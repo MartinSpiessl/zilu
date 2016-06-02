@@ -1,4 +1,4 @@
-# Invariant Inference Framework Setup Guide
+# ZILU Setup Guide
 
 ## Installation
 #### pre-requirement
@@ -15,7 +15,8 @@
 This modification aims at generating smt2 file for each path condition.
 The principle is to add a new method call``Massert'', and in its method handler we output the path condition to files.
 
-* [download patch file](http://lijiaying.github.io/content/iif/klee_patch.tar.bz2)
+* [download patch file](http://lijiaying.github.io/content/iif/klee_patch.tar.bz2) This is only valid for KLEE by Dec. 2015.
+For the latest KLEE, please modify the files by yourself. 
 
 ##### Note:
 + The patch files are tested successfully if you use them just between KLEE configure step and KLEE make step. (between step 5 and 6 in [build-llvm29](http://klee.github.io/build-llvm29/))
@@ -30,21 +31,20 @@ $patch -p1 <../klee.patch
 + After the patch, you can continue to proceed KLEE make step (step 6 in [build-llvm29](http://klee.github.io/build-llvm29/))
 
 
-#### Get IIF
+#### Get ZILU
 ```
-git clone git@github.com:IIFrm/IIF.git
+git clone git@github.com:lijiaying/ZILU.git
 ```
 
-#### Test IIF
+#### Test ZILU
 ```
-cd IIF
+cd ZILU
 mkdir build
 ./run_once.sh test
 ./run_once.sh conj
 ```
 
 #### Notes
-+ The folder 'backup/' is not used currently.
 + The 'test', 'conj' are filenames located in 'cfg' folder without extension.
 
 #### Add a new test
