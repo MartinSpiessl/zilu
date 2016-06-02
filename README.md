@@ -13,10 +13,10 @@
 
 #### patch KLEE source code
 This modification aims at generating smt2 file for each path condition.
-The principle is to add a new method call``Massert'', and in its method handler we output the path condition to files.
+The principle is to add a new method call **``Massert''**, and in its method handler we output the path condition to files.
 
 * [download patch file](http://lijiaying.github.io/content/iif/klee_patch.tar.bz2) This is only valid for KLEE by Dec. 2015.
-For the latest KLEE, please replace the following files with the files in [klee patch file](http://lijiaying.github.io/content/iif/klee_file_patch.tar.bz2).
+* For the latest KLEE, please replace the following files with the files in [klee patch file](http://lijiaying.github.io/content/iif/klee_file_patch.tar.bz2).
 1. KLEE_home_folder/include/klee/klee.h 
 2. KLEE_home_folder/lib/Core/Executor.cpp
 3. KLEE_home_folder/lib/Core/SpecialFunctionHandler.cpp
@@ -46,15 +46,14 @@ git clone git@github.com:lijiaying/ZILU.git
 ```
 cd ZILU
 mkdir build
-./run_once.sh test
-./run_once.sh conj
+./run_once.sh zilu_linear1 
 ```
 
 #### Notes
-+ The 'test', 'conj' are filenames located in 'cfg' folder without extension.
++ The 'zilu_linear1' is a file located in 'cfg' folder without extension.
 
 #### Add a new test
-- Follow the format such as 'cfg/test.cfg', put your test case in 'cfg' folder.
+- Follow the format such as 'cfg/template.cfg', put your test case in 'cfg' folder.
 - And then try to run the system and see what happens.
 
 ## Enjoy your tour with our Invariant Inference Framework: ZILU
