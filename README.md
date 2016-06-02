@@ -57,4 +57,4 @@ mkdir build
 - Follow the format such as 'cfg/test.cfg', put your test case in 'cfg' folder.
 - And then try to run the system and see what happens.
 
-## Enjoy your tour with our Invariant Inference Framework
+## Enjoy your tour with our Invariant Inference Framework: ZILU
