@@ -1,0 +1,27 @@
+/*
+ * From CAV'12 by Sharma et al.
+ */
+
+void main() {
+  int x=0;
+  int y=0;
+  int n = 0;
+  while(unknown()) {
+      x++;
+      y++;
+  }
+  while(x!=n) {
+      x--;
+      y--;
+  }
+  static_assert(y==n);
+}
+names=
+beforeloop=
+beforeloopinit=
+precondition=
+loopcondition=
+loop=
+postcondition=
+afterloop=
+learners= linear poly conj

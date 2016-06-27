@@ -1,0 +1,13 @@
+*.out
+dev/*.out
+bin/*.out
+src/*.out
+test/*.inv
+tmp/
+bin
+data
+build
+tags
+./CMakeLists.txt
+./include/config.h
+result/

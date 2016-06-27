@@ -14,10 +14,10 @@ then
 	exit 1
 fi
 
-dir_cfg="cfg/"
-dir_test="test/"
-dir_temp="tmp/"
-dir_tool="tools/bin/"
+cfg_path="cfg/"
+test_path="test/"
+temp_path="tmp/"
+tool_path="tools/bin/"
 
 
 prefix=$1
@@ -26,11 +26,11 @@ file_cfg=$prefix".cfg"
 file_cpp=$prefix".cpp"
 file_var=$prefix".var"
 file_inv=$prefix".inv"
-path_cfg=$dir_cfg""$file_cfg
-path_cpp=$dir_test""$file_cpp
-path_var=$dir_temp""$file_var
-path_inv=$dir_temp""$file_inv
-prefix_path_inv=$dir_temp""$prefix
+path_cfg=$cfg_path"/"$file_cfg
+path_cpp=$test_path"/"$file_cpp
+path_var=$temp_path"/"$file_var
+path_inv=$temp_path"/"$file_inv
+prefix_path_inv=$temp_path"/"$prefix
 
 
 #**********************************************************************************************
@@ -42,12 +42,12 @@ prefix_path_inv=$dir_temp""$prefix
 echo -n -e $blue"Converting the given config file to a valid cplusplus file..."$normal
 if [ $# -ge 2 ]; then
 	if [ $# -ge 3 ]; then
-		$dir_tool"cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2 $3
+		$tool_path"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2 $3
 	else
-		$dir_tool"cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2
+		$tool_path"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2
 	fi
 else
-	$dir_tool"cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv
+	$tool_path"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv
 fi
 Nv=$?
 echo -e $green$bold"[DONE]"$normal

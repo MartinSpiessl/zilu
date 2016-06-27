@@ -46,8 +46,8 @@ class BaseLearner{
 					Solution s;
 					while (fin >> s) {
 						//std::cout.setf(std::ios::fixed);
-						std::cout << BLUE << BOLD << "Test on Last Counter Example: "
-							<< s << " from file " << cntempl_fname << " --> " << NORMAL << NORMAL;
+						std::cout << BLUE << BOLD << "Test Counter Example: "
+							<< s << " @" << cntempl_fname << " --> " << NORMAL;
 						//std::cout.unsetf(std::ios::fixed);
 						int ret = runTarget(s);
 						printRunResult(ret);

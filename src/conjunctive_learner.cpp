@@ -83,7 +83,7 @@ init_svm_i:
 		}
 #endif
 #ifdef __PRT_STATISTICS
-		std::cout << "[#r" << random_samples << ",#s" << selective_samples << "]\n    ";
+		std::cout << "[#r" << random_samples << ",#s" << selective_samples << "] -->   ";
 #endif
 		if (svm_i->makeTrainingSet(gsets, pre_psize, pre_nsize) == 0) {
 			if (++zero_times < Nretry_init)
