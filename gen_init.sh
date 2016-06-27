@@ -14,26 +14,26 @@ then
 	exit 1
 fi
 
-dir_cfg="cfg/"
-dir_test="test/"
-dir_temp="tmp/"
-dir_tool="tools/bin/"
+dir_cfg="cfg"
+dir_test="test"
+dir_temp="tmp"
+dir_tool="tools/bin"
 
 
 prefix=$1
 mkdir -p tmp
 
 file_cfg=$prefix".cfg"
-path_cfg=$dir_cfg""$file_cfg
+path_cfg=$dir_cfg"/"$file_cfg
 file_var=$prefix".var"
-path_var=$dir_temp""$file_var
+path_var=$dir_temp"/"$file_var
 file_cnt=$prefix".cnt"
-path_cnt=$dir_temp""$file_cnt
+path_cnt=$dir_temp"/"$file_cnt
 file_cnt_lib=$prefix".cntlib"
-path_cnt_lib=$dir_temp""$file_cnt_lib
+path_cnt_lib=$dir_temp"/"$file_cnt_lib
 
 file_verif=$prefix".c"
-path_verif=$dir_temp""$file_verif
+path_verif=$dir_temp"/"$file_verif
 file_c_verif=$prefix"_init.c"
 file_o_verif=$prefix"_init.o"
 
@@ -66,7 +66,7 @@ while [ $i -lt $n ]; do
 	sed -i 's/)//g' $path_model
 	sed -i 's/\ \ /\ /g' $path_model
 
-	cat $path_model | "../../"$dir_tool"model_parser" "../../"$path_var "../../"$path_cnt
+	cat $path_model | "../../"$dir_tool"/model_parser" "../../"$path_var "../../"$path_cnt
 	result=$?
 	if [ $result -eq 0 ]; then
 		# unsat
@@ -115,7 +115,7 @@ return 0
 # Generate C files to verify using cfg file and inv file
 ##########################################################################
 echo -n -e $blue"Generating a C file to get initial positive value by KLEE..."$normal
-$dir_tool"cfg2init" $path_cfg $path_verif
+$dir_tool"/cfg2init" $path_cfg $path_verif
 echo -n -e $green$bold"[Done]"$normal
 
 

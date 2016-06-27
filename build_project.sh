@@ -14,10 +14,10 @@ then
 	exit 1
 fi
 
-cfg_path="cfg/"
-test_path="test/"
-temp_path="tmp/"
-tool_path="tools/bin/"
+dir_cfg="cfg"
+dir_test="test"
+dir_temp="tmp"
+dir_tool="tools/bin"
 
 
 prefix=$1
@@ -26,11 +26,11 @@ file_cfg=$prefix".cfg"
 file_cpp=$prefix".cpp"
 file_var=$prefix".var"
 file_inv=$prefix".inv"
-path_cfg=$cfg_path"/"$file_cfg
-path_cpp=$test_path"/"$file_cpp
-path_var=$temp_path"/"$file_var
-path_inv=$temp_path"/"$file_inv
-prefix_path_inv=$temp_path"/"$prefix
+path_cfg=$dir_cfg"/"$file_cfg
+path_cpp=$dir_test"/"$file_cpp
+path_var=$dir_temp"/"$file_var
+path_inv=$dir_temp"/"$file_inv
+prefix_path_inv=$dir_temp"/"$prefix
 
 
 #**********************************************************************************************
@@ -42,12 +42,12 @@ prefix_path_inv=$temp_path"/"$prefix
 echo -n -e $blue"Converting the given config file to a valid cplusplus file..."$normal
 if [ $# -ge 2 ]; then
 	if [ $# -ge 3 ]; then
-		$tool_path"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2 $3
+		$dir_tool"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2 $3
 	else
-		$tool_path"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2
+		$dir_tool"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2
 	fi
 else
-	$tool_path"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv
+	$dir_tool"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv
 fi
 Nv=$?
 echo -e $green$bold"[DONE]"$normal
@@ -61,14 +61,16 @@ cmakefile="./CMakeLists.txt"
 echo "cmake_minimum_required (VERSION 2.8)" > $cmakefile
 echo "set(Nv "$Nv")" >> $cmakefile
 if [ $# -ge 4 ]; then
-	if [ $4 -eq 1 ]; then
-		echo "add_definitions(-D__QAS_POSITIVE)" >> $cmakefile
-	fi
-	if [ $4 -eq -1 ]; then
-		echo "add_definitions(-D__QAS_NEGATIVE)" >> $cmakefile
-	fi
 	if [ $4 -eq 0 ]; then
 		echo "add_definitions(-D__SELECTIVE_SAMPLING_ENABLED)" >> $cmakefile
+	fi
+fi
+if [ $# -ge 5 ]; then
+	if [ $5 -eq 1 ]; then
+		echo "add_definitions(-D__QAS_POSITIVE)" >> $cmakefile
+	fi
+	if [ $5 -eq -1 ]; then
+		echo "add_definitions(-D__QAS_NEGATIVE)" >> $cmakefile
 	fi
 fi
 cat ./cmake.in >> $cmakefile

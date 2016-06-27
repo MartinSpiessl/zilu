@@ -14,41 +14,41 @@ if [ $# -lt 1 ]; then
 	exit 1
 fi
 
-cfg_path="cfg"
-test_path="test"
-temp_path="tmp"
-tool_path="tools/bin"
+dir_cfg="cfg"
+dir_test="test"
+dir_temp="tmp"
+dir_tool="tools/bin"
 
-# cfg_path=$1
+# dir_cfg=$1
 
 prefix=`basename -s .cfg $1`
-if [ ! -f $cfg_path"/"$prefix".cfg" ]; then
+if [ ! -f $dir_cfg"/"$prefix".cfg" ]; then
 	if [ ! -f $1 ]; then
 		echo -e $red"The argument is invalid, can not find a config file with name $1"
 		exit 1
 	fi
 	prefix=$prefix"_copy"
-	cp $1 $cfg_path"/"$prefix".cfg"
+	cp $1 $dir_cfg"/"$prefix".cfg"
 fi
 
 mkdir -p tmp
 mkdir -p build
 mkdir -p test
 file_cfg=$prefix".cfg"
-path_cfg=$cfg_path"/"$file_cfg
+path_cfg=$dir_cfg"/"$file_cfg
 file_cpp=$prefix".cpp"
-path_cpp=$test_path"/"$file_cpp
+path_cpp=$dir_test"/"$file_cpp
 file_var=$prefix".var"
-path_var=$temp_path"/"$file_var
+path_var=$dir_temp"/"$file_var
 file_inv=$prefix".inv"
-path_inv=$temp_path"/"$file_inv
+path_inv=$dir_temp"/"$file_inv
 file_cnt=$prefix".cnt"
-path_cnt=$temp_path"/"$file_cnt
+path_cnt=$dir_temp"/"$file_cnt
 file_cnt_lib=$prefix".cntlib"
-path_cnt_lib=$temp_path"/"$file_cnt_lib
+path_cnt_lib=$dir_temp"/"$file_cnt_lib
 
 file_dataset=$prefix".ds"
-path_dataset=$temp_path"/"$file_dataset
+path_dataset=$dir_temp"/"$file_dataset
 
 #rm -f $path_cnt
 rm -f $path_dataset
@@ -114,7 +114,7 @@ while [ $iteration -le 128 ]; do
 	else
 		iteration=$(($iteration+1))
 	fi
-	#cat $temp_path"svm.ds" > $path_dataset
+	#cat $dir_temp"svm.ds" > $path_dataset
 done
 echo "FAILED. iteration= "$iteration >> tmp/statistics
 exit $?

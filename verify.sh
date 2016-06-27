@@ -6,36 +6,35 @@ blue="\e[34m"
 bold="\e[1m"
 normal="\e[0m"
 
-if [ $# -lt 1 ]
-then
+if [ $# -lt 1 ]; then
 	echo "./verify.sh needs more parameters"
 	echo "./verify.sh cofig_prefix"
 	echo "try it again..."
 	exit 1
 fi
 
-cfg_path="cfg"
-test_path="test"
-temp_path="tmp"
-tool_path="tools/bin"
+dir_cfg="cfg"
+dir_test="test"
+dir_temp="tmp"
+dir_tool="tools/bin"
 
 
 prefix=$1
 mkdir -p tmp
 
 file_cfg=$prefix".cfg"
-path_cfg=$cfg_path"/"$file_cfg
+path_cfg=$dir_cfg"/"$file_cfg
 file_var=$prefix".var"
-path_var=$temp_path"/"$file_var
+path_var=$dir_temp"/"$file_var
 file_inv=$prefix".inv"
-path_inv=$temp_path"/"$file_inv
+path_inv=$dir_temp"/"$file_inv
 file_cnt=$prefix".cnt"
-path_cnt=$temp_path"/"$file_cnt
+path_cnt=$dir_temp"/"$file_cnt
 file_cnt_lib=$prefix".cntlib"
-path_cnt_lib=$temp_path"/"$file_cnt_lib
+path_cnt_lib=$dir_temp"/"$file_cnt_lib
 
 file_verif=$prefix".c"
-path_verif=$temp_path"/"$file_verif
+path_verif=$dir_temp"/"$file_verif
 file_c_verif=$prefix"_klee.c"
 file_c1_verif=$prefix"_klee1.c"
 file_c2_verif=$prefix"_klee2.c"
@@ -76,7 +75,7 @@ while [ $i -lt $n ]; do
 	sed -i 's/)//g' $path_model
 	sed -i 's/\ \ /\ /g' $path_model
 
-	cat $path_model | "../../"$tool_path"/model_parser" "../../"$path_var "../../"$path_cnt
+	cat $path_model | "../../"$dir_tool"/model_parser" "../../"$path_var "../../"$path_cnt
 	result=$?
 	if [ $result -eq 0 ]; then
 		# unsat
@@ -156,14 +155,14 @@ echo -e $green$bold"[Done]"$normal
 # Generate C files to verify using cfg file and inv file
 ##########################################################################
 echo -n -e $blue"Generating three C files to do the verification by KLEE..."$normal
-$tool_path"/cfg2verif" $path_tmp_cfg $path_verif
+$dir_tool"/cfg2verif" $path_tmp_cfg $path_verif
 echo -e $green$bold"[Done]"$normal
 
 
 ##########################################################################
 # File preparation for verificattion
 ##########################################################################
-cd $temp_path
+cd $dir_temp
 mkdir -p $prefix"_klee1" $prefix"_klee2" $prefix"_klee3"
 mv $file_c1_verif $prefix"_klee1/"$file_c_verif
 mv $file_c2_verif $prefix"_klee2/"$file_c_verif
