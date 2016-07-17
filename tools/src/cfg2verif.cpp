@@ -183,7 +183,7 @@ class FileHelper {
 					if (cs[BEFLI].value.compare("") != 0)
 						cppFile << cs[BEFLI].value << std::endl;
 					cppFile << "klee_assume(" << cs[PREC].value <<");\n"; 
-					cppFile << "klee_Massert(" << cs[INV].value <<");\n"; 
+					cppFile << "klee_fail(" << cs[INV].value <<");\n"; 
 					break;
 				case 2:
 					if (cs[BEFLI].value.compare("") != 0)
@@ -194,13 +194,13 @@ class FileHelper {
 					cppFile << "do {\n";
 					cppFile << cs[LOOP].value << "\n";
 					cppFile << "} while(0);\n";
-					cppFile << "klee_Massert(" << cs[INV].value <<");\n"; 
+					cppFile << "klee_fail(" << cs[INV].value <<");\n"; 
 					break;
 				case 3:
 					if (cs[LOOPC].value.compare("") != 0)
 						cppFile << "klee_assume(!(" << cs[LOOPC].value <<"));\n"; 
 					cppFile << "klee_assume(" << cs[INV].value <<");\n"; 
-					cppFile << "klee_Massert(" << cs[POSTC].value <<");\n"; 
+					cppFile << "klee_fail(" << cs[POSTC].value <<");\n"; 
 					break;
 			}
 			cppFile << "return 0;\n}" << endl;

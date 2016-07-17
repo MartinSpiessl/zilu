@@ -13,8 +13,9 @@
 
 #### patch KLEE source code
 This modification aims at generating smt2 file for each path condition.
-The principle is to add a new method call **``Massert''**, and in its method handler we output the path condition to files.
+The principle is to add a new method call **``klee_fail && klee_pass''**, and in its method handler we output the path condition to files.
 
+##### these patch files are out-dated. Will update it soon, sorry for this inconvenience.
 * [download patch file](http://lijiaying.github.io/content/iif/klee_patch.tar.bz2) This is only valid for KLEE by Dec. 2015.
 * For the latest KLEE, please replace the following files with the files in [klee patch file](http://lijiaying.github.io/content/iif/klee_file_patch.tar.bz2).
 1. KLEE_home_folder/include/klee/klee.h 

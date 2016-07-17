@@ -43,7 +43,7 @@ file_o_verif=$prefix"_klee.o"
 
 
 function func_findSmtForZ3(){
-smtname="failAssert0000";
+smtname="kleeAssert0000";
 n=99
 i=1
 while [ $i -lt $n ]; do
@@ -61,11 +61,6 @@ while [ $i -lt $n ]; do
 		echo -e $red$bold"A Error Occurs during smt2solver"$normal
 		exit 2 
 	fi
-
-	#sed -i 's/\[//g' $path_model
-	#sed -i 's/\]//g' $path_model
-	#sed -i 's/,/\n/g' $path_model
-	#sed -i 's/=//g' $path_model
 
 	sed -i 's/\ \ /\ /g' $path_model
 	sed -i 's/(define-fun\ \([a-zA-Z_][a-zA-Z_0-9]*\)\ ()\ Int/\1/g' $path_model
