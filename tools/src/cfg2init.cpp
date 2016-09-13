@@ -137,9 +137,6 @@ class FileHelper {
 		}
 
 		bool writeCFile() {
-			//int len = strlen(cppfilename);
-			//cppfilename[len-3] = '0';
-
 			std::ofstream cppFile(cppfilename);
 			//cout << "---> CPPFILE: " << cppfilename << "\n";
 			if(!cppFile.is_open()) {

@@ -86,7 +86,6 @@ return 0
 }
 
 function KleeInit(){
-u=$1
 cd $prefix"_init" 
 rm -rf klee-*
 rm -rf *.smt2
@@ -100,8 +99,7 @@ ret=$?
 #echo -n -e $red$ret$normal
 if [ $ret -eq 2 ]; then
 	exit $ret
-fi
-if [ $ret -eq 1 ]; then
+elif [ $ret -eq 1 ]; then
 	#echo -n -e $red">>>Getting an initial input..."$normal
 	exit $ret
 fi

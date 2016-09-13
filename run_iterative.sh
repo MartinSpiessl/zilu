@@ -74,7 +74,7 @@ if [ $# -ge 3 ]; then
 	echo -e $blue"Using precondition as the invariant candidiate..."$normal
 	grep '^precondition=*' $path_cfg > $path_inv
 	sed -i 's/precondition=*//g' $path_inv
-	./verify.sh $prefix
+	./scripts/verify.sh $prefix
 	if [ $? -eq 0 ]; then
 		exit 0
 	fi
@@ -103,7 +103,7 @@ while [ $iteration -le 128 ]; do
 	#**********************************************************************************************
 	# verification phase
 	#**********************************************************************************************
-	./verify.sh $prefix
+	./scripts/verify.sh $prefix
 	if [ $? -eq 0 ]; then
 		echo ""
 		echo "=====================time========================="
