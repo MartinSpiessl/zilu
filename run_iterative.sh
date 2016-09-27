@@ -62,9 +62,9 @@ cd tools
 cd ..
 
 if [ $# -lt 2 ]; then
-	./build_project.sh $prefix $path_cnt $path_dataset 0
+	./scripts/build.sh $prefix $path_cnt $path_dataset 0
 else
-	./build_project.sh $prefix $path_cnt $path_dataset $2
+	./scripts/build.sh $prefix $path_cnt $path_dataset $2
 fi
 
 ##echo "-----------------------"$prefix"--------------------------" >> tmp/statistics
