@@ -222,10 +222,17 @@ class FileHelper {
 		inline bool writeCppMain(ofstream& cppFile) {
 			cppFile << "\nint main(int argc, char** argv)\n {\n";
 			if (oldtracefilename)
+				cppFile << "iifContext context(\"" << varfilename 
+					<<"\", loopFunction, \"loopFunction\", \"" << oldtracefilename << "\");\n";
+			else
+				cppFile << "iifContext context(" << varfilename <<"\", loopFunction, \"loopFunction\");\n";
+			/*
+			if (oldtracefilename)
 				cppFile << "iifContext context(\"../" << varfilename 
 					<<"\", loopFunction, \"loopFunction\", \"../" << oldtracefilename << "\");\n";
 			else
 				cppFile << "iifContext context(\"../" << varfilename <<"\", loopFunction, \"loopFunction\");\n";
+				*/
 
 			{
 				/*std::cout << "size=" << learners.size() << std::endl;
@@ -258,10 +265,17 @@ class FileHelper {
 			}
 
 			if (testcasefilename) {
+				cppFile << "return context.learn(\"" << testcasefilename << "\", \"" << invfileprefix << "\");\n}" << endl;
+			} else {
+				cppFile << "return context.learn(NULL, \"" << invfileprefix << "\");\n}" << endl;
+			}
+			/*
+			if (testcasefilename) {
 				cppFile << "return context.learn(\"../" << testcasefilename << "\", \"../" << invfileprefix << "\");\n}" << endl;
 			} else {
 				cppFile << "return context.learn(NULL, \"../" << invfileprefix << "\");\n}" << endl;
 			}
+			*/
 			return true;
 
 			/*cppFile << "int main(int argc, char** argv)\n {\n" 

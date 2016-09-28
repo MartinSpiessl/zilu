@@ -194,6 +194,6 @@ include_directories (include)
 AUX_SOURCE_DIRECTORY(src DIR_SRCS)
 AUX_SOURCE_DIRECTORY(test DIR_TEST)
 
-add_executable(interproc2 /home/lijiaying/Research/GitHub/ZILU/test/interproc2.cpp ${DIR_SRCS} ${HEADER})
+add_executable(interproc2 /home/parallels/Research/GitHub/ZILU/test/interproc2.cpp ${DIR_SRCS} ${HEADER})
 target_link_libraries(interproc2 ${Z3_LIBRARY})
 target_link_libraries(interproc2 ${GSL_LIBRARIES})
