@@ -14,13 +14,15 @@ then
 	exit 1
 fi
 
-dir_cfg="cfg"
-dir_test="test"
-dir_temp="tmp"
-dir_tool="tools/bin"
-
-
 prefix=$1
+
+dir_project=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
+dir_project=`dirname $dir_project`
+. $dir_project"/scripts/include.sh"
+
+
+dir_pwd=`pwd`
+cd $dir_project
 mkdir -p tmp
 
 file_cfg=$prefix".cfg"
@@ -50,8 +52,8 @@ while [ $i -lt $n ]; do
 	path_smt2=$smtname""$i".smt2"
 	path_model=$smtname""$i".model"
 	#echo -n "  |-- processing "$path_smt2" ---> "
-	"../../tools/smt2_bv2int.sh" $path_smt2 
-	"../../tools/bin/smt2solver" $path_smt2 > $path_model
+	$dir_tool"/smt2_bv2int.sh" $path_smt2 
+	$dir_parser"/smt2solver" $path_smt2 > $path_model
 	result=$?
 	if [ $result -gt 1 ]; then
 		echo -e $red$bold"A Error Occurs during smt2solver"$normal
@@ -66,7 +68,7 @@ while [ $i -lt $n ]; do
 	sed -i 's/)//g' $path_model
 	sed -i 's/\ \ /\ /g' $path_model
 
-	cat $path_model | "../../"$dir_tool"/model_parser" "../../"$path_var "../../"$path_cnt
+	cat $path_model | $dir_parser"/model_parser" $path_var $path_cnt
 	result=$?
 	if [ $result -eq 0 ]; then
 		# unsat
@@ -86,7 +88,7 @@ return 0
 }
 
 function KleeInit(){
-cd $prefix"_init" 
+cd $dir_temp"/"$prefix"_init" 
 rm -rf klee-*
 rm -rf *.smt2
 llvm-gcc --emit-llvm -c -g $file_c_verif > /dev/null
@@ -104,7 +106,7 @@ elif [ $ret -eq 1 ]; then
 	exit $ret
 fi
 #echo -e $blue"[PASS]"$normal
-cd ..
+cd $dir_project
 return 0
 }
 
@@ -113,8 +115,8 @@ return 0
 # Generate C files to verify using cfg file and inv file
 ##########################################################################
 echo -n -e $blue"Generating a C file to get initial positive value by KLEE..."$normal
-$dir_tool"/cfg2init" $path_cfg $path_verif
-echo -n -e $green$bold"[Done]"$normal
+$dir_parser"/cfg2init" $path_cfg $path_verif
+echo -e $green$bold"[Done]"$normal
 
 
 ##########################################################################
@@ -123,8 +125,9 @@ echo -n -e $green$bold"[Done]"$normal
 cd $dir_temp
 mkdir -p $prefix"_init" 
 mv $file_c_verif $prefix"_init/"$file_c_verif
+cd $dir_project
 
 KleeInit
 
-cd ..
+cd $dir_pwd
 exit 0

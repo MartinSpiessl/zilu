@@ -18,7 +18,7 @@ return 0;
 
 int main(int argc, char** argv)
  {
-iifContext context("/home/parallels/Research/GitHub/ZILU/tmp/interproc1.var", loopFunction, "loopFunction", "tmp/interproc1.ds");
+iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/interproc1.var", loopFunction, "loopFunction", "tmp/interproc1.ds");
 context.addLearner("linear");
-return context.learn("tmp/interproc1.cnt", "/home/parallels/Research/GitHub/ZILU/tmp/interproc1");
+return context.learn("tmp/interproc1.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/interproc1");
 }
