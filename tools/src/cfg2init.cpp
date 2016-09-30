@@ -176,7 +176,7 @@ class FileHelper {
 
 			if (cs[BEFLI].value.compare("") != 0)
 				cppFile << cs[BEFLI].value << std::endl;
-			cppFile << "klee_Massert(!(" << cs[PREC].value <<"));\n"; 
+			cppFile << "klee_pass(!(" << cs[PREC].value <<"));\n"; 
 			cppFile << "return 0;\n}" << endl;
 			return true;
 		}

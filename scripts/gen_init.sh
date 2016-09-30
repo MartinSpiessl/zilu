@@ -70,6 +70,8 @@ while [ $i -lt $n ]; do
 
 	cat $path_model | $dir_parser"/model_parser" $path_var $path_cnt
 	result=$?
+	#cat $path_model
+	#cat $path_cnt
 	if [ $result -eq 0 ]; then
 		# unsat
 		#echo -e $green$bold" [unsat] [PASS]"$normal
@@ -98,6 +100,7 @@ klee -write-smt2s $file_o_verif > /dev/null 2>&1
 ret=$?
 func_findSmtForZ3
 ret=$?
+#cat $path_cnt
 #echo -n -e $red$ret$normal
 if [ $ret -eq 2 ]; then
 	exit $ret
