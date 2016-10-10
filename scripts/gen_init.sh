@@ -41,7 +41,7 @@ file_o_verif=$prefix"_init.o"
 
 
 function func_findSmtForZ3(){
-smtname="failAssert0000";
+smtname="kleeAssert0000";
 n=99
 i=1
 while [ $i -lt $n ]; do
@@ -71,17 +71,22 @@ while [ $i -lt $n ]; do
 	cat $path_model | $dir_parser"/model_parser" $path_var $path_cnt
 	result=$?
 	#cat $path_model
-	#cat $path_cnt
+	echo -n -e $yellow"  "$i")---->["$result"]"
 	if [ $result -eq 0 ]; then
 		# unsat
 		#echo -e $green$bold" [unsat] [PASS]"$normal
+		echo -e $normal
 		i=$(($i+1))
 	elif [ $result -eq 2 ]; then
 		#echo -e $red$bold"Error Occurs during model parsing"$normal
+		echo -e $normal
 		exit 2 
 	else
 		#echo -n -e $red$bold" [sat] [FAIL]"$normal
-		echo -e " >>> an init value is stored at "$yellow$path_cnt$normal
+		echo -n " :::::: "
+		cat $path_cnt
+		echo -e -n $normal
+		#echo -e " >>> an init value is stored at "$yellow$path_cnt$normal
 		#cat "../../"$path_cnt >> "../../"$path_cnt_lib
 		return 1
 	fi
@@ -98,7 +103,9 @@ llvm-gcc --emit-llvm -c -g $file_c_verif > /dev/null
 klee -write-smt2s $file_o_verif > /dev/null 2>&1
 #klee -write-smt2s $file_o_verif #> /dev/null 2>&1
 ret=$?
+echo -e $yellow"LOOKING FOR SMT for Z3"
 func_findSmtForZ3
+#echo -e "DONE"$normal
 ret=$?
 #cat $path_cnt
 #echo -n -e $red$ret$normal

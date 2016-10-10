@@ -39,6 +39,7 @@ class BaseLearner{
 		} 
 
 		void runCounterExampleFile(const char* cntempl_fname = NULL) {
+			std::cout << RED << ">>>> run counter example from file %%" << cntempl_fname << NORMAL << std::endl;
 			std::cout.unsetf(std::ios::fixed);
 			if (cntempl_fname!= NULL) {
 				std::ifstream fin(cntempl_fname);

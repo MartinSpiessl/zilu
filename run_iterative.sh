@@ -14,10 +14,13 @@ if [ $# -lt 1 ]; then
 	exit 1
 fi
 
-dir_cfg="cfg"
-dir_test="test"
-dir_temp="tmp"
-dir_tool="tools/bin"
+dir_project=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
+#dir_project=`dirname $dir_project`
+
+dir_cfg=$dir_project"/cfg"
+dir_test=$dir_project"/test"
+dir_temp=$dir_project"/tmp"
+dir_tool=$dir_project"/tools/bin"
 
 # dir_cfg=$1
 
@@ -68,7 +71,9 @@ else
 fi
 
 ##echo "-----------------------"$prefix"--------------------------" >> tmp/statistics
+echo -e $green"GEN INIT"$normal
 ./scripts/gen_init.sh $prefix
+echo -e $green"DONE"$normal
 
 if [ $# -ge 3 ]; then
 	echo -e $blue"Using precondition as the invariant candidiate..."$normal

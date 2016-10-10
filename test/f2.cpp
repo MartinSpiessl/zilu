@@ -20,7 +20,7 @@ return 0;
 
 int main(int argc, char** argv)
  {
-iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/f2.var", loopFunction, "loopFunction", "tmp/f2.ds");
+iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/f2.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/f2.ds");
 context.addLearner("linear");
-return context.learn("tmp/f2.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/f2");
+return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/f2.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/f2");
 }

@@ -186,8 +186,8 @@ class FileHelper {
 					cppFile << "klee_fail(" << cs[INV].value <<");\n"; 
 					break;
 				case 2:
-					if (cs[BEFLI].value.compare("") != 0)
-						cppFile << cs[BEFLI].value << std::endl;
+					//if (cs[BEFLI].value.compare("") != 0)
+					//	cppFile << cs[BEFLI].value << std::endl;
 					if (cs[LOOPC].value.compare("") != 0)
 						cppFile << "klee_assume(" << cs[LOOPC].value <<");\n"; 
 					cppFile << "klee_assume(" << cs[INV].value <<");\n"; 
