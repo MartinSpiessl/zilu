@@ -3,26 +3,25 @@
 using namespace iif;
 
 int loopFunction(int _reserved_input_[]) {
-int j = _reserved_input_[0];
-int x = _reserved_input_[1];
+int i = _reserved_input_[0];
+int j = _reserved_input_[1];
+int x = _reserved_input_[2];
 
-int i=0;
-iif_assume(i==0 && x==100);
+iif_assume(i==0 && j==0 && x>0);
 while(i<x)
 {
-recordi(j, x);
+recordi(i, j, x);
 j=j+2;i++;
 }
-recordi(j, x);
+recordi(i, j, x);
 iif_assert(j==2*x);
 return 0;
 }
 
 int main(int argc, char** argv)
  {
-iifContext context("../tmp//11_copy.var", loopFunction, "loopFunction", "../tmp/11_copy.ds");
+iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/11_copy.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/11_copy.ds");
 context.addLearner("linear");
-context.addLearner("poly");
 context.addLearner("conjunctive");
-return context.learn("../tmp/11_copy.cnt", "../tmp//11_copy");
+return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/11_copy.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/11_copy");
 }
