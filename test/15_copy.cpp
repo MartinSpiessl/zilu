@@ -4,26 +4,23 @@ using namespace iif;
 
 int loopFunction(int _reserved_input_[]) {
 int k = _reserved_input_[0];
+int j = _reserved_input_[1];
+int n = _reserved_input_[2];
 
-int j=0;
-int n = rand()%2;
-iif_assume(n>0 && k>n);
+iif_assume(n>0 && k>n && j==0);
 while(j<n)
 {
-recordi(k);
+recordi(k, j, n);
 j++; k--;
-n = rand()%2;
 }
-recordi(k);
+recordi(k, j, n);
 iif_assert(k>=0);
 return 0;
 }
 
 int main(int argc, char** argv)
  {
-iifContext context("../tmp//15_copy.var", loopFunction, "loopFunction", "../tmp/15_copy.ds");
-context.addLearner("linear");
-context.addLearner("poly");
+iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/15_copy.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/15_copy.ds");
 context.addLearner("conjunctive");
-return context.learn("../tmp/15_copy.cnt", "../tmp//15_copy");
+return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/15_copy.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/15_copy");
 }
