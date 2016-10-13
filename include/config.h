@@ -19,7 +19,7 @@
  *		   This should be set in /CMakeLists.txt file
  *		   If it is not set correctly, you may come across a runtime error
  */
-#define Nv 3 
+#define Nv 2 
 
 /*#define Cv(i) do {int return_num##i = 1;\
   for (int tempi = 0; tempi < i; i++) return_num##i *= (Nv + i);\
@@ -62,8 +62,8 @@
  *		   You'd better set this value in a scope [1, 12] 
  */
 //#define PRECISION 1
-#define PRECISION 2
-//#define PRECISION 3
+//#define PRECISION 2
+#define PRECISION 3
 
 /** @brief The pointer to test program, DO NOT assign directly
  *		   Call register_program to set its value
