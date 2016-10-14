@@ -19,7 +19,7 @@ return 0;
 
 int main(int argc, char** argv)
  {
-iifContext context("/home/parallels/Research/GitHub/ZILU/tmp/afnp2014_true.var", loopFunction, "loopFunction", "/home/parallels/Research/GitHub/ZILU/tmp/afnp2014_true.ds");
+iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds");
 context.addLearner("conjunctive");
-return context.learn("/home/parallels/Research/GitHub/ZILU/tmp/afnp2014_true.cnt", "/home/parallels/Research/GitHub/ZILU/tmp/afnp2014_true");
+return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true");
 }
