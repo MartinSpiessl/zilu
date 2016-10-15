@@ -10,7 +10,7 @@ iif_assume( x == y && y >=0);
 while(x!=0)
 {
 recordi(x, y);
-x--; y--;
+x--; y--; if (x<0 || y<0) break;
 }
 recordi(x, y);
 iif_assert(y==0);

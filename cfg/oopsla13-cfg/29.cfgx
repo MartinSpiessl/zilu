@@ -1,6 +1,6 @@
 names=a b c d
-beforeloop=
-beforeloopinit=int x=3; int y=3;
+beforeloop=int x, y;
+beforeloopinit=x=3; y=3;
 symbolic=flag
 precondition=a==1 && b==1 && c==1 && d==1
 loopcondition=
