@@ -49,11 +49,11 @@ while [ $i -lt $n ]; do
 	path_smt2=$smtname""$i".smt2"
 	path_model=$smtname""$i".model"
 	echo -n "  |-- processing "$path_smt2" ---> "
-	cat $path_smt2
-	z3 $path_smt2
-	echo "==========================="
+	#cat $path_smt2
+	#z3 $path_smt2
+	#echo "==========================="
 	$dir_tool"/smt2_bv2int.sh" $path_smt2 
-	cat $path_smt2
+	#cat $path_smt2
 	$dir_parser"/smt2solver" $path_smt2 > $path_model
 	result=$?
 	if [ $result -gt 1 ]; then

@@ -6,7 +6,8 @@ int loopFunction(int _reserved_input_[]) {
 int i = _reserved_input_[0];
 int j = _reserved_input_[1];
 
-int x = 0; int y = 0;
+int x, y;
+x = 0; y = 0;
 int flag = rand()%2;
 iif_assume(i==0 && j==0);
 while(rand() % 8)

@@ -11,6 +11,7 @@ iif_assume( l>0);
 while( i < n)
 {
 recordi(l);
+i++;
 }
 recordi(l);
 iif_assert(l>=1);
