@@ -1,22 +1,21 @@
 #!/bin/bash
-#dir_include=/home/parallels/Research/GitHub/ZILUv3/scripts
-#dir_include=`dirname $(pwd)/${0}`
-dir_include=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
-. $dir_include"/include.sh"
 
 if [ $# -lt 1 ]; then
-	echo "./verify.sh needs more parameters"
-	echo "./verify.sh cofig_prefix"
+	echo "verify.sh needs more parameters"
+	echo "verify.sh cofig_prefix"
 	echo "try it again..."
 	exit 1
 fi
-
-dir_org=`pwd`
 prefix=$1
-cnt_num=8
-if [ $# -gt 1 ]; then
-	cnt_num=$2
-fi
+
+dir_project=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
+dir_project=`dirname $dir_project`
+. $dir_project"/scripts/include.sh"
+
+
+dir_pwd=`pwd`
+cd $dir_project
+mkdir -p tmp
 
 file_cfg=$prefix".cfg"
 path_cfg=$dir_cfg"/"$file_cfg
@@ -31,14 +30,67 @@ path_cnt_lib=$dir_temp"/"$file_cnt_lib
 
 file_verif=$prefix".c"
 path_verif=$dir_temp"/"$file_verif
-file_c_verif=$prefix".c"
+file_c_verif=$prefix"_klee.c"
 file_c1_verif=$prefix"_klee1.c"
 file_c2_verif=$prefix"_klee2.c"
 file_c3_verif=$prefix"_klee3.c"
-file_o_verif=$prefix".o"
+file_o_verif=$prefix"_klee.o"
+
+cnt_num=8
+
+function func_findSmtForZ3(){
+smtname="kleeAssert0000";
+n=99
+i=1
+while [ $i -lt $n ]; do
+	if [ ! -f $smtname""$i".smt2" ]; then
+		#echo  "No such file."
+		return 0
+	fi
+	path_smt2=$smtname""$i".smt2"
+	path_model=$smtname""$i".model"
+	echo -n "  |-- processing "$path_smt2" ---> "
+	#cat $path_smt2
+	#z3 $path_smt2
+	#echo "==========================="
+	$dir_tool"/smt2_bv2int.sh" $path_smt2 
+	#cat $path_smt2
+	$dir_parser"/smt2solver" $path_smt2 > $path_model
+	result=$?
+	if [ $result -gt 1 ]; then
+		echo -e $red$bold"A Error Occurs during smt2solver"$normal
+		exit 2 
+	fi
+
+	sed -i 's/\ \ /\ /g' $path_model
+	sed -i 's/(define-fun\ \([a-zA-Z_][a-zA-Z_0-9]*\)\ ()\ Int/\1/g' $path_model
+	sed -i 's/()//g' $path_model
+	sed -i 's/Int//g' $path_model
+	sed -i 's/(-\ \([1-9][0-9]*\))/-\1/g' $path_model
+	sed -i 's/)//g' $path_model
+	sed -i 's/\ \ /\ /g' $path_model
+
+	cat $path_model | $dir_parser"/model_parser" $path_var $path_cnt
+	result=$?
+	if [ $result -eq 0 ]; then
+		# unsat
+		echo -e $green$bold" [unsat] [PASS]"$normal
+		i=$(($i+1))
+	elif [ $result -eq 2 ]; then
+		echo -e $red$bold"Error Occurs during model parsing"$normal
+		exit 2 
+	else
+		echo -n -e $red$bold" [sat] [FAIL]"$normal
+		echo -e " >>> counter example is stored at "$yellow$path_cnt$normal
+		#cat "../../"$path_cnt >> "../../"$path_cnt_lib
+		return 1
+	fi
+done
+return 0
+}
 
 
-function func_findsmt4z3(){
+function new_func_findSmtForZ3(){
 smtname="kleeAssert0000";
 n=99
 u=1
@@ -46,25 +98,40 @@ while [ $u -lt $n ]; do
 	if [ $u -ge 10 ]; then
 		smtname="kleeAssert000";
 	fi
-	path_smt2=$(pwd)"/"$smtname""$u".smt2"
-	path_model=$(pwd)"/"$smtname""$u".model"
+	path_smt2=$smtname""$u".smt2"
+	path_model=$smtname""$u".model"
 	if [ ! -f $path_smt2 ]; then
 		#echo  "No such file."
 		return 0
 	fi
 	echo -n "  |-- processing $smtname$u.smt2 ---> "
 	func_bv2int $path_smt2 
+	res=$?
+	echo -e $yellow"smt2:"$normal
+	cat $path_smt2
 	func_z3solve $path_smt2 $path_model
-	if [ $? -eq 0 ]; then
+	res=$?
+	echo -e $yellow"model:"$normal
+	cat $path_model
+	if [ $res -eq 0 ]; then
 		func_modelfile2values $path_model
 		echo ${values[*]} > $path_cnt
+		echo ${values[*]}
 		cnt_num=$(($cnt_num-1))
+		echo "cnt_num-->"$cnt_num
 		while [ $cnt_num -gt 0 ]; do
 			func_updatesmt2file $path_smt2
+			res=$?
+			echo -e $yellow"smt2:"$normal
+			cat $path_smt2
 			func_z3solve $path_smt2 $path_model
-			if [ $? -eq 0 ]; then
+			res=$?
+			echo -e $yellow"model:"$normal
+			cat $path_model
+			if [ $res -eq 0 ]; then
 				func_modelfile2values $path_model
 				echo ${values[*]} >> $path_cnt
+				echo ${values[*]}
 				cnt_num=$(($cnt_num-1))
 			else
 				break
@@ -74,6 +141,7 @@ while [ $u -lt $n ]; do
 
 		echo -n -e $red$bold" [sat] [FAIL]"$normal
 		echo -e " >>> counter example(s) are  stored at "$yellow$path_cnt$normal
+		cnt_num=8
 		return 1
 	fi
 
@@ -85,42 +153,40 @@ return 0
 }
 
 
-function func_kleeverify(){
+function KleeVerify(){
 u=$1
-cd $prefix"_klee"$u 
+cd $dir_temp"/"$prefix"_klee"$u 
 rm -rf klee-*
 rm -rf *.smt2
 echo -e $green"Compiling the C files and Run KLEE..."$u$normal
 llvm-gcc --emit-llvm -c -g $file_c_verif > /dev/null
-echo -e $blue"Running KLEE to generate path condition"$normal
-klee $file_o_verif > /dev/null 2>&1
+#echo -e $blue"Running KLEE to generate path condition"$normal
+klee -write-smt2s $file_o_verif > /dev/null 2>&1
 #klee -write-smt2s $file_o_verif #> /dev/null 2>&1
-func_findsmt4z3
+ret=$?
+new_func_findSmtForZ3
 ret=$?
 #echo -n -e $red$ret$normal
 if [ $ret -eq 2 ]; then
 	exit $ret
-elif [ $ret -eq 1 ]; then
-	echo -n -e $red">>>NOT A VALID INVARIVANT...Reason: "
+fi
+if [ $ret -eq 1 ]; then
+	echo -n -e $red">>>NOT A VALID INVARIVANT..."
 	if [ $u -eq 1 ]; then
-		echo -e $bold"Property I (precondition ==> invariant) FAILS. "
+		echo -e $bold"Reason: Property I (precondition ==> invariant) FAILED. stop here..."$normal
 	elif [ $u -eq 2 ]; then
-		echo -e $bold"Property II (invariant && loopcondition =S=> invariant) FAILS."
+		echo -e $bold"Reason: Property II (invariant && loopcondition =S=> invariant) FAILED. stop here..."$normal 
 	elif [ $u -eq 3 ]; then
-		echo -e $bold"Property III (invariant && ~loopcondition ==> postcondition) FAILS."
+		echo -e $bold"Reason: Property III (invariant && ~loopcondition ==> postcondition) FAILED. stop here..."$normal
 	fi
-	echo -e $normal #" stop here..."
 	exit $ret
 fi
 #echo -e $blue"[PASS]"$normal
-cd ..
+cd $dir_project
 return 0
 }
 
 
-cd $dir_project
-mkdir -p tmp
-func_varfile2vars $path_var
 #**********************************************************************************************
 # verification phase
 #**********************************************************************************************
@@ -138,12 +204,10 @@ echo ""
 echo -n -e $blue"Generating a new config file contains the invariant candidate..."$normal
 path_tmp_cfg=$dir_temp"/tmp.cfg"
 cp $path_cfg $path_tmp_cfg
-#echo "" >> $path_tmp_cfg
+echo "" >> $path_tmp_cfg
 echo -n "invariant=" >> $path_tmp_cfg
 cat $path_inv >> $path_tmp_cfg
-echo "" >> $path_tmp_cfg
 echo -e $green$bold"[Done]"$normal
-#cat $path_tmp_cfg
 
 
 ##########################################################################
@@ -151,10 +215,6 @@ echo -e $green$bold"[Done]"$normal
 ##########################################################################
 echo -n -e $blue"Generating three C files to do the verification by KLEE..."$normal
 $dir_parser"/cfg2verif" $path_tmp_cfg $path_verif
-#cat $path_tmp_cfg | $dir_parser"/parser" -t 4 -c 1 -o $dir_temp"/"$file_c1_verif
-#cat $path_tmp_cfg | $dir_parser"/parser" -t 4 -c 2 -o $dir_temp"/"$file_c2_verif
-#cat $path_tmp_cfg | $dir_parser"/parser" -t 4 -c 3 -o $dir_temp"/"$file_c3_verif
-#$dir_tool"/bin/cfg2verif" $path_tmp_cfg $path_verif
 echo -e $green$bold"[Done]"$normal
 
 
@@ -166,17 +226,18 @@ mkdir -p $prefix"_klee1" $prefix"_klee2" $prefix"_klee3"
 mv $file_c1_verif $prefix"_klee1/"$file_c_verif
 mv $file_c2_verif $prefix"_klee2/"$file_c_verif
 mv $file_c3_verif $prefix"_klee3/"$file_c_verif
-
-func_kleeverify 1
-func_kleeverify 2
-func_kleeverify 3
-
 cd $dir_project
-echo -e $bold$green"-----------------------------------------------------------finish proving---------------------------------------------------------------"$normal
 
+
+KleeVerify 1
+KleeVerify 2
+KleeVerify 3
+
+#cd ..
+echo -e $bold$green"-----------------------------------------------------------finish proving---------------------------------------------------------------"$normal
 echo -n -e $green"The invariant can be "$yellow
 cat $path_inv
-echo -e $normal
+echo -e "\n"$normal
 #echo -e $green".\nEND"$normal
-cd $dir_org
+cd $dir_pwd
 exit 0

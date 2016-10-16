@@ -8,9 +8,9 @@ case $option in
 		for cfile in $allcfiles; do
 			basename=`basename -s .c $cfile`
 			echo -n $basename"-->"
-			cp $cfile $pre""$basename".cfg"
-			cat template.cfg >> $pre""$basename".cfg"
-			echo `wc -l $pre""$basename".cfg"`
+			cp $cfile $pre"_"$basename".cfg"
+			cat template.cfg >> $pre"_"$basename".cfg"
+			echo `wc -l $pre"_"$basename".cfg"`
 		done
 		;;
 	2)

@@ -19,8 +19,7 @@ return 0;
 
 int main(int argc, char** argv)
  {
-iifContext context("../tmp/01.var", loopFunction, "loopFunction", "../tmp/01.ds");
-context.addLearner("linear");
+iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_01.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_01.ds");
 context.addLearner("conjunctive");
-return context.learn("../tmp/01.cnt", "../tmp/01");
+return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_01.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_01");
 }
