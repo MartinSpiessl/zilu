@@ -72,8 +72,9 @@ fi
 
 ##echo "-----------------------"$prefix"--------------------------" >> tmp/statistics
 echo -e $green"GEN INIT"$normal
+#./scripts/old_gen_init.sh $prefix
 ./scripts/gen_init.sh $prefix
-echo -e $green"DONE"$normal
+#echo -e $green"DONE"$normal
 
 if [ $# -ge 3 ]; then
 	echo -e $blue"Using precondition as the invariant candidiate..."$normal
