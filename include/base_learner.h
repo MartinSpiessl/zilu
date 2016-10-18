@@ -175,7 +175,7 @@ class BaseLearner{
 			//std::cout << GREEN << BOLD << "|*\t\t   " << RED << "random_samples= " << random_samples << "\n";
 			//std::cout << GREEN << BOLD << "|*\t\t   " << RED << "selective_samples= " << selective_samples << "\n";
 			//std::cout << GREEN << BOLD << "******************************************************\n" << NORMAL;
-			std::ofstream of1("../tmp/statistics", std::ofstream::app);
+			std::ofstream of1("../result/statistics", std::ofstream::app);
 			struct timeval tv;
 			gettimeofday(&tv, NULL);
 			//time_t nowtime = tv.tv_sec;

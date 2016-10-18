@@ -531,7 +531,8 @@ void Solver::Solve(int l, const QMatrix& Q, const double *p_, const schar *y_,
 
 	int iter = 0;
 	//std::cout << "oprimization step 1.\n";
-	int max_iter = max(10000000, l>INT_MAX/100 ? INT_MAX : 100*l);
+	//int max_iter = max(10000000, l>INT_MAX/100 ? INT_MAX : 100*l);
+	int max_iter = max(10000000, l>INT_MAX/100 ? INT_MAX/10 : 10*l);
 	//int max_iter = max(1000000, l>INT_MAX/100 ? INT_MAX : 100*l);
 	//int max_iter = INT_MAX;
 	max_iter/=10; 

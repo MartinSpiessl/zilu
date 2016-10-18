@@ -19,7 +19,7 @@ return 0;
 
 int main(int argc, char** argv)
  {
-iifContext context("/home/parallels/Research/GitHub/ZILU/tmp/zilu_conj2.var", loopFunction, "loopFunction", "/home/parallels/Research/GitHub/ZILU/tmp/zilu_conj2.ds");
+iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj2.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj2.ds");
 context.addLearner("conjunctive");
-return context.learn("/home/parallels/Research/GitHub/ZILU/tmp/zilu_conj2.cnt", "/home/parallels/Research/GitHub/ZILU/tmp/zilu_conj2");
+return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj2.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj2");
 }

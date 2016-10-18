@@ -4,18 +4,19 @@ using namespace iif;
 
 int loopFunction(int _reserved_input_[]) {
 int x = _reserved_input_[0];
-int i = _reserved_input_[1];
-int j = _reserved_input_[2];
+int y = _reserved_input_[1];
+int i = _reserved_input_[2];
+int j = _reserved_input_[3];
 
 int flag = rand()%2;
-iif_assume(x==0 && i==0 && j==0);
+iif_assume(x==0 && y==0 && i==0 && j==0);
 while(rand() % 8)
 {
-recordi(x, i, j);
-x++; i+=x; j+=x; if(flag) j+=1;
+recordi(x, y, i, j);
+x++; y++; i+=x; j+=y; if(flag) j+=1;
 flag = rand()%2;
 }
-recordi(x, i, j);
+recordi(x, y, i, j);
 iif_assert(j>=i);
 return 0;
 }
