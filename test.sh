@@ -1,4 +1,11 @@
-#!/bin/sh
+#!/bin/bash
+red="\e[31m"
+green="\e[32m"
+yellow="\e[33m"
+blue="\e[34m"
+normal="\e[0m"
+bold="\e[1m"
+
 i=0
 if [ $# -ge 1 ] && [ $1 !=  "all" ]; then
 	echo    "--"$1"------------------------------------------------------------------------------"
@@ -37,23 +44,27 @@ do
 	cfgfile=`basename -s .cfg $file`
 	#cfgfile=$file
 	#echo -e $yellow""$i" --> Processing $file >> "$filename" --> "$cfgfile""$normal
-	echo $i" --> Processing $file >> "$filename" --> "$cfgfile
+	echo -e $yellow$bold$i$normal$yellow" --> Processing $file >> "$filename" --> "$cfgfile$normal
 
-	echo    "\n"$i"--"$cfgfile"------------------------------------------------------------------------------" >> result/statistics
-	echo    "   ||----SELECTIVE---------------------------------------------------" >> result/statistics
+	echo    $i"--"$cfgfile"------------------------------------------------------------------------------" >> result/statistics
 	echo    "   ||----SELECTIVE---------------------------------------------------"
+	echo    "   ||----SELECTIVE---------------------------------------------------" >> result/statistics
 	{ time -p timeout 120 ./run_iterative.sh $cfgfile 0 ; } 1> result/"$cfgfile".selective.out.txt 2>> result/statistics
-	echo -n "     ---->>"
+	echo -n -e "     ---->>"$bold$green
 	cat		"tmp/"$cfgfile".inv"
-	echo	"" 
+	echo -e	""$normal 
 
-	echo    "   ||----unSELECTIVE-------------------------------------------------" >> result/statistics
 	echo    "   ||----unSELECTIVE-------------------------------------------------"
+	echo    "   ||----unSELECTIVE-------------------------------------------------" >> result/statistics
 	{ time -p timeout 120 ./run_iterative.sh $cfgfile 1 ; } 1> result/"$cfgfile".unselective.out.txt 2>> result/statistics
-	echo -n "     ---->>"
+	echo -n -e "     ---->>"$bold$green
 	cat		"tmp/"$cfgfile".inv"
-	echo	"" 
+	echo -e	""$normal 
 
+	echo    "" >> result/statistics
+	echo    "" >> result/statistics
+	echo    "" >> result/statistics
+	echo    "" >> result/statistics
 	echo    "##########################################################################################" >> result/statistics
 	date >> result/statistics
 done
