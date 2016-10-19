@@ -4,7 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-AFTL	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, PREC, LOOPC, LOOP, POSTC, AFTL, INV};$/;"	e	enum:category	file:
+AFTL	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+AFTL	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
 ARCHITECTURE_ID	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	298;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	301;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	304;"	d	file:
@@ -21,17 +22,19 @@ ARCHITECTURE_ID	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	3
 ARCHITECTURE_ID	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	306;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	309;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	313;"	d	file:
-BEFL	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, PREC, LOOPC, LOOP, POSTC, AFTL, INV};$/;"	e	enum:category	file:
-BEFLI	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, PREC, LOOPC, LOOP, POSTC, AFTL, INV};$/;"	e	enum:category	file:
-BLUE	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL};$/;"	e	enum:Color
-BOLD	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL};$/;"	e	enum:Color
+BEFL	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+BEFL	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+BEFLI	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+BEFLI	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+BLUE	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL, UNDERLINE};$/;"	e	enum:Color
+BOLD	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL, UNDERLINE};$/;"	e	enum:Color
 BaseLearner	include/base_learner.h	/^		BaseLearner(States* gsets, \/*const char* cntempl_fname = NULL,*\/ int (*func)(int*) = target_program):$/;"	f	class:BaseLearner
 BaseLearner	include/base_learner.h	/^class BaseLearner{$/;"	c
 C	include/svm_core.h	/^	double C;	\/* for C_SVC, EPSILON_SVR and NU_SVR *\/$/;"	m	struct:svm_parameter
-CMAKE_BINARY_DIR	build/Makefile	/^CMAKE_BINARY_DIR = \/home\/lijiaying\/Research\/GitHub\/iif\/build$/;"	m
+CMAKE_BINARY_DIR	build/Makefile	/^CMAKE_BINARY_DIR = \/home\/lijiaying\/Research\/GitHub\/ZILU\/build$/;"	m
 CMAKE_COMMAND	build/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
-CMAKE_SOURCE_DIR	build/Makefile	/^CMAKE_SOURCE_DIR = \/home\/lijiaying\/Research\/GitHub\/iif$/;"	m
-CNT_EMPL	include/instrumentation.h	/^enum {NEGATIVE = 0, POSITIVE, QUESTION, CNT_EMPL};	\/* trace_type *\/$/;"	e	enum:__anon5
+CMAKE_SOURCE_DIR	build/Makefile	/^CMAKE_SOURCE_DIR = \/home\/lijiaying\/Research\/GitHub\/ZILU$/;"	m
+CNT_EMPL	include/instrumentation.h	/^enum {NEGATIVE = 0, POSITIVE, QUESTION, CNT_EMPL};	\/* trace_type *\/$/;"	e	enum:__anon3
 COMPILER_ID	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	107;"	d	file:
 COMPILER_ID	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	112;"	d	file:
 COMPILER_ID	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	119;"	d	file:
@@ -204,22 +207,21 @@ COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	
 COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	20;"	d	file:
 COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	149;"	d	file:
 COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	25;"	d	file:
-CONJUNCT	include/connector.h	/^enum { UNUSED, DISJUNCT, CONJUNCT };$/;"	e	enum:__anon4
-C_SVC	include/svm_core.h	/^enum { C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR };	\/* svm_type *\/$/;"	e	enum:__anon2
+CONJUNCT	include/connector.h	/^enum { UNUSED, DISJUNCT, CONJUNCT };$/;"	e	enum:__anon2
+C_SVC	include/svm_core.h	/^enum { C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR };	\/* svm_type *\/$/;"	e	enum:__anon4
 Cache	src/svm_core.cpp	/^Cache::Cache(int l_,long int size_):l(l_),size(size_)$/;"	f	class:Cache
 Cache	src/svm_core.cpp	/^class Cache$/;"	c	file:
 Candidates	include/candidates.h	/^		Candidates() {$/;"	f	class:Candidates
 Candidates	include/candidates.h	/^class Candidates{$/;"	c
 Classifier	include/classifier.h	/^class Classifier{$/;"	c
 Classifier	src/classifier.cpp	/^Classifier:: Classifier(int maxsize) {$/;"	f	class:Classifier
-Cluster	backup/cluster.h	/^		Cluster(double (*pdata)[VARS], double (*ndata)[VARS], int psize, int nsize){$/;"	f	class:Cluster
-Cluster	backup/cluster.h	/^class Cluster$/;"	c
 Cn	src/svm_core.cpp	/^		double Cp,Cn;$/;"	m	class:Solver	file:
-Color	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL};$/;"	g
+Color	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL, UNDERLINE};$/;"	g
+Config	testcases/zilu2cpa.cpp	/^class Config {$/;"	c	file:
+Config	testcases/zilu2interproc.cpp	/^class Config {$/;"	c	file:
+Config	tools/src/cfg2init.cpp	/^class Config {$/;"	c	file:
 Config	tools/src/cfg2test.cpp	/^class Config {$/;"	c	file:
 Config	tools/src/cfg2verif.cpp	/^class Config {$/;"	c	file:
-ConjunctiveLearner	backup/conjunctive_learner.cpp	/^ConjunctiveLearner::ConjunctiveLearner(States* gsets, int (*func)(int*), int max_iteration) : BaseLearner(gsets, func) { $/;"	f	class:ConjunctiveLearner
-ConjunctiveLearner	backup/conjunctive_learner.h	/^class ConjunctiveLearner: public BaseLearner {$/;"	c
 ConjunctiveLearner	include/conjunctive_learner.h	/^class ConjunctiveLearner: public BaseLearner {$/;"	c
 ConjunctiveLearner	src/conjunctive_learner.cpp	/^ConjunctiveLearner::ConjunctiveLearner(States* gsets, int (*func)(int*), int max_iteration) $/;"	f	class:ConjunctiveLearner
 Connector	include/connector.h	/^		Connector(int connector_type = 0) {$/;"	f	class:Connector
@@ -241,69 +243,72 @@ Cv4	include/config.h	38;"	d
 DEC	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	324;"	d	file:
 DEC	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	317;"	d	file:
 DIMENSION	src/svm_core.cpp	/^int DIMENSION = Nv;$/;"	v
-DISJUNCT	include/connector.h	/^enum { UNUSED, DISJUNCT, CONJUNCT };$/;"	e	enum:__anon4
-DisjunctiveLearner	backup/disjunctive_learner.cpp	/^DisjunctiveLearner::DisjunctiveLearner(States* gsets, int (*func)(int*), int max_iteration, int K) : BaseLearner(gsets, func) { $/;"	f	class:DisjunctiveLearner
-DisjunctiveLearner	backup/disjunctive_learner.h	/^class DisjunctiveLearner: public BaseLearner {$/;"	c
-EPSILON_SVR	include/svm_core.h	/^enum { C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR };	\/* svm_type *\/$/;"	e	enum:__anon2
+DISJUNCT	include/connector.h	/^enum { UNUSED, DISJUNCT, CONJUNCT };$/;"	e	enum:__anon2
+EPSILON_SVR	include/svm_core.h	/^enum { C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR };	\/* svm_type *\/$/;"	e	enum:__anon4
 EQUALS	build/Makefile	/^EQUALS = =$/;"	m
 FREE	src/svm_core.cpp	/^		enum { LOWER_BOUND, UPPER_BOUND, FREE };$/;"	e	enum:Solver::__anon1	file:
-FSCANF	src/svm_core.cpp	2743;"	d	file:
+FSCANF	src/svm_core.cpp	2748;"	d	file:
+FileHelper	testcases/zilu2cpa.cpp	/^		FileHelper(const char* cfgfilename, const char* cppfilename) {$/;"	f	class:FileHelper
+FileHelper	testcases/zilu2cpa.cpp	/^class FileHelper {$/;"	c	file:
+FileHelper	testcases/zilu2interproc.cpp	/^		FileHelper(const char* cfgfilename, const char* cppfilename) {$/;"	f	class:FileHelper
+FileHelper	testcases/zilu2interproc.cpp	/^class FileHelper {$/;"	c	file:
+FileHelper	tools/src/cfg2init.cpp	/^		FileHelper(const char* cfgfname, const char* cppfname) {$/;"	f	class:FileHelper
+FileHelper	tools/src/cfg2init.cpp	/^class FileHelper {$/;"	c	file:
 FileHelper	tools/src/cfg2test.cpp	/^		FileHelper(const char* cfgfilename, const char* cppfilename, const char* varfilename, const char* invfileprefix, const char* testcasefilename, const char* oldtracefilename) {$/;"	f	class:FileHelper
 FileHelper	tools/src/cfg2test.cpp	/^class FileHelper {$/;"	c	file:
 FileHelper	tools/src/cfg2verif.cpp	/^		FileHelper(const char* cfgfname, const char* cppfname) {$/;"	f	class:FileHelper
 FileHelper	tools/src/cfg2verif.cpp	/^class FileHelper {$/;"	c	file:
 G	src/svm_core.cpp	/^		double *G;		\/\/ gradient of objective function$/;"	m	class:Solver	file:
-GREEN	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL};$/;"	e	enum:Color
+GREEN	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL, UNDERLINE};$/;"	e	enum:Color
 G_bar	src/svm_core.cpp	/^		double *G_bar;		\/\/ gradient, if we treat free variables as 0$/;"	m	class:Solver	file:
 HEX	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	335;"	d	file:
 HEX	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	328;"	d	file:
 ID_VOID_MAIN	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	9;"	d	file:
 INF	src/svm_core.cpp	45;"	d	file:
-INV	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, PREC, LOOPC, LOOP, POSTC, AFTL, INV};$/;"	e	enum:category	file:
-K	backup/disjunctive_learner.h	/^		int K;$/;"	m	class:DisjunctiveLearner
+INV	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+INV	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
 Kernel	src/svm_core.cpp	/^	Kernel::Kernel(int l, svm_node * const * x_, const svm_parameter& param)$/;"	f	class:Kernel
 Kernel	src/svm_core.cpp	/^class Kernel: public QMatrix {$/;"	c	file:
-KleeVerify	verify.sh	/^function KleeVerify(){$/;"	f
+KleeInit	backup/gen_init_bk.sh	/^function KleeInit(){$/;"	f
+KleeInit	scripts/gen_init.sh	/^function KleeInit(){$/;"	f
+KleeVerify	scripts/old_verify.sh	/^function KleeVerify(){$/;"	f
+LEARNERS	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+LEARNERS	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
 LIBSVM_VERSION	include/svm_core.h	14;"	d
-LINEAR	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon3
-LOOP	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, PREC, LOOPC, LOOP, POSTC, AFTL, INV};$/;"	e	enum:category	file:
-LOOPC	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, PREC, LOOPC, LOOP, POSTC, AFTL, INV};$/;"	e	enum:category	file:
+LINEAR	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon5
+LOOP	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+LOOP	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+LOOPC	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+LOOPC	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
 LOWER_BOUND	src/svm_core.cpp	/^		enum { LOWER_BOUND, UPPER_BOUND, FREE };$/;"	e	enum:Solver::__anon1	file:
 LabelTable	src/instrumentation.cpp	/^char(*LabelTable)[10] = &lt[1];$/;"	v
 LearnerNode	include/iif.h	/^	class LearnerNode {$/;"	c	namespace:iif
 LearnerNode	src/iif.cpp	/^LearnerNode::LearnerNode() {$/;"	f	class:LearnerNode
 LinearLearner	include/linear_learner.h	/^class LinearLearner: public BaseLearner {$/;"	c
 LinearLearner	src/linear_learner.cpp	/^LinearLearner::LinearLearner(States* gsets, int (*func)(int*), int max_iteration) $/;"	f	class:LinearLearner
-MAXPATHLEN	test/untested/cav13cbench/dillig/39.c	/^int MAXPATHLEN;$/;"	v
+MAXPATHLEN	cfg/beautifulInterpolants/39.c	/^int MAXPATHLEN;$/;"	v
+MAXPATHLEN	cfg/oopsla13-cfg/c/39.c	/^int MAXPATHLEN;$/;"	v
 MLalgo	include/ml_algo.h	/^		MLalgo() {};$/;"	f	class:MLalgo
 MLalgo	include/ml_algo.h	/^class MLalgo $/;"	c
 MState	include/ml_algo.h	/^typedef double MState[Cv1to4];$/;"	t
 Malloc	src/svm_core.cpp	47;"	d	file:
 Mitems	include/config.h	/^const int Mitems = 10000000;$/;"	v
 Miter	include/config.h	/^const int Miter = 512;$/;"	v
-Model_Var	backup/model_parser.cpp	/^class Model_Var{$/;"	c	file:
-Model_Var	backup/parseSMT/backup/get_model_parser_complete.cpp	/^class Model_Var{$/;"	c	file:
-Model_Var	backup/parseSMT/backup/model_parser.cpp	/^class Model_Var{$/;"	c	file:
-Model_Var	backup/parseSMT/model_parser.cpp	/^class Model_Var{$/;"	c	file:
 Model_Var	tools/src/model_parser.cpp	/^class Model_Var{$/;"	c	file:
-MstatesIn1trace	include/config.h	/^const int MstatesIn1trace = 10240;$/;"	v
-NAME	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, PREC, LOOPC, LOOP, POSTC, AFTL, INV};$/;"	e	enum:category	file:
-NEGATIVE	include/instrumentation.h	/^enum {NEGATIVE = 0, POSITIVE, QUESTION, CNT_EMPL};	\/* trace_type *\/$/;"	e	enum:__anon5
-NORMAL	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL};$/;"	e	enum:Color
-NU_SVC	include/svm_core.h	/^enum { C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR };	\/* svm_type *\/$/;"	e	enum:__anon2
-NU_SVR	include/svm_core.h	/^enum { C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR };	\/* svm_type *\/$/;"	e	enum:__anon2
+MstatesIn1trace	include/config.h	/^const int MstatesIn1trace = 1024;$/;"	v
+NAME	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+NAME	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+NEGATIVE	include/instrumentation.h	/^enum {NEGATIVE = 0, POSITIVE, QUESTION, CNT_EMPL};	\/* trace_type *\/$/;"	e	enum:__anon3
+NORMAL	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL, UNDERLINE};$/;"	e	enum:Color
+NU_SVC	include/svm_core.h	/^enum { C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR };	\/* svm_type *\/$/;"	e	enum:__anon4
+NU_SVR	include/svm_core.h	/^enum { C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR };	\/* svm_type *\/$/;"	e	enum:__anon4
 Nexe_after	include/config.h	/^static int Nexe_after = 8 * Nv;$/;"	v
 Nexe_init	include/config.h	/^const int Nexe_init = 8 * Nv;$/;"	v
 Nexe_rand	include/config.h	/^const int Nexe_rand = 2 * Nv;$/;"	v
 Nretry_init	include/config.h	/^const int Nretry_init = 32;$/;"	v
-Nv	backup/model_parser.cpp	/^int Nv = 0;$/;"	v
-Nv	backup/parseSMT/backup/get_model_parser_complete.cpp	/^int Nv = 0;$/;"	v
-Nv	backup/parseSMT/backup/model_parser.cpp	/^int Nv = 0;$/;"	v
-Nv	backup/parseSMT/model_parser.cpp	/^int Nv = 0;$/;"	v
-Nv	backup/parseSMT/smt2_getvalue.cpp	/^int Nv;$/;"	v
 Nv	include/config.h	22;"	d
 Nv	tools/src/model_parser.cpp	/^int Nv = 0;$/;"	v
-ONE_CLASS	include/svm_core.h	/^enum { C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR };	\/* svm_type *\/$/;"	e	enum:__anon2
+ONE_CLASS	include/svm_core.h	/^enum { C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR };	\/* svm_type *\/$/;"	e	enum:__anon4
 ONE_CLASS_Q	src/svm_core.cpp	/^		ONE_CLASS_Q(const svm_problem& prob, const svm_parameter& param)$/;"	f	class:ONE_CLASS_Q
 ONE_CLASS_Q	src/svm_core.cpp	/^class ONE_CLASS_Q: public Kernel$/;"	c	file:
 PLATFORM_ID	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	212;"	d	file:
@@ -358,21 +363,16 @@ PLATFORM_ID	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	271;"
 PLATFORM_ID	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	274;"	d	file:
 PLATFORM_ID	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	277;"	d	file:
 PLATFORM_ID	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	280;"	d	file:
-POLY	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon3
-POSITIVE	include/instrumentation.h	/^enum {NEGATIVE = 0, POSITIVE, QUESTION, CNT_EMPL};	\/* trace_type *\/$/;"	e	enum:__anon5
-POSTC	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, PREC, LOOPC, LOOP, POSTC, AFTL, INV};$/;"	e	enum:category	file:
-PREC	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, PREC, LOOPC, LOOP, POSTC, AFTL, INV};$/;"	e	enum:category	file:
-PRECISION	include/config.h	64;"	d
-PRECOMPUTED	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon3
-PV1	test/Loc/papers.c	/^PV1 (int y){$/;"	f
-PolyLearner	backup/poly_learner.cpp	/^PolyLearner::PolyLearner(States* gsets, int (*func)(int*), int max_iteration) : BaseLearner(gsets, func) { $/;"	f	class:PolyLearner
-PolyLearner	backup/poly_learner.h	/^class PolyLearner: public BaseLearner {$/;"	c
+POLY	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon5
+POSITIVE	include/instrumentation.h	/^enum {NEGATIVE = 0, POSITIVE, QUESTION, CNT_EMPL};	\/* trace_type *\/$/;"	e	enum:__anon3
+POSTC	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+POSTC	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+PREC	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+PREC	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+PRECISION	include/config.h	65;"	d
+PRECOMPUTED	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon5
 PolyLearner	include/poly_learner.h	/^class PolyLearner: public BaseLearner {$/;"	c
 PolyLearner	src/poly_learner.cpp	/^PolyLearner::PolyLearner(States* gsets, int (*func)(int*), int max_iteration) $/;"	f	class:PolyLearner
-Polynomial	backup/polynomial.h	/^		Polynomial() {$/;"	f	class:Polynomial
-Polynomial	backup/polynomial.h	/^		Polynomial(Polynomial& poly) {$/;"	f	class:Polynomial
-Polynomial	backup/polynomial.h	/^		Polynomial(double a0, ...) {$/;"	f	class:Polynomial
-Polynomial	backup/polynomial.h	/^class Polynomial {$/;"	c
 Polynomial	include/polynomial.h	/^		Polynomial() {$/;"	f	class:Polynomial
 Polynomial	include/polynomial.h	/^		Polynomial(Polynomial& poly) {$/;"	f	class:Polynomial
 Polynomial	include/polynomial.h	/^		Polynomial(double a0, ...) {$/;"	f	class:Polynomial
@@ -383,29 +383,25 @@ QD	src/svm_core.cpp	/^		double *QD;$/;"	m	class:ONE_CLASS_Q	file:
 QD	src/svm_core.cpp	/^		double *QD;$/;"	m	class:SVC_Q	file:
 QD	src/svm_core.cpp	/^		double *QD;$/;"	m	class:SVR_Q	file:
 QMatrix	src/svm_core.cpp	/^class QMatrix {$/;"	c	file:
-QUESTION	include/instrumentation.h	/^enum {NEGATIVE = 0, POSITIVE, QUESTION, CNT_EMPL};	\/* trace_type *\/$/;"	e	enum:__anon5
+QUESTION	include/instrumentation.h	/^enum {NEGATIVE = 0, POSITIVE, QUESTION, CNT_EMPL};	\/* trace_type *\/$/;"	e	enum:__anon3
 Qfloat	src/svm_core.cpp	/^typedef float Qfloat;$/;"	t	file:
-RBF	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon3
-RED	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL};$/;"	e	enum:Color
+RBF	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon5
+RED	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL, UNDERLINE};$/;"	e	enum:Color
 RM	build/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
-RbfLearner	backup/rbf_learner.cpp	/^RbfLearner::RbfLearner(States* gsets, int (*func)(int*), int max_iteration) : BaseLearner(gsets, func) { $/;"	f	class:RbfLearner
-RbfLearner	backup/rbf_learner.h	/^class RbfLearner: public BaseLearner {$/;"	c
 SHELL	build/Makefile	/^SHELL = \/bin\/sh$/;"	m
-SIGMOID	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon3
+SIGMOID	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon5
 SUFFIXES	build/Makefile	/^SUFFIXES =$/;"	m
 SV	include/svm_core.h	/^	struct svm_node **SV;		\/* SVs (SV[l]) *\/$/;"	m	struct:svm_model	typeref:struct:svm_model::svm_node
 SVC_Q	src/svm_core.cpp	/^		SVC_Q(const svm_problem& prob, const svm_parameter& param, const schar *y_)$/;"	f	class:SVC_Q
 SVC_Q	src/svm_core.cpp	/^class SVC_Q: public Kernel$/;"	c	file:
-SVM	backup/svm.h	/^		SVM(int type = 0, void (*f) (const char*) = NULL, int size = 1000000) : max_size(size) {$/;"	f	class:SVM
-SVM	backup/svm.h	/^class SVM : public MLalgo$/;"	c
-SVM	include/svm.h	/^		SVM(int type = 0, void (*f) (const char*) = NULL, int size = 1000000) : max_size(size) {$/;"	f	class:SVM
+SVM	include/svm.h	/^		SVM(int type = 0, void (*f) (const char*) = NULL, int size = 2 * restricted_trainset_size+1) : max_size(size) {$/;"	f	class:SVM
 SVM	include/svm.h	/^class SVM : public MLalgo$/;"	c
-SVM_I	backup/svm_i.h	/^		SVM_I(int type = 0, void(*f) (const char*) = NULL, int size = 10000, int csf = 16) : max_size(size), max_csf(csf) {$/;"	f	class:SVM_I
-SVM_I	backup/svm_i.h	/^class SVM_I : public MLalgo \/\/SVM$/;"	c
-SVM_I	include/svm_i.h	/^		SVM_I(int type = 0, void(*f) (const char*) = NULL, int size = 1000000) $/;"	f	class:SVM_I
+SVM_I	include/svm_i.h	/^		SVM_I(int type = 0, void (*f) (const char*) = NULL, int size = restricted_trainset_size+1) : max_size(2 * size) {$/;"	f	class:SVM_I
 SVM_I	include/svm_i.h	/^class SVM_I : public MLalgo \/\/SVM$/;"	c
 SVR_Q	src/svm_core.cpp	/^		SVR_Q(const svm_problem& prob, const svm_parameter& param)$/;"	f	class:SVR_Q
 SVR_Q	src/svm_core.cpp	/^class SVR_Q: public Kernel$/;"	c	file:
+SYM	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
+SYM	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
 Solution	include/solution.h	/^		Solution() {$/;"	f	class:Solution
 Solution	include/solution.h	/^		Solution(double a0, ...) {$/;"	f	class:Solution
 Solution	include/solution.h	/^		Solution(double* values) {$/;"	f	class:Solution
@@ -422,228 +418,167 @@ State	include/states.h	/^typedef double State[Nv];$/;"	t
 States	include/states.h	/^		States() : max_size(Mitems) {$/;"	f	class:States
 States	include/states.h	/^class States{$/;"	c
 TAU	src/svm_core.cpp	46;"	d	file:
-UNUSED	include/connector.h	/^enum { UNUSED, DISJUNCT, CONJUNCT };$/;"	e	enum:__anon4
+UNDERLINE	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL, UNDERLINE};$/;"	e	enum:Color
+UNUSED	include/connector.h	/^enum { UNUSED, DISJUNCT, CONJUNCT };$/;"	e	enum:__anon2
 UPBOUND	src/polynomial.cpp	/^const double UPBOUND = pow(0.1, PRECISION);$/;"	v
 UPPER_BOUND	src/svm_core.cpp	/^		enum { LOWER_BOUND, UPPER_BOUND, FREE };$/;"	e	enum:Solver::__anon1	file:
 VariablePowerArray	include/config.h	/^class VariablePowerArray{$/;"	c
-WP1	test/Loc/papers.c	/^WP1(int i,j){$/;"	f
-YELLOW	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL};$/;"	e	enum:Color
+YELLOW	include/color.h	/^enum Color {RED = 0, YELLOW, GREEN, BLUE, \/*WHITE,*\/ BOLD, NORMAL, UNDERLINE};$/;"	e	enum:Color
 _CANDIDATES_	include/candidates.h	7;"	d
 _CLASSIFIER_	include/classifier.h	7;"	d
-_CLUSTER_H_	backup/cluster.h	2;"	d
 _COLOR_H_	include/color.h	12;"	d
 _CONFIG_H_	include/config.h	10;"	d
-_CONJUNCTIVE_	backup/conjunctive_learner.h	2;"	d
 _CONJUNCTIVE_	include/conjunctive_learner.h	2;"	d
 _CONNECTOR_	include/connector.h	7;"	d
-_DISJUNCTIVE_	backup/disjunctive_learner.h	2;"	d
 _IIF_ASSERT_H_	include/iif_assert.h	12;"	d
 _IIF_H_	include/iif.h	10;"	d
 _INSTRUMENTATION_H_	include/instrumentation.h	8;"	d
 _LEARNER_BASE_	include/base_learner.h	11;"	d
 _LINEAR_	include/linear_learner.h	2;"	d
 _ML_ALGO_H_	include/ml_algo.h	10;"	d
-_POLYNOMIAL_H_	backup/polynomial.h	9;"	d
 _POLYNOMIAL_H_	include/polynomial.h	9;"	d
-_POLY_	backup/poly_learner.h	2;"	d
 _POLY_	include/poly_learner.h	2;"	d
-_RBF_	backup/rbf_learner.h	2;"	d
 _SOLUTION_H_	include/solution.h	9;"	d
 _STATES_H_	include/states.h	2;"	d
 _SVM_CORE_H_	include/svm_core.h	2;"	d
-_SVM_H_	backup/svm.h	2;"	d
 _SVM_H_	include/svm.h	2;"	d
-_SVM_I_H_	backup/svm_i.h	2;"	d
 _SVM_I_H_	include/svm_i.h	2;"	d
-__BLAST_NONDET	test/untested/cav13cbench/dillig/39.c	/^int __BLAST_NONDET;$/;"	v
+__BLAST_NONDET	cfg/beautifulInterpolants/39.c	/^int __BLAST_NONDET;$/;"	v
+__BLAST_NONDET	cfg/oopsla13-cfg/c/39.c	/^int __BLAST_NONDET;$/;"	v
 _factor_polynomial_	include/config.h	57;"	d
 _in_	include/config.h	54;"	d
 _out_	include/config.h	55;"	d
 _passP	src/instrumentation.cpp	/^bool _passP = false;$/;"	v
 _passQ	src/instrumentation.cpp	/^bool _passQ = false;$/;"	v
-_print	backup/cluster.h	/^		virtual std::ostream& _print(std::ostream& out) const {$/;"	f	class:Cluster
-_print	backup/svm.h	/^		std::ostream& _print(std::ostream& out) const {$/;"	f	class:SVM
-_print	backup/svm_i.h	/^		std::ostream& _print(std::ostream& out) const {$/;"	f	class:SVM_I
 _print	include/ml_algo.h	/^		virtual std::ostream& _print(std::ostream& out) const {$/;"	f	class:MLalgo
-_print	include/svm.h	/^		std::ostream& _print(std::ostream& out) const {$/;"	f	class:SVM
+_print	include/svm.h	/^			std::ostream& _print(std::ostream& out) const {$/;"	f	class:SVM
 _print	include/svm_i.h	/^		std::ostream& _print(std::ostream& out) const {$/;"	f	class:SVM_I
 _roundoff	src/polynomial.cpp	/^static bool _roundoff(double x, double& roundx)$/;"	f	file:
 _vtimes	include/config.h	/^		int _vtimes[Nv];$/;"	m	class:VariablePowerArray
 active_set	src/svm_core.cpp	/^		int *active_set;$/;"	m	class:Solver	file:
 active_size	src/svm_core.cpp	/^		int active_size;$/;"	m	class:Solver	file:
-add	backup/candidates.cpp	/^int Candidates::add(Polynomial* eq) {$/;"	f	class:Candidates
 add	src/classifier.cpp	/^int Classifier::add(Polynomial& poly, Connector& ct) {$/;"	f	class:Classifier
 add	src/classifier.cpp	/^int Classifier::add(Polynomial& poly, int type) {$/;"	f	class:Classifier
 addLearner	src/iif.cpp	/^iifContext& iifContext::addLearner(const char* learnerName) {$/;"	f	class:iifContext
 addStateDouble	src/instrumentation.cpp	/^int addStateDouble(double first, ...)$/;"	f
 addStateInt	src/instrumentation.cpp	/^int addStateInt(int first ...)$/;"	f
 addStates	src/state.cpp	/^int States::addStates(State st[], int len) {$/;"	f	class:States
-add_statements	backup/parseSMT/smt2_getvalue.cpp	/^static bool add_statements(const char* ifname, const char* outfname) {$/;"	f	file:
 afterLoop	src/instrumentation.cpp	/^int afterLoop(States* gsets)$/;"	f
 alpha	src/svm_core.cpp	/^		double *alpha;$/;"	m	class:Solver	file:
 alpha	src/svm_core.cpp	/^	double *alpha;$/;"	m	struct:decision_function	file:
 alpha_status	src/svm_core.cpp	/^		char *alpha_status;	\/\/ LOWER_BOUND, UPPER_BOUND, FREE$/;"	m	class:Solver	file:
-arr_def	backup/model_parser.cpp	/^const char* arr_def = "(_ as-array ";$/;"	v
-arr_def	backup/parseSMT/backup/get_model_parser_complete.cpp	/^const char* arr_def = "(_ as-array ";$/;"	v
-arr_def	backup/parseSMT/backup/model_parser.cpp	/^const char* arr_def = "(_ as-array ";$/;"	v
-arr_def	backup/parseSMT/model_parser.cpp	/^const char* arr_def = "(_ as-array ";$/;"	v
-arr_name	backup/model_parser.cpp	/^		string arr_name;$/;"	m	class:Model_Var	file:
-arr_name	backup/parseSMT/backup/get_model_parser_complete.cpp	/^		string arr_name;$/;"	m	class:Model_Var	file:
-arr_name	backup/parseSMT/backup/model_parser.cpp	/^		string arr_name;$/;"	m	class:Model_Var	file:
-arr_name	backup/parseSMT/model_parser.cpp	/^		string arr_name;$/;"	m	class:Model_Var	file:
+alreadyRoundoff	src/polynomial.cpp	/^bool Polynomial::alreadyRoundoff() {$/;"	f	class:Polynomial
 assert_times	src/instrumentation.cpp	/^int assert_times = 0;$/;"	v
-assume	test/demo.cpp	12;"	d	file:
 assume_times	src/instrumentation.cpp	/^int assume_times = 0;$/;"	v
+base_step	include/config.h	/^const int base_step = 200;$/;"	v
 be_shrunk	src/svm_core.cpp	/^bool Solver::be_shrunk(int i, double Gmax1, double Gmax2)$/;"	f	class:Solver
 be_shrunk	src/svm_core.cpp	/^bool Solver_NU::be_shrunk(int i, double Gmax1, double Gmax2, double Gmax3, double Gmax4)$/;"	f	class:Solver_NU
 beforeLoop	src/instrumentation.cpp	/^int beforeLoop()$/;"	f
-branch	test/demo.cpp	/^int branch = 1;$/;"	v
 buffer	src/svm_core.cpp	/^		Qfloat *buffer[2];$/;"	m	class:SVR_Q	file:
-byte_str	backup/model_parser.cpp	/^const char* byte_str = "#x";$/;"	v
-byte_str	backup/parseSMT/backup/get_model_parser_complete.cpp	/^const char* byte_str = "#x";$/;"	v
-byte_str	backup/parseSMT/backup/model_parser.cpp	/^const char* byte_str = "#x";$/;"	v
-byte_str	backup/parseSMT/model_parser.cpp	/^const char* byte_str = "#x";$/;"	v
 cache	src/svm_core.cpp	/^		Cache *cache;$/;"	m	class:ONE_CLASS_Q	file:
 cache	src/svm_core.cpp	/^		Cache *cache;$/;"	m	class:SVC_Q	file:
 cache	src/svm_core.cpp	/^		Cache *cache;$/;"	m	class:SVR_Q	file:
 cache_size	include/svm_core.h	/^	double cache_size; \/* in MB *\/$/;"	m	struct:svm_parameter
-calc	backup/polynomial.h	/^		static double calc(Polynomial& poly, double* sol) {$/;"	f	class:Polynomial
 calc	include/polynomial.h	/^		static double calc(Polynomial& poly, double* sol) {$/;"	f	class:Polynomial
 calculate_rho	src/svm_core.cpp	/^double Solver::calculate_rho()$/;"	f	class:Solver
 calculate_rho	src/svm_core.cpp	/^double Solver_NU::calculate_rho()$/;"	f	class:Solver_NU
 cands	include/candidates.h	/^		std::vector<Polynomial*> cands;$/;"	m	class:Candidates
-category	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, PREC, LOOPC, LOOP, POSTC, AFTL, INV};$/;"	g	file:
+category	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	g	file:
+category	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	g	file:
+cfgfilename	testcases/zilu2cpa.cpp	/^		const char* cfgfilename;$/;"	m	class:FileHelper	file:
+cfgfilename	testcases/zilu2interproc.cpp	/^		const char* cfgfilename;$/;"	m	class:FileHelper	file:
+cfgfilename	tools/src/cfg2init.cpp	/^		const char* cfgfilename;$/;"	m	class:FileHelper	file:
 cfgfilename	tools/src/cfg2test.cpp	/^		const char* cfgfilename;$/;"	m	class:FileHelper	file:
 cfgfilename	tools/src/cfg2verif.cpp	/^		const char* cfgfilename;$/;"	m	class:FileHelper	file:
-checkQuestionSet	backup/svm_i.h	/^		virtual int checkQuestionSet(States& qset)$/;"	f	class:SVM_I
-checkStepTrainingData	backup/svm_i.h	/^		double checkStepTrainingData()$/;"	f	class:SVM_I
+checkQuestionTraces	include/svm.h	/^			int checkQuestionTraces(States& qset) {$/;"	f	class:SVM
+checkQuestionTraces	include/svm_i.h	/^		int checkQuestionTraces(States& qset) {$/;"	f	class:SVM_I
+checkRedundancy	src/classifier.cpp	/^bool Classifier::checkRedundancy(int l) {$/;"	f	class:Classifier
 checkStepTrainingData	include/svm_i.h	/^		double checkStepTrainingData() {$/;"	f	class:SVM_I
-checkTrainingSet	backup/svm.h	/^		double checkTrainingSet() {$/;"	f	class:SVM
-checkTrainingSet	backup/svm_i.h	/^		double checkTrainingSet()$/;"	f	class:SVM_I
-checkTrainingSet	include/svm.h	/^		double checkTrainingSet() {$/;"	f	class:SVM
+checkTrainingSet	include/svm.h	/^			double checkTrainingSet() {$/;"	f	class:SVM
 checkTrainingSet	include/svm_i.h	/^		double checkTrainingSet()$/;"	f	class:SVM_I
 check_target_program	src/config.cpp	/^bool check_target_program(int (*func)(int*))$/;"	f
-checkset	backup/disjunctive_learner.h	/^		double (*checkset)[VARS];$/;"	m	class:DisjunctiveLearner
-cl	backup/poly_learner.h	/^		Classifier* cl;$/;"	m	class:PolyLearner
-cl	backup/rbf_learner.h	/^		Classifier* cl;$/;"	m	class:RbfLearner
 cl	include/ml_algo.h	/^		Classifier cl;$/;"	m	class:MLalgo
-classifiers	backup/svm_i.h	/^		Equation* classifiers;$/;"	m	class:SVM_I
-classify	backup/cluster.h	/^		bool classify(std::vector<Equation>& X)$/;"	f	class:Cluster
-clear	backup/candidates.cpp	/^int Candidates::clear() {$/;"	f	class:Candidates
 clear	src/classifier.cpp	/^int Classifier::clear() {$/;"	f	class:Classifier
 clone	src/svm_core.cpp	/^template <class S, class T> static inline void clone(T*& dst, S* src, int n)$/;"	f	file:
 coef0	include/svm_core.h	/^	double coef0;	\/* for poly\/sigmoid *\/$/;"	m	struct:svm_parameter
 coef0	src/svm_core.cpp	/^		const double coef0;$/;"	m	class:Kernel	file:
+confignum	testcases/zilu2cpa.cpp	/^		int confignum;$/;"	m	class:FileHelper	file:
+confignum	testcases/zilu2interproc.cpp	/^		int confignum;$/;"	m	class:FileHelper	file:
+confignum	tools/src/cfg2init.cpp	/^		int confignum;$/;"	m	class:FileHelper	file:
 confignum	tools/src/cfg2test.cpp	/^		int confignum;$/;"	m	class:FileHelper	file:
 confignum	tools/src/cfg2verif.cpp	/^		int confignum;$/;"	m	class:FileHelper	file:
-conj	test/1_conj.cpp	/^int conj(int* a)$/;"	f
-conj	test/2_conj.cpp	/^int conj(int* a)$/;"	f
-converged	backup/svm.h	/^		int converged (void* last_model, int num =1) {$/;"	f	class:SVM
-converged	backup/svm_i.h	/^		int converged(void* pre_model, int pre_csf_num) {$/;"	f	class:SVM_I
-converged	include/svm.h	/^		bool converged (Classifier& pre_cl) {$/;"	f	class:SVM
+converged	include/svm.h	/^			bool converged (Classifier& pre_cl) {$/;"	f	class:SVM
 converged	include/svm_i.h	/^		bool converged(Classifier& pre_cl) {$/;"	f	class:SVM_I
-converged_model	backup/svm.h	/^		bool converged_model () {$/;"	f	class:SVM
-converged_model	backup/svm_i.h	/^		bool converged_model() {$/;"	f	class:SVM_I
+converged_std	include/config.h	/^const int converged_std = 1;$/;"	v
+cppfilename	testcases/zilu2cpa.cpp	/^		const char* cppfilename;$/;"	m	class:FileHelper	file:
+cppfilename	testcases/zilu2interproc.cpp	/^		const char* cppfilename;$/;"	m	class:FileHelper	file:
+cppfilename	tools/src/cfg2init.cpp	/^		char* cppfilename;$/;"	m	class:FileHelper	file:
 cppfilename	tools/src/cfg2test.cpp	/^		const char* cppfilename;$/;"	m	class:FileHelper	file:
 cppfilename	tools/src/cfg2verif.cpp	/^		char* cppfilename;$/;"	m	class:FileHelper	file:
+cppstatement	testcases/zilu2cpa.cpp	/^		string cppstatement;$/;"	m	class:Config	file:
+cppstatement	testcases/zilu2interproc.cpp	/^		string cppstatement;$/;"	m	class:Config	file:
+cppstatement	tools/src/cfg2init.cpp	/^		string cppstatement;$/;"	m	class:Config	file:
 cppstatement	tools/src/cfg2test.cpp	/^		string cppstatement;$/;"	m	class:Config	file:
 cppstatement	tools/src/cfg2verif.cpp	/^		string cppstatement;$/;"	m	class:Config	file:
+cs	testcases/zilu2cpa.cpp	/^		Config* cs;$/;"	m	class:FileHelper	file:
+cs	testcases/zilu2interproc.cpp	/^		Config* cs;$/;"	m	class:FileHelper	file:
+cs	tools/src/cfg2init.cpp	/^		Config* cs;$/;"	m	class:FileHelper	file:
 cs	tools/src/cfg2test.cpp	/^		Config* cs;$/;"	m	class:FileHelper	file:
 cs	tools/src/cfg2verif.cpp	/^		Config* cs;$/;"	m	class:FileHelper	file:
-csf_num	backup/svm_i.h	/^		int csf_num;$/;"	m	class:SVM_I
 cts	include/classifier.h	/^		Connector* cts;$/;"	m	class:Classifier
-data	backup/svm.h	/^		double** data; \/\/ [max_items * 2];$/;"	m	class:SVM
-data	backup/svm_i.h	/^		double** data; \/\/ [max_items * 2];$/;"	m	class:SVM_I
 data	include/svm.h	/^		double** data; \/\/ [max_items * 2];$/;"	m	class:SVM
 data	include/svm_i.h	/^		double** data; \/\/ [max_items * 2];$/;"	m	class:SVM_I
 data	src/svm_core.cpp	/^			Qfloat *data;$/;"	m	struct:Cache::head_t	file:
 decision_function	src/svm_core.cpp	/^struct decision_function$/;"	s	file:
 degree	include/svm_core.h	/^	int degree;	\/* for poly *\/$/;"	m	struct:svm_parameter
 degree	src/svm_core.cpp	/^		const int degree;$/;"	m	class:Kernel	file:
-dims	backup/polynomial.h	/^		int dims;$/;"	m	class:Polynomial
+density	include/config.h	/^const double density = 0.4;$/;"	v
 dims	include/polynomial.h	/^		int dims;$/;"	m	class:Polynomial
-doClustering	backup/cluster.h	/^		bool doClustering() {$/;"	f	class:Cluster
 do_shrinking	src/svm_core.cpp	/^void Solver::do_shrinking()$/;"	f	class:Solver
 do_shrinking	src/svm_core.cpp	/^void Solver_NU::do_shrinking()$/;"	f	class:Solver_NU
 dot	src/svm_core.cpp	/^double Kernel::dot(const svm_node *px, const svm_node *py)$/;"	f	class:Kernel
 dumpTrace	src/state.cpp	/^void States::dumpTrace(int num) {$/;"	f	class:States
-enlargeSize	backup/svm_i.h	/^		int enlargeSize(int new_size) {$/;"	f	class:SVM_I
 eps	include/svm_core.h	/^	double eps;	\/* stopping criteria *\/$/;"	m	struct:svm_parameter
 eps	src/svm_core.cpp	/^		double eps;$/;"	m	class:Solver	file:
-etimes	backup/polynomial.h	/^		int etimes;$/;"	m	class:Polynomial
-etimes	backup/svm.h	/^		int etimes;$/;"	m	class:SVM
 etimes	include/ml_algo.h	/^		int etimes;$/;"	m	class:MLalgo
 etimes	include/polynomial.h	/^		int etimes;$/;"	m	class:Polynomial
 etimes	include/svm.h	/^		int etimes;$/;"	m	class:SVM
-evaluateCoef	backup/polynomial.h	/^		double evaluateCoef(int x, int power, double* given_values) {$/;"	f	class:Polynomial
 evaluateCoef	include/polynomial.h	/^		double evaluateCoef(int x, int power, double* given_values) {$/;"	f	class:Polynomial
-evaluateItem	backup/polynomial.h	/^		double evaluateItem(int index, const double* given_values) {$/;"	f	class:Polynomial
 evaluateItem	include/polynomial.h	/^		double evaluateItem(int index, const double* given_values) {$/;"	f	class:Polynomial
-evaluatePolynomial	backup/polynomial.h	/^		int evaluatePolynomial(int x, _in_ _out_ double* given_values) {$/;"	f	class:Polynomial
-ex1	test/3_ex1.cpp	/^int ex1(int* a) {$/;"	f
-f1a	test/2_f1a.cpp	/^int f1a(int* a) {$/;"	f
-f1a	test/f1a/2_f1a.cpp	/^int f1a(int* a) {$/;"	f
-f2	test/2_f2.cpp	/^int f2(int* a) {$/;"	f
-f2	test/2_f4.cpp	/^int f2(int* a) {$/;"	f
-f3	test/3_f3.cpp	/^int f3(int* a) {$/;"	f
-factor	backup/polynomial.h	/^		bool factor() {$/;"	f	class:Polynomial
 factor	include/polynomial.h	/^		bool factor() {$/;"	f	class:Polynomial
 factor	src/classifier.cpp	/^bool Classifier::factor(Polynomial& poly) {$/;"	f	class:Classifier
-findSMT4Z3	backup/runtest.sh.b	/^function findSMT4Z3(){$/;"	f
 first	include/iif.h	/^			LearnerNode* first;$/;"	m	class:iif::iifContext
-foo	test/Loc/papers.c	/^void foo()$/;"	f
-foo	test/Loc/papers.c	/^void foo(int y)$/;"	f
 free_sv	include/svm_core.h	/^	int free_sv;		\/* 1 if svm_model is created by svm_load_model*\/$/;"	m	struct:svm_model
-fun_def	backup/model_parser.cpp	/^const char* fun_def = "(define-fun ";$/;"	v
-fun_def	backup/parseSMT/backup/get_model_parser_complete.cpp	/^const char* fun_def = "(define-fun ";$/;"	v
-fun_def	backup/parseSMT/backup/model_parser.cpp	/^const char* fun_def = "(define-fun ";$/;"	v
-fun_def	backup/parseSMT/model_parser.cpp	/^const char* fun_def = "(define-fun ";$/;"	v
-fun_name	backup/model_parser.cpp	/^		string fun_name;$/;"	m	class:Model_Var	file:
-fun_name	backup/parseSMT/backup/get_model_parser_complete.cpp	/^		string fun_name;$/;"	m	class:Model_Var	file:
-fun_name	backup/parseSMT/backup/model_parser.cpp	/^		string fun_name;$/;"	m	class:Model_Var	file:
-fun_name	backup/parseSMT/model_parser.cpp	/^		string fun_name;$/;"	m	class:Model_Var	file:
 func	include/base_learner.h	/^		int (*func)(int*);$/;"	m	class:BaseLearner
-func	test/1_diamond_false-unreach-call2.cpp	/^int func(int* a)$/;"	f
-func	test/1_overflow_false-unreach-call1.cpp	/^int func(int* a)$/;"	f
-func1	test/demo.cpp	/^int func1()$/;"	f
-func10	test/demo.cpp	/^int func10()$/;"	f
-func11	test/demo.cpp	/^int func11()$/;"	f
-func2	test/demo.cpp	/^int func2()$/;"	f
-func3	test/demo.cpp	/^int func3()$/;"	f
-func4	test/demo.cpp	/^int func4()$/;"	f
-func5	test/demo.cpp	/^int func5()$/;"	f
-func6	test/demo.cpp	/^int func6()$/;"	f
-func7	test/demo.cpp	/^int func7()$/;"	f
-func8	test/demo.cpp	/^int func8()$/;"	f
-func9	test/demo.cpp	/^int func9()$/;"	f
-func_findSmtForZ3	verify.sh	/^function func_findSmtForZ3(){$/;"	f
-funcname	backup/z3solve.cpp	/^		string funcname;$/;"	m	class:record	file:
+func_bv2int	scripts/include.sh	/^function func_bv2int() {$/;"	f
+func_findSmtForZ3	backup/gen_init_bk.sh	/^function func_findSmtForZ3(){$/;"	f
+func_findSmtForZ3	scripts/gen_init.sh	/^function func_findSmtForZ3(){$/;"	f
+func_findSmtForZ3	scripts/old_verify.sh	/^function func_findSmtForZ3(){$/;"	f
+func_findsmt4z3	scripts/new_gen_init.sh	/^function func_findsmt4z3(){$/;"	f
+func_findsmt4z3	scripts/verify.sh	/^function func_findsmt4z3(){$/;"	f
+func_kleeinit	scripts/new_gen_init.sh	/^function func_kleeinit(){$/;"	f
+func_kleeverify	scripts/verify.sh	/^function func_kleeverify(){$/;"	f
+func_modelfile2values	scripts/include.sh	/^function func_modelfile2values() {$/;"	f
+func_updatesmt2file	scripts/include.sh	/^function func_updatesmt2file() {$/;"	f
+func_varfile2vars	scripts/include.sh	/^function func_varfile2vars() {$/;"	f
+func_z3solve	scripts/include.sh	/^function func_z3solve() {$/;"	f
 gamma	include/svm_core.h	/^	double gamma;	\/* for poly\/rbf\/sigmoid *\/$/;"	m	struct:svm_parameter
 gamma	src/svm_core.cpp	/^		const double gamma;$/;"	m	class:Kernel	file:
-getClassifier	backup/svm_i.h	/^		inline Equation* getClassifier() {$/;"	f	class:SVM_I
-getClassifier	backup/svm_i.h	/^		inline Equation* getClassifier(int idx) {$/;"	f	class:SVM_I
-getClassifierNum	backup/svm_i.h	/^		inline int getClassifierNum() {$/;"	f	class:SVM_I
-getDims	backup/polynomial.h	/^		inline int getDims() {$/;"	f	class:Polynomial
 getDims	include/polynomial.h	/^		inline int getDims() const {$/;"	f	class:Polynomial
-getEtimes	backup/polynomial.h	/^		inline int getEtimes() const {$/;"	f	class:Polynomial
 getEtimes	include/polynomial.h	/^		inline int getEtimes() const {$/;"	f	class:Polynomial
 getLabel	include/states.h	/^		int getLabel(int index = 0) { $/;"	f	class:States
-getMisclassified	backup/svm_i.h	/^		int getMisclassified(int& idx) \/\/ negative points may be misclassified.$/;"	f	class:SVM_I
 getMisclassified	include/svm_i.h	/^		int getMisclassified(int& idx) {$/;"	f	class:SVM_I
-getProblemSize	backup/cluster.h	/^		virtual int getProblemSize() {$/;"	f	class:Cluster
-getProblemSize	backup/svm.h	/^		int getProblemSize() {$/;"	f	class:SVM
-getProblemSize	backup/svm_i.h	/^		int getProblemSize() {$/;"	f	class:SVM_I
-getProblemSize	include/svm.h	/^		int getProblemSize() {$/;"	f	class:SVM
+getProblemSize	include/svm.h	/^			int getProblemSize() {$/;"	f	class:SVM
 getProblemSize	include/svm_i.h	/^		int getProblemSize() {$/;"	f	class:SVM_I
-getSize	backup/candidates.cpp	/^int Candidates::getSize() const {$/;"	f	class:Candidates
 getSize	include/states.h	/^		int getSize() {$/;"	f	class:States
 getState	include/states.h	/^		double* getState (int i) {$/;"	f	class:States
-getTheta	backup/polynomial.h	/^		inline double getTheta(int i) const {$/;"	f	class:Polynomial
 getTheta	include/polynomial.h	/^		inline double getTheta(int i) const {$/;"	f	class:Polynomial
-getTheta0	backup/polynomial.h	/^		inline double getTheta0() const { return theta[0]; }$/;"	f	class:Polynomial
 getTheta0	include/polynomial.h	/^		inline double getTheta0() const { return theta[0]; }$/;"	f	class:Polynomial
 getTraceSize	include/states.h	/^		inline int getTraceSize() {$/;"	f	class:States
 getType	include/connector.h	/^		int getType() {$/;"	f	class:Connector
+getVnum	testcases/zilu2cpa.cpp	/^		inline int getVnum() {$/;"	f	class:FileHelper
+getVnum	testcases/zilu2interproc.cpp	/^		inline int getVnum() {$/;"	f	class:FileHelper
+getVnum	tools/src/cfg2init.cpp	/^		inline int getVnum() {$/;"	f	class:FileHelper
 getVnum	tools/src/cfg2test.cpp	/^		inline int getVnum() {$/;"	f	class:FileHelper
 getVnum	tools/src/cfg2verif.cpp	/^		inline int getVnum() {$/;"	f	class:FileHelper
 get_C	src/svm_core.cpp	/^		double get_C(int i)$/;"	f	class:Solver
@@ -654,9 +589,6 @@ get_QD	src/svm_core.cpp	/^		double *get_QD() const$/;"	f	class:ONE_CLASS_Q
 get_QD	src/svm_core.cpp	/^		double *get_QD() const$/;"	f	class:SVC_Q
 get_QD	src/svm_core.cpp	/^		double *get_QD() const$/;"	f	class:SVR_Q
 get_data	src/svm_core.cpp	/^int Cache::get_data(const int index, Qfloat **data, int len)$/;"	f	class:Cache
-get_sign	test/f1a/get_sign/get_sign.c	/^int get_sign(int x) {$/;"	f
-get_variable_statements	backup/parseSMT/smt2_getvalue.cpp	/^vector<string> get_variable_statements;$/;"	v
-groupLabelRandomization	backup/cluster.h	/^static bool groupLabelRandomization(int* pglabel, int* nglabel, int pfirst, int nfirst, int psize, int nsize, const unsigned int place)$/;"	f
 gsets	include/base_learner.h	/^		States* gsets;$/;"	m	class:BaseLearner
 gsets	include/iif.h	/^			States* gsets;$/;"	m	class:iif::iifContext
 gslSolvePolynomial	include/polynomial.h	/^		static bool gslSolvePolynomial(_in_ double* coefs, _in_ int power, _out_ double* results) {$/;"	f	class:Polynomial
@@ -670,10 +602,6 @@ iifContext	src/iif.cpp	/^iifContext::iifContext(const char* vfilename, int (*fun
 iif_assert	include/iif_assert.h	39;"	d
 iif_assume	include/iif_assert.h	28;"	d
 index	src/svm_core.cpp	/^		int *index;$/;"	m	class:SVR_Q	file:
-index_str	backup/model_parser.cpp	/^const char* index_str = "#x0000000";$/;"	v
-index_str	backup/parseSMT/backup/get_model_parser_complete.cpp	/^const char* index_str = "#x0000000";$/;"	v
-index_str	backup/parseSMT/backup/model_parser.cpp	/^const char* index_str = "#x0000000";$/;"	v
-index_str	backup/parseSMT/model_parser.cpp	/^const char* index_str = "#x0000000";$/;"	v
 info	src/svm_core.cpp	/^static void info(const char *fmt,...) {}$/;"	f	file:
 info	src/svm_core.cpp	/^static void info(const char *fmt,...)$/;"	f	file:
 info_arch	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
@@ -685,10 +613,6 @@ info_platform	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^c
 info_version	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v
 info_version	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v
 initFromFile	src/state.cpp	/^bool States::initFromFile(int num, std::ifstream& fin) {$/;"	f	class:States
-invariant	backup/conjunctive_learner.cpp	/^std::string ConjunctiveLearner::invariant() {$/;"	f	class:ConjunctiveLearner
-invariant	backup/disjunctive_learner.cpp	/^std::string DisjunctiveLearner::invariant()$/;"	f	class:DisjunctiveLearner
-invariant	backup/poly_learner.cpp	/^std::string PolyLearner::invariant() {$/;"	f	class:PolyLearner
-invariant	backup/rbf_learner.cpp	/^std::string RbfLearner::invariant() {$/;"	f	class:RbfLearner
 invariant	src/conjunctive_learner.cpp	/^std::string ConjunctiveLearner::invariant(int n) {$/;"	f	class:ConjunctiveLearner
 invariant	src/linear_learner.cpp	/^std::string LinearLearner::invariant(int n) {$/;"	f	class:LinearLearner
 invariant	src/poly_learner.cpp	/^std::string PolyLearner::invariant(int n) {$/;"	f	class:PolyLearner
@@ -696,15 +620,8 @@ invfileprefix	tools/src/cfg2test.cpp	/^		const char* invfileprefix;$/;"	m	class:
 isSimilar	include/polynomial.h	/^		bool isSimilar(Polynomial& e2, int precision = PRECISION) {$/;"	f	class:Polynomial
 is_free	src/svm_core.cpp	/^		bool is_free(int i) { return alpha_status[i] == FREE; }$/;"	f	class:Solver
 is_lower_bound	src/svm_core.cpp	/^		bool is_lower_bound(int i) { return alpha_status[i] == LOWER_BOUND; }$/;"	f	class:Solver
-is_similar	backup/polynomial.h	/^		int is_similar(Polynomial& e2, int precision = PRECISION) {$/;"	f	class:Polynomial
 is_upper_bound	src/svm_core.cpp	/^		bool is_upper_bound(int i) { return alpha_status[i] == UPPER_BOUND; }$/;"	f	class:Solver
-ite_str	backup/model_parser.cpp	/^const char* ite_str = "(ite (= ";$/;"	v
-ite_str	backup/parseSMT/backup/get_model_parser_complete.cpp	/^const char* ite_str = "(ite (= ";$/;"	v
-ite_str	backup/parseSMT/backup/model_parser.cpp	/^const char* ite_str = "(ite (= ";$/;"	v
-ite_str	backup/parseSMT/model_parser.cpp	/^const char* ite_str = "(ite (= ";$/;"	v
-kClustering	backup/cluster.h	/^		bool kClustering(int k) {$/;"	f	class:Cluster
 k_function	src/svm_core.cpp	/^double Kernel::k_function(const svm_node *x, const svm_node *y,$/;"	f	class:Kernel
-k_means	backup/disjunctive_learner.cpp	/^int DisjunctiveLearner::k_means(int gset_index, int k)$/;"	f	class:DisjunctiveLearner
 kernel	include/svm.h	/^		int kernel;$/;"	m	class:SVM
 kernel_function	src/svm_core.cpp	/^		double (Kernel::*kernel_function)(int i, int j) const;$/;"	m	class:Kernel	file:
 kernel_linear	src/svm_core.cpp	/^		double kernel_linear(int i, int j) const$/;"	f	class:Kernel	file:
@@ -715,275 +632,674 @@ kernel_sigmoid	src/svm_core.cpp	/^		double kernel_sigmoid(int i, int j) const$/;
 kernel_type	include/svm_core.h	/^	int kernel_type;$/;"	m	struct:svm_parameter
 kernel_type	src/svm_core.cpp	/^		const int kernel_type;$/;"	m	class:Kernel	file:
 kernel_type_table	src/svm_core.cpp	/^static const char *kernel_type_table[]=$/;"	v	file:
+key	testcases/zilu2cpa.cpp	/^		string key;$/;"	m	class:Config	file:
+key	testcases/zilu2interproc.cpp	/^		string key;$/;"	m	class:Config	file:
+key	tools/src/cfg2init.cpp	/^		string key;$/;"	m	class:Config	file:
 key	tools/src/cfg2test.cpp	/^		string key;$/;"	m	class:Config	file:
 key	tools/src/cfg2verif.cpp	/^		string key;$/;"	m	class:Config	file:
-kmeans	backup/cluster.h	/^		int kmeans(int k, bool positive)$/;"	f	class:Cluster
 l	include/svm_core.h	/^	int l;			\/* total #SV *\/$/;"	m	struct:svm_model
 l	include/svm_core.h	/^	int l;$/;"	m	struct:svm_problem
 l	src/svm_core.cpp	/^		int l;$/;"	m	class:Cache	file:
 l	src/svm_core.cpp	/^		int l;$/;"	m	class:SVR_Q	file:
 l	src/svm_core.cpp	/^		int l;$/;"	m	class:Solver	file:
-label	backup/svm.h	/^		double* label; \/\/ [max_items * 2];$/;"	m	class:SVM
-label	backup/svm_i.h	/^		double* label; \/\/ [max_items * 2];$/;"	m	class:SVM_I
 label	include/states.h	/^		int label;$/;"	m	class:States
 label	include/svm.h	/^		double* label; \/\/ [max_items * 2];$/;"	m	class:SVM
 label	include/svm_core.h	/^	int *label;		\/* label of each class (label[k]) *\/$/;"	m	struct:svm_model
 label	include/svm_i.h	/^		double* label; \/\/ [max_items * 2];$/;"	m	class:SVM_I
 last	include/iif.h	/^			LearnerNode* last; $/;"	m	class:iif::iifContext
-last_model	backup/svm.h	/^		svm_model* last_model;$/;"	m	class:SVM
-learn	backup/conjunctive_learner.cpp	/^int ConjunctiveLearner::learn()$/;"	f	class:ConjunctiveLearner
-learn	backup/disjunctive_learner.cpp	/^int DisjunctiveLearner::learn()$/;"	f	class:DisjunctiveLearner
-learn	backup/poly_learner.cpp	/^int PolyLearner::learn()$/;"	f	class:PolyLearner
-learn	backup/rbf_learner.cpp	/^int RbfLearner::learn()$/;"	f	class:RbfLearner
 learn	src/conjunctive_learner.cpp	/^int ConjunctiveLearner::learn()$/;"	f	class:ConjunctiveLearner
 learn	src/iif.cpp	/^int iifContext::learn(const char* last_cnt_fname, const char* invfilename, int times) {$/;"	f	class:iifContext
 learn	src/linear_learner.cpp	/^int LinearLearner::learn()$/;"	f	class:LinearLearner
 learn	src/poly_learner.cpp	/^int PolyLearner::learn()$/;"	f	class:PolyLearner
 learner	include/iif.h	/^			BaseLearner* learner;$/;"	m	class:iif::LearnerNode
+learners	testcases/zilu2cpa.cpp	/^		vector<string> learners;$/;"	m	class:FileHelper	file:
+learners	testcases/zilu2interproc.cpp	/^		vector<string> learners;$/;"	m	class:FileHelper	file:
+learners	tools/src/cfg2test.cpp	/^		vector<string> learners;$/;"	m	class:FileHelper	file:
 len	src/svm_core.cpp	/^			int len;		\/\/ data[0,len) is cached in this entry$/;"	m	struct:Cache::head_t	file:
 libsvm_version	src/svm_core.cpp	/^int libsvm_version = LIBSVM_VERSION;$/;"	v
 line	src/svm_core.cpp	/^static char *line = NULL;$/;"	v	file:
-linear_separable	backup/disjunctive_learner.cpp	/^bool linear_separable(int positive_label, int negative_label)$/;"	f
-loopFunction	test/PV1.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/PV2.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/V2.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/WP1.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/cav12foo1.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/cav12foo2.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/coj.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/conj.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/ex1.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/ex2.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/f3.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/interproc_test3.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/interproc_test7.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/interproc_test8.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/interproc_test9.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/lili.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/lili2.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/pldi.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/synergy.foo.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/test.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/xeq10.cpp	/^int loopFunction(int a[]) {$/;"	f
-loopFunction	test/xle10.cpp	/^int loopFunction(int a[]) {$/;"	f
-looptimes	test/demo.cpp	/^int looptimes = cin.get();$/;"	v
+loopFunction	test/01_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/02_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/03.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/03_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/04_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/05.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/05_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/10_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/11.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/11_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/13_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/14_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/15_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/16_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/17_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/19_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/20.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/20_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/21.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/21_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/22_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/23.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/23_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/25_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/28.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/28_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/30.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/30_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/32_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/33_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/35.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/35_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/37_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/41.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/41_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/43.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/43_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/44.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/44_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/afnp2014_true.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/bound.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/cggmp2005_variant_true.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/css2003_true.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/dillig_01.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/dillig_03.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/dillig_05.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/dillig_07.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/dillig_15.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/dillig_17.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/dillig_19.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/dillig_20.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/dillig_28.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/dillig_35.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/down.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/down_true_1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/down_true_2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/ex49.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/f2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/f3.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/fm05.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/fm11.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/half.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/interproc1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/interproc2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/interproc3.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/interproc4.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/interproc5.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/large_const.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/linear1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/multivar_true_1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/new.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/new_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/pldi08.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/pldi08_fig7.c_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/pldi08_fig7.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/simple_if.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/splitter1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/substring1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/terminator_01_safe.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/up_true_2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xle10.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xy0_1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xy0_2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xy10.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xy4_1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xy4_2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xyle0.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xyz.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xyz2_1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xyz2_2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/xyz_2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_conj1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_conj2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_linear1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_linear2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_linear3.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_linear4.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_poly1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_poly2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_poly3.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_poly4.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_poly5.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/zilu_poly6.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 lru_delete	src/svm_core.cpp	/^void Cache::lru_delete(head_t *h)$/;"	f	class:Cache
 lru_head	src/svm_core.cpp	/^		head_t lru_head;$/;"	m	class:Cache	file:
 lru_insert	src/svm_core.cpp	/^void Cache::lru_insert(head_t *h)$/;"	f	class:Cache
 lt	src/instrumentation.cpp	/^char lt[4][10] =  { "Negative", "Question", "Positive", "Bugtrace"};$/;"	v
 mDouble	src/instrumentation.cpp	/^int mDouble(double* p)$/;"	f
 mInt	src/instrumentation.cpp	/^int mInt(int* p) { return target_program(p); }$/;"	f
-main	backup/model_parser.cpp	/^int main(int argc, char** argv)$/;"	f
-main	backup/parseSMT/backup/get_model_parser_complete.cpp	/^int main(int argc, char** argv)$/;"	f
-main	backup/parseSMT/backup/model_parser.cpp	/^int main(int argc, char** argv)$/;"	f
-main	backup/parseSMT/conj_klee1.c	/^int main()$/;"	f
-main	backup/parseSMT/model_parser.cpp	/^int main(int argc, char** argv)$/;"	f
-main	backup/parseSMT/smt2_getvalue.cpp	/^int main(int argc, char** argv) $/;"	f
-main	backup/z3solve.cpp	/^int main(int argc, char** argv)$/;"	f
 main	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f
 main	build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
 main	build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
-main	test/1_conj.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/1_diamond_false-unreach-call1.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/1_diamond_false-unreach-call2.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/1_hailassumtion.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/1_overflow_false-unreach-call1.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/1_z3multitest.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/1_z3test.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/2_f1a.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/2_f4.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/2_pldi08.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/3_ex1.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/3_substring1.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/Loc/gen-down_true-unreach-call.c	/^int main() {$/;"	f
-main	test/Loc/gen-half_2_true-unreach-call.c	/^int main() {$/;"	f
-main	test/Loc/gen-id_build_true-unreach-call.c	/^int main() {$/;"	f
-main	test/Loc/gen-id_trans_false-unreach-call.c	/^int main() {$/;"	f
-main	test/Loc/gen-up_true-unreach-call.c	/^int main() {$/;"	f
-main	test/PV1.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/V2.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/WP1.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/cav12foo1.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/cav12foo2.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/conj.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/ex1.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/ex2.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/f1a.cpp	/^int main (int argc, char** argv) {$/;"	f
-main	test/f1a/2_f1a.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/f1a/get_sign/get_sign.c	/^int main() {$/;"	f
-main	test/f1a/i2i.c	/^int main()$/;"	f
+main	cfg/beautifulInterpolants/01.c	/^void main()$/;"	f
+main	cfg/beautifulInterpolants/03.c	/^int main()$/;"	f
+main	cfg/beautifulInterpolants/05.c	/^void main()$/;"	f
+main	cfg/beautifulInterpolants/07.c	/^void main()$/;"	f
+main	cfg/beautifulInterpolants/09.c	/^void main(){$/;"	f
+main	cfg/beautifulInterpolants/12.c	/^int main()$/;"	f
+main	cfg/beautifulInterpolants/15.c	/^void main(int argc, char* argv[]) {$/;"	f
+main	cfg/beautifulInterpolants/17.c	/^void main()$/;"	f
+main	cfg/beautifulInterpolants/19.c	/^void main(int n, int m)$/;"	f
+main	cfg/beautifulInterpolants/20.c	/^void main()$/;"	f
+main	cfg/beautifulInterpolants/24.c	/^void main() {$/;"	f
+main	cfg/beautifulInterpolants/25.c	/^void main()$/;"	f
+main	cfg/beautifulInterpolants/28.c	/^void main() {$/;"	f
+main	cfg/beautifulInterpolants/31.c	/^int main() {$/;"	f
+main	cfg/beautifulInterpolants/32.c	/^void main(int n)$/;"	f
+main	cfg/beautifulInterpolants/33.c	/^int main()$/;"	f
+main	cfg/beautifulInterpolants/35.c	/^void main() {$/;"	f
+main	cfg/beautifulInterpolants/37.c	/^void main() {$/;"	f
+main	cfg/beautifulInterpolants/39.c	/^int main()$/;"	f
+main	cfg/oopsla13-cfg/c/01.c	/^void main()$/;"	f
+main	cfg/oopsla13-cfg/c/02.c	/^int main()$/;"	f
+main	cfg/oopsla13-cfg/c/03.c	/^void main() {$/;"	f
+main	cfg/oopsla13-cfg/c/04.c	/^void main() {$/;"	f
+main	cfg/oopsla13-cfg/c/05.c	/^void main(int flag)$/;"	f
+main	cfg/oopsla13-cfg/c/06.c	/^void main()$/;"	f
+main	cfg/oopsla13-cfg/c/07.c	/^int main(int argc, char* argv[]) {$/;"	f
+main	cfg/oopsla13-cfg/c/08.c	/^void main() {$/;"	f
+main	cfg/oopsla13-cfg/c/09.c	/^void main(){$/;"	f
+main	cfg/oopsla13-cfg/c/10.c	/^void main() {$/;"	f
+main	cfg/oopsla13-cfg/c/11.c	/^void main()$/;"	f
+main	cfg/oopsla13-cfg/c/12.c	/^int main(int flag)$/;"	f
+main	cfg/oopsla13-cfg/c/13.c	/^int main(int flag) {$/;"	f
+main	cfg/oopsla13-cfg/c/14.c	/^int main() {$/;"	f
+main	cfg/oopsla13-cfg/c/15.c	/^int main(int argc, char* argv[]) {$/;"	f
+main	cfg/oopsla13-cfg/c/16.c	/^int main(int i, int j) {$/;"	f
+main	cfg/oopsla13-cfg/c/17.c	/^void main(int n)$/;"	f
+main	cfg/oopsla13-cfg/c/18.c	/^int main(int flag, int a) {$/;"	f
+main	cfg/oopsla13-cfg/c/19.c	/^void main(int n, int m)$/;"	f
+main	cfg/oopsla13-cfg/c/20.c	/^void main(int x, int y, int k, int j, int i, int n)$/;"	f
+main	cfg/oopsla13-cfg/c/21.c	/^int main(int argc, char* argv[]) {$/;"	f
+main	cfg/oopsla13-cfg/c/22.c	/^void main()$/;"	f
+main	cfg/oopsla13-cfg/c/23.c	/^int main( int n){$/;"	f
+main	cfg/oopsla13-cfg/c/24.c	/^void main() {$/;"	f
+main	cfg/oopsla13-cfg/c/25.c	/^void main()$/;"	f
+main	cfg/oopsla13-cfg/c/26.c	/^void main()$/;"	f
+main	cfg/oopsla13-cfg/c/27.c	/^void main() {$/;"	f
+main	cfg/oopsla13-cfg/c/28.c	/^void main() {$/;"	f
+main	cfg/oopsla13-cfg/c/29.c	/^int main()$/;"	f
+main	cfg/oopsla13-cfg/c/30.c	/^int main() {$/;"	f
+main	cfg/oopsla13-cfg/c/31.c	/^int main() {$/;"	f
+main	cfg/oopsla13-cfg/c/32.c	/^void main() {$/;"	f
+main	cfg/oopsla13-cfg/c/33.c	/^int main(int k)$/;"	f
+main	cfg/oopsla13-cfg/c/34.c	/^void main(int n)$/;"	f
+main	cfg/oopsla13-cfg/c/35.c	/^void main(int n) {$/;"	f
+main	cfg/oopsla13-cfg/c/36.c	/^void main(int flag)$/;"	f
+main	cfg/oopsla13-cfg/c/37.c	/^void main(int n) {$/;"	f
+main	cfg/oopsla13-cfg/c/38.c	/^void main(int n)$/;"	f
+main	cfg/oopsla13-cfg/c/39.c	/^int main()$/;"	f
+main	cfg/oopsla13-cfg/c/40.c	/^void main( int flag)$/;"	f
+main	cfg/oopsla13-cfg/c/41.c	/^int main(int n, int flag) {$/;"	f
+main	cfg/oopsla13-cfg/c/42.c	/^void main(int flag)$/;"	f
+main	cfg/oopsla13-cfg/c/43.c	/^int main(int x, int y)$/;"	f
+main	cfg/oopsla13-cfg/c/44.c	/^int main(int k, int flag)$/;"	f
+main	cfg/oopsla13-cfg/c/45.c	/^void main(int flag)$/;"	f
+main	cfg/oopsla13-cfg/c/46.c	/^void main()$/;"	f
+main	test/01_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/02_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/03.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/03_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/04_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/05.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/05_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/10_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/11.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/11_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/13_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/14_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/15_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/16_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/17_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/19_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/20.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/20_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/21.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/21_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/22_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/23.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/23_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/25_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/28.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/28_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/30.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/30_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/32_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/33_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/35.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/35_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/37_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/41.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/41_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/43.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/43_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/44.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/44_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/afnp2014_true.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/bound.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/cggmp2005_variant_true.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/css2003_true.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/dillig_01.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/dillig_03.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/dillig_05.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/dillig_07.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/dillig_15.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/dillig_17.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/dillig_19.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/dillig_20.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/dillig_28.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/dillig_35.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/down.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/down_true_1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/down_true_2.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/ex49.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/f2.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/f3.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/ins_substring1.c	/^int main (int argc, char** argv) {$/;"	f
-main	test/interproc_test3.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/interproc_test7.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/interproc_test8.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/interproc_test9.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/lili.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/lili2.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/pldi.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/pldi08.c	/^int main (){$/;"	f
-main	test/synergy.foo.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/test.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/untested/cav13cbench/changed_xy0.c	/^int main (){$/;"	f
-main	test/untested/cav13cbench/dillig/01.c	/^void main()$/;"	f
-main	test/untested/cav13cbench/dillig/03.c	/^int main()$/;"	f
-main	test/untested/cav13cbench/dillig/05.c	/^void main()$/;"	f
-main	test/untested/cav13cbench/dillig/07.c	/^void main()$/;"	f
-main	test/untested/cav13cbench/dillig/09.c	/^void main(){$/;"	f
-main	test/untested/cav13cbench/dillig/12.c	/^int main()$/;"	f
-main	test/untested/cav13cbench/dillig/15.c	/^void main(int argc, char* argv[]) {$/;"	f
-main	test/untested/cav13cbench/dillig/17.c	/^void main()$/;"	f
-main	test/untested/cav13cbench/dillig/19.c	/^void main(int n, int m)$/;"	f
-main	test/untested/cav13cbench/dillig/20.c	/^void main()$/;"	f
-main	test/untested/cav13cbench/dillig/24.c	/^void main() {$/;"	f
-main	test/untested/cav13cbench/dillig/25.c	/^void main()$/;"	f
-main	test/untested/cav13cbench/dillig/28.c	/^void main() {$/;"	f
-main	test/untested/cav13cbench/dillig/31.c	/^int main() {$/;"	f
-main	test/untested/cav13cbench/dillig/32.c	/^void main(int n)$/;"	f
-main	test/untested/cav13cbench/dillig/33.c	/^int main()$/;"	f
-main	test/untested/cav13cbench/dillig/35.c	/^void main() {$/;"	f
-main	test/untested/cav13cbench/dillig/37.c	/^void main() {$/;"	f
-main	test/untested/cav13cbench/dillig/39.c	/^int main()$/;"	f
-main	test/untested/cav13cbench/f2.c	/^void main () {$/;"	f
-main	test/untested/cav13cbench/gulv.c	/^int main(){$/;"	f
-main	test/untested/cav13cbench/gulv_simp.c	/^int main(){$/;"	f
-main	test/untested/cav13cbench/pldi08.c	/^int main (){$/;"	f
-main	test/untested/cav13cbench/pldi082_unbounded.c	/^int main(){$/;"	f
-main	test/untested/cav13cbench/substring1.c	/^void main () {$/;"	f
-main	test/untested/cav13cbench/xy0.c	/^int main (){$/;"	f
-main	test/untested/cav13cbench/xy10.c	/^int main ()$/;"	f
-main	test/untested/cav13cbench/xy4.c	/^int main (){$/;"	f
-main	test/untested/cav13cbench/xyz.c	/^int main(){$/;"	f
-main	test/untested/cav13cbench/xyz2.c	/^int main(){$/;"	f
-main	test/untested/ex1.cpp	/^int main () {$/;"	f
-main	test/untested/f1a.cpp	/^int main (int argc, char** argv) {$/;"	f
-main	test/untested/f2.c	/^void main () {$/;"	f
-main	test/untested/ins2.cpp	/^int main (int argc, char** argv) {$/;"	f
-main	test/untested/ins3.cpp	/^int main (int argc, char** argv) {$/;"	f
-main	test/untested/pldi08.c	/^int main (){$/;"	f
-main	test/untested/slow_gulv/gulv.c	/^int main(){$/;"	f
-main	test/untested/slow_gulv/ins_gulv.cpp	/^int main(int argc, char** argv){$/;"	f
-main	test/untested/substring1/ins_substring1.c	/^int main (int argc, char** argv) {$/;"	f
-main	test/untested/substring1/substring1.c	/^void main () {$/;"	f
-main	test/untested/un_fig1a/fig1a.c	/^void main () {$/;"	f
-main	test/xeq10.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/fm05.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/fm11.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/half.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/interproc1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/interproc2.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/interproc3.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/interproc4.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/interproc5.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/large_const.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/linear1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/multivar_true_1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/new.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/new_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/pldi08.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/pldi08_fig7.c_copy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/pldi08_fig7.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/simple_if.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/splitter1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/substring1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/terminator_01_safe.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/up_true_2.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/xle10.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/z3_multitest.cpp	/^int main(int argc, char** argv)$/;"	f
-main	tmp/conj_klee1/conj_klee.c	/^int main() {$/;"	f
-main	tmp/conj_klee2/conj_klee.c	/^int main() {$/;"	f
-main	tmp/conj_klee3/conj_klee.c	/^int main() {$/;"	f
-main	tmp/ex1_klee1/ex1_klee.c	/^int main() {$/;"	f
-main	tmp/ex1_klee2/ex1_klee.c	/^int main() {$/;"	f
-main	tmp/ex1_klee3/ex1_klee.c	/^int main() {$/;"	f
-main	tmp/interproc_test3_klee1/interproc_test3_klee.c	/^int main() {$/;"	f
-main	tmp/interproc_test3_klee2/interproc_test3_klee.c	/^int main() {$/;"	f
-main	tmp/interproc_test3_klee3/interproc_test3_klee.c	/^int main() {$/;"	f
-main	tmp/interproc_test7_klee1/interproc_test7_klee.c	/^int main() {$/;"	f
-main	tmp/interproc_test7_klee2/interproc_test7_klee.c	/^int main() {$/;"	f
-main	tmp/interproc_test7_klee3/interproc_test7_klee.c	/^int main() {$/;"	f
-main	tmp/interproc_test9_klee1/interproc_test9_klee.c	/^int main() {$/;"	f
-main	tmp/interproc_test9_klee2/interproc_test9_klee.c	/^int main() {$/;"	f
-main	tmp/interproc_test9_klee3/interproc_test9_klee.c	/^int main() {$/;"	f
-main	tmp/test_klee1/test_klee.c	/^int main() {$/;"	f
-main	tmp/test_klee2/test_klee.c	/^int main() {$/;"	f
-main	tmp/test_klee3/test_klee.c	/^int main() {$/;"	f
-main	tmp/xeq10_klee1/xeq10_klee.c	/^int main() {$/;"	f
-main	tmp/xeq10_klee2/xeq10_klee.c	/^int main() {$/;"	f
-main	tmp/xeq10_klee3/xeq10_klee.c	/^int main() {$/;"	f
-main	tmp/xle10_klee1/xle10_klee.c	/^int main() {$/;"	f
-main	tmp/xle10_klee2/xle10_klee.c	/^int main() {$/;"	f
-main	tmp/xle10_klee3/xle10_klee.c	/^int main() {$/;"	f
+main	test/xy0_1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/xy0_2.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/xy10.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/xy4_1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/xy4_2.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/xyle0.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/xyz.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/xyz2_1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/xyz2_2.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/xyz_2.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_conj1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_conj2.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_linear1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_linear2.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_linear3.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_linear4.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_poly1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_poly2.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_poly3.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_poly4.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_poly5.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/zilu_poly6.cpp	/^int main(int argc, char** argv)$/;"	f
+main	testcases/cpa-test/afnp2014_true.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/cggmp2005_variant_true.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/css2003_true.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/down_true_1.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/down_true_2.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/f2.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/interproc1.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/interproc2.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/interproc3.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/interproc4.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/interproc5.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/multivar_true_1.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/pldi08.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/terminator_01_safe.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/up_true_2.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/xy0_1.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/xy0_2.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/xy10.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/xyz.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_conj1.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_conj2.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_linear1.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_linear2.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_linear3.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_linear4.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_linear5.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_poly1.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_poly2.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_poly3.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_poly4.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_poly5.cpp	/^int main() {$/;"	f
+main	testcases/cpa-test/zilu_poly6.cpp	/^int main() {$/;"	f
+main	testcases/zilu2cpa.cpp	/^int main(int argc, char** argv) $/;"	f
+main	testcases/zilu2interproc.cpp	/^int main(int argc, char** argv) $/;"	f
+main	tmp/03_init/03_init.c	/^int main() {$/;"	f
+main	tmp/03_klee1/03.c	/^int main() {$/;"	f
+main	tmp/03_klee2/03.c	/^int main() {$/;"	f
+main	tmp/03_klee3/03.c	/^int main() {$/;"	f
+main	tmp/05_init/05_init.c	/^int main() {$/;"	f
+main	tmp/05_klee1/05.c	/^int main() {$/;"	f
+main	tmp/05_klee2/05.c	/^int main() {$/;"	f
+main	tmp/05_klee3/05.c	/^int main() {$/;"	f
+main	tmp/11_init/11_init.c	/^int main() {$/;"	f
+main	tmp/11_klee1/11.c	/^int main() {$/;"	f
+main	tmp/11_klee2/11.c	/^int main() {$/;"	f
+main	tmp/11_klee3/11.c	/^int main() {$/;"	f
+main	tmp/20_init/20_init.c	/^int main() {$/;"	f
+main	tmp/20_klee1/20.c	/^int main() {$/;"	f
+main	tmp/20_klee2/20.c	/^int main() {$/;"	f
+main	tmp/20_klee3/20.c	/^int main() {$/;"	f
+main	tmp/21_init/21_init.c	/^int main() {$/;"	f
+main	tmp/21_klee1/21.c	/^int main() {$/;"	f
+main	tmp/21_klee2/21.c	/^int main() {$/;"	f
+main	tmp/21_klee3/21.c	/^int main() {$/;"	f
+main	tmp/23_init/23_init.c	/^int main() {$/;"	f
+main	tmp/23_klee1/23.c	/^int main() {$/;"	f
+main	tmp/23_klee2/23.c	/^int main() {$/;"	f
+main	tmp/23_klee3/23.c	/^int main() {$/;"	f
+main	tmp/28_init/28_init.c	/^int main() {$/;"	f
+main	tmp/28_klee1/28.c	/^int main() {$/;"	f
+main	tmp/28_klee2/28.c	/^int main() {$/;"	f
+main	tmp/28_klee3/28.c	/^int main() {$/;"	f
+main	tmp/30_init/30_init.c	/^int main() {$/;"	f
+main	tmp/30_klee1/30.c	/^int main() {$/;"	f
+main	tmp/30_klee2/30.c	/^int main() {$/;"	f
+main	tmp/30_klee3/30.c	/^int main() {$/;"	f
+main	tmp/35_init/35_init.c	/^int main() {$/;"	f
+main	tmp/35_klee1/35.c	/^int main() {$/;"	f
+main	tmp/35_klee2/35.c	/^int main() {$/;"	f
+main	tmp/35_klee3/35.c	/^int main() {$/;"	f
+main	tmp/41_init/41_init.c	/^int main() {$/;"	f
+main	tmp/41_klee1/41.c	/^int main() {$/;"	f
+main	tmp/41_klee2/41.c	/^int main() {$/;"	f
+main	tmp/41_klee3/41.c	/^int main() {$/;"	f
+main	tmp/43_init/43_init.c	/^int main() {$/;"	f
+main	tmp/43_klee1/43.c	/^int main() {$/;"	f
+main	tmp/43_klee2/43.c	/^int main() {$/;"	f
+main	tmp/43_klee3/43.c	/^int main() {$/;"	f
+main	tmp/44_init/44_init.c	/^int main() {$/;"	f
+main	tmp/44_klee1/44.c	/^int main() {$/;"	f
+main	tmp/44_klee2/44.c	/^int main() {$/;"	f
+main	tmp/44_klee3/44.c	/^int main() {$/;"	f
+main	tmp/afnp2014_true_init/afnp2014_true_init.c	/^int main() {$/;"	f
+main	tmp/afnp2014_true_klee1/afnp2014_true.c	/^int main() {$/;"	f
+main	tmp/afnp2014_true_klee2/afnp2014_true.c	/^int main() {$/;"	f
+main	tmp/afnp2014_true_klee3/afnp2014_true.c	/^int main() {$/;"	f
+main	tmp/bound_init/bound_init.c	/^int main() {$/;"	f
+main	tmp/bound_klee1/bound.c	/^int main() {$/;"	f
+main	tmp/bound_klee2/bound.c	/^int main() {$/;"	f
+main	tmp/bound_klee3/bound.c	/^int main() {$/;"	f
+main	tmp/cggmp2005_variant_true_init/cggmp2005_variant_true_init.c	/^int main() {$/;"	f
+main	tmp/cggmp2005_variant_true_klee1/cggmp2005_variant_true.c	/^int main() {$/;"	f
+main	tmp/cggmp2005_variant_true_klee2/cggmp2005_variant_true.c	/^int main() {$/;"	f
+main	tmp/cggmp2005_variant_true_klee3/cggmp2005_variant_true.c	/^int main() {$/;"	f
+main	tmp/css2003_true_init/css2003_true_init.c	/^int main() {$/;"	f
+main	tmp/css2003_true_klee1/css2003_true.c	/^int main() {$/;"	f
+main	tmp/css2003_true_klee2/css2003_true.c	/^int main() {$/;"	f
+main	tmp/css2003_true_klee3/css2003_true.c	/^int main() {$/;"	f
+main	tmp/dillig_01_init/dillig_01_init.c	/^int main() {$/;"	f
+main	tmp/dillig_01_klee1/dillig_01.c	/^int main() {$/;"	f
+main	tmp/dillig_01_klee2/dillig_01.c	/^int main() {$/;"	f
+main	tmp/dillig_01_klee3/dillig_01.c	/^int main() {$/;"	f
+main	tmp/dillig_03_init/dillig_03_init.c	/^int main() {$/;"	f
+main	tmp/dillig_03_klee1/dillig_03.c	/^int main() {$/;"	f
+main	tmp/dillig_03_klee2/dillig_03.c	/^int main() {$/;"	f
+main	tmp/dillig_03_klee3/dillig_03.c	/^int main() {$/;"	f
+main	tmp/dillig_05_init/dillig_05_init.c	/^int main() {$/;"	f
+main	tmp/dillig_05_klee1/dillig_05.c	/^int main() {$/;"	f
+main	tmp/dillig_05_klee2/dillig_05.c	/^int main() {$/;"	f
+main	tmp/dillig_05_klee3/dillig_05.c	/^int main() {$/;"	f
+main	tmp/dillig_07_init/dillig_07_init.c	/^int main() {$/;"	f
+main	tmp/dillig_07_klee1/dillig_07.c	/^int main() {$/;"	f
+main	tmp/dillig_07_klee2/dillig_07.c	/^int main() {$/;"	f
+main	tmp/dillig_07_klee3/dillig_07.c	/^int main() {$/;"	f
+main	tmp/dillig_15_init/dillig_15_init.c	/^int main() {$/;"	f
+main	tmp/dillig_15_klee1/dillig_15.c	/^int main() {$/;"	f
+main	tmp/dillig_15_klee2/dillig_15.c	/^int main() {$/;"	f
+main	tmp/dillig_15_klee3/dillig_15.c	/^int main() {$/;"	f
+main	tmp/dillig_19_init/dillig_19_init.c	/^int main() {$/;"	f
+main	tmp/dillig_19_klee1/dillig_19.c	/^int main() {$/;"	f
+main	tmp/dillig_19_klee2/dillig_19.c	/^int main() {$/;"	f
+main	tmp/dillig_19_klee3/dillig_19.c	/^int main() {$/;"	f
+main	tmp/dillig_20_init/dillig_20_init.c	/^int main() {$/;"	f
+main	tmp/dillig_20_klee1/dillig_20.c	/^int main() {$/;"	f
+main	tmp/dillig_20_klee2/dillig_20.c	/^int main() {$/;"	f
+main	tmp/dillig_20_klee3/dillig_20.c	/^int main() {$/;"	f
+main	tmp/dillig_28_init/dillig_28_init.c	/^int main() {$/;"	f
+main	tmp/dillig_28_klee1/dillig_28.c	/^int main() {$/;"	f
+main	tmp/dillig_28_klee2/dillig_28.c	/^int main() {$/;"	f
+main	tmp/dillig_28_klee3/dillig_28.c	/^int main() {$/;"	f
+main	tmp/dillig_35_init/dillig_35_init.c	/^int main() {$/;"	f
+main	tmp/dillig_35_klee1/dillig_35.c	/^int main() {$/;"	f
+main	tmp/dillig_35_klee2/dillig_35.c	/^int main() {$/;"	f
+main	tmp/dillig_35_klee3/dillig_35.c	/^int main() {$/;"	f
+main	tmp/down_init/down_init.c	/^int main() {$/;"	f
+main	tmp/down_klee1/down.c	/^int main() {$/;"	f
+main	tmp/down_klee2/down.c	/^int main() {$/;"	f
+main	tmp/down_klee3/down.c	/^int main() {$/;"	f
+main	tmp/down_true_1_init/down_true_1_init.c	/^int main() {$/;"	f
+main	tmp/down_true_1_klee1/down_true_1.c	/^int main() {$/;"	f
+main	tmp/down_true_1_klee2/down_true_1.c	/^int main() {$/;"	f
+main	tmp/down_true_1_klee3/down_true_1.c	/^int main() {$/;"	f
+main	tmp/down_true_2_init/down_true_2_init.c	/^int main() {$/;"	f
+main	tmp/down_true_2_klee1/down_true_2.c	/^int main() {$/;"	f
+main	tmp/down_true_2_klee2/down_true_2.c	/^int main() {$/;"	f
+main	tmp/down_true_2_klee3/down_true_2.c	/^int main() {$/;"	f
+main	tmp/ex49_init/ex49_init.c	/^int main() {$/;"	f
+main	tmp/ex49_klee1/ex49.c	/^int main() {$/;"	f
+main	tmp/ex49_klee2/ex49.c	/^int main() {$/;"	f
+main	tmp/ex49_klee3/ex49.c	/^int main() {$/;"	f
+main	tmp/f2_init/f2_init.c	/^int main() {$/;"	f
+main	tmp/f2_klee1/f2.c	/^int main() {$/;"	f
+main	tmp/f2_klee2/f2.c	/^int main() {$/;"	f
+main	tmp/f2_klee3/f2.c	/^int main() {$/;"	f
+main	tmp/f3_init/f3_init.c	/^int main() {$/;"	f
+main	tmp/f3_klee1/f3.c	/^int main() {$/;"	f
+main	tmp/f3_klee2/f3.c	/^int main() {$/;"	f
+main	tmp/f3_klee3/f3.c	/^int main() {$/;"	f
+main	tmp/fm11_init/fm11_init.c	/^int main() {$/;"	f
+main	tmp/fm11_klee1/fm11.c	/^int main() {$/;"	f
+main	tmp/fm11_klee2/fm11.c	/^int main() {$/;"	f
+main	tmp/fm11_klee3/fm11.c	/^int main() {$/;"	f
+main	tmp/half_init/half_init.c	/^int main() {$/;"	f
+main	tmp/half_klee1/half.c	/^int main() {$/;"	f
+main	tmp/half_klee2/half.c	/^int main() {$/;"	f
+main	tmp/half_klee3/half.c	/^int main() {$/;"	f
+main	tmp/interproc1_init/interproc1_init.c	/^int main() {$/;"	f
+main	tmp/interproc1_klee1/interproc1.c	/^int main() {$/;"	f
+main	tmp/interproc1_klee2/interproc1.c	/^int main() {$/;"	f
+main	tmp/interproc1_klee3/interproc1.c	/^int main() {$/;"	f
+main	tmp/interproc2_init/interproc2_init.c	/^int main() {$/;"	f
+main	tmp/interproc2_klee1/interproc2.c	/^int main() {$/;"	f
+main	tmp/interproc2_klee2/interproc2.c	/^int main() {$/;"	f
+main	tmp/interproc2_klee3/interproc2.c	/^int main() {$/;"	f
+main	tmp/interproc3_init/interproc3_init.c	/^int main() {$/;"	f
+main	tmp/interproc3_klee1/interproc3.c	/^int main() {$/;"	f
+main	tmp/interproc3_klee2/interproc3.c	/^int main() {$/;"	f
+main	tmp/interproc3_klee3/interproc3.c	/^int main() {$/;"	f
+main	tmp/interproc4_init/interproc4_init.c	/^int main() {$/;"	f
+main	tmp/interproc4_klee1/interproc4.c	/^int main() {$/;"	f
+main	tmp/interproc4_klee2/interproc4.c	/^int main() {$/;"	f
+main	tmp/interproc4_klee3/interproc4.c	/^int main() {$/;"	f
+main	tmp/interproc5_init/interproc5_init.c	/^int main() {$/;"	f
+main	tmp/interproc5_klee1/interproc5.c	/^int main() {$/;"	f
+main	tmp/interproc5_klee2/interproc5.c	/^int main() {$/;"	f
+main	tmp/interproc5_klee3/interproc5.c	/^int main() {$/;"	f
+main	tmp/large_const_init/large_const_init.c	/^int main() {$/;"	f
+main	tmp/large_const_klee1/large_const.c	/^int main() {$/;"	f
+main	tmp/large_const_klee2/large_const.c	/^int main() {$/;"	f
+main	tmp/large_const_klee3/large_const.c	/^int main() {$/;"	f
+main	tmp/multivar_true_1_init/multivar_true_1_init.c	/^int main() {$/;"	f
+main	tmp/multivar_true_1_klee1/multivar_true_1.c	/^int main() {$/;"	f
+main	tmp/multivar_true_1_klee2/multivar_true_1.c	/^int main() {$/;"	f
+main	tmp/multivar_true_1_klee3/multivar_true_1.c	/^int main() {$/;"	f
+main	tmp/new_copy_init/new_copy_init.c	/^int main() {$/;"	f
+main	tmp/new_init/new_init.c	/^int main() {$/;"	f
+main	tmp/pldi08_fig7_init/pldi08_fig7_init.c	/^int main() {$/;"	f
+main	tmp/pldi08_fig7_klee1/pldi08_fig7.c	/^int main() {$/;"	f
+main	tmp/pldi08_fig7_klee2/pldi08_fig7.c	/^int main() {$/;"	f
+main	tmp/pldi08_fig7_klee3/pldi08_fig7.c	/^int main() {$/;"	f
+main	tmp/simple_if_init/simple_if_init.c	/^int main() {$/;"	f
+main	tmp/simple_if_klee1/simple_if.c	/^int main() {$/;"	f
+main	tmp/simple_if_klee2/simple_if.c	/^int main() {$/;"	f
+main	tmp/simple_if_klee3/simple_if.c	/^int main() {$/;"	f
+main	tmp/substring1_init/substring1_init.c	/^int main() {$/;"	f
+main	tmp/substring1_klee1/substring1.c	/^int main() {$/;"	f
+main	tmp/substring1_klee2/substring1.c	/^int main() {$/;"	f
+main	tmp/substring1_klee3/substring1.c	/^int main() {$/;"	f
+main	tmp/terminator_01_safe_init/terminator_01_safe_init.c	/^int main() {$/;"	f
+main	tmp/terminator_01_safe_klee1/terminator_01_safe.c	/^int main() {$/;"	f
+main	tmp/terminator_01_safe_klee2/terminator_01_safe.c	/^int main() {$/;"	f
+main	tmp/terminator_01_safe_klee3/terminator_01_safe.c	/^int main() {$/;"	f
+main	tmp/up_true_2_init/up_true_2_init.c	/^int main() {$/;"	f
+main	tmp/up_true_2_klee1/up_true_2.c	/^int main() {$/;"	f
+main	tmp/up_true_2_klee2/up_true_2.c	/^int main() {$/;"	f
+main	tmp/up_true_2_klee3/up_true_2.c	/^int main() {$/;"	f
+main	tmp/xle10_init/xle10_init.c	/^int main() {$/;"	f
+main	tmp/xle10_klee1/xle10.c	/^int main() {$/;"	f
+main	tmp/xle10_klee2/xle10.c	/^int main() {$/;"	f
+main	tmp/xle10_klee3/xle10.c	/^int main() {$/;"	f
+main	tmp/xy0_1_init/xy0_1_init.c	/^int main() {$/;"	f
+main	tmp/xy0_1_klee1/xy0_1.c	/^int main() {$/;"	f
+main	tmp/xy0_1_klee2/xy0_1.c	/^int main() {$/;"	f
+main	tmp/xy0_1_klee3/xy0_1.c	/^int main() {$/;"	f
+main	tmp/xy0_2_init/xy0_2_init.c	/^int main() {$/;"	f
+main	tmp/xy0_2_klee1/xy0_2.c	/^int main() {$/;"	f
+main	tmp/xy0_2_klee2/xy0_2.c	/^int main() {$/;"	f
+main	tmp/xy0_2_klee3/xy0_2.c	/^int main() {$/;"	f
+main	tmp/xy10_init/xy10_init.c	/^int main() {$/;"	f
+main	tmp/xy10_klee1/xy10.c	/^int main() {$/;"	f
+main	tmp/xy10_klee2/xy10.c	/^int main() {$/;"	f
+main	tmp/xy10_klee3/xy10.c	/^int main() {$/;"	f
+main	tmp/xy4_1_init/xy4_1_init.c	/^int main() {$/;"	f
+main	tmp/xy4_1_klee1/xy4_1.c	/^int main() {$/;"	f
+main	tmp/xy4_1_klee2/xy4_1.c	/^int main() {$/;"	f
+main	tmp/xy4_1_klee3/xy4_1.c	/^int main() {$/;"	f
+main	tmp/xy4_2_init/xy4_2_init.c	/^int main() {$/;"	f
+main	tmp/xy4_2_klee1/xy4_2.c	/^int main() {$/;"	f
+main	tmp/xy4_2_klee2/xy4_2.c	/^int main() {$/;"	f
+main	tmp/xy4_2_klee3/xy4_2.c	/^int main() {$/;"	f
+main	tmp/xyle0_init/xyle0_init.c	/^int main() {$/;"	f
+main	tmp/xyle0_klee1/xyle0.c	/^int main() {$/;"	f
+main	tmp/xyle0_klee2/xyle0.c	/^int main() {$/;"	f
+main	tmp/xyle0_klee3/xyle0.c	/^int main() {$/;"	f
+main	tmp/xyz2_1_init/xyz2_1_init.c	/^int main() {$/;"	f
+main	tmp/xyz2_1_klee1/xyz2_1.c	/^int main() {$/;"	f
+main	tmp/xyz2_1_klee2/xyz2_1.c	/^int main() {$/;"	f
+main	tmp/xyz2_1_klee3/xyz2_1.c	/^int main() {$/;"	f
+main	tmp/xyz2_2_init/xyz2_2_init.c	/^int main() {$/;"	f
+main	tmp/xyz2_2_klee1/xyz2_2.c	/^int main() {$/;"	f
+main	tmp/xyz2_2_klee2/xyz2_2.c	/^int main() {$/;"	f
+main	tmp/xyz2_2_klee3/xyz2_2.c	/^int main() {$/;"	f
+main	tmp/xyz_2_init/xyz_2_init.c	/^int main() {$/;"	f
+main	tmp/xyz_2_klee1/xyz_2.c	/^int main() {$/;"	f
+main	tmp/xyz_2_klee2/xyz_2.c	/^int main() {$/;"	f
+main	tmp/xyz_2_klee3/xyz_2.c	/^int main() {$/;"	f
+main	tmp/xyz_init/xyz_init.c	/^int main() {$/;"	f
+main	tmp/zilu_conj1_init/zilu_conj1_init.c	/^int main() {$/;"	f
+main	tmp/zilu_conj1_klee1/zilu_conj1.c	/^int main() {$/;"	f
+main	tmp/zilu_conj1_klee2/zilu_conj1.c	/^int main() {$/;"	f
+main	tmp/zilu_conj1_klee3/zilu_conj1.c	/^int main() {$/;"	f
+main	tmp/zilu_conj2_init/zilu_conj2_init.c	/^int main() {$/;"	f
+main	tmp/zilu_conj2_klee1/zilu_conj2.c	/^int main() {$/;"	f
+main	tmp/zilu_conj2_klee2/zilu_conj2.c	/^int main() {$/;"	f
+main	tmp/zilu_conj2_klee3/zilu_conj2.c	/^int main() {$/;"	f
+main	tmp/zilu_linear1_init/zilu_linear1_init.c	/^int main() {$/;"	f
+main	tmp/zilu_linear1_klee1/zilu_linear1.c	/^int main() {$/;"	f
+main	tmp/zilu_linear1_klee2/zilu_linear1.c	/^int main() {$/;"	f
+main	tmp/zilu_linear1_klee3/zilu_linear1.c	/^int main() {$/;"	f
+main	tmp/zilu_linear2_init/zilu_linear2_init.c	/^int main() {$/;"	f
+main	tmp/zilu_linear2_klee1/zilu_linear2.c	/^int main() {$/;"	f
+main	tmp/zilu_linear2_klee2/zilu_linear2.c	/^int main() {$/;"	f
+main	tmp/zilu_linear2_klee3/zilu_linear2.c	/^int main() {$/;"	f
+main	tmp/zilu_linear3_init/zilu_linear3_init.c	/^int main() {$/;"	f
+main	tmp/zilu_linear3_klee1/zilu_linear3.c	/^int main() {$/;"	f
+main	tmp/zilu_linear3_klee2/zilu_linear3.c	/^int main() {$/;"	f
+main	tmp/zilu_linear3_klee3/zilu_linear3.c	/^int main() {$/;"	f
+main	tmp/zilu_linear4_init/zilu_linear4_init.c	/^int main() {$/;"	f
+main	tmp/zilu_linear4_klee1/zilu_linear4.c	/^int main() {$/;"	f
+main	tmp/zilu_linear4_klee2/zilu_linear4.c	/^int main() {$/;"	f
+main	tmp/zilu_linear4_klee3/zilu_linear4.c	/^int main() {$/;"	f
+main	tmp/zilu_poly1_init/zilu_poly1_init.c	/^int main() {$/;"	f
+main	tmp/zilu_poly1_klee1/zilu_poly1.c	/^int main() {$/;"	f
+main	tmp/zilu_poly1_klee2/zilu_poly1.c	/^int main() {$/;"	f
+main	tmp/zilu_poly1_klee3/zilu_poly1.c	/^int main() {$/;"	f
+main	tmp/zilu_poly2_init/zilu_poly2_init.c	/^int main() {$/;"	f
+main	tmp/zilu_poly2_klee1/zilu_poly2.c	/^int main() {$/;"	f
+main	tmp/zilu_poly2_klee2/zilu_poly2.c	/^int main() {$/;"	f
+main	tmp/zilu_poly2_klee3/zilu_poly2.c	/^int main() {$/;"	f
+main	tmp/zilu_poly3_init/zilu_poly3_init.c	/^int main() {$/;"	f
+main	tmp/zilu_poly3_klee1/zilu_poly3.c	/^int main() {$/;"	f
+main	tmp/zilu_poly3_klee2/zilu_poly3.c	/^int main() {$/;"	f
+main	tmp/zilu_poly3_klee3/zilu_poly3.c	/^int main() {$/;"	f
+main	tmp/zilu_poly4_init/zilu_poly4_init.c	/^int main() {$/;"	f
+main	tmp/zilu_poly4_klee1/zilu_poly4.c	/^int main() {$/;"	f
+main	tmp/zilu_poly4_klee2/zilu_poly4.c	/^int main() {$/;"	f
+main	tmp/zilu_poly4_klee3/zilu_poly4.c	/^int main() {$/;"	f
+main	tmp/zilu_poly5_init/zilu_poly5_init.c	/^int main() {$/;"	f
+main	tmp/zilu_poly5_klee1/zilu_poly5.c	/^int main() {$/;"	f
+main	tmp/zilu_poly5_klee2/zilu_poly5.c	/^int main() {$/;"	f
+main	tmp/zilu_poly5_klee3/zilu_poly5.c	/^int main() {$/;"	f
+main	tmp/zilu_poly6_init/zilu_poly6_init.c	/^int main() {$/;"	f
+main	tmp/zilu_poly6_klee1/zilu_poly6.c	/^int main() {$/;"	f
+main	tmp/zilu_poly6_klee2/zilu_poly6.c	/^int main() {$/;"	f
+main	tmp/zilu_poly6_klee3/zilu_poly6.c	/^int main() {$/;"	f
+main	tools/src/cfg2init.cpp	/^int main(int argc, char** argv) $/;"	f
 main	tools/src/cfg2test.cpp	/^int main(int argc, char** argv) $/;"	f
 main	tools/src/cfg2verif.cpp	/^int main(int argc, char** argv) $/;"	f
 main	tools/src/model_parser.cpp	/^int main(int argc, char** argv) {$/;"	f
 main	tools/src/smt2solver.cpp	/^int main(int argc, char** argv) {$/;"	f
-makeTrainingSet	backup/svm.h	/^		int makeTrainingSet(States* gsets, int& pre_psize, int& pre_nsize) {$/;"	f	class:SVM
-makeTrainingSet	backup/svm_i.h	/^		int makeTrainingSet(States* gsets, int& pre_psize, int& pre_nsize) {$/;"	f	class:SVM_I
-makeTrainingSet	include/svm.h	/^		int makeTrainingSet(States* gsets, int& pre_psize, int& pre_nsize) {$/;"	f	class:SVM
+makeTrainingSet	include/svm.h	/^			int makeTrainingSet(States* gsets, int& pre_psize, int& pre_nsize) {$/;"	f	class:SVM
 makeTrainingSet	include/svm_i.h	/^		int makeTrainingSet(States* gsets, int& pre_psize, int& pre_nsize) {$/;"	f	class:SVM_I
-mappingData	backup/svm.h	/^		bool mappingData(double* src, double* dst, int et = 4) {$/;"	f	class:SVM
 mappingData	include/ml_algo.h	/^		bool mappingData(double* src, double* dst, int et = 4) {$/;"	f	class:MLalgo
 max	src/svm_core.cpp	/^template <class T> static inline T max(T x,T y) { return (x>y)?x:y; }$/;"	f	file:
-max_csf	backup/svm_i.h	/^		int max_csf;$/;"	m	class:SVM_I
-max_iteration	backup/conjunctive_learner.h	/^		int max_iteration;$/;"	m	class:ConjunctiveLearner
-max_iteration	backup/disjunctive_learner.h	/^		int max_iteration;$/;"	m	class:DisjunctiveLearner
-max_iteration	backup/poly_learner.h	/^		int max_iteration;$/;"	m	class:PolyLearner
-max_iteration	backup/rbf_learner.h	/^		int max_iteration;$/;"	m	class:RbfLearner
+max_confignum	testcases/zilu2cpa.cpp	/^const int max_confignum = 32;$/;"	v
+max_confignum	testcases/zilu2interproc.cpp	/^const int max_confignum = 32;$/;"	v
+max_confignum	tools/src/cfg2init.cpp	/^const int max_confignum = 32;$/;"	v
+max_confignum	tools/src/cfg2test.cpp	/^const int max_confignum = 32;$/;"	v
+max_confignum	tools/src/cfg2verif.cpp	/^const int max_confignum = 32;$/;"	v
 max_iteration	include/conjunctive_learner.h	/^		int max_iteration;$/;"	m	class:ConjunctiveLearner
 max_iteration	include/linear_learner.h	/^		int max_iteration;$/;"	m	class:LinearLearner
 max_iteration	include/poly_learner.h	/^		int max_iteration;$/;"	m	class:PolyLearner
 max_line_len	src/svm_core.cpp	/^static int max_line_len;$/;"	v	file:
-max_ncluster	backup/cluster.h	/^		int max_ncluster; \/\/ max k value$/;"	m	class:Cluster
-max_size	backup/cluster.h	/^		int max_size;$/;"	m	class:Cluster
-max_size	backup/svm.h	/^		int max_size;$/;"	m	class:SVM
-max_size	backup/svm_i.h	/^		int max_size;$/;"	m	class:SVM_I
 max_size	include/classifier.h	/^		int max_size;$/;"	m	class:Classifier
 max_size	include/states.h	/^		int max_size;$/;"	m	class:States
 max_size	include/svm.h	/^		int max_size;$/;"	m	class:SVM
 max_size	include/svm_i.h	/^		int max_size;$/;"	m	class:SVM_I
-maxv	src/config.cpp	/^int minv = -200, maxv = 200;$/;"	v
-mergeByGroupID	backup/cluster.h	/^		void mergeByGroupID(bool positive, int i1, int i2) {$/;"	f	class:Cluster
+maxv	src/config.cpp	/^int minv = -1 * base_step, maxv = base_step;$/;"	v
 min	src/svm_core.cpp	/^template <class T> static inline T min(T x,T y) { return (x<y)?x:y; }$/;"	f	file:
-minv	src/config.cpp	/^int minv = -200, maxv = 200;$/;"	v
-model	backup/cluster.h	/^		svm_model* model;$/;"	m	class:Cluster
-model	backup/model_parser.cpp	/^Model_Var* model;$/;"	v
-model	backup/parseSMT/backup/get_model_parser_complete.cpp	/^Model_Var* model;$/;"	v
-model	backup/parseSMT/backup/model_parser.cpp	/^Model_Var* model;$/;"	v
-model	backup/parseSMT/model_parser.cpp	/^Model_Var* model;$/;"	v
-model	backup/svm.h	/^		svm_model* model;$/;"	m	class:SVM
-model	backup/svm_i.h	/^		svm_model* model;$/;"	m	class:SVM_I
+minv	src/config.cpp	/^int minv = -1 * base_step, maxv = base_step;$/;"	v
 model	include/svm.h	/^		svm_model* model;$/;"	m	class:SVM
 model	include/svm_i.h	/^		svm_model* model;$/;"	m	class:SVM_I
 model	tools/src/model_parser.cpp	/^Model_Var* model;$/;"	v
 model_converged	src/svm_core.cpp	/^bool model_converged(struct svm_model *m1, struct svm_model *m2)$/;"	f
-model_solver	src/svm_core.cpp	/^int model_solver(const svm_model* m, Solution& sol)$/;"	f
 multiImply	src/polynomial.cpp	/^bool Polynomial::multiImply(const Polynomial* e1, int e1_num, const Polynomial& e2) {$/;"	f	class:Polynomial
 multiclass_probability	src/svm_core.cpp	/^static void multiclass_probability(int k, double **r, double *p)$/;"	f	file:
 my_print_func	src/svm_core.cpp	/^void my_print_func(const char* str) {}$/;"	f
 nSV	include/svm_core.h	/^	int *nSV;		\/* number of SVs for each class (nSV[k]) *\/$/;"	m	struct:svm_model
 name	tools/src/model_parser.cpp	/^		string name;$/;"	m	class:Model_Var	file:
-ndata	backup/cluster.h	/^		double (*ndata)[VARS];$/;"	m	class:Cluster
-negative_group	backup/disjunctive_learner.h	/^		int *positive_group, *negative_group;$/;"	m	class:DisjunctiveLearner
 negative_mapped_data	include/svm_i.h	/^		MState* negative_mapped_data; $/;"	m	class:SVM_I
 negative_nodes	src/svm_core.cpp	/^struct svm_node* negative_nodes = NULL;$/;"	v	typeref:struct:svm_node
 negative_size	include/svm_i.h	/^		int negative_size;$/;"	m	class:SVM_I
-negatives	backup/svm_i.h	/^		States* negatives; $/;"	m	class:SVM_I
+new_func_findSmtForZ3	scripts/old_verify.sh	/^function new_func_findSmtForZ3(){$/;"	f
 next	include/iif.h	/^			LearnerNode* next;$/;"	m	class:iif::LearnerNode
 next	src/svm_core.cpp	/^			head_t *prev, *next;	\/\/ a circular list$/;"	m	struct:Cache::head_t	file:
 next_buffer	src/svm_core.cpp	/^		mutable int next_buffer;$/;"	m	class:SVR_Q	file:
-ng	backup/cluster.h	/^		int* ng; \/\/group No. for each elements$/;"	m	class:Cluster
-ngid	backup/cluster.h	/^		int* ngid;$/;"	m	class:Cluster
 nn	include/svm_core.h	/^	int np, nn;$/;"	m	struct:svm_problem
-nncluster	backup/cluster.h	/^		int nncluster;$/;"	m	class:Cluster
 node_polyal	src/svm_core.cpp	/^bool node_polyal(svm_node* n1, svm_node* n2)$/;"	f
-nondet	test/2_conj.cpp	/^static int nondet() {$/;"	f	file:
-nondet	test/2_f2.cpp	/^static int nondet() {$/;"	f	file:
-nondet	test/3_ex1.cpp	/^static int nondet() {$/;"	f	file:
-nondet	test/untested/cav13cbench/gulv_simp.c	/^int nondet(){$/;"	f
-nondet	test/untested/cav13cbench/xy10.c	/^int nondet(){$/;"	f
+nondet	testcases/zilu2cpa.cpp	/^bool nondet=false;$/;"	v
+nondet	testcases/zilu2interproc.cpp	/^bool nondet=false;$/;"	v
 np	include/svm_core.h	/^	int np, nn;$/;"	m	struct:svm_problem
 nr_class	include/svm_core.h	/^	int nr_class;		\/* number of classes, = 2 in regression\/one class svm *\/$/;"	m	struct:svm_model
 nr_weight	include/svm_core.h	/^	int nr_weight;		\/* for C_SVC *\/$/;"	m	struct:svm_parameter
-nsize	backup/cluster.h	/^		int nsize;$/;"	m	class:Cluster
 nu	include/svm_core.h	/^	double nu;	\/* for NU_SVC, ONE_CLASS, and NU_SVR *\/$/;"	m	struct:svm_parameter
-numInvFile	backup/runtest.sh.b	/^function numInvFile(){$/;"	f
 obj	src/svm_core.cpp	/^			double obj;$/;"	m	struct:Solver::SolutionInfo	file:
 oldtracefilename	tools/src/cfg2test.cpp	/^		const char* oldtracefilename;$/;"	m	class:FileHelper	file:
 operator +=	src/classifier.cpp	/^Classifier& Classifier::operator+= (Polynomial& poly) {$/;"	f	class:Classifier
-operator <<	backup/candidates.cpp	/^std::ostream& operator<< (std::ostream& out, const Candidates& cs) {$/;"	f
-operator <<	backup/cluster.h	/^		friend std::ostream& operator << (std::ostream& out, const SVM& svm) {$/;"	f	class:Cluster
-operator <<	backup/model_parser.cpp	/^		friend ostream& operator << (ostream& out, const Model_Var& mv) {$/;"	f	class:Model_Var
-operator <<	backup/parseSMT/backup/get_model_parser_complete.cpp	/^		friend ostream& operator << (ostream& out, const Model_Var& mv) {$/;"	f	class:Model_Var
-operator <<	backup/parseSMT/backup/model_parser.cpp	/^		friend ostream& operator << (ostream& out, const Model_Var& mv) {$/;"	f	class:Model_Var
-operator <<	backup/parseSMT/model_parser.cpp	/^		friend ostream& operator << (ostream& out, const Model_Var& mv) {$/;"	f	class:Model_Var
-operator <<	backup/svm.h	/^		friend std::ostream& operator << (std::ostream& out, const SVM& svm) {$/;"	f	class:SVM
-operator <<	backup/svm_i.h	/^		friend std::ostream& operator << (std::ostream& out, const SVM_I& svm_i) {$/;"	f	class:SVM_I
-operator <<	backup/z3solve.cpp	/^		friend ostream& operator << (ostream& out, const record& r) {$/;"	f	class:record
 operator <<	include/config.h	/^		friend std::ostream& operator << (std::ostream& out, VariablePowerArray& vpa) {$/;"	f	class:VariablePowerArray
 operator <<	include/connector.h	/^	friend std::ostream& operator<< (std::ostream& out, const Connector& c) {$/;"	f	class:Connector
 operator <<	include/ml_algo.h	/^		friend std::ostream& operator << (std::ostream& out, const MLalgo& mla) { return mla._print(out); }$/;"	f	class:MLalgo
 operator <<	include/solution.h	/^		friend std::ostream& operator << (std::ostream& out, const Solution& sol) {$/;"	f	class:Solution
-operator <<	include/svm.h	/^		friend std::ostream& operator << (std::ostream& out, const SVM& svm) {$/;"	f	class:SVM
+operator <<	include/svm.h	/^			friend std::ostream& operator << (std::ostream& out, const SVM& svm) {$/;"	f	class:SVM
 operator <<	include/svm_core.h	/^	friend std::ostream& operator << (std::ostream& out, const svm_model& m) {$/;"	f	struct:svm_model
 operator <<	include/svm_core.h	/^	friend std::ostream& operator << (std::ostream& out, const svm_node& sn) {$/;"	f	struct:svm_node
 operator <<	include/svm_core.h	/^	friend std::ostream& operator << (std::ostream& out, const svm_problem& sp) {$/;"	f	struct:svm_problem
@@ -992,6 +1308,9 @@ operator <<	src/classifier.cpp	/^std::ostream& operator << (std::ostream& out, c
 operator <<	src/color.cpp	/^std::ostream& operator << (std::ostream& out, Color c) {$/;"	f
 operator <<	src/polynomial.cpp	/^std::ostream& operator<< (std::ostream& out, const Polynomial& poly) {$/;"	f
 operator <<	src/state.cpp	/^std::ostream& operator<< (std::ostream& out, const States& ss) {$/;"	f
+operator <<	testcases/zilu2cpa.cpp	/^		friend std::ostream& operator << (std::ostream& out, const Config& c) {$/;"	f	class:Config
+operator <<	testcases/zilu2interproc.cpp	/^		friend std::ostream& operator << (std::ostream& out, const Config& c) {$/;"	f	class:Config
+operator <<	tools/src/cfg2init.cpp	/^		friend std::ostream& operator << (std::ostream& out, const Config& c) {$/;"	f	class:Config
 operator <<	tools/src/cfg2test.cpp	/^		friend std::ostream& operator << (std::ostream& out, const Config& c) {$/;"	f	class:Config
 operator <<	tools/src/cfg2verif.cpp	/^		friend std::ostream& operator << (std::ostream& out, const Config& c) {$/;"	f	class:Config
 operator <<	tools/src/model_parser.cpp	/^		friend ostream& operator << (ostream& out, const Model_Var& mv) {$/;"	f	class:Model_Var
@@ -1011,59 +1330,23 @@ operator []	src/classifier.cpp	/^Polynomial* Classifier::operator[] (int index) 
 p	include/svm_core.h	/^	double p;	\/* for EPSILON_SVR *\/$/;"	m	struct:svm_parameter
 p	src/svm_core.cpp	/^		double *p;$/;"	m	class:Solver	file:
 p_index	include/states.h	/^		int p_index;$/;"	m	class:States
-pairLinearSeparable	backup/cluster.h	/^		bool pairLinearSeparable(int p_gid, int n_gid)$/;"	f	class:Cluster
-pairSeparableByEquation	backup/cluster.h	/^		bool pairSeparableByEquation(int p_gid, int n_gid, Equation& eq)$/;"	f	class:Cluster
-pairSetLinearSeparable	backup/cluster.h	/^		bool pairSetLinearSeparable(bool positive, int i1, int i2)$/;"	f	class:Cluster
-param	backup/cluster.h	/^		svm_parameter param;$/;"	m	class:Cluster
-param	backup/svm.h	/^		svm_parameter param;$/;"	m	class:SVM
-param	backup/svm_i.h	/^		svm_parameter param;$/;"	m	class:SVM_I
 param	include/svm.h	/^		svm_parameter param;$/;"	m	class:SVM
 param	include/svm_core.h	/^	struct svm_parameter param;	\/* parameter *\/$/;"	m	struct:svm_model	typeref:struct:svm_model::svm_parameter
 param	include/svm_i.h	/^		svm_parameter param;$/;"	m	class:SVM_I
-parse_ite_statement	backup/model_parser.cpp	/^bool parse_ite_statement(string str, int nv = Nv) {$/;"	f
-parse_ite_statement	backup/parseSMT/backup/get_model_parser_complete.cpp	/^bool parse_ite_statement(string str, int nv = Nv) {$/;"	f
-parse_ite_statement	backup/parseSMT/backup/model_parser.cpp	/^bool parse_ite_statement(string str, int nv = Nv) {$/;"	f
-parse_ite_statement	backup/parseSMT/model_parser.cpp	/^bool parse_ite_statement(string str, int nv = Nv) {$/;"	f
-parse_var_file	backup/model_parser.cpp	/^bool parse_var_file(const char* varfile) {$/;"	f
-parse_var_file	backup/parseSMT/backup/get_model_parser_complete.cpp	/^bool parse_var_file(const char* varfile) {$/;"	f
-parse_var_file	backup/parseSMT/backup/model_parser.cpp	/^bool parse_var_file(const char* varfile) {$/;"	f
-parse_var_file	backup/parseSMT/model_parser.cpp	/^bool parse_var_file(const char* varfile) {$/;"	f
 parse_var_file	tools/src/model_parser.cpp	/^bool parse_var_file(const char* varfile) {$/;"	f
-parse_var_filename	backup/z3solve.cpp	/^bool parse_var_filename(const char* var_filename) {$/;"	f
-passP	test/ins_substring1.c	/^bool passP = false;$/;"	v
-passP	test/untested/pldi08.c	/^bool passP = false;$/;"	v
-passP	test/untested/substring1/ins_substring1.c	/^bool passP = false;$/;"	v
-passQ	test/ins_substring1.c	/^bool passQ = false;$/;"	v
-passQ	test/untested/ins2.cpp	/^bool passQ = false;$/;"	v
-passQ	test/untested/ins3.cpp	/^bool passQ = false;$/;"	v
-passQ	test/untested/pldi08.c	/^bool passQ = false;$/;"	v
-passQ	test/untested/slow_gulv/ins_gulv.cpp	/^bool passQ = false;$/;"	v
-passQ	test/untested/substring1/ins_substring1.c	/^bool passQ = false;$/;"	v
-pdata	backup/cluster.h	/^		double (*pdata)[VARS];$/;"	m	class:Cluster
-pdata	backup/svm.h	/^		MState* pdata;$/;"	m	class:SVM
-pg	backup/cluster.h	/^		int* pg; \/\/group No. for each elements$/;"	m	class:Cluster
-pgid	backup/cluster.h	/^		int* pgid;$/;"	m	class:Cluster
-pldi08	test/2_pldi08.cpp	/^int pldi08(int* a){$/;"	f
-pncluster	backup/cluster.h	/^		int pncluster;$/;"	m	class:Cluster
-poly	backup/svm.h	/^		Polynomial* poly;$/;"	m	class:SVM
+partialCheckTrainingSet	include/svm_i.h	/^		double partialCheckTrainingSet(int removed_cl)$/;"	f	class:SVM_I
+partialPredict	include/svm_i.h	/^		int partialPredict(double* v, int removed_cl) {$/;"	f	class:SVM_I
+pointwiseSimplify	include/svm_i.h	/^		bool pointwiseSimplify()$/;"	f	class:SVM_I
 poly_num	include/svm_i.h	/^		int poly_num;$/;"	m	class:SVM_I
 polys	include/classifier.h	/^		Polynomial* polys;$/;"	m	class:Classifier
-positive_group	backup/disjunctive_learner.h	/^		int *positive_group, *negative_group;$/;"	m	class:DisjunctiveLearner
 positive_nodes	src/svm_core.cpp	/^struct svm_node* positive_nodes = NULL;$/;"	v	typeref:struct:svm_node
 powi	src/svm_core.cpp	/^static inline double powi(double base, int times)$/;"	f	file:
-predict	backup/cluster.h	/^		virtual int predict(double* v) {$/;"	f	class:Cluster
-predict	backup/svm.h	/^		int predict(double* v) {$/;"	f	class:SVM
-predict	backup/svm_i.h	/^		int predict(double* v)$/;"	f	class:SVM_I
-predict	include/svm.h	/^		int predict(double* v) {$/;"	f	class:SVM
+predict	include/svm.h	/^			int predict(double* v) {$/;"	f	class:SVM
 predict	include/svm_i.h	/^		int predict(double* v) {$/;"	f	class:SVM_I
-prepare_get_variable_values	backup/parseSMT/smt2_getvalue.cpp	/^static bool prepare_get_variable_values() {$/;"	f	file:
-prepare_svm_parameters	src/svm_core.cpp	/^void prepare_svm_parameters(struct svm_parameter& param, int type, int degree) {$/;"	f
+prepare_svm_parameters	src/svm_core.cpp	/^void prepare_svm_parameters(struct svm_parameter* param, int type, int degree) {$/;"	f
 prev	src/svm_core.cpp	/^			head_t *prev, *next;	\/\/ a circular list$/;"	m	struct:Cache::head_t	file:
 printRunResult	src/instrumentation.cpp	/^void printRunResult(int rr) {$/;"	f
-print_null	backup/conjunctive_learner.cpp	/^static void print_null(const char *s) {}$/;"	f	file:
-print_null	backup/disjunctive_learner.cpp	/^static void print_null(const char *s) {}$/;"	f	file:
-print_null	backup/poly_learner.cpp	/^static void print_null(const char *s) {}$/;"	f	file:
-print_null	backup/rbf_learner.cpp	/^static void print_null(const char *s) {}$/;"	f	file:
+printStatistics	include/base_learner.h	/^		void printStatistics() {$/;"	f	class:BaseLearner
 print_null	src/conjunctive_learner.cpp	/^static void print_null(const char *s) {}$/;"	f	file:
 print_null	src/linear_learner.cpp	/^static void print_null(const char *s) {}$/;"	f	file:
 print_null	src/poly_learner.cpp	/^static void print_null(const char *s) {}$/;"	f	file:
@@ -1073,85 +1356,58 @@ print_svm_samples	src/svm_core.cpp	/^void print_svm_samples(const svm_problem *s
 probA	include/svm_core.h	/^	double *probA;		\/* pariwise probability information *\/$/;"	m	struct:svm_model
 probB	include/svm_core.h	/^	double *probB;$/;"	m	struct:svm_model
 probability	include/svm_core.h	/^	int probability; \/* do probability estimates *\/$/;"	m	struct:svm_parameter
-problem	backup/cluster.h	/^		svm_problem problem;$/;"	m	class:Cluster
-problem	backup/svm.h	/^		svm_problem problem;$/;"	m	class:SVM
-problem	backup/svm_i.h	/^		svm_problem problem;$/;"	m	class:SVM_I
 problem	include/svm.h	/^		svm_problem problem;$/;"	m	class:SVM
 problem	include/svm_i.h	/^		svm_problem problem;$/;"	m	class:SVM_I
 program_states	src/instrumentation.cpp	/^double program_states[MstatesIn1trace * 2][Nv];$/;"	v
-psize	backup/cluster.h	/^		int psize;$/;"	m	class:Cluster
-pv2	test/1_pv2.cpp	/^int pv2(int* a)$/;"	f
 r	src/svm_core.cpp	/^			double r;	\/\/ for Solver_NU$/;"	m	struct:Solver::SolutionInfo	file:
+random_samples	src/config.cpp	/^int random_samples = 0, selective_samples = 0;$/;"	v
 raw_mapped_data	include/svm.h	/^		MState* raw_mapped_data;$/;"	m	class:SVM
 raw_mapped_data	include/svm_i.h	/^		MState* raw_mapped_data;$/;"	m	class:SVM_I
+readConfigFile	testcases/zilu2cpa.cpp	/^		bool readConfigFile() {$/;"	f	class:FileHelper
+readConfigFile	testcases/zilu2interproc.cpp	/^		bool readConfigFile() {$/;"	f	class:FileHelper
+readConfigFile	tools/src/cfg2init.cpp	/^		bool readConfigFile() {$/;"	f	class:FileHelper
 readConfigFile	tools/src/cfg2test.cpp	/^		bool readConfigFile() {$/;"	f	class:FileHelper
 readConfigFile	tools/src/cfg2verif.cpp	/^		bool readConfigFile() {$/;"	f	class:FileHelper
-readVar	backup/parseSMT/smt2_getvalue.cpp	/^static bool readVar(const char* ifname)$/;"	f	file:
 read_model_header	src/svm_core.cpp	/^bool read_model_header(FILE *fp, svm_model* model)$/;"	f
 readline	src/svm_core.cpp	/^static char* readline(FILE *input)$/;"	f	file:
 reconstruct_gradient	src/svm_core.cpp	/^void Solver::reconstruct_gradient()$/;"	f	class:Solver
-record	backup/z3solve.cpp	/^class record{$/;"	c	file:
 recordd	include/instrumentation.h	28;"	d
 recordd	include/instrumentation.h	31;"	d
 recordi	include/instrumentation.h	27;"	d
 recordi	include/instrumentation.h	30;"	d
-recs	backup/z3solve.cpp	/^} *recs;$/;"	v	typeref:class:record
 register_program	src/config.cpp	/^bool register_program(int (*func)(int*), const char* func_name) $/;"	f
-resize	backup/svm.h	/^		int resize(int new_size) {$/;"	f	class:SVM
 resize	include/svm.h	/^		int resize(int new_size) {$/;"	f	class:SVM
 resize	include/svm_i.h	/^		int resize(int new_size) {$/;"	f	class:SVM_I
-resolveUniImplication	src/classifier.cpp	/^bool Classifier::resolveUniImplication() {$/;"	f	class:Classifier
+restricted_trainset_size	include/config.h	/^const int restricted_trainset_size = 2000*Nv;$/;"	v
 rho	include/svm_core.h	/^	double *rho;		\/* constants in decision functions (rho[k*(k-1)\/2]) *\/$/;"	m	struct:svm_model
 rho	src/svm_core.cpp	/^			double rho;$/;"	m	struct:Solver::SolutionInfo	file:
 rho	src/svm_core.cpp	/^	double rho;$/;"	m	struct:decision_function	file:
-roundoff	backup/svm.h	/^		Polynomial* roundoff(int& num) {$/;"	f	class:SVM
-roundoff	backup/svm_i.h	/^		Equation* roundoff(int& num) {$/;"	f	class:SVM_I
 roundoff	src/classifier.cpp	/^bool Classifier::roundoff() {$/;"	f	class:Classifier
 roundoff	src/polynomial.cpp	/^Polynomial* Polynomial::roundoff() {$/;"	f	class:Polynomial
 roundoff	src/polynomial.cpp	/^int Polynomial::roundoff(Polynomial& e) {$/;"	f	class:Polynomial
 runCounterExampleFile	include/base_learner.h	/^		void runCounterExampleFile(const char* cntempl_fname = NULL) {$/;"	f	class:BaseLearner
 runTarget	include/base_learner.h	/^		int runTarget(Solution& input) {$/;"	f	class:BaseLearner
-s	backup/smt2solver.py	/^    s = Solver()$/;"	v
-s	test/f1a/p2i.py	/^s = Solver()$/;"	v
-save2file	src/conjunctive_learner.cpp	/^int ConjunctiveLearner::save2file() {$/;"	f	class:ConjunctiveLearner
-save2file	src/linear_learner.cpp	/^int LinearLearner::save2file() {$/;"	f	class:LinearLearner
-save2file	src/poly_learner.cpp	/^int PolyLearner::save2file() {$/;"	f	class:PolyLearner
-saveClassifier	backup/svm_i.h	/^		inline Equation* saveClassifier() {$/;"	f	class:SVM_I
-save_result_to_file	backup/z3solve.cpp	/^bool save_result_to_file(const char* out_filename) {$/;"	f
-save_to_file	backup/model_parser.cpp	/^bool save_to_file(const char* filename) {$/;"	f
-save_to_file	backup/parseSMT/backup/get_model_parser_complete.cpp	/^bool save_to_file(const char* filename) {$/;"	f
-save_to_file	backup/parseSMT/backup/model_parser.cpp	/^bool save_to_file(const char* filename) {$/;"	f
-save_to_file	backup/parseSMT/model_parser.cpp	/^bool save_to_file(const char* filename) {$/;"	f
+save2file	src/conjunctive_learner.cpp	/^int ConjunctiveLearner::save2file(const char* dsfilename) {$/;"	f	class:ConjunctiveLearner
+save2file	src/linear_learner.cpp	/^int LinearLearner::save2file(const char* dsfilename) {$/;"	f	class:LinearLearner
+save2file	src/poly_learner.cpp	/^int PolyLearner::save2file(const char* dsfilename) {$/;"	f	class:PolyLearner
 save_to_file	include/svm_core.h	/^	bool save_to_file(const char* filepath) {$/;"	f	struct:svm_problem
 save_to_file	tools/src/model_parser.cpp	/^bool save_to_file(const char* filename) {$/;"	f
 scale	src/polynomial.cpp	/^static bool scale(Polynomial& poly, double times) {$/;"	f	file:
 schar	src/svm_core.cpp	/^typedef signed char schar;$/;"	t	file:
 select_working_set	src/svm_core.cpp	/^int Solver::select_working_set(int &out_i, int &out_j)$/;"	f	class:Solver
 select_working_set	src/svm_core.cpp	/^int Solver_NU::select_working_set(int &out_i, int &out_j)$/;"	f	class:Solver_NU
-selectiveSampling	backup/conjunctive_learner.cpp	/^int ConjunctiveLearner::selectiveSampling(int randn, int exen, int type, void* params)$/;"	f	class:ConjunctiveLearner
-selectiveSampling	backup/disjunctive_learner.cpp	/^int DisjunctiveLearner::selectiveSampling(int randn, int exen, int type, void* paras)$/;"	f	class:DisjunctiveLearner
-selectiveSampling	backup/poly_learner.cpp	/^int PolyLearner::selectiveSampling(int randn, int exen, int type, void* params)$/;"	f	class:PolyLearner
-selectiveSampling	backup/rbf_learner.cpp	/^int RbfLearner::selectiveSampling(int randn, int exen, int type, void* params)$/;"	f	class:RbfLearner
-selectiveSampling	include/base_learner.h	/^		int selectiveSampling(int randn, int exen, int type, Classifier* cl) {$/;"	f	class:BaseLearner
-set	backup/polynomial.h	/^		bool set(double* values) {$/;"	f	class:Polynomial
-set	backup/polynomial.h	/^		bool set(int* values) {$/;"	f	class:Polynomial
+selectiveSampling	include/base_learner.h	/^		int selectiveSampling(int randn, int exen, Classifier* cl) {$/;"	f	class:BaseLearner
+selective_samples	src/config.cpp	/^int random_samples = 0, selective_samples = 0;$/;"	v
 set	include/polynomial.h	/^		bool set(double* values) {$/;"	f	class:Polynomial
 set	include/polynomial.h	/^		bool set(int* values) {$/;"	f	class:Polynomial
 setColor	src/color.cpp	/^void setColor(std::ostream& out, int choice) {$/;"	f
-setDegree	backup/svm.h	/^		void setDegree(int degree) {$/;"	f	class:SVM
 setDimension	src/svm_core.cpp	/^int setDimension(int d) {$/;"	f
-setDims	backup/polynomial.h	/^		bool setDims(int dim) {$/;"	f	class:Polynomial
 setDims	include/polynomial.h	/^		bool setDims(int dim) {$/;"	f	class:Polynomial
-setEtimes	backup/polynomial.h	/^		bool setEtimes(int et) {$/;"	f	class:Polynomial
-setEtimes	backup/svm.h	/^		int setEtimes(int et) {$/;"	f	class:SVM
 setEtimes	include/ml_algo.h	/^		bool setEtimes(int et) {$/;"	f	class:MLalgo
 setEtimes	include/polynomial.h	/^		bool setEtimes(int et) {$/;"	f	class:Polynomial
-setKernel	include/svm.h	/^		void setKernel(int kn) {$/;"	f	class:SVM
-setTheta	backup/polynomial.h	/^		inline bool setTheta(int i, double value) {$/;"	f	class:Polynomial
-setTheta	backup/polynomial.h	/^		inline int setTheta(double* values) {$/;"	f	class:Polynomial
+setKernel	include/svm.h	/^			void setKernel(int kn) {$/;"	f	class:SVM
 setTheta	include/polynomial.h	/^		inline bool setTheta(int i, double value) {$/;"	f	class:Polynomial
 setTheta	include/polynomial.h	/^		inline int setTheta(double* values) {$/;"	f	class:Polynomial
-setTheta0	backup/polynomial.h	/^		inline bool setTheta0(double value) { theta[0] = value; return true; }$/;"	f	class:Polynomial
 setTheta0	include/polynomial.h	/^		inline bool setTheta0(double value) { theta[0] = value; return true; }$/;"	f	class:Polynomial
 setType	include/connector.h	/^		void setType(int connector_type) {$/;"	f	class:Connector
 shrinking	include/svm_core.h	/^	int shrinking;	\/* use the shrinking heuristics *\/$/;"	m	struct:svm_parameter
@@ -1160,7 +1416,7 @@ sig_alrm	include/iif.h	/^			static void sig_alrm(int signo) {$/;"	f	class:iif::i
 sigmoid_predict	src/svm_core.cpp	/^static double sigmoid_predict(double decision_value, double A, double B)$/;"	f	file:
 sigmoid_train	src/svm_core.cpp	/^static void sigmoid_train($/;"	f	file:
 sign	src/svm_core.cpp	/^		schar *sign;$/;"	m	class:SVR_Q	file:
-size	backup/cluster.h	/^		int size;$/;"	m	class:Cluster
+simplify	src/classifier.cpp	/^bool Classifier::simplify() {$/;"	f	class:Classifier
 size	include/candidates.h	/^		int size;$/;"	m	class:Candidates
 size	include/classifier.h	/^		int size;$/;"	m	class:Classifier
 size	include/states.h	/^		int size;$/;"	m	class:States
@@ -1168,35 +1424,18 @@ size	src/svm_core.cpp	/^		long int size;$/;"	m	class:Cache	file:
 solvePolynomial	include/polynomial.h	/^		inline bool solvePolynomial(double* results) {$/;"	f	class:Polynomial
 solve_c_svc	src/svm_core.cpp	/^static void solve_c_svc($/;"	f	file:
 solve_epsilon_svr	src/svm_core.cpp	/^static void solve_epsilon_svr($/;"	f	file:
-solve_multivariate_polynomial	backup/polynomial.h	/^		inline int solve_multivariate_polynomial(double* results, int x = 0) {$/;"	f	class:Polynomial
-solve_multivariate_polynomial	backup/polynomial.h	/^		static int solve_multivariate_polynomial(Polynomial& poly, double* results, int x) {$/;"	f	class:Polynomial
 solve_nu_svc	src/svm_core.cpp	/^static void solve_nu_svc($/;"	f	file:
 solve_nu_svr	src/svm_core.cpp	/^static void solve_nu_svr($/;"	f	file:
 solve_one_class	src/svm_core.cpp	/^static void solve_one_class($/;"	f	file:
-solve_univariate_polynomial	backup/polynomial.h	/^		inline int solve_univariate_polynomial(double* results) {$/;"	f	class:Polynomial
-solve_univariate_polynomial	backup/polynomial.h	/^		static int solve_univariate_polynomial(_in_ Polynomial& poly, _out_ double* results) {$/;"	f	class:Polynomial
-solve_univariate_polynomial	backup/polynomial.h	/^		static int solve_univariate_polynomial(_in_ double* coefs, _in_ int power, _out_ double* results) {$/;"	f	class:Polynomial
-solver	backup/polynomial.h	/^		int solver(Solution& sol) {$/;"	f	class:Polynomial
-solver	backup/polynomial.h	/^		static int solver(\/*const*\/ Polynomial* poly, Solution& sol) {$/;"	f	class:Polynomial
 solver	include/polynomial.h	/^		int solver(Solution& sol) {$/;"	f	class:Polynomial
 solver	include/polynomial.h	/^		static int solver(\/*const*\/ Polynomial* poly, Solution& sol) {$/;"	f	class:Polynomial
 solver	src/classifier.cpp	/^int Classifier::solver(const Classifier* cl, Solution& sol) {$/;"	f	class:Classifier
-sqrDistance	backup/cluster.h	/^static inline double sqrDistance(double* a1, double* b1, int size)$/;"	f
-sqrDistance	src/svm_core.cpp	/^static inline double sqrDistance(svm_node* a1, svm_node* b1, int size=DIMENSION)$/;"	f	file:
 stateCmp	include/states.h	/^		static bool stateCmp(const State& s1, const State& s2) {$/;"	f	class:States
 stateCpy	include/states.h	/^		static inline void stateCpy(State* dst, State* src, int length = 1) {$/;"	f	class:States
 state_index	src/instrumentation.cpp	/^int state_index;$/;"	v
-std	test/ins_substring1.c	/^using namespace std;$/;"	v
-std	test/untested/pldi08.c	/^using namespace std;$/;"	v
-std	test/untested/substring1/ins_substring1.c	/^using namespace std;$/;"	v
 stepTrain	include/svm_i.h	/^		int stepTrain(int negative_index) {$/;"	f	class:SVM_I
-str_as_array	backup/z3solve.cpp	/^const char* str_as_array = " as-array ";$/;"	v
-substring1	test/3_substring1.cpp	/^int substring1(int* a) {$/;"	f
 sv_coef	include/svm_core.h	/^	double **sv_coef;	\/* coefficients for SVs in decision functions (sv_coef[k-1][l]) *\/$/;"	m	struct:svm_model
 sv_indices	include/svm_core.h	/^	int *sv_indices;        \/* sv_indices[0,...,nSV-1] are values in [1,...,num_traning_data] to indicate SVs in the training set *\/$/;"	m	struct:svm_model
-svm	backup/disjunctive_learner.h	/^		SVM* svm;$/;"	m	class:DisjunctiveLearner
-svm	backup/poly_learner.h	/^		SVM* svm;$/;"	m	class:PolyLearner
-svm	backup/rbf_learner.h	/^		SVM* svm;$/;"	m	class:RbfLearner
 svm	include/linear_learner.h	/^		SVM* svm;$/;"	m	class:LinearLearner
 svm	include/poly_learner.h	/^		SVM* svm;$/;"	m	class:PolyLearner
 svm_I_train	src/svm_core.cpp	/^struct svm_model *svm_I_train(const struct svm_problem *prob, const struct svm_parameter *param) $/;"	f
@@ -1214,7 +1453,6 @@ svm_get_sv_indices	src/svm_core.cpp	/^void svm_get_sv_indices(const svm_model *m
 svm_get_svm_type	src/svm_core.cpp	/^int svm_get_svm_type(const svm_model *model)$/;"	f
 svm_get_svr_probability	src/svm_core.cpp	/^double svm_get_svr_probability(const svm_model *model)$/;"	f
 svm_group_classes	src/svm_core.cpp	/^static void svm_group_classes(const svm_problem *prob, int *nr_class_ret, int **label_ret, int **start_ret, int **count_ret, int *perm)$/;"	f	file:
-svm_i	backup/conjunctive_learner.h	/^		SVM_I* svm_i;$/;"	m	class:ConjunctiveLearner
 svm_i	include/conjunctive_learner.h	/^		SVM_I* svm_i;$/;"	m	class:ConjunctiveLearner
 svm_load_model	src/svm_core.cpp	/^svm_model *svm_load_model(const char *model_file_name)$/;"	f
 svm_model	include/svm_core.h	/^struct svm_model$/;"	s
@@ -1244,136 +1482,109 @@ swap_index	src/svm_core.cpp	/^		void swap_index(int i, int j) const$/;"	f	class:
 swap_index	src/svm_core.cpp	/^		void swap_index(int i, int j) const$/;"	f	class:SVR_Q
 swap_index	src/svm_core.cpp	/^void Cache::swap_index(int i, int j)$/;"	f	class:Cache
 swap_index	src/svm_core.cpp	/^void Solver::swap_index(int i, int j)$/;"	f	class:Solver
-sz_arr_def	backup/model_parser.cpp	/^const int sz_arr_def = strlen(arr_def);$/;"	v
-sz_arr_def	backup/parseSMT/backup/get_model_parser_complete.cpp	/^const int sz_arr_def = strlen(arr_def);$/;"	v
-sz_arr_def	backup/parseSMT/backup/model_parser.cpp	/^const int sz_arr_def = strlen(arr_def);$/;"	v
-sz_arr_def	backup/parseSMT/model_parser.cpp	/^const int sz_arr_def = strlen(arr_def);$/;"	v
-sz_byte_str	backup/model_parser.cpp	/^const int sz_byte_str = strlen(byte_str);$/;"	v
-sz_byte_str	backup/parseSMT/backup/get_model_parser_complete.cpp	/^const int sz_byte_str = strlen(byte_str);$/;"	v
-sz_byte_str	backup/parseSMT/backup/model_parser.cpp	/^const int sz_byte_str = strlen(byte_str);$/;"	v
-sz_byte_str	backup/parseSMT/model_parser.cpp	/^const int sz_byte_str = strlen(byte_str);$/;"	v
-sz_fun_def	backup/model_parser.cpp	/^const int sz_fun_def = strlen(fun_def);$/;"	v
-sz_fun_def	backup/parseSMT/backup/get_model_parser_complete.cpp	/^const int sz_fun_def = strlen(fun_def);$/;"	v
-sz_fun_def	backup/parseSMT/backup/model_parser.cpp	/^const int sz_fun_def = strlen(fun_def);$/;"	v
-sz_fun_def	backup/parseSMT/model_parser.cpp	/^const int sz_fun_def = strlen(fun_def);$/;"	v
-sz_index_str	backup/model_parser.cpp	/^const int sz_index_str = strlen(index_str);$/;"	v
-sz_index_str	backup/parseSMT/backup/get_model_parser_complete.cpp	/^const int sz_index_str = strlen(index_str);$/;"	v
-sz_index_str	backup/parseSMT/backup/model_parser.cpp	/^const int sz_index_str = strlen(index_str);$/;"	v
-sz_index_str	backup/parseSMT/model_parser.cpp	/^const int sz_index_str = strlen(index_str);$/;"	v
-sz_ite_str	backup/model_parser.cpp	/^const int sz_ite_str = strlen(ite_str);$/;"	v
-sz_ite_str	backup/parseSMT/backup/get_model_parser_complete.cpp	/^const int sz_ite_str = strlen(ite_str);$/;"	v
-sz_ite_str	backup/parseSMT/backup/model_parser.cpp	/^const int sz_ite_str = strlen(ite_str);$/;"	v
-sz_ite_str	backup/parseSMT/model_parser.cpp	/^const int sz_ite_str = strlen(ite_str);$/;"	v
 t_index	include/states.h	/^		int* t_index;$/;"	m	class:States
 target_program	src/config.cpp	/^int(*target_program)(int*) = NULL;$/;"	v
-test_template	test/1_diamond_false-unreach-call1.cpp	/^int test_template(int* a)$/;"	f
-test_template	test/1_hailassumtion.cpp	/^int test_template(int* a)$/;"	f
 testcasefilename	tools/src/cfg2test.cpp	/^		const char* testcasefilename;$/;"	m	class:FileHelper	file:
-theta	backup/polynomial.h	/^		double theta[Cv0to4];$/;"	m	class:Polynomial
 theta	include/polynomial.h	/^		double theta[Cv0to4];$/;"	m	class:Polynomial
 timeout	include/iif.h	/^			int timeout;$/;"	m	class:iif::iifContext
+toCppStatement	testcases/zilu2cpa.cpp	/^		bool toCppStatement() {$/;"	f	class:Config
+toCppStatement	testcases/zilu2interproc.cpp	/^		bool toCppStatement() {$/;"	f	class:Config
 toCppStatement	tools/src/cfg2test.cpp	/^		bool toCppStatement() {$/;"	f	class:Config
-toCppStatement	tools/src/cfg2verif.cpp	/^		bool toCppStatement() {$/;"	f	class:Config
-toStandardForm	backup/polynomial.h	/^		bool toStandardForm(double* coefs) {$/;"	f	class:Polynomial
-toString	backup/candidates.cpp	/^std::string Candidates::toString(int i) {$/;"	f	class:Candidates
 toString	include/config.h	/^		std::string toString() {$/;"	f	class:VariablePowerArray
 toString	src/classifier.cpp	/^std::string Classifier::toString() const {$/;"	f	class:Classifier
 toString	src/polynomial.cpp	/^std::string Polynomial::toString() const {$/;"	f	class:Polynomial
 toZ3expr	src/polynomial.cpp	/^z3::expr Polynomial::toZ3expr(char** name, z3::context& c) const {$/;"	f	class:Polynomial
 traces_num	include/states.h	/^		inline int traces_num() {$/;"	f	class:States
-train	backup/svm.h	/^		int train() {$/;"	f	class:SVM
-train	backup/svm_i.h	/^		int train()$/;"	f	class:SVM_I
-train	include/svm.h	/^		int train() {$/;"	f	class:SVM
+train	include/svm.h	/^			int train() {$/;"	f	class:SVM
 train	include/svm_i.h	/^		int train() {$/;"	f	class:SVM_I
-trainLinear	include/svm.h	/^		int trainLinear() {$/;"	f	class:SVM
-trainPoly	include/svm.h	/^		int trainPoly() {$/;"	f	class:SVM
+trainLinear	include/svm.h	/^			int trainLinear() {$/;"	f	class:SVM
+trainPoly	include/svm.h	/^			int trainPoly() {$/;"	f	class:SVM
 type	include/connector.h	/^		int type;$/;"	m	class:Connector
 uniImply	src/polynomial.cpp	/^bool Polynomial::uniImply(const Polynomial& e2) {$/;"	f	class:Polynomial
-unknown	test/untested/cav13cbench/dillig/39.c	/^int unknown(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/01.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/03.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/05.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/07.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/09.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/12.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/15.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/17.c	/^int unknown1()$/;"	f
-unknown1	test/untested/cav13cbench/dillig/19.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/20.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/25.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/28.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/31.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/33.c	/^int unknown1(){$/;"	f
-unknown1	test/untested/cav13cbench/dillig/37.c	/^int unknown1(){$/;"	f
-unknown2	test/untested/cav13cbench/dillig/03.c	/^int unknown2()$/;"	f
-unknown2	test/untested/cav13cbench/dillig/09.c	/^int unknown2(){$/;"	f
-unknown2	test/untested/cav13cbench/dillig/12.c	/^int unknown2(){$/;"	f
-unknown2	test/untested/cav13cbench/dillig/19.c	/^int unknown2(){$/;"	f
-unknown2	test/untested/cav13cbench/dillig/25.c	/^int unknown2(){$/;"	f
-unknown2	test/untested/cav13cbench/dillig/33.c	/^int unknown2(){$/;"	f
-unknown3	test/untested/cav13cbench/dillig/09.c	/^int unknown3(){$/;"	f
-unknown3	test/untested/cav13cbench/dillig/33.c	/^int unknown3(){$/;"	f
+unknown	cfg/beautifulInterpolants/39.c	/^int unknown(){$/;"	f
+unknown1	cfg/beautifulInterpolants/01.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/03.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/05.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/07.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/09.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/12.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/15.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/17.c	/^int unknown1()$/;"	f
+unknown1	cfg/beautifulInterpolants/19.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/20.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/25.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/28.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/31.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/33.c	/^int unknown1(){$/;"	f
+unknown1	cfg/beautifulInterpolants/37.c	/^int unknown1(){$/;"	f
+unknown2	cfg/beautifulInterpolants/03.c	/^int unknown2()$/;"	f
+unknown2	cfg/beautifulInterpolants/09.c	/^int unknown2(){$/;"	f
+unknown2	cfg/beautifulInterpolants/12.c	/^int unknown2(){$/;"	f
+unknown2	cfg/beautifulInterpolants/19.c	/^int unknown2(){$/;"	f
+unknown2	cfg/beautifulInterpolants/25.c	/^int unknown2(){$/;"	f
+unknown2	cfg/beautifulInterpolants/33.c	/^int unknown2(){$/;"	f
+unknown3	cfg/beautifulInterpolants/09.c	/^int unknown3(){$/;"	f
+unknown3	cfg/beautifulInterpolants/33.c	/^int unknown3(){$/;"	f
 unshrink	src/svm_core.cpp	/^		bool unshrink;	\/\/ XXX$/;"	m	class:Solver	file:
 update_alpha_status	src/svm_core.cpp	/^		void update_alpha_status(int i)$/;"	f	class:Solver
 upper_bound_n	src/svm_core.cpp	/^			double upper_bound_n;$/;"	m	struct:Solver::SolutionInfo	file:
 upper_bound_p	src/svm_core.cpp	/^			double upper_bound_p;$/;"	m	struct:Solver::SolutionInfo	file:
 val	include/solution.h	/^		double val[Nv];$/;"	m	class:Solution
-value	backup/model_parser.cpp	/^		int value;$/;"	m	class:Model_Var	file:
-value	backup/parseSMT/backup/get_model_parser_complete.cpp	/^		int value;$/;"	m	class:Model_Var	file:
-value	backup/parseSMT/backup/model_parser.cpp	/^		int value;$/;"	m	class:Model_Var	file:
-value	backup/parseSMT/model_parser.cpp	/^		int value;$/;"	m	class:Model_Var	file:
-value	backup/z3solve.cpp	/^		int value;$/;"	m	class:record	file:
 value	include/svm_core.h	/^	double value;$/;"	m	struct:svm_node
+value	testcases/zilu2cpa.cpp	/^		string value;$/;"	m	class:Config	file:
+value	testcases/zilu2interproc.cpp	/^		string value;$/;"	m	class:Config	file:
+value	tools/src/cfg2init.cpp	/^		string value;$/;"	m	class:Config	file:
 value	tools/src/cfg2test.cpp	/^		string value;$/;"	m	class:Config	file:
 value	tools/src/cfg2verif.cpp	/^		string value;$/;"	m	class:Config	file:
 value	tools/src/model_parser.cpp	/^		int value;$/;"	m	class:Model_Var	file:
 values	include/states.h	/^		State (*values);$/;"	m	class:States
 varfilename	tools/src/cfg2test.cpp	/^		const char* varfilename;$/;"	m	class:FileHelper	file:
-variables	backup/parseSMT/smt2_getvalue.cpp	/^vector<string> variables;$/;"	v
 variables	src/config.cpp	/^std::string* variables;$/;"	v
+variables	testcases/zilu2cpa.cpp	/^		vector<string> variables;$/;"	m	class:FileHelper	file:
+variables	testcases/zilu2interproc.cpp	/^		vector<string> variables;$/;"	m	class:FileHelper	file:
+variables	tools/src/cfg2init.cpp	/^		vector<string> variables;$/;"	m	class:FileHelper	file:
 variables	tools/src/cfg2test.cpp	/^		vector<string> variables;$/;"	m	class:FileHelper	file:
 variables	tools/src/cfg2verif.cpp	/^		vector<string> variables;$/;"	m	class:FileHelper	file:
-varname	backup/z3solve.cpp	/^		string varname;$/;"	m	class:record	file:
-vno	backup/z3solve.cpp	/^int vno;$/;"	v
 vnum	src/config.cpp	/^int vnum;$/;"	v
+vnum	testcases/zilu2cpa.cpp	/^		int vnum;$/;"	m	class:FileHelper	file:
+vnum	testcases/zilu2interproc.cpp	/^		int vnum;$/;"	m	class:FileHelper	file:
+vnum	tools/src/cfg2init.cpp	/^		int vnum;$/;"	m	class:FileHelper	file:
 vnum	tools/src/cfg2test.cpp	/^		int vnum;$/;"	m	class:FileHelper	file:
 vnum	tools/src/cfg2verif.cpp	/^		int vnum;$/;"	m	class:FileHelper	file:
 vparray	src/config.cpp	/^VariablePowerArray* vparray;$/;"	v
 weight	include/svm_core.h	/^	double* weight;		\/* for C_SVC *\/$/;"	m	struct:svm_parameter
 weight_label	include/svm_core.h	/^	int *weight_label;	\/* for C_SVC *\/$/;"	m	struct:svm_parameter
+writeCFile	tools/src/cfg2init.cpp	/^		bool writeCFile() {$/;"	f	class:FileHelper
 writeCFile	tools/src/cfg2verif.cpp	/^		bool writeCFile() {$/;"	f	class:FileHelper
+writeCppFile	testcases/zilu2cpa.cpp	/^		bool writeCppFile() {$/;"	f	class:FileHelper
+writeCppFile	testcases/zilu2interproc.cpp	/^		bool writeCppFile() {$/;"	f	class:FileHelper
 writeCppFile	tools/src/cfg2test.cpp	/^		bool writeCppFile() {$/;"	f	class:FileHelper
 writeCppHeader	tools/src/cfg2test.cpp	/^		inline bool writeCppHeader(ofstream& cppFile) {$/;"	f	class:FileHelper	file:
+writeCppLoopFunction	testcases/zilu2cpa.cpp	/^		bool writeCppLoopFunction(ofstream& cppFile) {$/;"	f	class:FileHelper	file:
+writeCppLoopFunction	testcases/zilu2interproc.cpp	/^		bool writeCppLoopFunction(ofstream& cppFile) {$/;"	f	class:FileHelper	file:
 writeCppLoopFunction	tools/src/cfg2test.cpp	/^		bool writeCppLoopFunction(ofstream& cppFile) {$/;"	f	class:FileHelper	file:
 writeCppMain	tools/src/cfg2test.cpp	/^		inline bool writeCppMain(ofstream& cppFile) {$/;"	f	class:FileHelper	file:
+writeHeader	tools/src/cfg2init.cpp	/^		inline bool writeHeader(ofstream& cppFile) {$/;"	f	class:FileHelper	file:
 writeHeader	tools/src/cfg2verif.cpp	/^		inline bool writeHeader(ofstream& cppFile) {$/;"	f	class:FileHelper	file:
+writeMain	tools/src/cfg2init.cpp	/^		inline bool writeMain(ofstream& cppFile) {$/;"	f	class:FileHelper	file:
 writeMain	tools/src/cfg2verif.cpp	/^		inline bool writeMain(ofstream& cppFile, int choice) {$/;"	f	class:FileHelper	file:
 writeRecordi	tools/src/cfg2test.cpp	/^		inline bool writeRecordi(ofstream& cppFile) {$/;"	f	class:FileHelper	file:
 writeVarFile	tools/src/cfg2test.cpp	/^		bool writeVarFile() {$/;"	f	class:FileHelper
 x	include/svm_core.h	/^	struct svm_node **x;$/;"	m	struct:svm_problem	typeref:struct:svm_problem::svm_node
 x	src/svm_core.cpp	/^		const svm_node **x;$/;"	m	class:Kernel	file:
-x	test/demo.cpp	/^int x = 0;$/;"	v
-x	test/f1a/p2i.py	/^x = Int('x')$/;"	v
-x	test/untested/pldi08.c	/^int x;$/;"	v
 x_square	src/svm_core.cpp	/^		double *x_square;$/;"	m	class:Kernel	file:
-xa	test/demo.cpp	/^int xa = 0;$/;"	v
 y	include/svm_core.h	/^	double *y;$/;"	m	struct:svm_problem
 y	src/svm_core.cpp	/^		schar *y;$/;"	m	class:SVC_Q	file:
 y	src/svm_core.cpp	/^		schar *y;$/;"	m	class:Solver	file:
-y	test/Loc/papers.c	/^(0≤x≤51∧x=y)∨(x≥51∧y≥0∧x+y= 102).$/;"	v
-y	test/demo.cpp	/^int y = 0;$/;"	v
-y	test/f1a/p2i.py	/^y = Int('y')$/;"	v
-y	test/untested/pldi08.c	/^int y;$/;"	v
-ya	test/demo.cpp	/^int ya = 0;$/;"	v
-z	test/demo.cpp	/^int z = 0;$/;"	v
 ~BaseLearner	include/base_learner.h	/^		virtual ~BaseLearner() {$/;"	f	class:BaseLearner
 ~Cache	src/svm_core.cpp	/^Cache::~Cache()$/;"	f	class:Cache
 ~Candidates	include/candidates.h	/^		~Candidates() { $/;"	f	class:Candidates
 ~Classifier	src/classifier.cpp	/^Classifier::~Classifier() { $/;"	f	class:Classifier
-~Cluster	backup/cluster.h	/^		~Cluster() {$/;"	f	class:Cluster
-~ConjunctiveLearner	backup/conjunctive_learner.cpp	/^ConjunctiveLearner::~ConjunctiveLearner() { $/;"	f	class:ConjunctiveLearner
 ~ConjunctiveLearner	src/conjunctive_learner.cpp	/^ConjunctiveLearner::~ConjunctiveLearner() { $/;"	f	class:ConjunctiveLearner
 ~Connector	include/connector.h	/^		~Connector() { } $/;"	f	class:Connector
+~FileHelper	testcases/zilu2cpa.cpp	/^		~FileHelper() {$/;"	f	class:FileHelper
+~FileHelper	testcases/zilu2interproc.cpp	/^		~FileHelper() {$/;"	f	class:FileHelper
+~FileHelper	tools/src/cfg2init.cpp	/^		~FileHelper() {$/;"	f	class:FileHelper
 ~FileHelper	tools/src/cfg2test.cpp	/^		~FileHelper() {$/;"	f	class:FileHelper
 ~FileHelper	tools/src/cfg2verif.cpp	/^		~FileHelper() {$/;"	f	class:FileHelper
 ~Kernel	src/svm_core.cpp	/^Kernel::~Kernel()$/;"	f	class:Kernel
@@ -1381,14 +1592,10 @@ z	test/demo.cpp	/^int z = 0;$/;"	v
 ~LinearLearner	src/linear_learner.cpp	/^LinearLearner::~LinearLearner() {$/;"	f	class:LinearLearner
 ~MLalgo	include/ml_algo.h	/^		virtual ~MLalgo() {};$/;"	f	class:MLalgo
 ~ONE_CLASS_Q	src/svm_core.cpp	/^		~ONE_CLASS_Q()$/;"	f	class:ONE_CLASS_Q
-~PolyLearner	backup/poly_learner.cpp	/^PolyLearner::~PolyLearner() {$/;"	f	class:PolyLearner
 ~PolyLearner	src/poly_learner.cpp	/^PolyLearner::~PolyLearner() {$/;"	f	class:PolyLearner
 ~QMatrix	src/svm_core.cpp	/^		virtual ~QMatrix() {}$/;"	f	class:QMatrix
-~RbfLearner	backup/rbf_learner.cpp	/^RbfLearner::~RbfLearner() {$/;"	f	class:RbfLearner
 ~SVC_Q	src/svm_core.cpp	/^		~SVC_Q()$/;"	f	class:SVC_Q
-~SVM	backup/svm.h	/^		~SVM() {$/;"	f	class:SVM
-~SVM	include/svm.h	/^		~SVM() {$/;"	f	class:SVM
-~SVM_I	backup/svm_i.h	/^		~SVM_I()$/;"	f	class:SVM_I
+~SVM	include/svm.h	/^			~SVM() {$/;"	f	class:SVM
 ~SVM_I	include/svm_i.h	/^		~SVM_I() {$/;"	f	class:SVM_I
 ~SVR_Q	src/svm_core.cpp	/^		~SVR_Q()$/;"	f	class:SVR_Q
 ~Solver	src/svm_core.cpp	/^		virtual ~Solver() {};$/;"	f	class:Solver
