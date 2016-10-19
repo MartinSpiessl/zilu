@@ -1,0 +1,81 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> linear]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target interproc4
+[  8%] Building CXX object CMakeFiles/interproc4.dir/test/interproc4.cpp.o
+[ 16%] Building CXX object CMakeFiles/interproc4.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/interproc4.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/interproc4.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/interproc4.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/interproc4.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/interproc4.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/interproc4.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/interproc4.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/interproc4.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/interproc4.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/interproc4.dir/src/instrumentation.cpp.o
+Linking CXX executable interproc4
+[100%] Built target interproc4
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[1] :::::: 4	7	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/interproc4.cnt[0m
+[34m[1mTest Counter Example: (4,7) @/home/lijiaying/Research/GitHub/ZILU/tmp/interproc4.cnt --> [0m+
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->  [130+:10-]|-->> [33m(1.226116666038241 - 0.103998812306763*i + 0.09226599364049909*j >= 0) [0m
+[31m[2][0m[#r8,#s32] -->  [421+:14-]|-->> [33m(1.030729516172215 - 0.3697535006485273*i + 0.3663391099627269*j >= 0) [0m
+[31m[3][0m[#r12,#s48] -->  [504+:27-]|-->> [33m(1.077469890833299 - 0.9306381465430533*i + 0.9220303808949097*j >= 0) [0m
+[31m[4][0m[#r16,#s64] -->  [689+:33-]|-->> [33m(1.113094424035353 - 1.659717473539857*i + 1.647151426424827*j >= 0) [0m
+[31m[5][0m[#r20,#s80] -->  [777+:37-]|-->> [33m(1.082866388770299 - 1.750401187196175*i + 1.741193810666161*j >= 0) [0m
+[31m[6][0m[#r24,#s96] -->  [841+:38-]|-->> [33m(1.082948202382568 - 1.7511553928517*i + 1.74193892592028*j >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(13 - 21*i + 21*j >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/interproc4.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/interproc4.inv >>> [0m(13 - 21*i + 21*j >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00003.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00004.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00005.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00006.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00007.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00008.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00003.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00004.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00005.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00006.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00007.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00008.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00009.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00010.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00003.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00004.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00005.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00006.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00007.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00008.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00009.smt2 ---> [32m[1m [unsat] [PASS][0m
+[1m[32m-----------------------------------------------------------finish proving---------------------------------------------------------------[0m
+[32mThe invariant can be [33m(13 - 21*i + 21*j >= 0) [0m
+
+=====================time=========================

@@ -1,0 +1,715 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> linear--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target 35
+[  8%] Building CXX object CMakeFiles/35.dir/test/35.cpp.o
+[ 16%] Building CXX object CMakeFiles/35.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/35.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/35.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/35.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/35.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/35.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/35.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/35.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/35.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/35.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/35.dir/src/instrumentation.cpp.o
+Linking CXX executable 35
+[100%] Built target 35
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 0	1	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (0,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m+
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:12-]|-->> [33m(1.021386755346532 - 0.05640440119769758*x + 0.03501764585116546*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:22-]|-->> [33m(0.978271698696787 - 0.166583643324634*x + 0.1883119446278471*n >= 0) [0m
+[31m[3Pure Random][0m[#r60,#s0] -->  [2+:33-]|-->> [33m(0.978271698696787 - 0.166583643324634*x + 0.1883119446278471*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(47 - 8*x + 9*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(47 - 8*x + 9*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-49,-48) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-50,-49) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-51,-50) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-52,-51) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-53,-52) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-54,-53) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-55,-54) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-56,-55) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:44-]|-->> [33m(0.9782713953105043 - 0.1665859692861335*x + 0.1883145739756292*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:53-]|-->> [33m(0.9809618811865692 - 0.1734584158557023*x + 0.1924965346691331*n >= 0) [0m
+[31m[3Pure Random][0m[#r60,#s0] -->  [2+:61-]|-->> [33m(1.003061267972877 - 0.2418401698572841*x + 0.2387789018844066*n >= 0) [0m
+[31m[4Pure Random][0m[#r80,#s0] -->  [2+:73-]|-->> [33m(1.003061267972877 - 0.2418401698572841*x + 0.2387789018844066*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(185 - 45*x + 44*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(185 - 45*x + 44*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 3 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (185,186) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (186,187) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (229,230) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (228,229) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (227,228) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (226,227) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (225,226) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (224,225) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:83-]|-->> [33m(1.003061267972877 - 0.2418401698572841*x + 0.2387789018844066*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:93-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(185 - 45*x + 44*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(185 - 45*x + 44*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 4 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (185,186) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (186,187) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (229,230) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (228,229) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (227,228) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (226,227) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (225,226) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (224,225) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:100-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:108-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(185 - 45*x + 44*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(185 - 45*x + 44*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 5 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (185,186) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (186,187) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (229,230) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (228,229) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (227,228) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (226,227) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (225,226) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (224,225) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:115-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:124-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(185 - 45*x + 44*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(185 - 45*x + 44*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 6 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (185,186) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (186,187) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (229,230) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (228,229) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (227,228) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (226,227) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (225,226) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (224,225) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:131-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:142-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(185 - 45*x + 44*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(185 - 45*x + 44*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 7 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (185,186) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (186,187) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (229,230) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (228,229) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (227,228) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (226,227) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (225,226) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (224,225) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:151-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:163-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(185 - 45*x + 44*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(185 - 45*x + 44*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 8 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (185,186) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (186,187) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (229,230) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (228,229) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (227,228) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (226,227) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (225,226) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (224,225) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:170-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:180-]|-->> [33m(1.003061257814911 - 0.2418393673780712*x + 0.2387781095631598*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(185 - 45*x + 44*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(185 - 45*x + 44*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 9 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (185,186) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (186,187) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (229,230) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (228,229) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (227,228) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (226,227) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (225,226) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (224,225) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:189-]|-->> [33m(1.001391094519937 - 0.265699053307566*x + 0.2643079587876302*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:194-]|-->> [33m(1.001391094519937 - 0.265699053307566*x + 0.2643079587876302*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(19 - 5*x + 5*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(19 - 5*x + 5*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 10 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (0,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-1,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-2,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-3,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-4,-5) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-5,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-6,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-7,-8) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m-
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:211-]|-->> [33m(0.8947893116258849 - 1.788581702359978*x + 1.893792390734093*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:223-]|-->> [33m(0.8947893116258849 - 1.788581702359978*x + 1.893792390734093*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(8 - 16*x + 17*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(8 - 16*x + 17*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 11 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-10,-9) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-17,-16) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-34,-32) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-51,-48) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-68,-64) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-85,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-102,-96) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-119,-112) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:238-]|-->> [33m(0.8947893116258849 - 1.788581702359978*x + 1.893792390734093*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:244-]|-->> [33m(0.8947893116258849 - 1.788581702359978*x + 1.893792390734093*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(8 - 16*x + 17*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(8 - 16*x + 17*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 12 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-10,-9) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-17,-16) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-34,-32) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-51,-48) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-68,-64) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-85,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-102,-96) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-119,-112) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:255-]|-->> [33m(0.8947893116258849 - 1.788581702359978*x + 1.893792390734093*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:265-]|-->> [33m(0.9080874719965131 - 1.815272428068864*x + 1.907184956072349*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(9 - 18*x + 19*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(9 - 18*x + 19*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 13 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-11,-10) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-19,-18) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-38,-36) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-57,-54) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-76,-72) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-95,-90) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-114,-108) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-133,-126) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:275-]|-->> [33m(0.9080874719965131 - 1.815272428068864*x + 1.907184956072349*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:289-]|-->> [33m(0.9080874719965131 - 1.815272428068864*x + 1.907184956072349*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(9 - 18*x + 19*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(9 - 18*x + 19*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 14 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-11,-10) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-19,-18) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-38,-36) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-57,-54) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-76,-72) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-95,-90) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-114,-108) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-133,-126) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:297-]|-->> [33m(0.9080874719965131 - 1.815272428068864*x + 1.907184956072349*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:309-]|-->> [33m(0.9080874719965131 - 1.815272428068864*x + 1.907184956072349*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(9 - 18*x + 19*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(9 - 18*x + 19*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 15 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-11,-10) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-19,-18) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-38,-36) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-57,-54) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-76,-72) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-95,-90) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-114,-108) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-133,-126) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:321-]|-->> [33m(0.9080874719965131 - 1.815272428068864*x + 1.907184956072349*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:331-]|-->> [33m(0.9080874719965131 - 1.815272428068864*x + 1.907184956072349*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(9 - 18*x + 19*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(9 - 18*x + 19*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 16 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-11,-10) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-19,-18) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-38,-36) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-57,-54) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-76,-72) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-95,-90) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-114,-108) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-133,-126) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:341-]|-->> [33m(0.9080874719965131 - 1.815272428068864*x + 1.907184956072349*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:352-]|-->> [33m(0.9167463434737311 - 1.832536565262695*x + 1.915790221788964*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(10 - 20*x + 21*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(10 - 20*x + 21*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 17 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-12,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-21,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-42,-40) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-63,-60) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-84,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-105,-100) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-126,-120) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-147,-140) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:367-]|-->> [33m(0.9167463434737311 - 1.832536565262695*x + 1.915790221788964*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:380-]|-->> [33m(0.9167463434737311 - 1.832536565262695*x + 1.915790221788964*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(10 - 20*x + 21*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(10 - 20*x + 21*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 18 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-12,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-21,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-42,-40) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-63,-60) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-84,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-105,-100) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-126,-120) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-147,-140) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:391-]|-->> [33m(0.9167463434737311 - 1.832536565262695*x + 1.915790221788964*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:399-]|-->> [33m(0.9167463434737311 - 1.832536565262695*x + 1.915790221788964*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(10 - 20*x + 21*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(10 - 20*x + 21*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 19 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-12,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-21,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-42,-40) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-63,-60) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-84,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-105,-100) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-126,-120) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-147,-140) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2+:407-]|-->> [33m(0.9167463434737311 - 1.832536565262695*x + 1.915790221788964*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [2+:414-]|-->> [33m(0.9167463434737311 - 1.832536565262695*x + 1.915790221788964*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(10 - 20*x + 21*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(10 - 20*x + 21*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 20 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-12,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-21,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-42,-40) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-63,-60) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-84,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-105,-100) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-126,-120) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-147,-140) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [88+:425-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [88+:434-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(10 - 20*x + 21*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(10 - 20*x + 21*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 21 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-12,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-21,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-42,-40) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-63,-60) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-84,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-105,-100) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-126,-120) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-147,-140) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [88+:444-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [88+:455-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(10 - 20*x + 21*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(10 - 20*x + 21*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 22 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-12,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-21,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-42,-40) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-63,-60) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-84,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-105,-100) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-126,-120) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-147,-140) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [88+:462-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [88+:466-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(10 - 20*x + 21*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(10 - 20*x + 21*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 23 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-12,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-21,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-42,-40) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-63,-60) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-84,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-105,-100) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-126,-120) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-147,-140) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [88+:473-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [88+:480-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(10 - 20*x + 21*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(10 - 20*x + 21*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 24 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-12,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-21,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-42,-40) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-63,-60) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-84,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-105,-100) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-126,-120) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-147,-140) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [88+:487-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [88+:498-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(10 - 20*x + 21*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(10 - 20*x + 21*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 25 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-12,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-21,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-42,-40) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-63,-60) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-84,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-105,-100) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-126,-120) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-147,-140) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [88+:509-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [88+:519-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(10 - 20*x + 21*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(10 - 20*x + 21*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 26 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (-12,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-21,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-42,-40) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-63,-60) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-84,-80) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-105,-100) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-126,-120) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-147,-140) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m?
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [88+:527-]|-->> [33m(0.9167058860183843 - 1.83247050759553*x + 1.915764621577146*n >= 0) [0m
