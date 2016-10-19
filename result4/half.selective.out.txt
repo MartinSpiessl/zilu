@@ -1,0 +1,183 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target half
+[  8%] Building CXX object CMakeFiles/half.dir/test/half.cpp.o
+[ 16%] Building CXX object CMakeFiles/half.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/half.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/half.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/half.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/half.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/half.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/half.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/half.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/half.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/half.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/half.dir/src/instrumentation.cpp.o
+Linking CXX executable half
+[100%] Built target half
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 0	0	0	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[34m[1mTest Counter Example: (0,0,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r6,#s24] -->   [1+:737-]|-->> [33m(1 + 0.003663259254090639*i + 0.006628754840735444*k + 0.003523706520601472*n >= 0)  &&  (1 - 0.01363225753469656*i + 0.01018313213435165*k + 0.00624127453395746*n >= 0)  &&  (1 + 0.005841879787095937*i + 0.008568090354407374*k - 0.01233285732831364*n >= 0)  &&  (1 - 0.00299077843316441*i - 0.01046772451607543*k - 0.014621583451026*n >= 0) 
+[0m[31m[2][0m[#r12,#s48] -->   [1+:2585-]|-->> [33m(1 + 0.003663259254090639*i + 0.006628754840735444*k + 0.003523706520601472*n >= 0)  &&  (1 - 0.01363225753469656*i + 0.01018313213435165*k + 0.00624127453395746*n >= 0)  &&  (1 + 0.005841879787095937*i + 0.008568090354407374*k - 0.01233285732831364*n >= 0)  &&  (1 - 0.00299077843316441*i - 0.01046772451607543*k - 0.014621583451026*n >= 0)  &&  (1 - 0.03127932436659368*i + 0.01501407569596497*k + 0.00688145136065061*n >= 0) 
+[0m[31m[3][0m[#r18,#s72] -->   [1+:5058-]|-->> [33m(1 + 0.003663259254090639*i + 0.006628754840735444*k + 0.003523706520601472*n >= 0)  &&  (1 - 0.01363225753469656*i + 0.01018313213435165*k + 0.00624127453395746*n >= 0)  &&  (1 + 0.005841879787095937*i + 0.008568090354407374*k - 0.01233285732831364*n >= 0)  &&  (1 - 0.00299077843316441*i - 0.01046772451607543*k - 0.014621583451026*n >= 0)  &&  (1 - 0.03127932436659368*i + 0.01501407569596497*k + 0.00688145136065061*n >= 0)  &&  (1 - 0.005969211435752434*i + 0.007225887527489789*k - 0.02324850769714106*n >= 0)  &&  (1 - 0.009021199819576003*i + 0.04149751917004962*k - 0.0009021199819576004*n >= 0)  &&  (1 + 0.01002479249757465*i + 0.001293521612590277*k + 0.002371456289748841*n >= 0) 
+[0m[31m[4][0m[#r24,#s96] -->   [1+:6287-]|-->> [33m(1 + 0.003663259254090639*i + 0.006628754840735444*k + 0.003523706520601472*n >= 0)  &&  (1 - 0.01363225753469656*i + 0.01018313213435165*k + 0.00624127453395746*n >= 0)  &&  (1 + 0.02077652252954162*i + 0.006752369822101026*k - 0.006492663290481755*n >= 0)  &&  (1 - 0.01779095626389918*i - 0.01556708673091179*k - 0.03039288361749444*n >= 0)  &&  (1 - 0.03127932436659368*i + 0.01501407569596497*k + 0.00688145136065061*n >= 0)  &&  (1 - 0.005969211435752434*i + 0.007225887527489789*k - 0.02324850769714106*n >= 0)  &&  (1 - 0.009021199819576003*i + 0.04149751917004962*k - 0.0009021199819576004*n >= 0)  &&  (1 + 0.01002479249757465*i + 0.001293521612590277*k + 0.002371456289748841*n >= 0)  &&  (1 + 0.01120971508640822*i - 0.02101821578701541*k - 0.01914992993928071*n >= 0) 
+[0m[31m[5][0m[#r30,#s120] -->   [1+:7583-]|-->> [33m(1 + 0.003663259254090639*i + 0.006628754840735444*k + 0.003523706520601472*n >= 0)  &&  (1 - 0.01363225753469656*i + 0.01018313213435165*k + 0.00624127453395746*n >= 0)  &&  (1 + 0.02077652252954162*i + 0.006752369822101026*k - 0.006492663290481755*n >= 0)  &&  (1 - 0.01779095626389918*i - 0.01556708673091179*k - 0.03039288361749444*n >= 0)  &&  (1 - 0.03127932436659368*i + 0.01501407569596497*k + 0.00688145136065061*n >= 0)  &&  (1 - 0.005969211435752434*i + 0.007225887527489789*k - 0.02324850769714106*n >= 0)  &&  (1 - 0.009021199819576003*i + 0.04149751917004962*k - 0.0009021199819576004*n >= 0)  &&  (1 + 0.01002479249757465*i + 0.001293521612590277*k + 0.002371456289748841*n >= 0)  &&  (1 + 0.01120971508640822*i - 0.02101821578701541*k - 0.01914992993928071*n >= 0) 
+[0m[31m[6][0m[#r36,#s144] -->   [1+:9242-]|-->> [33m(1 + 0.003663259254090639*i + 0.006628754840735444*k + 0.003523706520601472*n >= 0)  &&  (1 - 0.01363225753469656*i + 0.01018313213435165*k + 0.00624127453395746*n >= 0)  &&  (1 + 0.02077652252954162*i + 0.006752369822101026*k - 0.006492663290481755*n >= 0)  &&  (1 - 0.01779095626389918*i - 0.01556708673091179*k - 0.03039288361749444*n >= 0)  &&  (1 - 0.03127932436659368*i + 0.01501407569596497*k + 0.00688145136065061*n >= 0)  &&  (1 - 0.005969211435752434*i + 0.007225887527489789*k - 0.02324850769714106*n >= 0)  &&  (1 - 0.009021199819576003*i + 0.04149751917004962*k - 0.0009021199819576004*n >= 0)  &&  (1 + 0.01002479249757465*i + 0.001293521612590277*k + 0.002371456289748841*n >= 0)  &&  (1 + 0.01120971508640822*i - 0.02101821578701541*k - 0.01914992993928071*n >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 6 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(24 + k >= 0)  &&  (666 - 21*i + 10*k >= 0)  &&  (48 + i >= 0)  &&  (964 - 17*i - 15*k - 29*n >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/half.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/half.inv >>> [0m(24 + k >= 0)  &&  (666 - 21*i + 10*k >= 0)  &&  (48 + i >= 0)  &&  (964 - 17*i - 15*k - 29*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00003.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00004.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[34m[1mTest Counter Example: (0,22,22) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,23,23) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,24,24) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,25,25) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,26,26) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,27,27) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,28,28) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,29,29) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r6,#s24] -->   [113+:10649-]|-->> [33m(1 + 0.01626016260162601*i + 0.0234337637494022*k - 0.01195600191296031*n >= 0)  &&  (6.622285576951899 - 0.02040548494771932*i - 0.04081592225625952*k - 0.1530559941903575*n >= 0)  &&  (5.264705882352944 + 0.05882352941176473*i - 0.05882352941176475*k - 0.08823529411764711*n >= 0)  &&  (2.09215111809475 - 0.006921425934635725*i - 0.01387465118018709*k - 0.02378573220239051*n >= 0)  &&  (1 - 0.02600039443506129*i + 0.02139567739490357*k + 0.01691591281961122*n >= 0)  &&  (2.663934426229508 + 0.04918032786885246*i - 0.03278688524590164*k - 0.02459016393442624*n >= 0)  &&  (1 + 0.01215746815901197*i + 0.005210343496719414*k + 0.004245465071401004*n >= 0)  &&  (1.771697195427233 + 0.006082951684251567*i + 0.01210987776390936*k - 0.03872012588208981*n >= 0) 
+[0m[31m[2][0m[#r12,#s48] -->   [113+:11889-]|-->> [33m(1 + 0.01626016260162601*i + 0.0234337637494022*k - 0.01195600191296031*n >= 0)  &&  (6.622285576951899 - 0.02040548494771932*i - 0.04081592225625952*k - 0.1530559941903575*n >= 0)  &&  (5.264705882352944 + 0.05882352941176473*i - 0.05882352941176475*k - 0.08823529411764711*n >= 0)  &&  (2.09215111809475 - 0.006921425934635725*i - 0.01387465118018709*k - 0.02378573220239051*n >= 0)  &&  (1 - 0.02600039443506129*i + 0.02139567739490357*k + 0.01691591281961122*n >= 0)  &&  (2.663934426229508 + 0.04918032786885246*i - 0.03278688524590164*k - 0.02459016393442624*n >= 0)  &&  (1 + 0.01215746815901197*i + 0.005210343496719414*k + 0.004245465071401004*n >= 0)  &&  (1.771697195427233 + 0.006082951684251567*i + 0.01210987776390936*k - 0.03872012588208981*n >= 0) 
+[0m[31m[3][0m[#r18,#s72] -->   [113+:13190-]|-->> [33m(1 + 0.03570626044857034*i + 0.07142773232040434*k - 0.07142773232040434*n >= 0)  &&  (1 + 0.07134556394367887*i + 0.03765460319249718*k - 0.03765460319249719*n >= 0)  &&  (1 - 0.0004095206136915872*i + 0.04248286104259127*k - 0.01987149822790983*n >= 0)  &&  (2.09215111809475 - 0.006921425934635725*i - 0.01387465118018709*k - 0.02378573220239051*n >= 0)  &&  (1 - 0.02600039443506129*i + 0.02139567739490357*k + 0.01691591281961122*n >= 0)  &&  (6.622285576951899 - 0.02040548494771932*i - 0.04081592225625952*k - 0.1530559941903575*n >= 0)  &&  (5.264705882352944 + 0.05882352941176473*i - 0.05882352941176475*k - 0.08823529411764711*n >= 0)  &&  (2.663934426229508 + 0.04918032786885246*i - 0.03278688524590164*k - 0.02459016393442624*n >= 0)  &&  (1 + 0.01215746815901197*i + 0.005210343496719414*k + 0.004245465071401004*n >= 0) 
+[0m[31m[4][0m[#r24,#s96] -->   [113+:14221-]|-->> [33m(1 + 0.03570626044857034*i + 0.07142773232040434*k - 0.07142773232040434*n >= 0)  &&  (1 + 0.07134556394367887*i + 0.03765460319249718*k - 0.03765460319249719*n >= 0)  &&  (1 - 0.0004095206136915872*i + 0.04248286104259127*k - 0.01987149822790983*n >= 0)  &&  (2.09215111809475 - 0.006921425934635725*i - 0.01387465118018709*k - 0.02378573220239051*n >= 0)  &&  (1 - 0.02600039443506129*i + 0.02139567739490357*k + 0.01691591281961122*n >= 0)  &&  (6.622285576951899 - 0.02040548494771932*i - 0.04081592225625952*k - 0.1530559941903575*n >= 0)  &&  (5.264705882352944 + 0.05882352941176473*i - 0.05882352941176475*k - 0.08823529411764711*n >= 0)  &&  (2.663934426229508 + 0.04918032786885246*i - 0.03278688524590164*k - 0.02459016393442624*n >= 0)  &&  (1 + 0.01215746815901197*i + 0.005210343496719414*k + 0.004245465071401004*n >= 0) 
+[0m[31m[5][0m[#r30,#s120] -->   [113+:15250-]|-->> [33m(1 + 0.07406612369858731*i + 0.1481322473971746*k - 0.1481497534909998*n >= 0)  &&  (1 + 0.07134556394367887*i + 0.03765460319249718*k - 0.03765460319249719*n >= 0)  &&  (6.622285576951899 - 0.02040548494771932*i - 0.04081592225625952*k - 0.1530559941903575*n >= 0)  &&  (2.09215111809475 - 0.006921425934635725*i - 0.01387465118018709*k - 0.02378573220239051*n >= 0)  &&  (1 - 0.02600039443506129*i + 0.02139567739490357*k + 0.01691591281961122*n >= 0)  &&  (5.264705882352944 + 0.05882352941176473*i - 0.05882352941176475*k - 0.08823529411764711*n >= 0)  &&  (2.663934426229508 + 0.04918032786885246*i - 0.03278688524590164*k - 0.02459016393442624*n >= 0)  &&  (1 + 0.01215746815901197*i + 0.005210343496719414*k + 0.004245465071401004*n >= 0) 
+[0m[31m[6][0m[#r36,#s144] -->   [113+:16045-]|-->> [33m(1 + 0.07406612369858731*i + 0.1481322473971746*k - 0.1481497534909998*n >= 0)  &&  (1 + 0.07134556394367887*i + 0.03765460319249718*k - 0.03765460319249719*n >= 0)  &&  (6.622285576951899 - 0.02040548494771932*i - 0.04081592225625952*k - 0.1530559941903575*n >= 0)  &&  (2.09215111809475 - 0.006921425934635725*i - 0.01387465118018709*k - 0.02378573220239051*n >= 0)  &&  (1 - 0.02600039443506129*i + 0.02139567739490357*k + 0.01691591281961122*n >= 0)  &&  (5.264705882352944 + 0.05882352941176473*i - 0.05882352941176475*k - 0.08823529411764711*n >= 0)  &&  (2.663934426229508 + 0.04918032786885246*i - 0.03278688524590164*k - 0.02459016393442624*n >= 0)  &&  (1 + 0.01215746815901197*i + 0.005210343496719414*k + 0.004245465071401004*n >= 0) 
+[0m[31m[7][0m[#r42,#s168] -->   [113+:16976-]|-->> [33m(1 + 0.07406612369858731*i + 0.1481322473971746*k - 0.1481497534909998*n >= 0)  &&  (1 + 0.07134556394367887*i + 0.03765460319249718*k - 0.03765460319249719*n >= 0)  &&  (6.622285576951899 - 0.02040548494771932*i - 0.04081592225625952*k - 0.1530559941903575*n >= 0)  &&  (2.09215111809475 - 0.006921425934635725*i - 0.01387465118018709*k - 0.02378573220239051*n >= 0)  &&  (1 - 0.02600039443506129*i + 0.02139567739490357*k + 0.01691591281961122*n >= 0)  &&  (5.264705882352944 + 0.05882352941176473*i - 0.05882352941176475*k - 0.08823529411764711*n >= 0)  &&  (2.663934426229508 + 0.04918032786885246*i - 0.03278688524590164*k - 0.02459016393442624*n >= 0)  &&  (1 + 0.01215746815901197*i + 0.005210343496719414*k + 0.004245465071401004*n >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 7 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(27 + 2*i + 4*k - 4*n >= 0)  &&  (82 + i >= 0)  &&  (650 - 17*i + 14*k + 11*n >= 0)  &&  (88 - n >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/half.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/half.inv >>> [0m(27 + 2*i + 4*k - 4*n >= 0)  &&  (82 + i >= 0)  &&  (650 - 17*i + 14*k + 11*n >= 0)  &&  (88 - n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty II (invariant && loopcondition =S=> invariant) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 3 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[34m[1mTest Counter Example: (0,89,89) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,90,90) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,91,91) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,92,92) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,93,93) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,94,94) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,95,95) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,96,96) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r6,#s24] -->   [493+:17699-]|-->> [33m(1 + 0.4998299868431159*i + 0.9996566463649401*k - 0.9996670510205519*n >= 0)  &&  (1 + 0.4998290943312069*i - 5.17895965934656e-06*k - 5.17895965934656e-06*n >= 0)  &&  (1 - 0.02600452526895851*i + 0.02139498698668689*k + 0.01691346466097171*n >= 0)  &&  (1 + 0.06248700806843488*i + 0.124953515225811*k - 0.1249604876188446*n >= 0) 
+[0m[31m[2][0m[#r12,#s48] -->   [493+:18610-]|-->> [33m(1 + 1.999393850824127*i + 3.998766897131418*k - 3.998774330393871*n >= 0)  &&  (1 + 1.999479592070413*i + 5.20407930082456e-06*k + 5.20407930082456e-06*n >= 0)  &&  (1 + 0.4998299868431159*i + 0.9996566463649401*k - 0.9996670510205519*n >= 0)  &&  (1 + 0.06248700806843488*i + 0.124953515225811*k - 0.1249604876188446*n >= 0)  &&  (1 - 0.02600452526895851*i + 0.02139498698668689*k + 0.01691346466097171*n >= 0)  &&  (1 + 0.4998290943312069*i - 5.17895965934656e-06*k - 5.17895965934656e-06*n >= 0) 
+[0m[31m[3][0m[#r18,#s72] -->   [493+:18868-]|-->> [33m(1 + 1.999393850824127*i + 3.998766897131418*k - 3.998774330393871*n >= 0)  &&  (1 + 1.999479592070413*i + 5.20407930082456e-06*k + 5.20407930082456e-06*n >= 0)  &&  (1 + 0.4998299868431159*i + 0.9996566463649401*k - 0.9996670510205519*n >= 0)  &&  (1 + 0.06248700806843488*i + 0.124953515225811*k - 0.1249604876188446*n >= 0)  &&  (1 - 0.02600452526895851*i + 0.02139498698668689*k + 0.01691346466097171*n >= 0)  &&  (1 + 0.4998290943312069*i - 5.17895965934656e-06*k - 5.17895965934656e-06*n >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 3 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(1 + 2*i + 4*k - 4*n >= 0)  &&  (650 - 17*i + 14*k + 11*n >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/half.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/half.inv >>> [0m(1 + 2*i + 4*k - 4*n >= 0)  &&  (650 - 17*i + 14*k + 11*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 4 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[34m[1mTest Counter Example: (-628,-313,-627) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-634,-316,-633) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-636,-317,-635) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-639,-318,-638) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-640,-319,-639) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-630,-314,-629) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-632,-315,-631) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-635,-316,-634) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r6,#s24] -->   [493+:23699-]|-->> [33m(1 + 1.999393850824127*i + 3.998766897131418*k - 3.998774330393871*n >= 0)  &&  (1 + 1.999479592070413*i + 5.20407930082456e-06*k + 5.20407930082456e-06*n >= 0)  &&  (1 + 0.4998299868431159*i + 0.9996566463649401*k - 0.9996670510205519*n >= 0)  &&  (1 + 0.06248700806843488*i + 0.124953515225811*k - 0.1249604876188446*n >= 0)  &&  (1 - 0.02600452526895851*i + 0.02139498698668689*k + 0.01691346466097171*n >= 0)  &&  (1 + 0.4998290943312069*i - 5.17895965934656e-06*k - 5.17895965934656e-06*n >= 0) 
+[0m[31m[2][0m[#r12,#s48] -->   [493+:26455-]|-->> [33m(1.284448481692407 - 0.001397810097513895*i - 0.0005892728842460537*k - 0.001270558477992322*n >= 0)  &&  (1 + 1.999393850824127*i + 3.998766897131418*k - 3.998774330393871*n >= 0)  &&  (1 + 1.999479592070413*i + 5.20407930082456e-06*k + 5.20407930082456e-06*n >= 0)  &&  (1 + 0.4998290943312069*i - 5.17895965934656e-06*k - 5.17895965934656e-06*n >= 0)  &&  (1 - 0.02600452526895851*i + 0.02139498698668689*k + 0.01691346466097171*n >= 0) 
+[0m[31m[3][0m[#r18,#s72] -->   [493+:30936-]|-->> [33m(1.284448481692407 - 0.001397810097513895*i - 0.0005892728842460537*k - 0.001270558477992322*n >= 0)  &&  (1 + 1.999393850824127*i + 3.998766897131418*k - 3.998774330393871*n >= 0)  &&  (1 + 1.999479592070413*i + 5.20407930082456e-06*k + 5.20407930082456e-06*n >= 0)  &&  (1 + 0.4998290943312069*i - 5.17895965934656e-06*k - 5.17895965934656e-06*n >= 0)  &&  (1 - 0.02600452526895851*i + 0.02139498698668689*k + 0.01691346466097171*n >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 3 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(650 - 17*i + 14*k + 11*n >= 0)  &&  (1 + 2*i + 4*k - 4*n >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/half.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/half.inv >>> [0m(650 - 17*i + 14*k + 11*n >= 0)  &&  (1 + 2*i + 4*k - 4*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 5 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[34m[1mTest Counter Example: (-628,-313,-627) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-630,-314,-629) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-632,-315,-631) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-634,-316,-633) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-636,-317,-635) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-635,-316,-634) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-638,-318,-637) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-640,-319,-639) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r6,#s24] -->   [493+:35400-]|-->> [33m(1.284448481692407 - 0.001397810097513895*i - 0.0005892728842460537*k - 0.001270558477992322*n >= 0)  &&  (1 + 1.999393850824127*i + 3.998766897131418*k - 3.998774330393871*n >= 0)  &&  (1 + 1.999479592070413*i + 5.20407930082456e-06*k + 5.20407930082456e-06*n >= 0)  &&  (1 + 0.4998290943312069*i - 5.17895965934656e-06*k - 5.17895965934656e-06*n >= 0)  &&  (1 - 0.02600452526895851*i + 0.02139498698668689*k + 0.01691346466097171*n >= 0) 
+[0m[31m[2][0m[#r12,#s48] -->   [493+:37463-]|-->> [33m(1.284448481692407 - 0.001397810097513895*i - 0.0005892728842460537*k - 0.001270558477992322*n >= 0)  &&  (1 + 1.999393850824127*i + 3.998766897131418*k - 3.998774330393871*n >= 0)  &&  (1 + 1.999479592070413*i + 5.20407930082456e-06*k + 5.20407930082456e-06*n >= 0)  &&  (1 + 0.4998290943312069*i - 5.17895965934656e-06*k - 5.17895965934656e-06*n >= 0)  &&  (1 - 0.02600452526895851*i + 0.02139498698668689*k + 0.01691346466097171*n >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(650 - 17*i + 14*k + 11*n >= 0)  &&  (1 + 2*i + 4*k - 4*n >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/half.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/half.inv >>> [0m(650 - 17*i + 14*k + 11*n >= 0)  &&  (1 + 2*i + 4*k - 4*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 6 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt[0m
+[34m[1mTest Counter Example: (-628,-313,-627) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-630,-314,-629) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-632,-315,-631) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-634,-316,-633) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-636,-317,-635) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-635,-316,-634) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-638,-318,-637) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-640,-319,-639) @/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt --> [0m?

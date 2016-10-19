@@ -1,0 +1,79 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> linear]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target simple_if
+[  8%] Building CXX object CMakeFiles/simple_if.dir/test/simple_if.cpp.o
+[ 16%] Building CXX object CMakeFiles/simple_if.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/simple_if.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/simple_if.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/simple_if.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/simple_if.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/simple_if.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/simple_if.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/simple_if.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/simple_if.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/simple_if.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/simple_if.dir/src/instrumentation.cpp.o
+Linking CXX executable simple_if
+[100%] Built target simple_if
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[1] :::::: 1	0	0	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt[0m
+[34m[1mTest Counter Example: (1,0,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt --> [0m+
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r30,#s0] -->  [1+:2-]|-->> [33m(0.9955295774377489 + 0.004470422562251006*i + 0.0005030570941927772*m + 0.008552162890081233*n >= 0) [0m
+[31m[2Pure Random][0m[#r60,#s0] -->  [1+:9-]|-->> [33m(0.9493914682385701 + 0.05060853176142982*i - 0.05858676819164817*m + 0.07700584043136119*n >= 0) [0m
+[31m[3Pure Random][0m[#r90,#s0] -->  [1+:13-]|-->> [33m(0.9493914682385701 + 0.05060853176142982*i - 0.05858676819164817*m + 0.07700584043136119*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(356 + 19*i - 22*m + 29*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.inv >>> [0m(356 + 19*i - 22*m + 29*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt[0m
+[34m[1mTest Counter Example: (1,0,-13) @/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (1,-1,-22) @/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (1,-2,-44) @/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (1,-3,-66) @/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (1,-4,-88) @/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (1,-5,-110) @/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (1,-6,-132) @/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (1,-7,-154) @/home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.cnt --> [0m+
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r30,#s0] -->  [17+:15-]|-->> [33m( -0.9991813677330329 + 1.999181367733033*i + 6.245699857743148e-06*m - 1.124801200624859e-06*n >= 0) [0m
+[31m[2Pure Random][0m[#r60,#s0] -->  [17+:19-]|-->> [33m( -0.9991813677330329 + 1.999181367733033*i + 6.245699857743148e-06*m - 1.124801200624859e-06*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m( -1 + 2*i >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/simple_if.inv >>> [0m( -1 + 2*i >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[1m[32m-----------------------------------------------------------finish proving---------------------------------------------------------------[0m
+[32mThe invariant can be [33m( -1 + 2*i >= 0) [0m
+
+=====================time=========================

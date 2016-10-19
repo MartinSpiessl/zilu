@@ -1,0 +1,357 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target css2003_true
+[  8%] Building CXX object CMakeFiles/css2003_true.dir/test/css2003_true.cpp.o
+[ 16%] Building CXX object CMakeFiles/css2003_true.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/css2003_true.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/css2003_true.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/css2003_true.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/css2003_true.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/css2003_true.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/css2003_true.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/css2003_true.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/css2003_true.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/css2003_true.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/css2003_true.dir/src/instrumentation.cpp.o
+Linking CXX executable css2003_true
+[100%] Built target css2003_true
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 1	0	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (1,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:150-]|-->> [33m(0.9997165934533088 + 0.0002834065466912286*i - 0.0238061499220632*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0)  &&  (1.001695416461311 + 0.005638245441103992*i + 0.006860522424839822*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:302-]|-->> [33m(0.9997165934533088 + 0.0002834065466912286*i - 0.0238061499220632*k >= 0)  &&  (0.9836002758832094 + 0.01639972411679056*i - 0.006130737987585256*k >= 0)  &&  (1.295580110497238 + 0.002762430939226519*i + 0.05248618784530387*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0)  &&  (1.082913599380085 - 0.03177063153816351*i - 0.02324680356450988*k >= 0) 
+[0m[31m[3Pure Random][0m[#r60,#s0] -->   [7+:447-]|-->> [33m(0.9997165934533088 + 0.0002834065466912286*i - 0.0238061499220632*k >= 0)  &&  (0.9836002758832094 + 0.01639972411679056*i - 0.006130737987585256*k >= 0)  &&  (1.295580110497238 + 0.002762430939226519*i + 0.05248618784530387*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0)  &&  (1.082913599380085 - 0.03177063153816351*i - 0.02324680356450988*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 3 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(42 - k >= 0)  &&  (60 + i >= 0)  &&  (49 + 2*k >= 0)  &&  (373 - 11*i - 8*k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m(42 - k >= 0)  &&  (60 + i >= 0)  &&  (49 + 2*k >= 0)  &&  (373 - 11*i - 8*k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00003.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty III (invariant && ~loopcondition ==> postcondition) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (0,-24) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (1,-24) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-1,-24) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-2,-24) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-3,-24) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-4,-24) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-5,-24) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-6,-24) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:607-]|-->> [33m(0.9997165934533088 + 0.0002834065466912286*i - 0.0238061499220632*k >= 0)  &&  (1.316353887399464 + 0.03753351206434316*i + 0.096514745308311*k >= 0)  &&  (0.9836002758832094 + 0.01639972411679056*i - 0.006130737987585256*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0)  &&  (1.082913599380085 - 0.03177063153816351*i - 0.02324680356450988*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:794-]|-->> [33m(0.9644699140401146 + 0.03553008595988539*i - 0.0320916905444126*k >= 0)  &&  (1.316353887399464 + 0.03753351206434316*i + 0.096514745308311*k >= 0)  &&  (1.082913599380085 - 0.03177063153816351*i - 0.02324680356450988*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0) 
+[0m[31m[3Pure Random][0m[#r60,#s0] -->   [7+:967-]|-->> [33m(0.9644699140401146 + 0.03553008595988539*i - 0.0320916905444126*k >= 0)  &&  (1.316353887399464 + 0.03753351206434316*i + 0.096514745308311*k >= 0)  &&  (1.082913599380085 - 0.03177063153816351*i - 0.02324680356450988*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 3 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(270 + 10*i - 9*k >= 0)  &&  (246 + 7*i + 18*k >= 0)  &&  (373 - 11*i - 8*k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m(270 + 10*i - 9*k >= 0)  &&  (246 + 7*i + 18*k >= 0)  &&  (373 - 11*i - 8*k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty II (invariant && loopcondition =S=> invariant) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 3 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (1,-14) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (55,-35) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (58,-36) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (4,-15) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (2,-14) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-17,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-14,-8) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-12,-9) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:1145-]|-->> [33m(1.12 + 0.12*i + 0.16*k >= 0)  &&  (0.9644699140401146 + 0.03553008595988539*i - 0.0320916905444126*k >= 0)  &&  (1.316353887399464 + 0.03753351206434316*i + 0.096514745308311*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0)  &&  (1.082913599380085 - 0.03177063153816351*i - 0.02324680356450988*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:1260-]|-->> [33m(0.76 + 0.24*i - 0.32*k >= 0)  &&  (1.12 + 0.12*i + 0.16*k >= 0)  &&  (1.316353887399464 + 0.03753351206434316*i + 0.096514745308311*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0)  &&  (1.082913599380085 - 0.03177063153816351*i - 0.02324680356450988*k >= 0) 
+[0m[31m[3Pure Random][0m[#r60,#s0] -->   [7+:1466-]|-->> [33m(1.054005893148551 - 0.05400589314855059*i - 0.05408336938783877*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0)  &&  (1.12 + 0.12*i + 0.16*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0)  &&  (1.316353887399464 + 0.03753351206434316*i + 0.096514745308311*k >= 0) 
+[0m[31m[4Pure Random][0m[#r80,#s0] -->   [7+:1618-]|-->> [33m(1.054005893148551 - 0.05400589314855059*i - 0.05408336938783877*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0)  &&  (1.12 + 0.12*i + 0.16*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0)  &&  (1.316353887399464 + 0.03753351206434316*i + 0.096514745308311*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 4 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(39 - 2*i - 2*k >= 0)  &&  (19 + 6*i - 8*k >= 0)  &&  (28 + 3*i + 4*k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m(39 - 2*i - 2*k >= 0)  &&  (19 + 6*i - 8*k >= 0)  &&  (28 + 3*i + 4*k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00003.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty III (invariant && ~loopcondition ==> postcondition) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 4 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (0,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (4,-10) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-13) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-4,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (12,-16) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (16,-19) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (20,-22) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (24,-25) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:1839-]|-->> [33m(0.74986988961792 + 0.25013011038208*i + 0.2499814128025599*k >= 0)  &&  (1.054005893148551 - 0.05400589314855059*i - 0.05408336938783877*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0)  &&  (1.12 + 0.12*i + 0.16*k >= 0)  &&  (1.316353887399464 + 0.03753351206434316*i + 0.096514745308311*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:1963-]|-->> [33m(0.74986988961792 + 0.25013011038208*i + 0.2499814128025599*k >= 0)  &&  (1.054005893148551 - 0.05400589314855059*i - 0.05408336938783877*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0)  &&  (1.297703879651623 - 0.02216943784639747*i + 0.02375296912114015*k >= 0)  &&  (1.12 + 0.12*i + 0.16*k >= 0)  &&  (1.316353887399464 + 0.03753351206434316*i + 0.096514745308311*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(3 + i + k >= 0)  &&  (39 - 2*i - 2*k >= 0)  &&  (19 + 6*i - 8*k >= 0)  &&  (246 + 7*i + 18*k >= 0)  &&  (28 + 3*i + 4*k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m(3 + i + k >= 0)  &&  (39 - 2*i - 2*k >= 0)  &&  (19 + 6*i - 8*k >= 0)  &&  (246 + 7*i + 18*k >= 0)  &&  (28 + 3*i + 4*k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty II (invariant && loopcondition =S=> invariant) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 5 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (19,-21) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (37,-28) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (40,-29) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (42,-30) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (45,-31) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (48,-32) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (50,-33) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (53,-34) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:2137-]|-->> [33m(1.133302564102564 - 0.1333025641025641*i - 0.1333538461538462*k >= 0)  &&  (1.943089430894309 - 0.06504065040650407*i + 0.08130081300813008*k >= 0)  &&  (0.74986988961792 + 0.25013011038208*i + 0.2499814128025599*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:2305-]|-->> [33m(1.133302564102564 - 0.1333025641025641*i - 0.1333538461538462*k >= 0)  &&  (1.943089430894309 - 0.06504065040650407*i + 0.08130081300813008*k >= 0)  &&  (0.74986988961792 + 0.25013011038208*i + 0.2499814128025599*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(17 - 2*i - 2*k >= 0)  &&  (119 - 4*i + 5*k >= 0)  &&  (3 + i + k >= 0)  &&  (19 + 6*i - 8*k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m(17 - 2*i - 2*k >= 0)  &&  (119 - 4*i + 5*k >= 0)  &&  (3 + i + k >= 0)  &&  (19 + 6*i - 8*k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 6 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (13,-13) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (11,-14) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (12,-14) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (12,-13) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (14,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (13,-12) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (15,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (14,-12) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:2608-]|-->> [33m(2.976470588235294 - 0.1411764705882353*i + 0.1647058823529412*k >= 0)  &&  (1.133302564102564 - 0.1333025641025641*i - 0.1333538461538462*k >= 0)  &&  (0.74986988961792 + 0.25013011038208*i + 0.2499814128025599*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:2782-]|-->> [33m(2.976470588235294 - 0.1411764705882353*i + 0.1647058823529412*k >= 0)  &&  (1.133302564102564 - 0.1333025641025641*i - 0.1333538461538462*k >= 0)  &&  (0.74986988961792 + 0.25013011038208*i + 0.2499814128025599*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(126 - 6*i + 7*k >= 0)  &&  (17 - 2*i - 2*k >= 0)  &&  (3 + i + k >= 0)  &&  (19 + 6*i - 8*k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m(126 - 6*i + 7*k >= 0)  &&  (17 - 2*i - 2*k >= 0)  &&  (3 + i + k >= 0)  &&  (19 + 6*i - 8*k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 7 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (9,-9) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-11) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-10) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (9,-10) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (10,-8) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (11,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (11,-8) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (12,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:2977-]|-->> [33m(5.923076923076922 - 0.3076923076923075*i + 0.4615384615384615*k >= 0)  &&  (1.133302564102564 - 0.1333025641025641*i - 0.1333538461538462*k >= 0)  &&  (0.74986988961792 + 0.25013011038208*i + 0.2499814128025599*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:3155-]|-->> [33m(5.923076923076922 - 0.3076923076923075*i + 0.4615384615384615*k >= 0)  &&  (1.133302564102564 - 0.1333025641025641*i - 0.1333538461538462*k >= 0)  &&  (0.74986988961792 + 0.25013011038208*i + 0.2499814128025599*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(77 - 4*i + 6*k >= 0)  &&  (17 - 2*i - 2*k >= 0)  &&  (3 + i + k >= 0)  &&  (19 + 6*i - 8*k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m(77 - 4*i + 6*k >= 0)  &&  (17 - 2*i - 2*k >= 0)  &&  (3 + i + k >= 0)  &&  (19 + 6*i - 8*k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 8 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (5,-8) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (7,-8) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (6,-8) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (8,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (7,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (11,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (9,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:3339-]|-->> [33m(8 - i >= 0)  &&  (2.600000000000001 - 0.4*i - 0.2000000000000001*k >= 0)  &&  (13 + 2*k >= 0)  &&  (0.5 + 0.5*i + 0.5*k >= 0)  &&  (1.133302564102564 - 0.1333025641025641*i - 0.1333538461538462*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:3478-]|-->> [33m(8 - i >= 0)  &&  (2.600000000000001 - 0.4*i - 0.2000000000000001*k >= 0)  &&  (13 + 2*k >= 0)  &&  (0.5 + 0.5*i + 0.5*k >= 0)  &&  (1.133302564102564 - 0.1333025641025641*i - 0.1333538461538462*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(8 - i >= 0)  &&  (19 + 6*i - 8*k >= 0)  &&  (13 + 2*k >= 0)  &&  (1 + i + k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m(8 - i >= 0)  &&  (19 + 6*i - 8*k >= 0)  &&  (13 + 2*k >= 0)  &&  (1 + i + k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 9 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (8,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-5) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:3668-]|-->> [33m(1.499928656361474 - 0.4999286563614744*i - 0.499833531510107*k >= 0)  &&  (8 - i >= 0)  &&  (13 + 2*k >= 0)  &&  (0.5 + 0.5*i + 0.5*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:3813-]|-->> [33m(1.499928656361474 - 0.4999286563614744*i - 0.499833531510107*k >= 0)  &&  (8 - i >= 0)  &&  (13 + 2*k >= 0)  &&  (0.5 + 0.5*i + 0.5*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(3 - i - k >= 0)  &&  (19 + 6*i - 8*k >= 0)  &&  (13 + 2*k >= 0)  &&  (1 + i + k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m(3 - i - k >= 0)  &&  (19 + 6*i - 8*k >= 0)  &&  (13 + 2*k >= 0)  &&  (1 + i + k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty II (invariant && loopcondition =S=> invariant) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 10 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (5,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (6,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (7,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (8,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (9,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:4014-]|-->> [33m(0.0003916586586418802 + 0.9996083413413581*i + 0.9997388942275718*k >= 0)  &&  (1.499928656361474 - 0.4999286563614744*i - 0.499833531510107*k >= 0)  &&  (8 - i >= 0)  &&  (13 + 2*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:4224-]|-->> [33m(0.0003916586586418802 + 0.9996083413413581*i + 0.9997388942275718*k >= 0)  &&  (1.499928656361474 - 0.4999286563614744*i - 0.499833531510107*k >= 0)  &&  (8 - i >= 0)  &&  (13 + 2*k >= 0)  &&  (0.76 + 0.24*i - 0.32*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(i + k >= 0)  &&  (3 - i - k >= 0)  &&  (19 + 6*i - 8*k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m(i + k >= 0)  &&  (3 - i - k >= 0)  &&  (19 + 6*i - 8*k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 11 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (0,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-1,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (1,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (2,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (3,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (4,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (5,-5) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (6,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:4422-]|-->> [33m( -0.9994117601894423 + 1.999411760189442*i + 1.999294112227332*k >= 0)  &&  ( -1 + 2*i >= 0)  &&  (1.499928656361474 - 0.4999286563614744*i - 0.499833531510107*k >= 0)  &&  (8 - i >= 0)  &&  (13 + 2*k >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:4509-]|-->> [33m( -0.9994117601894423 + 1.999411760189442*i + 1.999294112227332*k >= 0)  &&  ( -1 + 2*i >= 0)  &&  (1.499928656361474 - 0.4999286563614744*i - 0.499833531510107*k >= 0)  &&  (8 - i >= 0)  &&  (13 + 2*k >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m( -1 + 2*i + 2*k >= 0)  &&  ( -1 + 2*i >= 0)  &&  (3 - i - k >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.inv >>> [0m( -1 + 2*i + 2*k >= 0)  &&  ( -1 + 2*i >= 0)  &&  (3 - i - k >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty II (invariant && loopcondition =S=> invariant) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 12 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt[0m
+[34m[1mTest Counter Example: (1,2) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (2,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (3,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (4,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (5,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (6,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (7,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (8,-5) @/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt --> [0m-

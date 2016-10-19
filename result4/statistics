@@ -1,0 +1,1831 @@
+2016年 10月 20日 星期四 01:25:54 CST
+1--zilu_linear2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+real 39.52
+user 7.44
+sys 0.66
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 34.56
+user 6.60
+sys 0.60
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:27:08 CST
+2--dillig_20------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+		#r_samples=24		#s_samples=96
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+real 120.02
+user 7.90
+sys 0.53
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 58.86
+user 12.69
+sys 0.68
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:30:07 CST
+3--dillig_19------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=30		#s_samples=120
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.03
+user 27.31
+sys 0.87
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 66.29
+user 16.02
+sys 0.70
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:33:14 CST
+4--pldi08_fig7------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=12		#s_samples=48
+real 25.74
+user 5.93
+sys 0.50
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=20		#s_samples=0
+		#r_samples=20		#s_samples=0
+real 33.57
+user 6.21
+sys 0.54
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:34:13 CST
+5--down_true_1------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=36		#s_samples=144
+		#r_samples=12		#s_samples=48
+		#r_samples=30		#s_samples=120
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.01
+user 32.88
+sys 0.76
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=150		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.02
+user 28.20
+sys 1.05
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:38:13 CST
+6--dillig_03------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=16		#s_samples=64
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+real 120.02
+user 20.01
+sys 1.20
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=80		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 120.02
+user 20.04
+sys 1.13
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:42:13 CST
+7--zilu_poly5------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+real 89.23
+user 33.57
+sys 0.43
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=100		#s_samples=0
+		#r_samples=60		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=40		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=40		#s_samples=0
+real 120.01
+user 37.66
+sys 0.74
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:45:43 CST
+8--43------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=30		#s_samples=120
+		#r_samples=60		#s_samples=240
+real 38.73
+user 9.60
+sys 0.62
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=90		#s_samples=0
+real 42.95
+user 6.71
+sys 0.70
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:47:04 CST
+9--20------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+/home/lijiaying/Research/GitHub/ZILU/test/20.cpp:16:7: warning: variable 'i' is uninitialized when used here [-Wuninitialized]
+if(j==i) {x++;y--;} else {y++;x--;} j++; 
+      ^
+/home/lijiaying/Research/GitHub/ZILU/test/20.cpp:10:13: note: initialize the variable 'i' to silence this warning
+int j; int i;
+            ^
+             = 0
+1 warning generated.
+		#r_samples=36		#s_samples=144
+		#r_samples=36		#s_samples=144
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=36		#s_samples=144
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.03
+user 32.15
+sys 0.88
+   ||----unSELECTIVE-------------------------------------------------
+/home/lijiaying/Research/GitHub/ZILU/test/20.cpp:16:7: warning: variable 'i' is uninitialized when used here [-Wuninitialized]
+if(j==i) {x++;y--;} else {y++;x--;} j++; 
+      ^
+/home/lijiaying/Research/GitHub/ZILU/test/20.cpp:10:13: note: initialize the variable 'i' to silence this warning
+int j; int i;
+            ^
+             = 0
+1 warning generated.
+		#r_samples=120		#s_samples=0
+		#r_samples=150		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.01
+user 31.94
+sys 0.87
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:51:04 CST
+10--f2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=20		#s_samples=80
+real 25.40
+user 6.40
+sys 0.46
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 40.98
+user 9.04
+sys 0.66
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:52:11 CST
+11--large_const------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=24		#s_samples=96
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.01
+user 14.16
+sys 1.29
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.03
+user 13.87
+sys 1.40
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 01:56:11 CST
+12--03------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+/home/lijiaying/Research/GitHub/ZILU/test/03.cpp:11:12: warning: variable 'n' is uninitialized when used here [-Wuninitialized]
+while( i < n)
+           ^
+/home/lijiaying/Research/GitHub/ZILU/test/03.cpp:8:7: note: initialize the variable 'n' to silence this warning
+ int n; int i;
+      ^
+       = 0
+1 warning generated.
+real 120.03
+user 5.77
+sys 0.51
+   ||----unSELECTIVE-------------------------------------------------
+/home/lijiaying/Research/GitHub/ZILU/test/03.cpp:11:12: warning: variable 'n' is uninitialized when used here [-Wuninitialized]
+while( i < n)
+           ^
+/home/lijiaying/Research/GitHub/ZILU/test/03.cpp:8:7: note: initialize the variable 'n' to silence this warning
+ int n; int i;
+      ^
+       = 0
+1 warning generated.
+real 120.02
+user 5.84
+sys 0.43
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:00:11 CST
+13--xy10------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+		#r_samples=18		#s_samples=72
+real 56.83
+user 13.02
+sys 0.62
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=120		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=60		#s_samples=0
+real 114.87
+user 33.61
+sys 0.77
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:03:03 CST
+14--zilu_conj2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=12		#s_samples=48
+		#r_samples=16		#s_samples=64
+real 120.02
+user 27.26
+sys 0.58
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 120.02
+user 33.62
+sys 0.68
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:07:03 CST
+15--xy0_1------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+real 97.62
+user 17.40
+sys 1.00
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=100		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 120.00
+user 22.19
+sys 1.10
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:10:41 CST
+16--cggmp2005_variant_true------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=18		#s_samples=72
+		#r_samples=36		#s_samples=144
+		#r_samples=30		#s_samples=120
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.02
+user 27.98
+sys 0.62
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=180		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.02
+user 8.67
+sys 0.49
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:14:41 CST
+17--41------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=30		#s_samples=120
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.03
+user 21.54
+sys 1.07
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=210		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.01
+user 21.55
+sys 1.06
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:18:41 CST
+18--fm11------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=32		#s_samples=128
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+real 120.02
+user 33.87
+sys 0.76
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=100		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 120.01
+user 27.28
+sys 0.87
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:22:41 CST
+19--28------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=16		#s_samples=64
+		#r_samples=20		#s_samples=80
+		#r_samples=8		#s_samples=32
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+real 66.96
+user 15.23
+sys 0.66
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 51.51
+user 10.02
+sys 0.65
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:24:40 CST
+20--35------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+real 26.85
+user 5.90
+sys 0.53
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=80		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 120.02
+user 11.33
+sys 1.42
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:27:07 CST
+21--dillig_15------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=30		#s_samples=120
+		#r_samples=48		#s_samples=192
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.03
+user 30.68
+sys 0.76
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=120		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.02
+user 25.07
+sys 1.04
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:31:07 CST
+22--zilu_linear1------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+real 29.37
+user 6.24
+sys 0.52
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=80		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 120.01
+user 36.63
+sys 0.66
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:33:37 CST
+23--zilu_linear3------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+real 120.03
+user 5.79
+sys 0.43
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 117.62
+user 38.58
+sys 0.62
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:37:34 CST
+24--zilu_poly3------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=4		#s_samples=16
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=4		#s_samples=16
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=4		#s_samples=16
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=4		#s_samples=16
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=4		#s_samples=16
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=4		#s_samples=16
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=4		#s_samples=16
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=4		#s_samples=16
+real 120.01
+user 28.32
+sys 1.02
+   ||----unSELECTIVE-------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=30		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=20		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=20		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=20		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=20		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=20		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=20		#s_samples=0
+real 120.00
+user 29.65
+sys 0.91
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:41:34 CST
+25--21------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=40		#s_samples=160
+real 30.73
+user 7.57
+sys 0.53
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 120.01
+user 8.73
+sys 1.31
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:44:05 CST
+26--23------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=42		#s_samples=168
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.01
+user 26.03
+sys 1.14
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.03
+user 22.06
+sys 1.06
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:48:05 CST
+27--11------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=30		#s_samples=120
+		#r_samples=30		#s_samples=120
+		#r_samples=18		#s_samples=72
+		#r_samples=18		#s_samples=72
+real 120.03
+user 36.54
+sys 0.64
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=150		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.02
+user 16.23
+sys 0.67
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:52:05 CST
+28--new_copy------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+[31m[FAIL] ..... Can not divided by Linear SVM.
+[0mreal 36.62
+user 11.60
+sys 0.50
+   ||----unSELECTIVE-------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+[31m[FAIL] ..... Can not divided by Linear SVM.
+[0mreal 31.99
+user 9.71
+sys 0.47
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:53:14 CST
+29--zilu_linear4------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=36		#s_samples=144
+real 26.33
+user 6.52
+sys 0.52
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 120.00
+user 6.30
+sys 0.57
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:55:41 CST
+30--zilu_conj1------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+		#r_samples=12		#s_samples=48
+		#r_samples=16		#s_samples=64
+real 120.03
+user 16.55
+sys 0.68
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=140		#s_samples=0
+real 120.01
+user 27.76
+sys 0.57
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 02:59:41 CST
+31--half------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=36		#s_samples=144
+		#r_samples=42		#s_samples=168
+		#r_samples=18		#s_samples=72
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+real 120.01
+user 33.83
+sys 0.74
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.02
+user 27.19
+sys 0.89
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:03:41 CST
+32--css2003_true------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+		#r_samples=8		#s_samples=32
+		#r_samples=20		#s_samples=80
+		#r_samples=8		#s_samples=32
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+real 114.82
+user 17.58
+sys 1.20
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=80		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 120.00
+user 22.04
+sys 1.19
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:07:36 CST
+33--xyle0------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=32		#s_samples=128
+real 120.02
+user 25.94
+sys 0.52
+   ||----unSELECTIVE-------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=80		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=100		#s_samples=0
+real 120.02
+user 34.54
+sys 0.52
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:11:36 CST
+34--afnp2014_true------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+real 111.66
+user 17.71
+sys 1.26
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.01
+user 16.41
+sys 1.22
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:15:28 CST
+35--xy4_2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=20		#s_samples=80
+		#r_samples=12		#s_samples=48
+		#r_samples=16		#s_samples=64
+		#r_samples=8		#s_samples=32
+		#r_samples=12		#s_samples=48
+real 60.41
+user 12.15
+sys 0.74
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 47.30
+user 8.04
+sys 0.75
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:17:16 CST
+36--dillig_01------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=16		#s_samples=64
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+[31m[FAIL] ..... Can not divided by SVM_I.
+[0mreal 67.18
+user 10.08
+sys 0.87
+   ||----unSELECTIVE-------------------------------------------------
+[31m[FAIL] ..... Can not divided by SVM_I.
+[0mreal 21.66
+user 6.04
+sys 0.42
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:18:44 CST
+37--zilu_poly4------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=20		#s_samples=80
+real 120.03
+user 33.82
+sys 0.47
+   ||----unSELECTIVE-------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+real 120.02
+user 5.73
+sys 0.46
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:22:45 CST
+38--dillig_28------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=36		#s_samples=144
+		#r_samples=18		#s_samples=72
+		#r_samples=18		#s_samples=72
+real 120.03
+user 14.77
+sys 0.58
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=210		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.04
+user 29.79
+sys 0.91
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:26:45 CST
+39--44------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=18		#s_samples=72
+		#r_samples=18		#s_samples=72
+		#r_samples=30		#s_samples=120
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.02
+user 31.15
+sys 0.78
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.02
+user 24.85
+sys 0.80
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:30:45 CST
+40--down_true_2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=30		#s_samples=120
+		#r_samples=24		#s_samples=96
+real 120.02
+user 9.00
+sys 0.57
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.01
+user 8.01
+sys 0.60
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:34:45 CST
+41--zilu_poly1------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=6		#s_samples=24
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=4		#s_samples=16
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=4		#s_samples=16
+real 70.40
+user 20.29
+sys 0.54
+   ||----unSELECTIVE-------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=40		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=30		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=20		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=20		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=20		#s_samples=0
+real 120.02
+user 41.60
+sys 0.62
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:37:56 CST
+42--xyz_2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.01
+user 34.54
+sys 0.85
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=120		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.02
+user 6.55
+sys 0.51
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:41:56 CST
+43--zilu_poly2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=8		#s_samples=32
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+real 76.14
+user 25.81
+sys 0.48
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=20		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+real 96.04
+user 33.23
+sys 0.64
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:44:48 CST
+44--interproc2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=20		#s_samples=80
+real 30.02
+user 7.37
+sys 0.56
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=40		#s_samples=0
+real 51.25
+user 15.74
+sys 0.46
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:46:09 CST
+45--30------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=16		#s_samples=64
+		#r_samples=16		#s_samples=64
+		#r_samples=8		#s_samples=32
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+real 120.02
+user 14.07
+sys 1.56
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 120.02
+user 14.13
+sys 1.53
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:50:09 CST
+46--substring1------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=18		#s_samples=72
+		#r_samples=30		#s_samples=120
+		#r_samples=24		#s_samples=96
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.01
+user 29.48
+sys 0.87
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.01
+user 23.69
+sys 1.05
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:54:10 CST
+47--f3------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+real 35.73
+user 9.87
+sys 0.60
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=120		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 47.07
+user 9.58
+sys 0.63
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:55:33 CST
+48--zilu_poly6------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=32		#s_samples=128
+real 120.02
+user 22.53
+sys 0.53
+   ||----unSELECTIVE-------------------------------------------------
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=60		#s_samples=0
+[31mWARNING: $$reaching max number of iterations[0m
+		#r_samples=40		#s_samples=0
+real 120.00
+user 28.92
+sys 0.56
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 03:59:33 CST
+49--bound------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=12		#s_samples=48
+real 26.58
+user 5.93
+sys 0.50
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=40		#s_samples=0
+		#r_samples=20		#s_samples=0
+		#r_samples=20		#s_samples=0
+real 35.63
+user 6.07
+sys 0.66
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:00:35 CST
+50--xy0_2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=12		#s_samples=48
+		#r_samples=16		#s_samples=64
+		#r_samples=8		#s_samples=32
+real 44.07
+user 7.96
+sys 0.60
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 43.80
+user 7.61
+sys 0.68
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:02:03 CST
+51--interproc1------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=12		#s_samples=48
+real 26.10
+user 5.93
+sys 0.49
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=30		#s_samples=0
+		#r_samples=20		#s_samples=0
+real 31.84
+user 5.95
+sys 0.60
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:03:01 CST
+52--multivar_true_1------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=32		#s_samples=128
+		#r_samples=32		#s_samples=128
+real 53.22
+user 15.54
+sys 0.54
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 36.49
+user 7.09
+sys 0.59
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:04:31 CST
+53--dillig_35------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=32		#s_samples=128
+real 26.60
+user 5.91
+sys 0.48
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=80		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 45.04
+user 7.80
+sys 0.62
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:05:42 CST
+54--interproc4------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+real 53.83
+user 8.49
+sys 0.65
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=80		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 71.98
+user 8.01
+sys 0.84
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:07:48 CST
+55--dillig_05------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=32		#s_samples=128
+		#r_samples=16		#s_samples=64
+		#r_samples=24		#s_samples=96
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+[31mWARNING: $$reaching max number of iterations[0m
+real 120.01
+user 9.36
+sys 0.63
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=240		#s_samples=0
+		#r_samples=120		#s_samples=0
+		#r_samples=80		#s_samples=0
+		#r_samples=80		#s_samples=0
+		#r_samples=80		#s_samples=0
+real 120.00
+user 14.13
+sys 0.62
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:11:49 CST
+56--xle10------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=12		#s_samples=48
+real 25.64
+user 5.96
+sys 0.47
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=30		#s_samples=0
+		#r_samples=20		#s_samples=0
+real 30.11
+user 6.01
+sys 0.56
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:12:44 CST
+57--up_true_2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=54		#s_samples=216
+		#r_samples=24		#s_samples=96
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+real 115.74
+user 31.73
+sys 0.80
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=120		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 104.95
+user 23.50
+sys 0.86
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:16:25 CST
+58--simple_if------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=30		#s_samples=120
+real 120.02
+user 5.90
+sys 0.50
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 30.16
+user 6.04
+sys 0.56
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:18:55 CST
+59--down------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=30		#s_samples=120
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+real 49.96
+user 8.33
+sys 0.77
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=120		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 45.66
+user 8.10
+sys 0.60
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:20:31 CST
+60--terminator_01_safe------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=10		#s_samples=40
+real 26.00
+user 5.83
+sys 0.54
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=20		#s_samples=0
+		#r_samples=20		#s_samples=0
+		#r_samples=20		#s_samples=0
+real 35.89
+user 6.31
+sys 0.50
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:21:33 CST
+61--dillig_07------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=18		#s_samples=72
+		#r_samples=24		#s_samples=96
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=24		#s_samples=96
+		#r_samples=12		#s_samples=48
+real 87.50
+user 18.86
+sys 0.78
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=150		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 59.22
+user 12.16
+sys 0.83
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:24:00 CST
+62--05------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=12		#s_samples=48
+real 28.40
+user 6.27
+sys 0.60
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 40.05
+user 6.59
+sys 0.59
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:25:09 CST
+63--interproc3------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=48		#s_samples=192
+real 96.08
+user 33.89
+sys 0.53
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=150		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 49.91
+user 14.22
+sys 0.47
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:27:35 CST
+64--interproc5------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=20		#s_samples=80
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+real 120.03
+user 9.89
+sys 1.37
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=60		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 84.06
+user 12.53
+sys 0.95
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:30:59 CST
+65--xyz2_1------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=30		#s_samples=120
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.02
+user 29.98
+sys 1.10
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.02
+user 6.68
+sys 0.50
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:34:59 CST
+66--xyz2_2------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=66		#s_samples=264
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=18		#s_samples=72
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.02
+user 30.02
+sys 0.72
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=150		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.02
+user 7.78
+sys 0.58
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:38:59 CST
+67--xy4_1------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=24		#s_samples=96
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=12		#s_samples=48
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+		#r_samples=8		#s_samples=32
+real 120.03
+user 19.73
+sys 1.18
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=80		#s_samples=0
+		#r_samples=80		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+		#r_samples=40		#s_samples=0
+real 83.79
+user 15.66
+sys 0.90
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:42:23 CST
+68--ex49------------------------------------------------------------------------------
+   ||----SELECTIVE---------------------------------------------------
+		#r_samples=12		#s_samples=48
+		#r_samples=36		#s_samples=144
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+		#r_samples=12		#s_samples=48
+real 120.02
+user 19.60
+sys 1.06
+   ||----unSELECTIVE-------------------------------------------------
+		#r_samples=90		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+		#r_samples=60		#s_samples=0
+real 120.02
+user 17.50
+sys 1.22
+
+
+
+
+##########################################################################################
+2016年 10月 20日 星期四 04:46:23 CST
