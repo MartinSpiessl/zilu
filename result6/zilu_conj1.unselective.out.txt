@@ -1,0 +1,74 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target zilu_conj1
+[  8%] Building CXX object CMakeFiles/zilu_conj1.dir/test/zilu_conj1.cpp.o
+[ 16%] Building CXX object CMakeFiles/zilu_conj1.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/zilu_conj1.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/zilu_conj1.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/zilu_conj1.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/zilu_conj1.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/zilu_conj1.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/zilu_conj1.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/zilu_conj1.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/zilu_conj1.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/zilu_conj1.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/zilu_conj1.dir/src/instrumentation.cpp.o
+Linking CXX executable zilu_conj1
+[100%] Built target zilu_conj1
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 99	99	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt[0m
+[34m[1mTest Counter Example: (99,99) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [1045+:10-]|-->> [33m(5.650730156041359 - 1.338366202988106e-06*x - 0.04650596319421063*y >= 0)  &&  (3.932459016393444 - 0.01757377049180329*x + 0.01468852459016394*y >= 0)  &&  (8.406240031582922 - 0.07405789758050613*x - 4.502735323139162e-06*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [2349+:16-]|-->> [33m(5.652282057823676 + 2.313869539347091e-06*x - 0.04652513444777612*y >= 0)  &&  (3.932459016393443 - 0.01757377049180328*x + 0.01468852459016394*y >= 0)  &&  (34.31898027643135 + 3.861809032557062e-06*x - 0.3331936645733471*y >= 0)  &&  (8.406262934052382 - 0.07405821494329734*x - 4.414397226475131e-06*y >= 0) 
+[0m[31m[3Pure Random][0m[#r60,#s0] -->   [3771+:23-]|-->> [33m(8.596651707402156 - 0.03634761582489072*x + 0.03634761582489071*y >= 0)  &&  (34.31994011956289 + 3.603555275510928e-06*x - 0.3332030047509038*y >= 0)  &&  (8.406076911355818 - 0.07405714048796297*x - 3.628625595240853e-06*y >= 0) 
+[0m[31m[4Pure Random][0m[#r80,#s0] -->   [5117+:31-]|-->> [33m(19.17390147674932 - 0.1817423133946052*x + 3.298627111902874e-06*y >= 0)  &&  (34.31972227479498 + 3.662168217566375e-06*x - 0.3332008849161658*y >= 0)  &&  (9.901696884978925 - 0.03331796569256616*x + 0.03334770951340596*y >= 0) 
+[0m[31m[5Pure Random][0m[#r100,#s0] -->   [6126+:39-]|-->> [33m(19.17405570959617 - 0.1817437914593876*x + 3.234363425974607e-06*y >= 0)  &&  (34.31994156748429 + 3.603165698251587e-06*x - 0.3332030188405417*y >= 0)  &&  (9.897935981646391 - 0.03334385330455469*x + 0.03331860537362355*y >= 0) 
+[0m[31m[6Pure Random][0m[#r120,#s0] -->   [6898+:47-]|-->> [33m(67.63755345311165 - 3.654378270212533e-06*x - 0.6663718801528447*y >= 0)  &&  (19.17386270102941 - 0.1817419417939563*x + 3.314783662222709e-06*y >= 0)  &&  (9.898965963479064 - 0.03333723803698271*x + 0.03332658884521181*y >= 0)  &&  (34.31973416861822 + 3.658968083186664e-06*x - 0.3332010006542667*y >= 0) 
+[0m[31m[7Pure Random][0m[#r140,#s0] -->   [8145+:56-]|-->> [33m(67.63750762774589 - 3.660130410310103e-06*x - 0.6663714161470544*y >= 0)  &&  (19.17403239223535 - 0.1817435680013459*x + 3.244078992548083e-06*y >= 0)  &&  (9.899170306695773 - 0.03333786717652587*x + 0.0333274044614662*y >= 0)  &&  (34.31994347585767 + 3.602652235201731e-06*x - 0.3332030374108115*y >= 0) 
+[0m[31m[8Pure Random][0m[#r160,#s0] -->   [8876+:66-]|-->> [33m(67.63769635716199 - 3.636440522925e-06*x - 0.6663733271310974*y >= 0)  &&  (19.17395232045256 - 0.181742800646761*x + 3.277442235827266e-06*y >= 0)  &&  (9.896736487437508 - 0.03332111043984071*x + 0.0333211104398409*y >= 0)  &&  (34.31995510011979 + 3.59952463124813e-06*x - 0.3332031505258293*y >= 0) 
+[0m[31m[9Pure Random][0m[#r180,#s0] -->   [9968+:76-]|-->> [33m(67.63751452681845 - 3.659264418587327e-06*x - 0.6663714860037722*y >= 0)  &&  (19.17302774312311 - 0.1817339401140208*x + 3.662682789506988e-06*y >= 0)  &&  (9.898890387674733 - 0.03333682268026833*x + 0.03332635463946368*y >= 0)  &&  (34.31982222863748 + 3.635274805624533e-06*x - 0.3332018575611801*y >= 0) 
+[0m[31m[10Pure Random][0m[#r200,#s0] -->   [10941+:86-]|-->> [33m(67.63755099179298 - 3.654687223075825e-06*x - 0.6663718552307039*y >= 0)  &&  (19.17300002803599 - 0.1817336745111024*x + 3.674230742323203e-06*y >= 0)  &&  (9.899233523718259 - 0.03333784732792552*x + 0.0333270137409043*y >= 0)  &&  (34.31991102758571 + 3.611382712875866e-06*x - 0.3332027216585693*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 10 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(1 >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.inv >>> [0m(1 >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty II (invariant && loopcondition =S=> invariant) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt[0m
+[34m[1mTest Counter Example: (101,101) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (102,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-5) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [12153+:100-]|-->> [33m(200.9382046311475 - 1.999378301137625*x - 3.745173871694263e-06*y >= 0)  &&  (200.9999999995125 - 0.9999999999975699*x - 0.9999999999975699*y >= 0)  &&  (9.899774700431628 - 0.0333324895147253*x + 0.03333248951472514*y >= 0)  &&  (67.63770577018749 - 3.635258972067845e-06*x - 0.6663734224429021*y >= 0)  &&  (34.31975736586142 + 3.652726674019391e-06*x - 0.3332012263852882*y >= 0) 

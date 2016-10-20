@@ -1,0 +1,395 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target afnp2014_true
+[  8%] Building CXX object CMakeFiles/afnp2014_true.dir/test/afnp2014_true.cpp.o
+[ 16%] Building CXX object CMakeFiles/afnp2014_true.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/afnp2014_true.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/afnp2014_true.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/afnp2014_true.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/afnp2014_true.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/afnp2014_true.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/afnp2014_true.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/afnp2014_true.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/afnp2014_true.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/afnp2014_true.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/afnp2014_true.dir/src/instrumentation.cpp.o
+Linking CXX executable afnp2014_true
+[100%] Built target afnp2014_true
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 1	0	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (1,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:100-]|-->> [33m(1.00398776639874 - 0.003987766398740364*x + 0.009970188288460666*y >= 0)  &&  (0.9945369654748922 + 0.005463034525107725*x + 0.003536150254623993*y >= 0)  &&  (0.9864864864864865 + 0.01351351351351351*x + 0.01891891891891892*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:190-]|-->> [33m(1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (0.9945369654748922 + 0.005463034525107725*x + 0.003536150254623993*y >= 0)  &&  (0.9864864864864865 + 0.01351351351351351*x + 0.01891891891891892*y >= 0)  &&  (1.13616872319944 - 0.004900673842653365*x - 0.009626323619497681*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0) 
+[0m[31m[3Pure Random][0m[#r60,#s0] -->   [7+:265-]|-->> [33m(0.959016393442623 + 0.04098360655737705*x + 0.04918032786885246*y >= 0)  &&  (0.9998760074395536 + 0.007935523868567886*x - 0.007811531308121513*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (1.13616872319944 - 0.004900673842653365*x - 0.009626323619497681*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0) 
+[0m[31m[4Pure Random][0m[#r80,#s0] -->   [7+:355-]|-->> [33m(0.959016393442623 + 0.04098360655737705*x + 0.04918032786885246*y >= 0)  &&  (0.9998760074395536 + 0.007935523868567886*x - 0.007811531308121513*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (1.13616872319944 - 0.004900673842653365*x - 0.009626323619497681*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 4 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(117 + 5*x + 6*y >= 0)  &&  (61 - x + 3*y >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(117 + 5*x + 6*y >= 0)  &&  (61 - x + 3*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (0,-19) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (1,-20) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (2,-19) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-21,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (1,-19) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (1,-18) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (3,-19) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (4,-19) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:560-]|-->> [33m(0.9098360655737705 + 0.0901639344262295*x + 0.008196721311475409*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0)  &&  (0.9998760074395536 + 0.007935523868567886*x - 0.007811531308121513*y >= 0)  &&  (1.13616872319944 - 0.004900673842653365*x - 0.009626323619497681*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:652-]|-->> [33m(1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.9098360655737705 + 0.0901639344262295*x + 0.008196721311475409*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0) 
+[0m[31m[3Pure Random][0m[#r60,#s0] -->   [7+:707-]|-->> [33m(1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.9098360655737705 + 0.0901639344262295*x + 0.008196721311475409*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 3 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(47 - y >= 0)  &&  (10 + x >= 0)  &&  (19 + 2*y >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(47 - y >= 0)  &&  (10 + x >= 0)  &&  (19 + 2*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 3 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (-10,47) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (0,47) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-1,47) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-2,47) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-3,47) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (1,47) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-4,47) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-5,47) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:750-]|-->> [33m(1.096446700507614 + 0.01116751269035533*x - 0.04365482233502539*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.9098360655737705 + 0.0901639344262295*x + 0.008196721311475409*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:798-]|-->> [33m(1.096446700507614 + 0.01116751269035533*x - 0.04365482233502539*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.9098360655737705 + 0.0901639344262295*x + 0.008196721311475409*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(785 + 8*x - 31*y >= 0)  &&  (19 + 2*y >= 0)  &&  (10 + x >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(785 + 8*x - 31*y >= 0)  &&  (19 + 2*y >= 0)  &&  (10 + x >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00003.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00004.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [0m
+[32m[1m--------------------------------------------- Iteration 4 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (-2,-9) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-10,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-9,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-10,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-10,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-10,-5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-10,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-9,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:906-]|-->> [33m(0.819672131147541 + 0.180327868852459*x + 0.01639344262295082*y >= 0)  &&  (0.9333333333333333 + 0.06666666666666667*x + 0.2*y >= 0)  &&  (1.096446700507614 + 0.01116751269035533*x - 0.04365482233502539*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:985-]|-->> [33m(0.819672131147541 + 0.180327868852459*x + 0.01639344262295082*y >= 0)  &&  (0.9333333333333333 + 0.06666666666666667*x + 0.2*y >= 0)  &&  (1.096446700507614 + 0.01116751269035533*x - 0.04365482233502539*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(50 + 11*x + y >= 0)  &&  (14 + x + 3*y >= 0)  &&  (785 + 8*x - 31*y >= 0)  &&  (62 - x >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(50 + 11*x + y >= 0)  &&  (14 + x + 3*y >= 0)  &&  (785 + 8*x - 31*y >= 0)  &&  (62 - x >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 5 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (-2,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-1,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-3,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-4,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-2,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-3,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-4,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-4,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:1060-]|-->> [33m(0.8 + 0.4*x - 0.2*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (0.9333333333333333 + 0.06666666666666667*x + 0.2*y >= 0)  &&  (1.096446700507614 + 0.01116751269035533*x - 0.04365482233502539*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:1104-]|-->> [33m(0.8 + 0.4*x - 0.2*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (0.9333333333333333 + 0.06666666666666667*x + 0.2*y >= 0)  &&  (1.096446700507614 + 0.01116751269035533*x - 0.04365482233502539*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(4 + 2*x - y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (61 - x + 3*y >= 0)  &&  (785 + 8*x - 31*y >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(4 + 2*x - y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (61 - x + 3*y >= 0)  &&  (785 + 8*x - 31*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 6 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (-2,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:1204-]|-->> [33m(0.8 + 0.4*x - 0.2*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (0.9333333333333333 + 0.06666666666666667*x + 0.2*y >= 0)  &&  (1.096446700507614 + 0.01116751269035533*x - 0.04365482233502539*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:1292-]|-->> [33m(0.8 + 0.4*x - 0.2*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (0.9333333333333333 + 0.06666666666666667*x + 0.2*y >= 0)  &&  (1.096446700507614 + 0.01116751269035533*x - 0.04365482233502539*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(4 + 2*x - y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (61 - x + 3*y >= 0)  &&  (785 + 8*x - 31*y >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(4 + 2*x - y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (61 - x + 3*y >= 0)  &&  (785 + 8*x - 31*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 7 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (-2,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:1357-]|-->> [33m(1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (0.9333333333333333 + 0.06666666666666667*x + 0.2*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (1.096446700507614 + 0.01116751269035533*x - 0.04365482233502539*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:1457-]|-->> [33m(1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (0.9333333333333333 + 0.06666666666666667*x + 0.2*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (1.096446700507614 + 0.01116751269035533*x - 0.04365482233502539*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(1 + x - y >= 0)  &&  (62 - x >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (14 + x + 3*y >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(1 + x - y >= 0)  &&  (62 - x >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (14 + x + 3*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 8 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (-1,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-1,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:1585-]|-->> [33m(3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (0.9333333333333333 + 0.06666666666666667*x + 0.2*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:1672-]|-->> [33m(3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (1.016666666666667 - 0.01666666666666667*x + 0.05*y >= 0)  &&  (0.9333333333333333 + 0.06666666666666667*x + 0.2*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0)  &&  (0.994475138121547 + 0.005524861878453038*x + 0.1049723756906077*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(3 + x - 2*y >= 0)  &&  (14 + x + 3*y >= 0)  &&  (1 + 2*x >= 0)  &&  (61 - x + 3*y >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(3 + x - 2*y >= 0)  &&  (14 + x + 3*y >= 0)  &&  (1 + 2*x >= 0)  &&  (61 - x + 3*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty II (invariant && loopcondition =S=> invariant) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 9 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (1,-5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (2,-5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (4,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (7,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (5,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (6,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (10,-8) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (13,-9) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:1751-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:1814-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 10 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (23,3) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (25,4) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (26,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (30,6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (27,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (28,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (29,6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (29,7) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:1926-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:2012-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 11 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (23,3) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (25,4) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (26,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (30,6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (27,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (28,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (29,6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (29,7) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:2100-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:2160-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 12 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (23,3) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (25,4) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (26,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (30,6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (27,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (28,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (29,6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (29,7) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:2213-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:2302-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 13 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (23,3) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (25,4) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (26,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (30,6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (27,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (28,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (29,6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (29,7) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:2410-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:2491-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 14 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt[0m
+[34m[1mTest Counter Example: (23,3) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (25,4) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (26,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (30,6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (27,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (28,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (29,6) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (29,7) @/home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [7+:2550-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [7+:2631-]|-->> [33m(1.068979310344828 - 0.06897931034482756*x + 0.172448275862069*y >= 0)  &&  (3 + x - 1.999999999999999*y >= 0)  &&  (1 + 0.9999999999999997*x - y >= 0)  &&  (0.3333333333333333 + 0.6666666666666667*x >= 0)  &&  (1.249438202247191 - 0.0202247191011236*x + 0.01235955056179775*y >= 0)  &&  (0.76 + 0.24*x + 0.3200000000000001*y >= 0)  &&  (1.18161542137964 - 0.00191174127768042*x - 0.02517126015612554*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/afnp2014_true.inv >>> [0m(31 - 2*x + 5*y >= 0)  &&  (3 + x - 2*y >= 0)  &&  (19 + 6*x + 8*y >= 0)  &&  (1 + 2*x >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> 

@@ -1,0 +1,64 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> polynomial]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target xyle0
+[  8%] Building CXX object CMakeFiles/xyle0.dir/test/xyle0.cpp.o
+[ 16%] Building CXX object CMakeFiles/xyle0.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/xyle0.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/xyle0.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/xyle0.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/xyle0.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/xyle0.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/xyle0.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/xyle0.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/xyle0.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/xyle0.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/xyle0.dir/src/instrumentation.cpp.o
+Linking CXX executable xyle0
+[100%] Built target xyle0
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[1] :::::: 0	1	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt[0m
+[34m[1mTest Counter Example: (0,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt --> [0m+
+[0m[33m>>>> Polynomial Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [117+:88-]|-->> [33m(1.000028040626143 - 1.991442913035757e-05*x + 4.041726665237849e-06*y - 0.0002543533284175936*x*x + 0.0006349214987149597*x*y - 3.208235280763441e-05*y*y >= 0) [0m
+[31m[2][0m[#r8,#s32] -->   [256+:129-]|-->> [33m(1 + 0.06079275570184256*x - 0.0001720731094415609*y - 0.0008343980060915301*x*x + 0.08212982127259559*x*y + 0.0001720731094415522*y*y >= 0) [0m
+[31m[3][0m[#r12,#s48] -->   [388+:140-]|-->> [33m(1.000081147450187 + 0.1663997421807182*x - 8.268465969334116e-05*y + 0.001485712812095086*x*x + 0.1758326116703069*x*y + 1.537209506616288e-06*y*y >= 0) [0m
+[31m[4][0m[#r16,#s64] -->   [457+:224-]|-->> [33m(1.000081131921074 + 0.1663958767512018*x - 8.268664991560246e-05*y + 0.001485682014773948*x*x + 0.1758285271523526*x*y + 1.554728841512282e-06*y*y >= 0) [0m
+[31m[5][0m[#r20,#s80] -->   [587+:247-]|-->> [33m(1.000077040103766 + 0.1663941984775581*x - 8.041097760931246e-05*y + 0.001485668969936293*x*x + 0.1758267537590231*x*y + 3.370873843326627e-06*y*y >= 0) [0m
+[31m[6][0m[#r24,#s96] -->   [681+:268-]|-->> [33m(1.000076635897758 + 0.1663978885700073*x - 8.039584749233719e-05*y + 0.001485698403782321*x*x + 0.1758306530023076*x*y + 3.75994973469268e-06*y*y >= 0) [0m
+[31m[7][0m[#r28,#s112] -->   [796+:273-]|-->> [33m(1.043229684847447 + 0.01273466364106646*x - 0.04655578738056759*y + 0.0009393619925999186*x*x + 0.3261414192022954*x*y + 0.003326102533120191*y*y >= 0) [0m
+[31m[8][0m[#r32,#s128] -->   [932+:287-]|-->> [33m(1.034534270002203 + 0.01061241075443548*x - 0.03718460812741722*y + 0.0008096667149177815*x*x + 0.327578499552299*x*y + 0.002650338125214438*y*y >= 0) [0m
+[31m[9][0m[#r36,#s144] -->   [1063+:328-]|-->> [33m(1.044457442485032 + 0.01405193440933126*x - 0.01857749256809483*y + 0.001107060110304239*x*x + 0.3305020655412067*x*y + 0.00164304600613846*y*y >= 0) [0m
+[31m[10][0m[#r40,#s160] -->   [1189+:336-]|-->> [33m(1.045300553863056 + 0.01392364814117759*x - 0.01891361942755877*y + 0.001062259305111621*x*x + 0.3304568780304511*x*y + 0.001640909127506029*y*y >= 0) [0m
+[31m[11][0m[#r44,#s176] -->   [1274+:344-]|-->> [33m(1.045305273614842 + 0.01392309612183402*x - 0.01891523876088287*y + 0.001062036197670714*x*x + 0.330457678022895*x*y + 0.001640904461715553*y*y >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Polynomial): {  [32m(826 + 11*x - 15*y + 261*x*y >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.inv >>> [0m(826 + 11*x - 15*y + 261*x*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt[0m
+[34m[1mTest Counter Example: (0,144) @/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,128) @/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (-146,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,919) @/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,736) @/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,861) @/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,1010) @/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (0,384) @/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt --> [0m+

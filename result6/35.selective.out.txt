@@ -1,0 +1,63 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> linear--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target 35
+[  8%] Building CXX object CMakeFiles/35.dir/test/35.cpp.o
+[ 16%] Building CXX object CMakeFiles/35.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/35.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/35.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/35.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/35.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/35.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/35.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/35.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/35.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/35.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/35.dir/src/instrumentation.cpp.o
+Linking CXX executable 35
+[100%] Built target 35
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 0	1	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt[0m
+[34m[1mTest Counter Example: (0,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/35.cnt --> [0m+
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->  [2+:6-]|-->> [33m(0.9876390605686032 - 0.02843016069221261*x + 0.04079110012360939*n >= 0) [0m
+[31m[2][0m[#r8,#s32] -->  [2+:24-]|-->> [33m(0.9744683910560712 - 0.05862813905642933*x + 0.08415974800035819*n >= 0) [0m
+[31m[3][0m[#r12,#s48] -->  [2+:34-]|-->> [33m(0.9438631391657303 - 0.1269458557502233*x + 0.183082716584493*n >= 0) [0m
+[31m[4][0m[#r16,#s64] -->  [2+:45-]|-->> [33m(0.8987809527229955 - 0.2403952372828855*x + 0.34161428455989*n >= 0) [0m
+[31m[5][0m[#r20,#s80] -->  [2+:58-]|-->> [33m(0.9077262379686255 - 0.3075792067712466*x + 0.3998529688026208*n >= 0) [0m
+[31m[6][0m[#r24,#s96] -->  [179+:68-]|-->> [33m(0.9394235132044861 - 0.545188381159623*x + 0.6057648679551367*n >= 0) [0m
+[31m[7][0m[#r28,#s112] -->  [179+:76-]|-->> [33m(0.9518310104424987 - 0.6382391116368922*x + 0.6864081011943934*n >= 0) [0m
+[31m[8][0m[#r32,#s128] -->  [179+:88-]|-->> [33m(0.9875837278985244 - 1.055383128625399*x + 1.067799400726873*n >= 0) [0m
+[31m[9][0m[#r36,#s144] -->  [179+:99-]|-->> [33m(0.9819909769938278 - 1.836920346630293*x + 1.854929369636466*n >= 0) [0m
+[31m[10][0m[#r40,#s160] -->  [179+:110-]|-->> [33m(1 - 1.99900300236277*x + 1.999003002362798*n >= 0) [0m
+[31m[11][0m[#r44,#s176] -->  [179+:120-]|-->> [33m(1.000000000000001 - 1.99900744092653*x + 1.999007440926527*n >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(1 - 2*x + 2*n >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/35.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/35.inv >>> [0m(1 - 2*x + 2*n >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[1m[32m-----------------------------------------------------------finish proving---------------------------------------------------------------[0m
+[32mThe invariant can be [33m(1 - 2*x + 2*n >= 0) [0m
+
+=====================time=========================

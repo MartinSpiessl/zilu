@@ -1,0 +1,64 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> linear]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target 43
+[  8%] Building CXX object CMakeFiles/43.dir/test/43.cpp.o
+[ 16%] Building CXX object CMakeFiles/43.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/43.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/43.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/43.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/43.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/43.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/43.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/43.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/43.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/43.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/43.dir/src/instrumentation.cpp.o
+Linking CXX executable 43
+[100%] Built target 43
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 1	0	0	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/43.cnt[0m
+[34m[1mTest Counter Example: (1,0,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/43.cnt --> [0m+
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1][0m[#r6,#s24] -->  [6+:12-]|-->> [33m(0.9974105835302594 + 0.002589416469740563*x + 0.01692475465390044*y - 0.05535292433912471*t >= 0) [0m
+[31m[2][0m[#r12,#s48] -->  [6+:31-]|-->> [33m(0.9632816200225969 + 0.03671837997740308*x + 0.06590871872379243*y - 0.08222096511393986*t >= 0) [0m
+[31m[3][0m[#r18,#s72] -->  [6+:37-]|-->> [33m(0.9662380996314599 + 0.03376190036854015*x + 0.08465331344989704*y - 0.09927391815190778*t >= 0) [0m
+[31m[4][0m[#r24,#s96] -->  [6+:40-]|-->> [33m(0.9745778543306496 + 0.02542214566935047*x + 0.1078645113326698*y - 0.1281527716670045*t >= 0) [0m
+[31m[5][0m[#r30,#s120] -->  [6+:46-]|-->> [33m(0.9685439341583244 + 0.03145606584167551*x + 0.11531787734832*y - 0.1230057699319557*t >= 0) [0m
+[31m[6][0m[#r36,#s144] -->  [6+:52-]|-->> [33m(0.9921926584161785 + 0.007807341583821459*x + 0.2321800636721028*y - 0.2380275377367482*t >= 0) [0m
+[31m[7][0m[#r42,#s168] -->  [11+:64-]|-->> [33m(0.9999946860374234 + 5.3139625766363e-06*x + 0.9995952985252501*y - 0.9996021180907917*t >= 0) [0m
+[31m[8][0m[#r48,#s192] -->  [12+:76-]|-->> [33m(0.9999992966328222 + 7.033671778344797e-07*x + 1.999347326802081*y - 1.999344968485048*t >= 0) [0m
+[31m[9][0m[#r54,#s216] -->  [31+:91-]|-->> [33m(1.000066093322573 - 1.560268527711628e-06*x + 1.999529975199548*y - 1.999531637773501*t >= 0) [0m
+[31m[10][0m[#r60,#s240] -->  [49+:121-]|-->> [33m(1.000394275542931 + 1.517831591968388e-06*x + 1.999510915139112*y - 1.999509893361093*t >= 0) [0m
+[31m[11][0m[#r66,#s264] -->  [74+:175-]|-->> [33m(1.000394173031964 + 1.517436803766259e-06*x + 1.999511042344615*y - 1.999510020832709*t >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(1 + 2*y - 2*t >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/43.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/43.inv >>> [0m(1 + 2*y - 2*t >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[1m[32m-----------------------------------------------------------finish proving---------------------------------------------------------------[0m
+[32mThe invariant can be [33m(1 + 2*y - 2*t >= 0) [0m
+
+=====================time=========================
