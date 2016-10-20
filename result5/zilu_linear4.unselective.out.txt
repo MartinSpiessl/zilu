@@ -1,0 +1,124 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> linear]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target zilu_linear4
+[  8%] Building CXX object CMakeFiles/zilu_linear4.dir/test/zilu_linear4.cpp.o
+[ 16%] Building CXX object CMakeFiles/zilu_linear4.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/zilu_linear4.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/zilu_linear4.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/zilu_linear4.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/zilu_linear4.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/zilu_linear4.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/zilu_linear4.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/zilu_linear4.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/zilu_linear4.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/zilu_linear4.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/zilu_linear4.dir/src/instrumentation.cpp.o
+Linking CXX executable zilu_linear4
+[100%] Built target zilu_linear4
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[1] :::::: 1	0	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt[0m
+[34m[1mTest Counter Example: (1,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m+
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [837+:266-]|-->> [33m(0.897905343647152 + 0.1020946563528479*xa + 0.3795829361034058*ya >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [1375+:363-]|-->> [33m(0.8978644368692982 + 0.1021355631307019*xa + 0.3797585946200727*ya >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(35 + 4*xa + 15*ya >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.inv >>> [0m(35 + 4*xa + 15*ya >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt[0m
+[34m[1mTest Counter Example: (19,-8) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (17,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (16,-9) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (13,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (12,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (11,-10) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (14,-13) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (10,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m+
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [2365+:533-]|-->> [33m(0.6666666666666667 + 0.3333333333333328*xa + 0.3333333333333332*ya >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [3584+:535-]|-->> [33m(0.6666549136835044 + 0.3333333333333353*xa + 0.3333450863164954*ya >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(2 + xa + ya >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.inv >>> [0m(2 + xa + ya >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 3 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt[0m
+[34m[1mTest Counter Example: (0,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (0,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-1,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_linear4.cnt --> [0m-
+[0m[33m>>>> Linear Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->  [4861+:550-]|-->> [33m(0.0001709467232575701 + 0.9998534742372077*xa + 0.9998290532767424*ya >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->  [5917+:583-]|-->> [33m( -0.0003455593790294698 + 1.000292396397641*xa + 1.00034555937903*ya >= 0) [0m
+[31m[3Pure Random][0m[#r60,#s0] -->  [6440+:767-]|-->> [33m(0.0004906077363389105 + 0.9995794790831379*xa + 0.9995093922636611*ya >= 0) [0m
+[31m[4Pure Random][0m[#r80,#s0] -->  [7321+:769-]|-->> [33m(0.0004281018805291081 + 0.999633055530975*xa + 0.999571898119471*ya >= 0) [0m
+[31m[5Pure Random][0m[#r100,#s0] -->  [8602+:775-]|-->> [33m( -7.209365563509706e-05 + 1.000072093655635*xa + 1.000072093655635*ya >= 0) [0m
+[31m[6Pure Random][0m[#r120,#s0] -->  [9391+:970-]|-->> [33m(0.0003770291771822976 + 0.9996768321338441*xa + 0.9996229708228178*ya >= 0) [0m
+[31m[7Pure Random][0m[#r140,#s0] -->  [10136+:1123-]|-->> [33m(0.0004227060042255593 + 0.9996376805678068*xa + 0.9995772939957744*ya >= 0) [0m
+[31m[8Pure Random][0m[#r160,#s0] -->  [10568+:1216-]|-->> [33m( -0.0001618015296220854 + 1.000161801529622*xa + 1.000161801529622*ya >= 0) [0m
+[31m[9Pure Random][0m[#r180,#s0] -->  [11302+:1406-]|-->> [33m(0.0001388592034802238 + 0.9998611407965197*xa + 0.9998611407965197*ya >= 0) [0m
+[31m[10Pure Random][0m[#r200,#s0] -->  [11741+:1618-]|-->> [33m( -0.0004299120203379303 + 1.000429912020338*xa + 1.000429912020338*ya >= 0) [0m
+[31m[11Pure Random][0m[#r220,#s0] -->  [12709+:1874-]|-->> [33m( -0.0003178565233747932 + 1.000317856523375*xa + 1.000317856523375*ya >= 0) [0m
+[31m[12Pure Random][0m[#r240,#s0] -->  [13537+:1965-]|-->> [33m(7.798152678906156e-05 + 0.9999331586913238*xa + 0.999922018473211*ya >= 0) [0m
+[31m[13Pure Random][0m[#r260,#s0] -->  [14409+:2111-]|-->> [33m(0.0003248112685375615 + 0.9996751887314623*xa + 0.9996751887314624*ya >= 0) [0m
+[31m[14Pure Random][0m[#r280,#s0] -->  [15004+:2362-]|-->> [33m( -0.0004076956806164933 + 1.000407695680617*xa + 1.000407695680616*ya >= 0) [0m
+[31m[15Pure Random][0m[#r300,#s0] -->  [15845+:2563-]|-->> [33m( -9.190603179864976e-05 + 1.000091906031799*xa + 1.000091906031799*ya >= 0) [0m
+[31m[16Pure Random][0m[#r320,#s0] -->  [16468+:2680-]|-->> [33m( -7.385648442093107e-05 + 1.000063305558075*xa + 1.000073856484421*ya >= 0) [0m
+[31m[17Pure Random][0m[#r340,#s0] -->  [16854+:2692-]|-->> [33m( -3.542563502656471e-06 + 1.000003036483002*xa + 1.000003542563503*ya >= 0) [0m
+[31m[18Pure Random][0m[#r360,#s0] -->  [17322+:2710-]|-->> [33m( -0.0002296549808964432 + 1.000229654980897*xa + 1.000229654980896*ya >= 0) [0m
+[31m[19Pure Random][0m[#r380,#s0] -->  [17998+:2832-]|-->> [33m(4.124396608129466e-05 + 0.9999587560339184*xa + 0.9999587560339186*ya >= 0) [0m
+[31m[20Pure Random][0m[#r400,#s0] -->  [18396+:2909-]|-->> [33m( -5.551115123125783e-16 + xa + 1*ya >= 0) [0m
+[31m[21Pure Random][0m[#r420,#s0] -->  [18698+:2992-]|-->> [33m( -0.0002933116800184488 + 1.000293311680018*xa + 1.000293311680018*ya >= 0) [0m
+[31m[22Pure Random][0m[#r440,#s0] -->  [19413+:3088-]|-->> [33m( -9.236309254534447e-06 + 1.000007916836505*xa + 1.000009236309255*ya >= 0) [0m
+[31m[23Pure Random][0m[#r460,#s0] -->  [20043+:3183-]|-->> [33m(2.141590465332133e-05 + 0.9999816435102976*xa + 0.9999785840953466*ya >= 0) [0m
+[31m[24Pure Random][0m[#r480,#s0] -->  [20691+:3579-]|-->> [33m( -8.738199574020999e-05 + 1.000074898853491*xa + 1.00008738199574*ya >= 0) [0m
+[31m[25Pure Random][0m[#r500,#s0] -->  [21158+:3723-]|-->> [33m(9.349824189641698e-05 + 0.9999065017581031*xa + 0.9999065017581036*ya >= 0) [0m
+[31m[26Pure Random][0m[#r520,#s0] -->  [21865+:3727-]|-->> [33m(0.0002129753633509646 + 0.9997896539621223*xa + 0.9997870246366487*ya >= 0) [0m
+[31m[27Pure Random][0m[#r540,#s0] -->  [22700+:3874-]|-->> [33m(0.0002545604686422509 + 0.9997485822531923*xa + 0.9997454395313579*ya >= 0) [0m
+[31m[28Pure Random][0m[#r560,#s0] -->  [23294+:4032-]|-->> [33m(0.0003273298193299246 + 0.999676711289551*xa + 0.9996726701806701*ya >= 0) [0m
+[31m[29Pure Random][0m[#r580,#s0] -->  [23424+:4273-]|-->> [33m(0.0003307241101193625 + 0.9996733589035859*xa + 0.9996692758898806*ya >= 0) [0m
+[31m[30Pure Random][0m[#r600,#s0] -->  [23923+:4633-]|-->> [33m(0.0002874597172113358 + 0.9997160891681862*xa + 0.9997125402827886*ya >= 0) [0m
+[31m[31Pure Random][0m[#r620,#s0] -->  [24145+:4770-]|-->> [33m(0.0002752965566397148 + 0.9997281021662823*xa + 0.9997247034433602*ya >= 0) [0m
+[31m[32Pure Random][0m[#r640,#s0] -->  [24892+:4965-]|-->> [33m(0.0003136227764624078 + 0.999690249109667*xa + 0.9996863772235376*ya >= 0) [0m
+[31m[33Pure Random][0m[#r660,#s0] -->  [25622+:5126-]|-->> [33m(0.0002775286674961963 + 0.99972589761235*xa + 0.9997224713325039*ya >= 0) [0m
+[31m[34Pure Random][0m[#r680,#s0] -->  [25773+:5373-]|-->> [33m(0.0003718538506622959 + 0.9996327369376173*xa + 0.9996281461493377*ya >= 0) [0m
+[31m[35Pure Random][0m[#r700,#s0] -->  [26514+:5415-]|-->> [33m(0.0004912417626641297 + 0.9995148229504551*xa + 0.9995087582373358*ya >= 0) [0m
+[31m[36Pure Random][0m[#r720,#s0] -->  [26969+:5489-]|-->> [33m(0.0003813285237315167 + 0.9996233792358207*xa + 0.9996186714762686*ya >= 0) [0m
+[31m[37Pure Random][0m[#r740,#s0] -->  [27331+:5493-]|-->> [33m(0.0002941869734108815 + 0.9997094449645333*xa + 0.999705813026589*ya >= 0) [0m
+[31m[38Pure Random][0m[#r760,#s0] -->  [27601+:5496-]|-->> [33m( -0.0001368324407953203 + 1.000136832440796*xa + 1.000136832440795*ya >= 0) [0m
+[31m[39Pure Random][0m[#r780,#s0] -->  [27747+:5784-]|-->> [33m(0.0003302998551177883 + 0.9996737779208719*xa + 0.9996697001448822*ya >= 0) [0m
+[31m[40Pure Random][0m[#r800,#s0] -->  [28284+:5883-]|-->> [33m(0.0001263058821532326 + 0.9998775215688269*xa + 0.9998736941178468*ya >= 0) [0m
+[31m[41Pure Random][0m[#r820,#s0] -->  [28538+:6046-]|-->> [33m( -3.236536310772045e-07 + 1.000000339065708*xa + 1.000000323653631*ya >= 0) [0m
+[31m[42Pure Random][0m[#r840,#s0] -->  [29062+:6051-]|-->> [33m( -5.195516978619141e-07 + 1.000000544292255*xa + 1.000000519551699*ya >= 0) [0m
+[31m[43Pure Random][0m[#r860,#s0] -->  [29112+:6443-]|-->> [33m( -9.600360095437209e-06 + 1.000009800367601*xa + 1.000009600360095*ya >= 0) [0m

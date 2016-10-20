@@ -1,0 +1,60 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> polynomial]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target zilu_poly6
+[  8%] Building CXX object CMakeFiles/zilu_poly6.dir/test/zilu_poly6.cpp.o
+[ 16%] Building CXX object CMakeFiles/zilu_poly6.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/zilu_poly6.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/zilu_poly6.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/zilu_poly6.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/zilu_poly6.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/zilu_poly6.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/zilu_poly6.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/zilu_poly6.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/zilu_poly6.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/zilu_poly6.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/zilu_poly6.dir/src/instrumentation.cpp.o
+Linking CXX executable zilu_poly6
+[100%] Built target zilu_poly6
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[1] :::::: 0	1	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt[0m
+[34m[1mTest Counter Example: (0,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt --> [0m+
+[0m[33m>>>> Polynomial Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [119+:48-]|-->> [33m(1.001081056801603 + 0.002234709434648177*x - 0.001067506528927125*y - 0.0004240805010627402*x*x + 0.01774433499610295*x*y - 1.355027267544925e-05*y*y >= 0) [0m
+[31m[2][0m[#r8,#s32] -->   [235+:88-]|-->> [33m(1.000000876347918 + 0.03665407526345322*x - 8.893443872864948e-07*y - 0.0004165030978606765*x*x + 0.03665407526345322*x*y + 1.299646951819985e-08*y*y >= 0) [0m
+[31m[3][0m[#r12,#s48] -->   [412+:157-]|-->> [33m(1.000002002727642 + 0.03664870676646836*x - 3.010288559269266e-06*y - 0.0004164287090411278*x*x + 0.03664870676646836*x*y + 1.007560917093506e-06*y*y >= 0) [0m
+[31m[4][0m[#r16,#s64] -->   [502+:177-]|-->> [33m(1.027102675292589 - 0.01516840671315944*x + 0.004718779065828314*y - 0.0005702676692340182*x*x + 0.1227798682069534*x*y + 0.0001209954728205731*y*y >= 0) [0m
+[31m[5][0m[#r20,#s80] -->   [619+:195-]|-->> [33m(1.02800731693835 - 0.01449699215994917*x + 0.0048775186624593*y + 0.0003913183543255393*x*x + 0.1230996470187991*x*y + 0.0001252104836503287*y*y >= 0) [0m
+[31m[6][0m[#r24,#s96] -->   [680+:206-]|-->> [33m(1.016145211321842 - 0.01450927733180036*x + 0.003203414944810398*y + 0.0004018031792659416*x*x + 0.1232064266163099*x*y + 0.0001281365977924831*y*y >= 0) [0m
+[31m[7][0m[#r28,#s112] -->   [824+:245-]|-->> [33m(1.016145679660475 - 0.01450956780272345*x + 0.0032034744113296*y + 0.0004013498079329797*x*x + 0.1232087813098797*x*y + 0.0001281355350781221*y*y >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Polynomial): {  [32m(140 - 2*x + 17*x*y >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.inv >>> [0m(140 - 2*x + 17*x*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt[0m
+[34m[1mTest Counter Example: (132,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (129,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (169,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (196,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (168,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (85,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (159,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt --> [0m+
+[0m[34m[1mTest Counter Example: (131,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly6.cnt --> [0m+

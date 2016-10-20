@@ -1,0 +1,41 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target zilu_conj1
+[  8%] Building CXX object CMakeFiles/zilu_conj1.dir/test/zilu_conj1.cpp.o
+[ 16%] Building CXX object CMakeFiles/zilu_conj1.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/zilu_conj1.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/zilu_conj1.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/zilu_conj1.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/zilu_conj1.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/zilu_conj1.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/zilu_conj1.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/zilu_conj1.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/zilu_conj1.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/zilu_conj1.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/zilu_conj1.dir/src/instrumentation.cpp.o
+Linking CXX executable zilu_conj1
+[100%] Built target zilu_conj1
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 99	99	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt[0m
+[34m[1mTest Counter Example: (99,99) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [1260+:9-]|-->> [33m(29.56155335221831 - 5.620043452836399e-06*x - 0.28560991347873*y >= 0)  &&  (3.298454392496299 - 0.008877434689248957*x + 0.01935854332174862*y >= 0)  &&  (3.531625907605467 - 0.0253148081922162*x + 2.133652703623545e-06*y >= 0)  &&  (4.628137503944687 + 0.0206187266673017*x - 0.02060223993903186*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [2208+:20-]|-->> [33m(29.56072855162643 - 4.329487780729835e-06*x - 0.2856029560284821*y >= 0)  &&  (3.436388886024245 - 0.01096943868144333*x + 0.01867753202614159*y >= 0)  &&  (3.531239987183595 - 0.02531239987183594*x - 4.662069341687669e-18*y >= 0)  &&  (10.7619477006312 + 0.04508566275924253*x - 0.03967538322813347*y >= 0) 
+[0m[31m[3Pure Random][0m[#r60,#s0] -->   [3180+:30-]|-->> [33m(29.56050041351568 - 4.421797998865884e-06*x - 0.2856005823371586*y >= 0)  &&  (7.198224320294948 - 0.02857174805320346*x + 0.02856056619108099*y >= 0)  &&  (200.9359569981389 - 1.999354962571232*x - 4.607410161838743e-06*y >= 0)  &&  (10.76194770063122 + 0.04508566275924264*x - 0.03967538322813352*y >= 0) 
+[0m[31m[4Pure Random][0m[#r80,#s0] -->   [4270+:37-]|-->> [33m(29.5717136258661 - 3.325635104189928e-06*x - 0.2857138106235562*y >= 0)  &&  (7.199842381766974 - 0.02858268701664489*x + 0.02856692519334207*y >= 0)  &&  (200.9359629003484 - 1.99935502201788*x - 4.606985584132417e-06*y >= 0)  &&  (14.20265170912747 + 0.06536106563663013*x - 0.03920853796849738*y >= 0) 
+[0m[31m[5Pure Random][0m[#r100,#s0] -->   [5417+:41-]|-->> [33m(29.56066608636183 - 4.028737725647602e-06*x - 0.285602632125892*y >= 0)  &&  (14.60550458715596 - 0.09174311926605505*x + 0.02752293577981657*y >= 0)  &&  (14.19943698817146 + 0.06534237347845334*x - 0.03921335395918296*y >= 0)  &&  (200.9299024656684 - 1.999295194190353*x - 3.830466333454297e-06*y >= 0) 
+[0m[31m[6Pure Random][0m[#r120,#s0] -->   [6696+:46-]|-->> [33m(29.56036851003921 - 4.140129930885195e-06*x - 0.2855995449704603*y >= 0)  &&  (14.60550458715596 - 0.091743119266055*x + 0.02752293577981646*y >= 0)  &&  (14.20182093055607 + 0.06535520605307077*x - 0.03921510385572191*y >= 0)  &&  (200.9299075241943 - 1.999295245051997*x - 3.830189946540941e-06*y >= 0) 
+[0m[31m[7Pure Random][0m[#r140,#s0] -->   [7990+:58-]|-->> [33m(29.56050093364286 - 4.090559598601828e-06*x - 0.2856009187768294*y >= 0)  &&  (14.60550458715596 - 0.09174311926605477*x + 0.02752293577981657*y >= 0)  &&  (14.19831774594674 + 0.06533634868546484*x - 0.03921253239650263*y >= 0)  &&  (200.9299018899292 - 1.999295188401476*x - 3.830497831813773e-06*y >= 0) 
+[0m[31m[8Pure Random][0m[#r160,#s0] -->   [10067+:61-]|-->> [33m(100.9564407609095 + 4.148498959466451e-06*x - 0.9995685561080521*y >= 0)  &&  (14.60550458715599 - 0.09174311926605516*x + 0.02752293577981646*y >= 0)  &&  (14.20267636855891 + 0.06536211497414041*x - 0.03920381594969968*y >= 0)  &&  (200.9298923809401 - 1.999295092791925*x - 3.831017465927289e-06*y >= 0) 
