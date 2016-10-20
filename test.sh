@@ -8,15 +8,16 @@ bold="\e[1m"
 
 i=0
 if [ $# -ge 1 ] && [ $1 !=  "all" ]; then
-	echo    "--"$1"------------------------------------------------------------------------------"
+	cfgfile=`basename -s .cfg $1`
+	echo    "--"$cfgfile"------------------------------------------------------------------------------"
 	echo    "   ||----SELECTIVE---------------------------------------------------"
-	echo    "\n--"$1"------------------------------------------------------------------------------" >> result/statistics
+	echo -e "\n--"$cfgfile"------------------------------------------------------------------------------" >> result/statistics
 	echo -n "   ||----SELECTIVE---------------------------------------------------" >> result/statistics
 	echo    "" >> result/statistics
-	{ time -p timeout 120 ./run_iterative.sh $1 0 ; } 1> result/"$1".selective.out.txt 2>> result/statistics
+	{ time -p timeout 360 ./run_iterative.sh $cfgfile 0 ; } 1> result/"$cfgfile".selective.out.txt 2>> result/statistics
 	echo    "   ||----unSELECTIVE-------------------------------------------------"
 	echo    "   ||----unSELECTIVE-------------------------------------------------" >> result/statistics
-	{ time -p timeout 120 ./run_iterative.sh $1 1 ; } 1> result/"$1".unselective.out.txt 2>> result/statistics
+	{ time -p timeout 360 ./run_iterative.sh $cfgfile 1 ; } 1> result/"$cfgfile".unselective.out.txt 2>> result/statistics
 	date >> result/statistics
 	exit 0
 fi
@@ -38,7 +39,8 @@ fi
 
 date >> result/statistics
 #for file in `find cfg/ -maxdepth 1 -name '*.cfg'`
-for file in `find cfg/ -maxdepth 1 -name '*.cfg'`
+#for file in `find cfg/ -maxdepth 1 -name '*.cfg'`
+for file in `ls cfg/*.cfg`
 do
 	i=$(($i+1))
 	cfgfile=`basename -s .cfg $file`
@@ -47,16 +49,16 @@ do
 	echo -e $yellow$bold$i$normal$yellow" --> Processing $file >> "$filename" --> "$cfgfile$normal
 
 	echo    $i"--"$cfgfile"------------------------------------------------------------------------------" >> result/statistics
-	echo    "   ||----SELECTIVE---------------------------------------------------"
-	echo    "   ||----SELECTIVE---------------------------------------------------" >> result/statistics
-	{ time -p timeout 120 ./run_iterative.sh $cfgfile 0 ; } 1> result/"$cfgfile".selective.out.txt 2>> result/statistics
+	echo    "   ||----unSELECTIVE-------------------------------------------------"
+	echo    "   ||----unSELECTIVE-------------------------------------------------" >> result/statistics
+	{ time -p timeout 120 ./run_iterative.sh $cfgfile 1 ; } 1> result/"$cfgfile".unselective.out.txt 2>> result/statistics
 	echo -n -e "     ---->>"$bold$green
 	cat		"tmp/"$cfgfile".inv"
 	echo -e	""$normal 
 
-	echo    "   ||----unSELECTIVE-------------------------------------------------"
-	echo    "   ||----unSELECTIVE-------------------------------------------------" >> result/statistics
-	{ time -p timeout 120 ./run_iterative.sh $cfgfile 1 ; } 1> result/"$cfgfile".unselective.out.txt 2>> result/statistics
+	echo    "   ||----SELECTIVE---------------------------------------------------"
+	echo    "   ||----SELECTIVE---------------------------------------------------" >> result/statistics
+	{ time -p timeout 120 ./run_iterative.sh $cfgfile 0 ; } 1> result/"$cfgfile".selective.out.txt 2>> result/statistics
 	echo -n -e "     ---->>"$bold$green
 	cat		"tmp/"$cfgfile".inv"
 	echo -e	""$normal 
@@ -67,6 +69,7 @@ do
 	echo    "" >> result/statistics
 	echo    "##########################################################################################" >> result/statistics
 	date >> result/statistics
+
 done
 exit 0
 

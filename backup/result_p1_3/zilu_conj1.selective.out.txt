@@ -1,0 +1,69 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target zilu_conj1
+[  8%] Building CXX object CMakeFiles/zilu_conj1.dir/test/zilu_conj1.cpp.o
+[ 16%] Building CXX object CMakeFiles/zilu_conj1.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/zilu_conj1.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/zilu_conj1.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/zilu_conj1.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/zilu_conj1.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/zilu_conj1.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/zilu_conj1.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/zilu_conj1.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/zilu_conj1.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/zilu_conj1.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/zilu_conj1.dir/src/instrumentation.cpp.o
+Linking CXX executable zilu_conj1
+[100%] Built target zilu_conj1
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 99	99	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt[0m
+[34m[1mTest Counter Example: (99,99) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [384+:11-]|-->> [33m(4.883792048929669 + 0.009174311926605512*x - 0.03058103975535173*y >= 0)  &&  (5.264705882352942 - 0.02058823529411764*x + 0.01764705882352942*y >= 0)  &&  (3.985088268117773 - 0.02985082985089502*x - 5.283028271102497e-08*y >= 0)  &&  (100.9658507616464 + 5.253728978971139e-06*x - 0.9996637613454382*y >= 0) 
+[0m[31m[2][0m[#r8,#s32] -->   [781+:19-]|-->> [33m(4.883792048929664 + 0.009174311926605498*x - 0.03058103975535167*y >= 0)  &&  (5.26470588235294 - 0.02058823529411764*x + 0.01764705882352941*y >= 0)  &&  (200.9211026666126 - 5.259822231096223e-06*x - 1.999205766843914*y >= 0)  &&  (7.058984259503235 - 0.06059264465976497*x + 2.802064732645992e-06*y >= 0) 
+[0m[31m[3][0m[#r12,#s48] -->   [1472+:28-]|-->> [33m(4.883792048929667 + 0.009174311926605512*x - 0.0305810397553517*y >= 0)  &&  (5.264705882352942 - 0.02058823529411764*x + 0.01764705882352941*y >= 0)  &&  (13.49519002292955 - 0.1249559721675563*x + 4.07193826079677e-06*y >= 0)  &&  (200.9211029438484 - 5.259803742774238e-06*x - 1.999205769634727*y >= 0) 
+[0m[31m[4][0m[#r16,#s64] -->   [2027+:36-]|-->> [33m(4.333169824921685 + 3.660636081689872e-07*x - 0.03333206431282502*y >= 0)  &&  (5.264705882352937 - 0.02058823529411763*x + 0.0176470588235294*y >= 0)  &&  (29.56054803720764 - 0.2856099084964683*x + 4.42812439160889e-06*y >= 0)  &&  (100.9699358019147 + 4.625261249557866e-06*x - 0.9997039832803978*y >= 0)  &&  (200.9185709345875 - 4.626651445960306e-06*x - 1.999181082694435*y >= 0) 
+[0m[31m[5][0m[#r20,#s80] -->   [3032+:43-]|-->> [33m(67.6387933444953 - 0.6663835323940823*x - 4.401050869518031e-06*y >= 0)  &&  (5.264705882352937 - 0.02058823529411763*x + 0.0176470588235294*y >= 0)  &&  (200.9185404505442 - 4.628383479143849e-06*x - 1.999180776122017*y >= 0)  &&  (100.9699491353763 + 4.623209946430507e-06*x - 0.9997041145637056*y >= 0) 
+[0m[31m[6][0m[#r24,#s96] -->   [3529+:49-]|-->> [33m(4.332863925663267 + 1.096746892685629e-06*x - 0.03332965923124286*y >= 0)  &&  (200.9471272972478 - 1.999475716056679*x + 4.443084250738139e-06*y >= 0)  &&  (12.24943215575482 - 0.04998518667186544*x + 0.05000037982892636*y >= 0)  &&  (100.9699258151368 + 4.626797673878968e-06*x - 0.9997038849490352*y >= 0)  &&  (200.9185346177037 - 4.628714904697517e-06*x - 1.999180717462139*y >= 0) 
+[0m[31m[7][0m[#r28,#s112] -->   [4150+:53-]|-->> [33m(4.333637792007281 + 2.354061911950811e-06*x - 0.03333364720825494*y >= 0)  &&  (200.9471266927176 - 1.999475710062228*x + 4.443135061649173e-06*y >= 0)  &&  (12.24943444833157 - 0.04998524647821606*x + 0.05000037829543014*y >= 0)  &&  (100.9699299863128 + 4.62615595075988e-06*x - 0.9997039260190874*y >= 0)  &&  (200.9185354502588 - 4.62866762518388e-06*x - 1.999180725834975*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 7 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(1 >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.inv >>> [0m(1 >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty II (invariant && loopcondition =S=> invariant) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt[0m
+[34m[1mTest Counter Example: (101,101) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (102,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-5) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (101,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m-

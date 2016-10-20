@@ -1,0 +1,36 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target zilu_conj1
+[  8%] Building CXX object CMakeFiles/zilu_conj1.dir/test/zilu_conj1.cpp.o
+[ 16%] Building CXX object CMakeFiles/zilu_conj1.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/zilu_conj1.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/zilu_conj1.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/zilu_conj1.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/zilu_conj1.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/zilu_conj1.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/zilu_conj1.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/zilu_conj1.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/zilu_conj1.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/zilu_conj1.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/zilu_conj1.dir/src/instrumentation.cpp.o
+Linking CXX executable zilu_conj1
+[100%] Built target zilu_conj1
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 99	99	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt[0m
+[34m[1mTest Counter Example: (99,99) @/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_conj1.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [811+:11-]|-->> [33m(10.99783103499529 - 0.09997364590908253*x - 4.664440870411068e-06*y >= 0)  &&  (3.129541280756592 - 0.01184773659430255*x + 0.01181974295927625*y >= 0)  &&  (29.55947415585088 + 3.947212690924573e-06*x - 0.2855986887711985*y >= 0) 
+[0m[31m[2][0m[#r8,#s32] -->   [1428+:23-]|-->> [33m(67.6395806171755 + 3.963812119422983e-06*x - 0.666399769983876*y >= 0)  &&  (3.500594983101478 + 3.869808790107898e-06*x - 0.0250098196398049*y >= 0)  &&  (29.5594727911756 + 3.94766329048224e-06*x - 0.2855986755750477*y >= 0)  &&  (3.178607159442642 - 0.01197036900792661*x + 0.01197036900792661*y >= 0)  &&  (20.99356499145472 - 0.1999411033116194*x + 5.453397072613386e-06*y >= 0) 
+[0m[31m[3][0m[#r12,#s48] -->   [2602+:30-]|-->> [33m(200.9358587134593 + 3.983930852768935e-06*x - 1.999362571065461*y >= 0)  &&  (3.499716316436634 + 1.773022271035762e-06*x - 0.02499893618663737*y >= 0)  &&  (29.55975900636872 + 3.853158275113344e-06*x - 0.285601443221962*y >= 0)  &&  (3.308219254313143 - 0.01234868723725176*x + 0.01234339014556931*y >= 0)  &&  (50.98329464569565 - 0.499838292170331*x + 5.34571337551526e-06*y >= 0)  &&  (67.63959803853635 + 3.961262649454511e-06*x - 0.6663999416480131*y >= 0) 

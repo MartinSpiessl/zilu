@@ -1,0 +1,156 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target dillig_03
+[  8%] Building CXX object CMakeFiles/dillig_03.dir/test/dillig_03.cpp.o
+[ 16%] Building CXX object CMakeFiles/dillig_03.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/dillig_03.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/dillig_03.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/dillig_03.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/dillig_03.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/dillig_03.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/dillig_03.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/dillig_03.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/dillig_03.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/dillig_03.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/dillig_03.dir/src/instrumentation.cpp.o
+Linking CXX executable dillig_03
+[100%] Built target dillig_03
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 1	1	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt[0m
+[34m[1mTest Counter Example: (1,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [6+:87-]|-->> [33m(0.9863063063063063 + 0.005765765765765766*k + 0.007927927927927928*w >= 0)  &&  (0.9931623931623931 - 0.003418803418803418*k + 0.02735042735042735*w >= 0)  &&  (0.9935695256759653 + 0.01035000153106531*k - 0.003919527207030651*w >= 0) 
+[0m[31m[2][0m[#r8,#s32] -->   [6+:194-]|-->> [33m(0.8919708029197081 + 0.05255474452554745*k + 0.05547445255474454*w >= 0)  &&  (0.9931623931623931 - 0.003418803418803418*k + 0.02735042735042735*w >= 0)  &&  (0.9935695256759653 + 0.01035000153106531*k - 0.003919527207030651*w >= 0)  &&  (0.9724137931034483 - 0.004597701149425287*k + 0.05517241379310345*w >= 0) 
+[0m[31m[3][0m[#r12,#s48] -->   [6+:270-]|-->> [33m(0.8180668761364116 + 0.0001580453124340048*k + 0.1817750785511544*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0)  &&  (0.9935695256759653 + 0.01035000153106531*k - 0.003919527207030651*w >= 0)  &&  (1.295690936106983 - 0.05200594353640416*k + 0.01634472511144131*w >= 0)  &&  (0.8919708029197081 + 0.05255474452554745*k + 0.05547445255474454*w >= 0)  &&  (1.15280194918204 - 0.02610511660285416*k + 0.003828750435085277*w >= 0) 
+[0m[31m[4][0m[#r16,#s64] -->   [6+:318-]|-->> [33m(0.8180668761364116 + 0.0001580453124340048*k + 0.1817750785511544*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0)  &&  (0.9935695256759653 + 0.01035000153106531*k - 0.003919527207030651*w >= 0)  &&  (1.295690936106983 - 0.05200594353640416*k + 0.01634472511144131*w >= 0)  &&  (0.8919708029197081 + 0.05255474452554745*k + 0.05547445255474454*w >= 0)  &&  (1.15280194918204 - 0.02610511660285416*k + 0.003828750435085277*w >= 0) 
+[0m[31m[5][0m[#r20,#s80] -->   [6+:362-]|-->> [33m(0.994937873907041 + 0.0174873446847676*k - 0.01242521859180856*w >= 0)  &&  (0.8180668761364116 + 0.0001580453124340048*k + 0.1817750785511544*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0)  &&  (1.295690936106983 - 0.05200594353640416*k + 0.01634472511144131*w >= 0)  &&  (0.8919708029197081 + 0.05255474452554745*k + 0.05547445255474454*w >= 0)  &&  (1.15280194918204 - 0.02610511660285416*k + 0.003828750435085277*w >= 0) 
+[0m[31m[6][0m[#r24,#s96] -->   [6+:415-]|-->> [33m(0.9052369077306732 + 0.0997506234413965*k - 0.004987531172069825*w >= 0)  &&  (0.994937873907041 + 0.0174873446847676*k - 0.01242521859180856*w >= 0)  &&  (0.8180668761364116 + 0.0001580453124340048*k + 0.1817750785511544*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0)  &&  (1.295690936106983 - 0.05200594353640416*k + 0.01634472511144131*w >= 0)  &&  (1.15280194918204 - 0.02610511660285416*k + 0.003828750435085277*w >= 0) 
+[0m[31m[7][0m[#r28,#s112] -->   [6+:483-]|-->> [33m(0.9052369077306732 + 0.0997506234413965*k - 0.004987531172069825*w >= 0)  &&  (0.994937873907041 + 0.0174873446847676*k - 0.01242521859180856*w >= 0)  &&  (0.8180668761364116 + 0.0001580453124340048*k + 0.1817750785511544*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0)  &&  (1.295690936106983 - 0.05200594353640416*k + 0.01634472511144131*w >= 0)  &&  (1.15280194918204 - 0.02610511660285416*k + 0.003828750435085277*w >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 7 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(9 + k >= 0)  &&  (9 + 2*w >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.inv >>> [0m(9 + k >= 0)  &&  (9 + 2*w >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt[0m
+[34m[1mTest Counter Example: (-9,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-8,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-9,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-6,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-8,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-8,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-7,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-7,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [6+:592-]|-->> [33m(0.7692307692307693 + 0.1923076923076923*k + 0.03846153846153846*w >= 0)  &&  (0.9052369077306732 + 0.0997506234413965*k - 0.004987531172069825*w >= 0)  &&  (0.994937873907041 + 0.0174873446847676*k - 0.01242521859180856*w >= 0)  &&  (0.8180668761364116 + 0.0001580453124340048*k + 0.1817750785511544*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0)  &&  (1.15280194918204 - 0.02610511660285416*k + 0.003828750435085277*w >= 0)  &&  (1.295690936106983 - 0.05200594353640416*k + 0.01634472511144131*w >= 0) 
+[0m[31m[2][0m[#r8,#s32] -->   [6+:632-]|-->> [33m(0.7692307692307693 + 0.1923076923076923*k + 0.03846153846153846*w >= 0)  &&  (0.9052369077306732 + 0.0997506234413965*k - 0.004987531172069825*w >= 0)  &&  (0.994937873907041 + 0.0174873446847676*k - 0.01242521859180856*w >= 0)  &&  (0.8180668761364116 + 0.0001580453124340048*k + 0.1817750785511544*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0)  &&  (1.15280194918204 - 0.02610511660285416*k + 0.003828750435085277*w >= 0)  &&  (1.295690936106983 - 0.05200594353640416*k + 0.01634472511144131*w >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(4 + k >= 0)  &&  (9 + 2*w >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.inv >>> [0m(4 + k >= 0)  &&  (9 + 2*w >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 3 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt[0m
+[34m[1mTest Counter Example: (-4,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-3,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-4,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-1,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-3,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-3,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-2,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-2,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [6+:771-]|-->> [33m(0.4399999999999999 + 0.3200000000000001*k + 0.24*w >= 0)  &&  (0.7692307692307693 + 0.1923076923076923*k + 0.03846153846153846*w >= 0)  &&  (0.9052369077306732 + 0.0997506234413965*k - 0.004987531172069825*w >= 0)  &&  (0.994937873907041 + 0.0174873446847676*k - 0.01242521859180856*w >= 0)  &&  (0.8180668761364116 + 0.0001580453124340048*k + 0.1817750785511544*w >= 0)  &&  (1.15280194918204 - 0.02610511660285416*k + 0.003828750435085277*w >= 0)  &&  (1.295690936106983 - 0.05200594353640416*k + 0.01634472511144131*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0) 
+[0m[31m[2][0m[#r8,#s32] -->   [6+:816-]|-->> [33m(0.4399999999999999 + 0.3200000000000001*k + 0.24*w >= 0)  &&  (0.7692307692307693 + 0.1923076923076923*k + 0.03846153846153846*w >= 0)  &&  (0.9052369077306732 + 0.0997506234413965*k - 0.004987531172069825*w >= 0)  &&  (0.994937873907041 + 0.0174873446847676*k - 0.01242521859180856*w >= 0)  &&  (0.8180668761364116 + 0.0001580453124340048*k + 0.1817750785511544*w >= 0)  &&  (1.15280194918204 - 0.02610511660285416*k + 0.003828750435085277*w >= 0)  &&  (1.295690936106983 - 0.05200594353640416*k + 0.01634472511144131*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(5 + 4*k + 3*w >= 0)  &&  (9 + 2*w >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.inv >>> [0m(5 + 4*k + 3*w >= 0)  &&  (9 + 2*w >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty II (invariant && loopcondition =S=> invariant) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 4 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt[0m
+[34m[1mTest Counter Example: (3,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (1,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (2,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (0,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (2,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (4,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (1,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (3,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [6+:976-]|-->> [33m( -0.2000000000000001 + 0.4*k + 0.8*w >= 0)  &&  (0.6001566306996171 + 2.775557561562891e-17*k + 0.3998433693003829*w >= 0)  &&  (0.4399999999999999 + 0.3200000000000001*k + 0.24*w >= 0)  &&  (0.7692307692307693 + 0.1923076923076923*k + 0.03846153846153846*w >= 0)  &&  (0.9052369077306732 + 0.0997506234413965*k - 0.004987531172069825*w >= 0)  &&  (1.15280194918204 - 0.02610511660285416*k + 0.003828750435085277*w >= 0)  &&  (1.295690936106983 - 0.05200594353640416*k + 0.01634472511144131*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0)  &&  (0.994937873907041 + 0.0174873446847676*k - 0.01242521859180856*w >= 0) 
+[0m[31m[2][0m[#r8,#s32] -->   [6+:1067-]|-->> [33m(1.195121951219512 + 0.02439024390243903*k - 0.2195121951219512*w >= 0)  &&  ( -0.2000000000000001 + 0.4*k + 0.8*w >= 0)  &&  (0.6001566306996171 + 2.775557561562891e-17*k + 0.3998433693003829*w >= 0)  &&  (0.4399999999999999 + 0.3200000000000001*k + 0.24*w >= 0)  &&  (0.7692307692307693 + 0.1923076923076923*k + 0.03846153846153846*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0) 
+[0m[31m[3][0m[#r12,#s48] -->   [6+:1131-]|-->> [33m(1.195121951219512 + 0.02439024390243903*k - 0.2195121951219512*w >= 0)  &&  ( -0.2000000000000001 + 0.4*k + 0.8*w >= 0)  &&  (0.6001566306996171 + 2.775557561562891e-17*k + 0.3998433693003829*w >= 0)  &&  (0.4399999999999999 + 0.3200000000000001*k + 0.24*w >= 0)  &&  (0.7692307692307693 + 0.1923076923076923*k + 0.03846153846153846*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 3 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(5 - w >= 0)  &&  ( -1 + 2*k + 4*w >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.inv >>> [0m(5 - w >= 0)  &&  ( -1 + 2*k + 4*w >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 5 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt[0m
+[34m[1mTest Counter Example: (0,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-1,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-2,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-3,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (1,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-4,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-5,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m?
+[0m[34m[1mTest Counter Example: (-6,5) @/home/lijiaying/Research/GitHub/ZILU/tmp/dillig_03.cnt --> [0m?
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [6+:1194-]|-->> [33m(1 + 0.25*k - 0.25*w >= 0)  &&  (1.195121951219512 + 0.02439024390243903*k - 0.2195121951219512*w >= 0)  &&  ( -0.2000000000000001 + 0.4*k + 0.8*w >= 0)  &&  (0.6001566306996171 + 2.775557561562891e-17*k + 0.3998433693003829*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0) 
+[0m[31m[2][0m[#r8,#s32] -->   [6+:1370-]|-->> [33m(1 + 0.25*k - 0.25*w >= 0)  &&  (1.195121951219512 + 0.02439024390243903*k - 0.2195121951219512*w >= 0)  &&  ( -0.2000000000000001 + 0.4*k + 0.8*w >= 0)  &&  (0.6001566306996171 + 2.775557561562891e-17*k + 0.3998433693003829*w >= 0)  &&  (1.456647398843931 - 0.08670520231213873*k + 0.06358381502890173*w >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.

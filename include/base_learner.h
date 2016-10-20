@@ -188,6 +188,7 @@ class BaseLearner{
 			of1 << "\t\t#r_samples=" << random_samples << "\t\t#s_samples=" << selective_samples << std::endl;
 			of1.close();
 #endif
+			std::cout<< "\t\t#r_samples=" << random_samples << "\t\t#s_samples=" << selective_samples << "\t TOTAL:" << BOLD << GREEN << random_samples + selective_samples << NORMAL << std::endl;
 		}
 	protected:
 		States* gsets;

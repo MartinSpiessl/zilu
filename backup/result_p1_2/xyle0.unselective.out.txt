@@ -1,0 +1,54 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> polynomial]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target xyle0
+[  8%] Building CXX object CMakeFiles/xyle0.dir/test/xyle0.cpp.o
+[ 16%] Building CXX object CMakeFiles/xyle0.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/xyle0.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/xyle0.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/xyle0.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/xyle0.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/xyle0.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/xyle0.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/xyle0.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/xyle0.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/xyle0.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/xyle0.dir/src/instrumentation.cpp.o
+Linking CXX executable xyle0
+[100%] Built target xyle0
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[1] :::::: 0	1	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt[0m
+[34m[1mTest Counter Example: (0,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt --> [0m+
+[0m[33m>>>> Polynomial Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [44+:136-]|-->> [33m(1.458336566878469 - 7.923792749567202e-06*x + 2.170574360738743e-05*y - 0.0005197728935853609*x*x + 0.001099639557584606*x*y - 0.0001721415644044369*y*y >= 0) [0m
+[31m[2Pure Random][0m[#r40,#s0] -->   [117+:212-]|-->> [33m(1.491040725137783 + 0.0005502065554258862*x - 4.437243207038857e-05*y - 0.0008086019635619376*x*x + 0.003767421961000422*x*y - 0.0001635177767462062*y*y >= 0) [0m
+[31m[3Pure Random][0m[#r60,#s0] -->   [193+:312-]|-->> [33m(1.000306772239003 + 0.00059037804214944*x - 0.0001064288696551942*y - 0.0001585225364661956*x*x + 0.005060780081922407*x*y - 0.00020034336934771*y*y >= 0) [0m
+[31m[4Pure Random][0m[#r80,#s0] -->   [281+:422-]|-->> [33m(1.000306803669729 + 0.0005903822245197633*x - 0.0001064294526994418*y - 0.0001585213510734394*x*x + 0.005060814682042197*x*y - 0.0002003742170298961*y*y >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Polynomial): {  [32m(1 >= 0) [33m  }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.inv >>> [0m(1 >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00003.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00004.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> 

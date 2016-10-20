@@ -1,0 +1,111 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target cggmp2005_variant_true
+[  8%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/test/cggmp2005_variant_true.cpp.o
+[ 16%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/cggmp2005_variant_true.dir/src/instrumentation.cpp.o
+Linking CXX executable cggmp2005_variant_true
+[100%] Built target cggmp2005_variant_true
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 0	1	2	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt[0m
+[34m[1mTest Counter Example: (0,1,2) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m+
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r6,#s24] -->   [2+:1411-]|-->> [33m(0.9873768767332888 + 0.001721334990915176*low - 0.01415319881419145*mid + 0.01338816104045137*high >= 0)  &&  (0.9983517130410895 - 0.004552411600800597*low + 0.009889721753463365*mid + 0.006200698559711158*high >= 0)  &&  (1.054704079226597 + 0.01792030181560953*low - 0.006602216458382458*mid - 0.02405093138410752*high >= 0)  &&  (1.002167214113982 - 0.007652974839998646*low - 0.006840269547255427*mid + 0.005485760726016729*high >= 0)  &&  (1.106174264281593 - 0.001154068090017311*low - 0.02769763416041547*mid - 0.03923831506058858*high >= 0)  &&  (1.129985228951256 - 0.05022156573116691*low - 0.02363367799113737*mid - 0.05317577548005908*high >= 0)  &&  (0.9924128458368762 + 0.01373536529531035*low - 0.005494146118124141*mid + 0.006540650140623977*high >= 0) 
+[0m[31m[2][0m[#r12,#s48] -->   [2+:2656-]|-->> [33m(1.024324324324324 - 0.02432432432432433*low + 0.04594594594594595*mid >= 0)  &&  (0.9794705564559697 + 0.01728795245813074*mid + 0.02052944354403026*high >= 0)  &&  (1.054704079226597 + 0.01792030181560953*low - 0.006602216458382458*mid - 0.02405093138410752*high >= 0)  &&  (0.987012987012987 - 0.02597402597402598*low - 0.03246753246753247*mid + 0.03896103896103897*high >= 0)  &&  (1.106174264281593 - 0.001154068090017311*low - 0.02769763416041547*mid - 0.03923831506058858*high >= 0)  &&  (1.129985228951256 - 0.05022156573116691*low - 0.02363367799113737*mid - 0.05317577548005908*high >= 0)  &&  (0.9924128458368762 + 0.01373536529531035*low - 0.005494146118124141*mid + 0.006540650140623977*high >= 0)  &&  (1.03921568627451 + 0.004901960784313725*low - 0.04901960784313725*mid + 0.004901960784313725*high >= 0) 
+[0m[31m[3][0m[#r18,#s72] -->   [2+:4780-]|-->> [33m(1.024324324324324 - 0.02432432432432433*low + 0.04594594594594595*mid >= 0)  &&  (0.9794705564559697 + 0.01728795245813074*mid + 0.02052944354403026*high >= 0)  &&  (1.054704079226597 + 0.01792030181560953*low - 0.006602216458382458*mid - 0.02405093138410752*high >= 0)  &&  (0.987012987012987 - 0.02597402597402598*low - 0.03246753246753247*mid + 0.03896103896103897*high >= 0)  &&  (1.106174264281593 - 0.001154068090017311*low - 0.02769763416041547*mid - 0.03923831506058858*high >= 0)  &&  (1.129985228951256 - 0.05022156573116691*low - 0.02363367799113737*mid - 0.05317577548005908*high >= 0)  &&  (0.9924128458368762 + 0.01373536529531035*low - 0.005494146118124141*mid + 0.006540650140623977*high >= 0)  &&  (1.03921568627451 + 0.004901960784313725*low - 0.04901960784313725*mid + 0.004901960784313725*high >= 0) 
+[0m[31m[4][0m[#r24,#s96] -->   [2+:5777-]|-->> [33m(1.024324324324324 - 0.02432432432432433*low + 0.04594594594594595*mid >= 0)  &&  (0.9794705564559697 + 0.01728795245813074*mid + 0.02052944354403026*high >= 0)  &&  (1.054704079226597 + 0.01792030181560953*low - 0.006602216458382458*mid - 0.02405093138410752*high >= 0)  &&  (0.987012987012987 - 0.02597402597402598*low - 0.03246753246753247*mid + 0.03896103896103897*high >= 0)  &&  (1.106174264281593 - 0.001154068090017311*low - 0.02769763416041547*mid - 0.03923831506058858*high >= 0)  &&  (1.129985228951256 - 0.05022156573116691*low - 0.02363367799113737*mid - 0.05317577548005908*high >= 0)  &&  (0.9924128458368762 + 0.01373536529531035*low - 0.005494146118124141*mid + 0.006540650140623977*high >= 0)  &&  (1.03921568627451 + 0.004901960784313725*low - 0.04901960784313725*mid + 0.004901960784313725*high >= 0) 
+[0m[31m[5][0m[#r30,#s120] -->   [2+:7061-]|-->> [33m(1.024324324324324 - 0.02432432432432433*low + 0.04594594594594595*mid >= 0)  &&  (0.9794705564559697 + 0.01728795245813074*mid + 0.02052944354403026*high >= 0)  &&  (1.054704079226597 + 0.01792030181560953*low - 0.006602216458382458*mid - 0.02405093138410752*high >= 0)  &&  (0.987012987012987 - 0.02597402597402598*low - 0.03246753246753247*mid + 0.03896103896103897*high >= 0)  &&  (1.106174264281593 - 0.001154068090017311*low - 0.02769763416041547*mid - 0.03923831506058858*high >= 0)  &&  (1.129985228951256 - 0.05022156573116691*low - 0.02363367799113737*mid - 0.05317577548005908*high >= 0)  &&  (0.9924128458368762 + 0.01373536529531035*low - 0.005494146118124141*mid + 0.006540650140623977*high >= 0)  &&  (1.03921568627451 + 0.004901960784313725*low - 0.04901960784313725*mid + 0.004901960784313725*high >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 5 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(1 >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.inv >>> [0m(1 >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt[0m
+[34m[1mTest Counter Example: (1,0,0) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-2,-1,-1) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (0,-2,-2) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-4,-3,-3) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-5,-4,-4) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-6,-5,-5) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-7,-6,-6) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-8,-7,-7) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r6,#s24] -->   [2+:8933-]|-->> [33m( -1 + 2*high >= 0)  &&  (1.024324324324324 - 0.02432432432432433*low + 0.04594594594594595*mid >= 0)  &&  (1.054704079226597 + 0.01792030181560953*low - 0.006602216458382458*mid - 0.02405093138410752*high >= 0)  &&  (0.9794705564559697 + 0.01728795245813074*mid + 0.02052944354403026*high >= 0)  &&  (1.106174264281593 - 0.001154068090017311*low - 0.02769763416041547*mid - 0.03923831506058858*high >= 0)  &&  (1.129985228951256 - 0.05022156573116691*low - 0.02363367799113737*mid - 0.05317577548005908*high >= 0)  &&  (0.987012987012987 - 0.02597402597402598*low - 0.03246753246753247*mid + 0.03896103896103897*high >= 0)  &&  (1.03921568627451 + 0.004901960784313725*low - 0.04901960784313725*mid + 0.004901960784313725*high >= 0) 
+[0m[31m[2][0m[#r12,#s48] -->   [2+:10570-]|-->> [33m( -1 + 2*high >= 0)  &&  (1.024324324324324 - 0.02432432432432433*low + 0.04594594594594595*mid >= 0)  &&  (1.054704079226597 + 0.01792030181560953*low - 0.006602216458382458*mid - 0.02405093138410752*high >= 0)  &&  (0.9794705564559697 + 0.01728795245813074*mid + 0.02052944354403026*high >= 0)  &&  (1.106174264281593 - 0.001154068090017311*low - 0.02769763416041547*mid - 0.03923831506058858*high >= 0)  &&  (1.129985228951256 - 0.05022156573116691*low - 0.02363367799113737*mid - 0.05317577548005908*high >= 0)  &&  (0.987012987012987 - 0.02597402597402598*low - 0.03246753246753247*mid + 0.03896103896103897*high >= 0)  &&  (1.03921568627451 + 0.004901960784313725*low - 0.04901960784313725*mid + 0.004901960784313725*high >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m( -1 + 2*high >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.inv >>> [0m( -1 + 2*high >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 3 --------------------------------------------------------[0m[0m
+[31m>>>> run counter example from file %%/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt[0m
+[34m[1mTest Counter Example: (3,1,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (3,2,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (4,1,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (0,1,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-1,3,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-2,1,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-3,1,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[34m[1mTest Counter Example: (-4,1,1) @/home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.cnt --> [0m-
+[0m[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1][0m[#r6,#s24] -->   [2+:12432-]|-->> [33m( -2 + low - mid + 2*high >= 0)  &&  (1.8 - 0.8000000000000002*low - 0.4*mid >= 0)  &&  (1.054704079226597 + 0.01792030181560953*low - 0.006602216458382458*mid - 0.02405093138410752*high >= 0)  &&  ( -1 + 2*high >= 0)  &&  (1.106174264281593 - 0.001154068090017311*low - 0.02769763416041547*mid - 0.03923831506058858*high >= 0)  &&  (1.129985228951256 - 0.05022156573116691*low - 0.02363367799113737*mid - 0.05317577548005908*high >= 0)  &&  (1.024324324324324 - 0.02432432432432433*low + 0.04594594594594595*mid >= 0) 
+[0m[31m[2][0m[#r12,#s48] -->   [2+:13893-]|-->> [33m(1 - low - 2*mid + high >= 0)  &&  (2.999999999999996 - 1.999999999999998*mid >= 0)  &&  (1.054704079226597 + 0.01792030181560953*low - 0.006602216458382458*mid - 0.02405093138410752*high >= 0)  &&  (1.823529411764706 + 0.2352941176470588*low - 0.3529411764705882*mid - 0.2352941176470588*high >= 0)  &&  (1.31404958677686 + 0.09917355371900827*low - 0.115702479338843*mid - 0.09917355371900827*high >= 0)  &&  (1.129985228951256 - 0.05022156573116691*low - 0.02363367799113737*mid - 0.05317577548005908*high >= 0)  &&  ( -2 + low - mid + 2*high >= 0)  &&  (1.8 - 0.8000000000000002*low - 0.4*mid >= 0)  &&  ( -1 + 2*high >= 0)  &&  (1.024324324324324 - 0.02432432432432433*low + 0.04594594594594595*mid >= 0) 
+[0m[31m[3][0m[#r18,#s72] -->   [2+:15830-]|-->> [33m(1 - low - 2*mid + high >= 0)  &&  (2.999999999999996 - 1.999999999999998*mid >= 0)  &&  (1.054704079226597 + 0.01792030181560953*low - 0.006602216458382458*mid - 0.02405093138410752*high >= 0)  &&  (1.823529411764706 + 0.2352941176470588*low - 0.3529411764705882*mid - 0.2352941176470588*high >= 0)  &&  (1.31404958677686 + 0.09917355371900827*low - 0.115702479338843*mid - 0.09917355371900827*high >= 0)  &&  (1.129985228951256 - 0.05022156573116691*low - 0.02363367799113737*mid - 0.05317577548005908*high >= 0)  &&  ( -2 + low - mid + 2*high >= 0)  &&  (1.8 - 0.8000000000000002*low - 0.4*mid >= 0)  &&  ( -1 + 2*high >= 0)  &&  (1.024324324324324 - 0.02432432432432433*low + 0.04594594594594595*mid >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 3 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(1 - low - 2*mid + high >= 0)  &&  ( -2 + low - mid + 2*high >= 0) [33m }[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/cggmp2005_variant_true.inv >>> [0m(1 - low - 2*mid + high >= 0)  &&  ( -2 + low - mid + 2*high >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
