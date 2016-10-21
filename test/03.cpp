@@ -22,6 +22,5 @@ int main(int argc, char** argv)
  {
 iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/03.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/03.ds");
 context.addLearner("linear");
-context.addLearner("conjunctive");
 return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/03.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/03");
 }
