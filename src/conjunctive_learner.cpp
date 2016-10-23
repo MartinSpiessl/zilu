@@ -218,6 +218,7 @@ std::string ConjunctiveLearner::invariant(int n) {
 int ConjunctiveLearner::save2file(const char* dsfilename) {
 	printStatistics();
 	//std::ofstream fout("../tmp/svm.ds");
+#ifdef __DS_ENABLED
 	std::ofstream fout(dsfilename);
 	fout << svm_i->problem.np + svm_i->negative_size  << "\t" << svm_i->problem.np << "\t" << svm_i->negative_size << "\n";
 	for (int i = 0; i < svm_i->problem.np; i++) {
@@ -235,5 +236,6 @@ int ConjunctiveLearner::save2file(const char* dsfilename) {
 	fout.close();
 	//std::cout << "save to file succeed. ../tmp/svm.ds\n";
 	std::cout << "save the training dataset to file " << dsfilename << "\n";
+#endif
 	return 0;
 }

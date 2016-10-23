@@ -1,0 +1,98 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> conjunctive]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target xy0_2
+[  8%] Building CXX object CMakeFiles/xy0_2.dir/test/xy0_2.cpp.o
+[ 16%] Building CXX object CMakeFiles/xy0_2.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/xy0_2.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/xy0_2.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/xy0_2.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/xy0_2.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/xy0_2.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/xy0_2.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/xy0_2.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/xy0_2.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/xy0_2.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/xy0_2.dir/src/instrumentation.cpp.o
+Linking CXX executable xy0_2
+[100%] Built target xy0_2
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 0	0	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [1+:752-]|-->> [33m(1 + 2*y >= 0)  &&  (1 - 2*x >= 0)  &&  (1 - 0.2666666666666667*x - 0.1333333333333333*y >= 0)  &&  (1 + 0.01211283635476791*x + 0.003983415982440452*y >= 0)  &&  (1 - 0.1189189189189189*x - 0.08648648648648649*y >= 0)  &&  (1 - 0.05490196078431372*x - 0.04705882352941176*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [1+:1544-]|-->> [33m(1 + 2*y >= 0)  &&  (1 - 2*x >= 0)  &&  (1 - 0.2666666666666667*x - 0.1333333333333333*y >= 0)  &&  (1 + 0.01211283635476791*x + 0.003983415982440452*y >= 0)  &&  (1 - 0.1189189189189189*x - 0.08648648648648649*y >= 0)  &&  (1 - 0.05490196078431372*x - 0.04705882352941176*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(1 + 2*y >= 0)  &&  (1 - 2*x >= 0) [33m }[0m
+		#r_samples=40		#s_samples=0	 TOTAL:[1m[32m40[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/xy0_2.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/xy0_2.inv >>> [0m(1 + 2*y >= 0)  &&  (1 - 2*x >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00003.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/xy0_2.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty III (invariant && ~loopcondition ==> postcondition) FAILS.
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [9+:1544-]|-->> [33m(1 - 1.999529882561568*x + 1.999462722927504*y >= 0)  &&  (17 - 2*x >= 0)  &&  (1 + 0.01175722910708612*x + 0.008579599618684462*y >= 0)  &&  (1 - 0.002366863905325444*x + 0.03431952662721893*y >= 0)  &&  (1.437617085050581 - 0.02847508430123642*x - 0.02622705133008617*y >= 0)  &&  (1.907617504051864 - 0.06158833063209075*x - 0.05186385737439221*y >= 0)  &&  (2.825503355704698 - 0.1342281879194631*x - 0.09395973154362415*y >= 0)  &&  (4.862068965517242 - 0.3448275862068966*x - 0.1379310344827587*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   Pure Random[#r60,#s0] -->   [9+:2046-]|-->> [33m(1 - 1.999529882561568*x + 1.999462722927504*y >= 0)  &&  (17 - 2*x >= 0)  &&  (1 + 0.01175722910708612*x + 0.008579599618684462*y >= 0)  &&  (1 - 0.002366863905325444*x + 0.03431952662721893*y >= 0)  &&  (1.437617085050581 - 0.02847508430123642*x - 0.02622705133008617*y >= 0)  &&  (1.907617504051864 - 0.06158833063209075*x - 0.05186385737439221*y >= 0)  &&  (2.825503355704698 - 0.1342281879194631*x - 0.09395973154362415*y >= 0)  &&  (4.862068965517242 - 0.3448275862068966*x - 0.1379310344827587*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(1 - 2*x + 2*y >= 0) [33m }[0m
+		#r_samples=60		#s_samples=0	 TOTAL:[1m[32m60[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/xy0_2.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/xy0_2.inv >>> [0m(1 - 2*x + 2*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/xy0_2.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 3 --------------------------------------------------------[0m[0m
+[33m>>>> Conjunctive Learner-----------------------
+[0m[31m[1Pure Random][0m[#r20,#s0] -->   [9+:2559-]|-->> [33m(1 + x + y >= 0)  &&  (1 - 1.999529882561568*x + 1.999462722927504*y >= 0)  &&  (1 + 0.01175722910708612*x + 0.008579599618684462*y >= 0)  &&  (17 - 2*x >= 0)  &&  (1.437617085050581 - 0.02847508430123642*x - 0.02622705133008617*y >= 0)  &&  (1.907617504051864 - 0.06158833063209075*x - 0.05186385737439221*y >= 0)  &&  (2.825503355704698 - 0.1342281879194631*x - 0.09395973154362415*y >= 0)  &&  (4.862068965517242 - 0.3448275862068966*x - 0.1379310344827587*y >= 0) 
+[0m[31m[2Pure Random][0m[#r40,#s0] -->   [9+:3380-]|-->> [33m(1 + x + y >= 0)  &&  (1 - 1.999529882561568*x + 1.999462722927504*y >= 0)  &&  (1 + 0.01175722910708612*x + 0.008579599618684462*y >= 0)  &&  (17 - 2*x >= 0)  &&  (1.437617085050581 - 0.02847508430123642*x - 0.02622705133008617*y >= 0)  &&  (1.907617504051864 - 0.06158833063209075*x - 0.05186385737439221*y >= 0)  &&  (2.825503355704698 - 0.1342281879194631*x - 0.09395973154362415*y >= 0)  &&  (4.862068965517242 - 0.3448275862068966*x - 0.1379310344827587*y >= 0) 
+[0m---------------------------------------------------
+Finish running svm_i for 2 times.
+[33m  Hypothesis Invairant(Conjunctive): { [32m(1 + x + y >= 0)  &&  (1 - 2*x + 2*y >= 0) [33m }[0m
+		#r_samples=40		#s_samples=0	 TOTAL:[1m[32m40[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/xy0_2.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/xy0_2.inv >>> [0m(1 + x + y >= 0)  &&  (1 - 2*x + 2*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[1m[32m-----------------------------------------------------------finish proving---------------------------------------------------------------[0m
+[32mThe invariant can be [33m(1 + x + y >= 0)  &&  (1 - 2*x + 2*y >= 0) [0m
+
+=====================time=========================

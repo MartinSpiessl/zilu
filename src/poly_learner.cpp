@@ -210,7 +210,9 @@ int PolyLearner::save2file(const char* dsfilename) {
 	printStatistics();
 	//svm->problem.save_to_file("../tmp/svm.ds");
 	//std::cout << "save to file succeed. ../tmp/svm.ds\n";
+#ifdef __DS_ENABLED
 	svm->problem.save_to_file(dsfilename);
 	std::cout << "save the training dataset to file " << dsfilename << "\n";
+#endif
 	return 0;
 }

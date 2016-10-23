@@ -49,6 +49,13 @@ do
 	echo -e $yellow$bold$i$normal$yellow" --> Processing $file >> "$filename" --> "$cfgfile$normal
 
 	echo    $i"--"$cfgfile"------------------------------------------------------------------------------" >> result/statistics
+	echo    "   ||----SELECTIVE---------------------------------------------------"
+	echo    "   ||----SELECTIVE---------------------------------------------------" >> result/statistics
+	{ time -p timeout 120 ./run_iterative.sh $cfgfile 0 ; } 1> result/"$cfgfile".selective.out.txt 2>> result/statistics
+	echo -n -e "     ---->>"$bold$green
+	cat		"tmp/"$cfgfile".inv"
+	echo -e	""$normal 
+
 	echo    "   ||----unSELECTIVE-------------------------------------------------"
 	echo    "   ||----unSELECTIVE-------------------------------------------------" >> result/statistics
 	{ time -p timeout 120 ./run_iterative.sh $cfgfile 1 ; } 1> result/"$cfgfile".unselective.out.txt 2>> result/statistics
@@ -56,12 +63,6 @@ do
 	cat		"tmp/"$cfgfile".inv"
 	echo -e	""$normal 
 
-	echo    "   ||----SELECTIVE---------------------------------------------------"
-	echo    "   ||----SELECTIVE---------------------------------------------------" >> result/statistics
-	{ time -p timeout 120 ./run_iterative.sh $cfgfile 0 ; } 1> result/"$cfgfile".selective.out.txt 2>> result/statistics
-	echo -n -e "     ---->>"$bold$green
-	cat		"tmp/"$cfgfile".inv"
-	echo -e	""$normal 
 
 	echo    "" >> result/statistics
 	echo    "" >> result/statistics

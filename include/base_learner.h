@@ -39,7 +39,9 @@ class BaseLearner{
 		} 
 
 		void runCounterExampleFile(const char* cntempl_fname = NULL) {
-			std::cout << RED << ">>>> run counter example from file %%" << cntempl_fname << NORMAL << std::endl;
+#ifdef __PRT
+			std::cout << RED << ">>>> run counter example from file @" << cntempl_fname << NORMAL << std::endl;
+#endif
 			std::cout.unsetf(std::ios::fixed);
 			if (cntempl_fname!= NULL) {
 				std::ifstream fin(cntempl_fname);
@@ -47,12 +49,17 @@ class BaseLearner{
 					Solution s;
 					while (fin >> s) {
 						//std::cout.setf(std::ios::fixed);
-						std::cout << BLUE << BOLD << "Test Counter Example: "
-							<< s << " @" << cntempl_fname << " --> " << NORMAL;
+#ifdef __PRT
+						std::cout << BLUE << BOLD << "Test Counter Example: " << s << " --> " << NORMAL;
+#endif
 						//std::cout.unsetf(std::ios::fixed);
+#ifdef __PRT
 						int ret = runTarget(s);
 						printRunResult(ret);
 						std::cout << std::endl << NORMAL;
+#else
+						runTarget(s);
+#endif
 					}
 					int newscope = maxv;
 					for (int i = 0; i < Nv; i++) {

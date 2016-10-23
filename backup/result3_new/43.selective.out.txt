@@ -1,0 +1,58 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> linear]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target 43
+[  8%] Building CXX object CMakeFiles/43.dir/test/43.cpp.o
+[ 16%] Building CXX object CMakeFiles/43.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/43.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/43.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/43.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/43.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/43.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/43.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/43.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/43.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/43.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/43.dir/src/instrumentation.cpp.o
+Linking CXX executable 43
+[100%] Built target 43
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[0][0m
+[33m  2)---->[1] :::::: 1	0	0	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[33m>>>> Linear Learner-----------------------
+[0m[31m[1][0m[#r6,#s24] -->  [9+:16-]|-->> [33m(0.9908851350286787 + 0.009114864971321524*x + 0.1527988910526331*y - 0.1423246524756179*t >= 0) [0m
+[31m[2][0m[#r12,#s48] -->  [9+:86-]|-->> [33m(0.9995727152939143 + 0.0004272847060860924*x + 0.2598678343105632*y - 0.2706359554311766*t >= 0) [0m
+[31m[3][0m[#r18,#s72] -->  [10+:99-]|-->> [33m(0.9795853229484894 + 0.02041467705151057*x + 0.6257027765766061*y - 0.6083313120798417*t >= 0) [0m
+[31m[4][0m[#r24,#s96] -->  [19+:105-]|-->> [33m(0.9999820345744013 + 1.79654255987316e-05*x + 1.999268711855223*y - 1.999260885626576*t >= 0) [0m
+[31m[5][0m[#r30,#s120] -->  [60+:149-]|-->> [33m(0.9999420226140501 + 2.015398486321374e-06*x + 1.999538293178382*y - 1.99953760937381*t >= 0) [0m
+[31m[6][0m[#r36,#s144] -->  [63+:177-]|-->> [33m(0.9999009181919973 + 1.824171576458866e-06*x + 1.999504248104692*y - 1.9995039378272*t >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Linear): {  [32m(1 + 2*y - 2*t >= 0) [33m  }[0m
+		#r_samples=36		#s_samples=144	 TOTAL:[1m[32m180[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/43.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/43.inv >>> [0m(1 + 2*y - 2*t >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[1m[32m-----------------------------------------------------------finish proving---------------------------------------------------------------[0m
+[32mThe invariant can be [33m(1 + 2*y - 2*t >= 0) [0m
+
+=====================time=========================

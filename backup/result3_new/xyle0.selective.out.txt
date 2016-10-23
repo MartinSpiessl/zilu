@@ -1,0 +1,111 @@
+[ 20%] [34mCompiling cfg2init...[0m[32m[DONE][0m
+[ 40%] [34mCompiling cfg2test...[0m[32m[DONE][0m
+[ 60%] [34mCompiling cfg2verif...[0m[32m[DONE][0m
+[ 80%] [34mCompiling smt2solver...[0m[32m[DONE][0m
+[100%] [34mCompiling model_parse...[0m[32m[DONE][0m
+[34mConverting the given config file to a valid cplusplus file...[0mLearners [[--> polynomial]][32m[1m[DONE][0m
+[34mGenerating CMakeLists file for further construction...[0m[32m[1m[DONE][0m
+[34mBuild the project...[0m
+Scanning dependencies of target xyle0
+[  8%] Building CXX object CMakeFiles/xyle0.dir/test/xyle0.cpp.o
+[ 16%] Building CXX object CMakeFiles/xyle0.dir/src/linear_learner.cpp.o
+[ 25%] Building CXX object CMakeFiles/xyle0.dir/src/svm_core.cpp.o
+[ 33%] Building CXX object CMakeFiles/xyle0.dir/src/color.cpp.o
+[ 41%] Building CXX object CMakeFiles/xyle0.dir/src/state.cpp.o
+[ 50%] Building CXX object CMakeFiles/xyle0.dir/src/polynomial.cpp.o
+[ 58%] Building CXX object CMakeFiles/xyle0.dir/src/iif.cpp.o
+[ 66%] Building CXX object CMakeFiles/xyle0.dir/src/config.cpp.o
+[ 75%] Building CXX object CMakeFiles/xyle0.dir/src/classifier.cpp.o
+[ 83%] Building CXX object CMakeFiles/xyle0.dir/src/poly_learner.cpp.o
+[ 91%] Building CXX object CMakeFiles/xyle0.dir/src/conjunctive_learner.cpp.o
+[100%] Building CXX object CMakeFiles/xyle0.dir/src/instrumentation.cpp.o
+Linking CXX executable xyle0
+[100%] Built target xyle0
+[32mGEN INIT[0m
+[34mGenerating a C file to get initial positive value by KLEE...[0m[32m[1m[Done][0m
+[33mLOOKING FOR SMT for Z3
+[33m  1)---->[1] :::::: 0	1	
+[0m[34mRunning the project to generate invariant candidiate...[0m
+[32m[1m--------------------------------------------- Iteration 1 --------------------------------------------------------[0m[0m
+[33m>>>> Polynomial Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [85+:108-]|-->> [33m(1.000254524169149 + 1.906648134284708e-06*x - 1.207628482545724e-05*y + 3.149255151894004e-08*x*x + 0.000454430348551871*x*y - 0.0002424478843235742*y*y >= 0) [0m
+[31m[2][0m[#r8,#s32] -->   [206+:142-]|-->> [33m(0.9628388992602945 + 0.002190015793932944*x + 0.03774805974032831*y + 2.828460894917272e-05*x*x + 0.04350970150997702*x*y - 0.0005869590006227776*y*y >= 0) [0m
+[31m[3][0m[#r12,#s48] -->   [268+:261-]|-->> [33m(0.9424080977386694 + 0.005365166349642927*x + 0.05850486302519766*y + 6.521094374367653e-05*x*x + 0.06786223216738839*x*y - 0.0009129607638668721*y*y >= 0) [0m
+[31m[4][0m[#r16,#s64] -->   [334+:316-]|-->> [33m(1.001505573838615 + 0.2201568905283227*x - 0.0007527869193077215*y + 0.002392541205162857*x*x + 0.2894132871047522*x*y - 0.0007527869193077215*y*y >= 0) [0m
+[31m[5][0m[#r20,#s80] -->   [410+:366-]|-->> [33m(1.001505573808412 + 0.220156888931854*x - 0.0007527869042059453*y + 0.002392541183231955*x*x + 0.2894132841184581*x*y - 0.0007527869042059453*y*y >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Polynomial): {  [32m(14 + 3*x + 4*x*y >= 0) [33m  }[0m
+		#r_samples=20		#s_samples=80	 TOTAL:[1m[32m100[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.inv >>> [0m(14 + 3*x + 4*x*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 2 --------------------------------------------------------[0m[0m
+[33m>>>> Polynomial Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [495+:414-]|-->> [33m(1.067009617251325 + 0.0263255825749743*x - 0.0649155715142514*y + 0.002392358254875937*x*x + 0.4832474442058206*x*y - 0.002094045737073599*y*y >= 0) [0m
+[31m[2][0m[#r8,#s32] -->   [627+:449-]|-->> [33m(1.066161105553344 + 0.02629542173296875*x - 0.06572295374323997*y + 0.002392592265493487*x*x + 0.4833296501639154*x*y - 0.0004381518101035797*y*y >= 0) [0m
+[31m[3][0m[#r12,#s48] -->   [672+:462-]|-->> [33m(1.087786234223352 + 0.03491944816947901*x - 0.08720487458226461*y + 0.003189880567433745*x*x + 0.6413379106122891*x*y - 0.0005813596410873256*y*y >= 0) [0m
+[31m[4][0m[#r16,#s64] -->   [692+:499-]|-->> [33m(1.087792661184022 + 0.03489095343074033*x - 0.08721126833286338*y + 0.003189825275211389*x*x + 0.6413538772682518*x*y - 0.0005813928511586575*y*y >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Polynomial): {  [32m(5 + 3*x*y >= 0) [33m  }[0m
+		#r_samples=16		#s_samples=64	 TOTAL:[1m[32m80[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.inv >>> [0m(5 + 3*x*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 3 --------------------------------------------------------[0m[0m
+[33m>>>> Polynomial Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [736+:580-]|-->> [33m(1.260707440694935 + 0.1043118005513097*x - 0.2589809118503847*y + 0.009569325465657474*x*x + 1.905252483629519*x*y - 0.001726528844549824*y*y >= 0) [0m
+[31m[2][0m[#r8,#s32] -->   [807+:597-]|-->> [33m(1.260724133683038 + 0.1042572543881668*x - 0.2589975086329239*y + 0.00956935570397599*x*x + 1.905313350016784*x*y - 0.001726625050113784*y*y >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Polynomial): {  [32m(5 - y + 7*x*y >= 0) [33m  }[0m
+		#r_samples=8		#s_samples=32	 TOTAL:[1m[32m40[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.inv >>> [0m(5 - y + 7*x*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [31m[1m [sat] [FAIL][0m >>> counter example(s) are  stored at [33m/home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.cnt[0m
+[31m>>>NOT A VALID INVARIVANT...Reason: [1mProperty I (precondition ==> invariant) FAILS. 
+[0m
+[32m[1m--------------------------------------------- Iteration 4 --------------------------------------------------------[0m[0m
+[33m>>>> Polynomial Learner-----------------------
+[0m[31m[1][0m[#r4,#s16] -->   [884+:683-]|-->> [33m(1.056326305339544 + 0.0750567827930555*x - 0.06571009514488924*y + 0.009569313635298116*x*x + 1.934505783773676*x*y + 0.009383789805345044*y*y >= 0) [0m
+[31m[2][0m[#r8,#s32] -->   [918+:721-]|-->> [33m(1.056353610516999 + 0.07509110555761755*x - 0.06573704745868736*y + 0.009569271040226424*x*x + 1.934463262252417*x*y + 0.00938343694168764*y*y >= 0) [0m
+--------------------------------------------------
+[33m  Invariant Candidate(Polynomial): {  [32m(1 + 2*x*y >= 0) [33m  }[0m
+		#r_samples=8		#s_samples=32	 TOTAL:[1m[32m40[0m
+save the training dataset to file /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.ds
+[34mInvariant file is located at /home/lijiaying/Research/GitHub/ZILU/tmp/xyle0.inv >>> [0m(1 + 2*x*y >= 0) 
+[34mGenerating a new config file contains the invariant candidate...[0m[32m[1m[Done][0m
+[34mGenerating three C files to do the verification by KLEE...[0m[32m[1m[Done][0m
+[32mCompiling the C files and Run KLEE...1[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...2[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00002.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00003.smt2 ---> [32m[1m [unsat] [PASS][0m
+  |-- processing kleeAssert00004.smt2 ---> [32m[1m [unsat] [PASS][0m
+[32mCompiling the C files and Run KLEE...3[0m
+[34mRunning KLEE to generate path condition[0m
+  |-- processing kleeAssert00001.smt2 ---> [32m[1m [unsat] [PASS][0m
+[1m[32m-----------------------------------------------------------finish proving---------------------------------------------------------------[0m
+[32mThe invariant can be [33m(1 + 2*x*y >= 0) [0m
+
+=====================time=========================

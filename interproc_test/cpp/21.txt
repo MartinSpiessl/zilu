@@ -1,0 +1,16 @@
+var	n:int, k:int, i:int;
+
+begin
+	if (n>0 and n<10 and i==0) then
+		while (i<n) do
+			i=i+1; 
+			if(brandom) then
+				k=k+4000; 
+			else 
+				k=k+2000;
+			endif;
+		done;
+	//k>n
+
+	endif;
+end

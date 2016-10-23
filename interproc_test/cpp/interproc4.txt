@@ -1,0 +1,16 @@
+var	i:int, j:int;
+
+begin
+	if (i>=1 and j>=1) then
+	if ( i * i < j * j) then
+		while ( i < j) do
+			 j = j - i; 
+			 if (j < i) then
+				j = j + i; i = j - i; j = j - i;
+			endif;
+		done;
+	//j == i
+
+	endif;
+	endif;
+end
