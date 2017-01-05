@@ -7,7 +7,7 @@
 * [clang](http://clang.llvm.org/get_started.html)
 * "make" and otherLLVM essential building tools, you can add if needed
 * [z3](https://github.com/Z3Prover/z3) the installation folder should be "/usr" or "/usr/local", otherwise you should modify $Z3_ROOT in cmake.base in the project directory so cmake can find it. 
-* [GSL](http://www.gnu.org/software/gsl/) This library is used to solve equations in our project.
+* [GSL](http://www.gnu.org/software/gsl/) This library is used to solve equations in our project. (ubuntu: apt-get install libgsl0-dev)
 * [KLEE](https://klee.github.io/) only test llvm2.9 yet, so try to build KLEE by [build-llvm29](http://klee.github.io/build-llvm29/)
 
 
