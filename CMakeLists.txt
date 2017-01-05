@@ -1,6 +1,5 @@
 cmake_minimum_required (VERSION 2.8)
 set(Nv 2)
-add_definitions(-D__SELECTIVE_SAMPLING_ENABLED)
 project(InvariantInferenceFramework)
 set(PRECISION 3)
 
