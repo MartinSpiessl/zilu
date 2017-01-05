@@ -18,7 +18,7 @@ add_definitions (-D__DS_ENABLED)
 #add_definitions (-D__PRT_INFER)
 #add_definitions (-D__PRT_QUERY)
 add_definitions (-D__PRT_STATISTICS)
-#add_definitions (-DSCRIPT)
+add_definitions (-DSCRIPT)
 
 #option(PRINT_ALL "Print All Message" ON)
 option(PRINT_ALL "Print All Message" OFF)

@@ -369,7 +369,7 @@ POSTC	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LO
 POSTC	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
 PREC	tools/src/cfg2init.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
 PREC	tools/src/cfg2verif.cpp	/^enum category {NAME=0, BEFL, BEFLI, SYM, PREC, LOOPC, LOOP, POSTC, AFTL, INV, LEARNERS};$/;"	e	enum:category	file:
-PRECISION	include/config.h	65;"	d
+PRECISION	include/config.h	64;"	d
 PRECOMPUTED	include/svm_core.h	/^enum { LINEAR, POLY, RBF, SIGMOID, PRECOMPUTED }; \/* kernel_type *\/$/;"	e	enum:__anon5
 PolyLearner	include/poly_learner.h	/^class PolyLearner: public BaseLearner {$/;"	c
 PolyLearner	src/poly_learner.cpp	/^PolyLearner::PolyLearner(States* gsets, int (*func)(int*), int max_iteration) $/;"	f	class:PolyLearner
@@ -658,45 +658,18 @@ learners	tools/src/cfg2test.cpp	/^		vector<string> learners;$/;"	m	class:FileHel
 len	src/svm_core.cpp	/^			int len;		\/\/ data[0,len) is cached in this entry$/;"	m	struct:Cache::head_t	file:
 libsvm_version	src/svm_core.cpp	/^int libsvm_version = LIBSVM_VERSION;$/;"	v
 line	src/svm_core.cpp	/^static char *line = NULL;$/;"	v	file:
-loopFunction	test/01_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/02_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/03.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/03_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/04_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/05.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/05_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/10_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/11.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/11_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/13_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/14_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/15_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/16_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/17_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/19_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/20.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/20_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/21.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/21_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/22_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/23.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/23_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/25_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/28.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/28_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/30.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/30_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/32_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/33_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/35.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/35_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/37_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/41.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/41_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/43.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/43_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/44.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/44_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/afnp2014_true.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/bound.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/cggmp2005_variant_true.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
@@ -717,6 +690,7 @@ loopFunction	test/down_true_2.cpp	/^int loopFunction(int _reserved_input_[]) {$/
 loopFunction	test/ex49.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/f2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/f3.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/fig1c.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/fm05.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/fm11.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/half.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
@@ -725,17 +699,16 @@ loopFunction	test/interproc2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;
 loopFunction	test/interproc3.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/interproc4.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/interproc5.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/large_const.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/linear1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/multivar_1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/multivar_true_1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/new.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/new_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/pldi08.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/pldi08_fig7.c_copy.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/pldi08_fig7.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/simple_if.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/splitter1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
-loopFunction	test/substring1.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
+loopFunction	test/terminator_01.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/terminator_01_safe.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/up_true_2.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
 loopFunction	test/xle10.cpp	/^int loopFunction(int _reserved_input_[]) {$/;"	f
@@ -835,45 +808,18 @@ main	cfg/oopsla13-cfg/c/43.c	/^int main(int x, int y)$/;"	f
 main	cfg/oopsla13-cfg/c/44.c	/^int main(int k, int flag)$/;"	f
 main	cfg/oopsla13-cfg/c/45.c	/^void main(int flag)$/;"	f
 main	cfg/oopsla13-cfg/c/46.c	/^void main()$/;"	f
-main	test/01_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/02_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/03.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/03_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/04_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/05.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/05_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/10_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/11.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/11_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/13_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/14_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/15_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/16_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/17_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/19_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/20.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/20_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/21.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/21_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/22_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/23.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/23_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/25_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/28.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/28_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/30.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/30_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/32_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/33_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/35.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/35_copy.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/37_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/41.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/41_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/43.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/43_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/44.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/44_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/afnp2014_true.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/bound.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/cggmp2005_variant_true.cpp	/^int main(int argc, char** argv)$/;"	f
@@ -894,6 +840,7 @@ main	test/down_true_2.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/ex49.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/f2.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/f3.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/fig1c.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/fm05.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/fm11.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/half.cpp	/^int main(int argc, char** argv)$/;"	f
@@ -902,17 +849,16 @@ main	test/interproc2.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/interproc3.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/interproc4.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/interproc5.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/large_const.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/linear1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/multivar_1.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/multivar_true_1.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/new.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/new_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/pldi08.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/pldi08_fig7.c_copy.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/pldi08_fig7.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/simple_if.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/splitter1.cpp	/^int main(int argc, char** argv)$/;"	f
-main	test/substring1.cpp	/^int main(int argc, char** argv)$/;"	f
+main	test/terminator_01.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/terminator_01_safe.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/up_true_2.cpp	/^int main(int argc, char** argv)$/;"	f
 main	test/xle10.cpp	/^int main(int argc, char** argv)$/;"	f
@@ -1096,6 +1042,10 @@ main	tmp/f3_init/f3_init.c	/^int main() {$/;"	f
 main	tmp/f3_klee1/f3.c	/^int main() {$/;"	f
 main	tmp/f3_klee2/f3.c	/^int main() {$/;"	f
 main	tmp/f3_klee3/f3.c	/^int main() {$/;"	f
+main	tmp/fig1c_init/fig1c_init.c	/^int main() {$/;"	f
+main	tmp/fig1c_klee1/fig1c.c	/^int main() {$/;"	f
+main	tmp/fig1c_klee2/fig1c.c	/^int main() {$/;"	f
+main	tmp/fig1c_klee3/fig1c.c	/^int main() {$/;"	f
 main	tmp/fm11_init/fm11_init.c	/^int main() {$/;"	f
 main	tmp/fm11_klee1/fm11.c	/^int main() {$/;"	f
 main	tmp/fm11_klee2/fm11.c	/^int main() {$/;"	f
@@ -1128,6 +1078,10 @@ main	tmp/large_const_init/large_const_init.c	/^int main() {$/;"	f
 main	tmp/large_const_klee1/large_const.c	/^int main() {$/;"	f
 main	tmp/large_const_klee2/large_const.c	/^int main() {$/;"	f
 main	tmp/large_const_klee3/large_const.c	/^int main() {$/;"	f
+main	tmp/multivar_1_init/multivar_1_init.c	/^int main() {$/;"	f
+main	tmp/multivar_1_klee1/multivar_1.c	/^int main() {$/;"	f
+main	tmp/multivar_1_klee2/multivar_1.c	/^int main() {$/;"	f
+main	tmp/multivar_1_klee3/multivar_1.c	/^int main() {$/;"	f
 main	tmp/multivar_true_1_init/multivar_true_1_init.c	/^int main() {$/;"	f
 main	tmp/multivar_true_1_klee1/multivar_true_1.c	/^int main() {$/;"	f
 main	tmp/multivar_true_1_klee2/multivar_true_1.c	/^int main() {$/;"	f
@@ -1146,6 +1100,10 @@ main	tmp/substring1_init/substring1_init.c	/^int main() {$/;"	f
 main	tmp/substring1_klee1/substring1.c	/^int main() {$/;"	f
 main	tmp/substring1_klee2/substring1.c	/^int main() {$/;"	f
 main	tmp/substring1_klee3/substring1.c	/^int main() {$/;"	f
+main	tmp/terminator_01_init/terminator_01_init.c	/^int main() {$/;"	f
+main	tmp/terminator_01_klee1/terminator_01.c	/^int main() {$/;"	f
+main	tmp/terminator_01_klee2/terminator_01.c	/^int main() {$/;"	f
+main	tmp/terminator_01_klee3/terminator_01.c	/^int main() {$/;"	f
 main	tmp/terminator_01_safe_init/terminator_01_safe_init.c	/^int main() {$/;"	f
 main	tmp/terminator_01_safe_klee1/terminator_01_safe.c	/^int main() {$/;"	f
 main	tmp/terminator_01_safe_klee2/terminator_01_safe.c	/^int main() {$/;"	f

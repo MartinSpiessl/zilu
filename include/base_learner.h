@@ -191,8 +191,8 @@ class BaseLearner{
 			//strftime(tmbuf, sizeof(tmbuf), "%Y-%m-%d %H:%M:%S", nowtm);
 			strftime(tmbuf, sizeof(tmbuf), "%H:%M:%S", nowtm);
 			snprintf(buf, sizeof(buf), "%s.%06ld", tmbuf, tv.tv_usec);
-			//of1 << buf << "\t\t" << random_samples << "\t\t" << selective_samples << std::endl;
-			of1 << "\t\t#r_samples=" << random_samples << "\t\t#s_samples=" << selective_samples << std::endl;
+			//of1 << "\t\t#r_samples=" << random_samples << "\t\t#s_samples=" << selective_samples << std::endl;
+			of1 << random_samples << "\t" << selective_samples << std::endl;
 			of1.close();
 #endif
 			std::cout<< "\t\t#r_samples=" << random_samples << "\t\t#s_samples=" << selective_samples << "\t TOTAL:" << BOLD << GREEN << random_samples + selective_samples << NORMAL << std::endl;

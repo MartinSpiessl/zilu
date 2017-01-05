@@ -279,6 +279,7 @@ class Polynomial {
 		 * @return int 0 if no error.
 		 */
 		static int solver(/*const*/ Polynomial* poly, Solution& sol) {
+			//std::cout << YELLOW << "*" << minv << "~~~" << maxv << std::endl << NORMAL;
 			if (poly == NULL) {
 				/**
 				 * poly == NULL means no polynomail is specified

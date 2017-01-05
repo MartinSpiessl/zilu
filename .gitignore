@@ -11,3 +11,4 @@ tags
 ./CMakeLists.txt
 ./include/config.h
 result/
+result*

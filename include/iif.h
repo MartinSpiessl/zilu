@@ -69,7 +69,7 @@ namespace iif{
 			iifContext (States* ss);
 
 			iifContext (const char* vfilename, int (*func)(int*), const char* func_name = "Unknown", 
-					const char* pasttestcase = NULL, int timeout = 120);
+					const char* pasttestcase = NULL, int timeout = 60*15);
 
 			~iifContext();
 

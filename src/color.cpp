@@ -62,7 +62,9 @@ void setColor(std::ostream& out, int choice) {
 #endif
 
 std::ostream& operator << (std::ostream& out, Color c) {
+#ifndef SCRIPT
 	setColor(out, c);
+#endif
 	return out;
 }
 
