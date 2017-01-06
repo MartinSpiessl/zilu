@@ -51,23 +51,36 @@ public:
 	Nsample totalu;
 
 	friend ostream& operator << (ostream& out, Testcase tc) {
-		out << tc.no << ". " << tc.filename << "\n";
+		out << tc.no << ". " << tc.filename;
+		out << "\n\tS" << "\t" << tc.selective_samples.size() 
+			<< "\t" << tc.selective_time.real
+			<< "\t" << tc.totals.randn + tc.totals.slctn;
+		if (tc.selective_samples.size() == 128 || tc.selective_time.real >= 118 || tc.totals.randn + tc.totals.slctn == 0)
+			out << "\tFail";
+		else
+			out << "\tPass";
+		out << "\n\tU\t" << tc.unselective_samples.size() 
+			<< "\t" << tc.unselective_time.real
+			<< "\t" << tc.totals.randn;
+		if (tc.unselective_samples.size() == 128 || tc.unselective_time.real >= 118 || tc.totals.randn == 0)
+			out << "\tFail";
+		else
+			out << "\tPass";
+		return out;
 		/*for (size_t i = 0; i < tc.selective_samples.size(); i++) {
 			out << "(" << tc.selective_samples[i] << ") ";
 		}*/
 		out << "  selective"
-			<< "\n  \tnum_of_rounds " << tc.selective_samples.size() 
-			<< "\n  \tworking_time " << tc.selective_time.real
-			<< "\n  \ttotal_num_of_samples " << tc.totals.randn + tc.totals.slctn
-			<< "\n  \tnum_of_rands " << tc.totals.randn 
-			<< "\n  \tnum_of_select " << tc.totals.slctn << "\n";
-		/*for (size_t i = 0; i < tc.unselective_samples.size(); i++) {
-			out << "(" << tc.unselective_samples[i] << ") ";
-		}*/
+			<< "\n  \tnum_of_round\t" << tc.selective_samples.size() 
+			<< "\n  \tworking_time\t" << tc.selective_time.real
+			<< "\n  \tnum_of_smpls\t" << tc.totals.randn + tc.totals.slctn
+			//<< "\n  \tnum_of_rands\t" << tc.totals.randn 
+			//<< "\n  \tnum_of_selct\t" << tc.totals.slctn 
+			<< "\n";
 		out << "  unselective"
-			<< "\n  \tnum_of_rounds " << tc.unselective_samples.size() 
-			<< "\n  \tworking_time " << tc.unselective_time.real
-			<< "\n  \ttotal_num_of_samples " << tc.totals.randn << "\n";
+			<< "\n  \tnum_of_round\t" << tc.unselective_samples.size() 
+			<< "\n  \tworking_time\t" << tc.unselective_time.real
+			<< "\n  \tnum_of_smpls\t" << tc.totals.randn << "\n";
 		return out;
 	}
 };
@@ -175,7 +188,7 @@ int main(int argc, char** argv)
 	parse_statistics(fp);
 	fp.close();
 	for (size_t i = 0; i < testcases.size(); i++)
-		cout << testcases[i] << endl;
+		cout << "----------------------------\n" << testcases[i] << endl;
 
 	return 0;
 }
