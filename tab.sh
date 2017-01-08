@@ -14,11 +14,11 @@ else
 fi
 
 if [ -d "./result" ]; then
-	mv ./result ./result_`date +%m%d%H%M`
+	mv ./result ./result_old_`date +%m%d%H%M`
 fi
 mkdir -p result
 
-#for file in `find cfg/ -maxdepth 1 -name '*.cfg'`
+from=`date +%m%d%H%M`
 #for file in `find cfg/ -maxdepth 1 -name '*.cfg'`
 date >> result/statistics
 for file in `ls $folder/*.cfg`
@@ -27,6 +27,7 @@ do
 	cfgfile=`basename -s .cfg $file`
 	echo -e $yellow$bold$i$normal$yellow" --> Processing $file >> "$filename" --> "$cfgfile$normal
 
+	rm -rf tmp/*
 	echo    $i >> result/statistics
 	echo    $cfgfile >> result/statistics
 	echo    "   ||----SELECTIVE---------------------------------------------------"
@@ -35,6 +36,7 @@ do
 	cat		"tmp/"$cfgfile".inv"
 	echo -e	""$normal 
 
+	rm -rf tmp/*
 	echo    "" >> result/statistics
 	echo    "   ||----unSELECTIVE-------------------------------------------------"
 	{ time -p timeout 120 ./run.sh $cfgfile 1 ; } 1> result/"$cfgfile".unselective.out.txt 2>> result/statistics
@@ -46,4 +48,10 @@ do
 	echo    "" >> result/statistics
 
 done
+
+to=`date +%m%d%H%M`
+
+if [ -d "./result" ]; then
+	mv ./result "./result_"$from"-"$to
+fi
 exit 0

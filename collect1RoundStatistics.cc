@@ -61,7 +61,7 @@ public:
 			out << "\tPass";
 		out << "\n\tU\t" << tc.unselective_samples.size() 
 			<< "\t" << tc.unselective_time.real
-			<< "\t" << tc.totals.randn;
+			<< "\t" << tc.totalu.randn;
 		if (tc.unselective_samples.size() == 128 || tc.unselective_time.real >= 118 || tc.totals.randn == 0)
 			out << "\tFail";
 		else
@@ -80,7 +80,7 @@ public:
 		out << "  unselective"
 			<< "\n  \tnum_of_round\t" << tc.unselective_samples.size() 
 			<< "\n  \tworking_time\t" << tc.unselective_time.real
-			<< "\n  \tnum_of_smpls\t" << tc.totals.randn << "\n";
+			<< "\n  \tnum_of_smpls\t" << tc.totalu.randn << "\n";
 		return out;
 	}
 };

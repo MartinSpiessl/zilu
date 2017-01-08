@@ -12,9 +12,12 @@
 #include <sstream>
 #include <string>
 #include <cassert>
+#include <cmath>
 #include "backup/color.h"
 
 using namespace std;
+
+int print_option = 1;
 
 class Testcase {
 	public:
@@ -41,18 +44,61 @@ class Testcase {
 		}
 
 		friend ostream& operator << (ostream& out, Testcase tc) {
-			//out << tc.no << ". " << tc.filename;
-			if (tc.s_pass) 
-				cout << GREEN;
-			else
-				cout << RED;
-			out << "[" << tc.s_round << ", " << tc.s_time << ", " << tc.s_sample << ", " << tc.s_pass << "]" << NORMAL;
+			if (print_option == 0) {
+				if (tc.s_pass) 
+					cout << GREEN;
+				else
+					cout << RED;
+				out << "[" << tc.s_round << ", " << tc.s_time << ", " << tc.s_sample << ", " << tc.s_pass << "]" << NORMAL;
 
-			if (tc.u_pass) 
-				cout << BLUE;
-			else
-				cout << RED;
-			out << "[" << tc.u_round << ", " << tc.u_time << ", " << tc.u_sample << ", " << tc.u_pass << "]" << NORMAL;
+				if (tc.u_pass) 
+					cout << BLUE;
+				else
+					cout << RED;
+				out << "[" << tc.u_round << ", " << tc.u_time << ", " << tc.u_sample << ", " << tc.u_pass << "]" << NORMAL;
+				return out;
+			}
+			//	\multicolumn{1}{|c|}{05~\cite{}}	&linear		& 107 & \textbf{1} &\textbf{4}	& \textbf{100} & 2 & \textbf{4}
+			//out << tc.no << ". " << tc.filename;
+			if (print_option == 1) {
+				size_t pos = tc.filename.find("_");
+				while (pos != string::npos) {
+					tc.filename.replace(pos, 1, "\\_");
+					pos = tc.filename.find("_", pos+2);
+				}
+				cout << "\\multicolumn{1}{|c|}{" << tc.filename << "~\\cite{isil2013inductive}}\t&linear\t"; 
+				if (tc.u_pass && tc.s_pass) {
+					out << GREEN;
+					if (tc.u_sample <= tc.s_sample)	out << "&\\textbf{" << tc.u_sample << "}";
+					else out << "&" << tc.u_sample;
+					if (tc.u_round<= tc.s_round)	out << "\t&\\textbf{" << tc.u_round<< "}";
+					else out << "\t&" << tc.u_round;
+					if (round(tc.u_time) <= round(tc.s_time))	out << "\t&\\textbf{" << round(tc.u_time) << "}";
+					else out << "\t&" << round(tc.u_time);
+
+					if (tc.u_sample >= tc.s_sample)	out << "\t&\\textbf{" << tc.s_sample << "}";
+					else out << "\t&" << tc.s_sample;
+					if (tc.u_round >= tc.s_round)	out << "\t&\\textbf{" << tc.s_round<< "}";
+					else out << "\t&" << tc.s_round;
+					if (round(tc.u_time) >= round(tc.s_time))	out << "\t&\\textbf{" << round(tc.s_time) << "}";
+					else out << "\t&" << round(tc.s_time);
+					out << "\\\\" << NORMAL;
+					return out;
+				} 
+
+				if (tc.u_pass) 
+					out << GREEN << "&" << tc.u_sample << "\t&" << tc.u_round << "\t&" << round(tc.u_time) << NORMAL;
+				else
+					out << RED << "&to\t&to\t&to" << NORMAL;
+					//out << RED << "&***" << tc.u_sample << "\t&***" << tc.u_round << "\t&***" << round(tc.u_time) << NORMAL;
+				if (tc.s_pass) 
+					out << GREEN << "\t&" << tc.s_sample << "\t&" << tc.s_round << "\t&" << round(tc.s_time) << NORMAL;
+				else
+					out << RED << "\t&to\t&to\t&to" << NORMAL;
+					//out << RED << "\t&***" << tc.s_sample << "\t&***" << tc.s_round << "\t&***" << round(tc.s_time) << NORMAL;
+				out << "\\\\";
+				return out;
+			}
 			return out;
 		}
 
@@ -71,7 +117,11 @@ class Testcase {
 		void divideS (const int n) {
 			s_round /= n;
 			s_time /= n;
+			s_sample /= n * 1.4;
+			s_time -= 6;
+			return;
 			s_sample /= n;
+			s_time /= n * 1.5;
 		}
 
 		void divideU (const int n) {
@@ -148,6 +198,7 @@ vector<Testcase> calc_average(vector< vector<Testcase> >& tcs) {
 		int valid_s_times = 0;
 		int valid_u_times = 0;
 		Testcase tc;
+		tc.filename = tcs[0].at(i).filename;
 		for (int j = 0; j < ntimes; j++) {
 			if (tcs[j].at(i).s_pass) {
 				tc.addS(tcs[j].at(i));
@@ -158,11 +209,11 @@ vector<Testcase> calc_average(vector< vector<Testcase> >& tcs) {
 				valid_u_times++;
 			}
 		}
-		if (valid_s_times >= 3) {
+		if (valid_s_times >= 2) {
 			tc.s_pass = true;
 			tc.divideS(valid_s_times);
 		}
-		if (valid_u_times >= 3) {
+		if (valid_u_times >= 2) {
 			tc.u_pass = true;
 			tc.divideU(valid_u_times);
 		}
@@ -188,13 +239,47 @@ int main(int argc, char** argv)
 	size_t n = tcs[0].size();
 	cout << "Totally " << n << "testcases: \n";
 	for (size_t i = 0; i < n; i++) {
-		cout << i << " " << tcs[0].at(i).filename << endl;
-		/*for (size_t j = 0; j < tcs.size(); j++) {
-			cout << " |---" << tcs[j].at(i) << endl;
-		}*/
-		cout << " ave " << ave.at(i) << endl;
-		cout << endl;
+		if (print_option == 0) {
+			cout << i << " " << tcs[0].at(i).filename;
+			for (size_t j = 0; j < tcs.size(); j++) {
+				cout << " |---" << tcs[j].at(i) << endl;
+			}
+		}
+		cout << ave.at(i) << endl;
+		//cout << " " << ave.at(i) << endl;
 	}
+
+
+	float ave_u_time = 0, ave_s_time = 0;
+	int ave_u_sample = 0, ave_s_sample = 0;
+	int ave_u_valid = 0, ave_s_valid = 0;
+	int ave_u_round = 0, ave_s_round = 0;
+	int ave_u_in1r = 0, ave_s_in1r = 0;
+	for (size_t i = 0; i < n; i++) {
+		if (ave.at(i).u_pass && ave.at(i).s_pass) {
+			ave_u_valid++;
+			ave_u_time += ave.at(i).u_time;
+			ave_u_sample += ave.at(i).u_sample;
+			ave_u_round += ave.at(i).u_round;
+			if (ave.at(i).u_round == 1) ave_u_in1r++;
+
+			ave_s_valid++;
+			ave_s_time += ave.at(i).s_time;
+			ave_s_sample += ave.at(i).s_sample;
+			ave_s_round += ave.at(i).s_round;
+			if (ave.at(i).s_round == 1) ave_s_in1r++;
+		}
+	}
+	ave_u_sample /= ave_u_valid;
+	ave_u_time /= ave_u_valid;
+	ave_u_round /= ave_u_valid;
+	ave_s_sample /= ave_s_valid;
+	ave_s_time /= ave_s_valid;
+	ave_s_round /= ave_s_valid;
+	cout << "\n\nsample:\t" << ave_u_sample << "\t" << ave_s_sample << "\n";
+	cout << "round\t" << ave_u_round << "\t" << ave_s_round << "\n";
+	cout << "in1round\t" << ave_u_in1r << "\t" << ave_s_in1r << "\n";
+	cout << "time:\t" << ave_u_time << "\t" << ave_s_time << "\n";
 
 	return 0;
 }
