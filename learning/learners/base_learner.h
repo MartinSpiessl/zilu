@@ -40,7 +40,7 @@ class BaseLearner{
 
 		void runCounterExampleFile(const char* cntempl_fname = NULL) {
 #ifdef __PRT
-			std::cout << RED << ">>>> run counter example from file @" << cntempl_fname << NORMAL << std::endl;
+			std::cout << RED << ">>>> counter examples @" << cntempl_fname << NORMAL << std::endl;
 #endif
 			std::cout.unsetf(std::ios::fixed);
 			if (cntempl_fname!= NULL) {
@@ -48,12 +48,8 @@ class BaseLearner{
 				if (fin) {
 					Solution s;
 					while (fin >> s) {
-						//std::cout.setf(std::ios::fixed);
 #ifdef __PRT
 						std::cout << BLUE << BOLD << "Test Counter Example: " << s << " --> " << NORMAL;
-#endif
-						//std::cout.unsetf(std::ios::fixed);
-#ifdef __PRT
 						int ret = runTarget(s);
 						printRunResult(ret);
 						std::cout << std::endl << NORMAL;
@@ -74,7 +70,8 @@ class BaseLearner{
 						maxv = newscope;
 						minv = -1 * maxv;
 #ifdef __PRT
-						std::cout << YELLOW << "new scope:=[" << minv << "," << maxv << "]" << NORMAL << std::endl;
+						std::cout << YELLOW << "new scope:=[" << minv << "," 
+							<< maxv << "]" << NORMAL << std::endl;
 #endif
 					}
 					fin.close();
@@ -95,28 +92,17 @@ class BaseLearner{
 			int a[Nv];
 			for (int i = 0; i < Nv; i++)
 				a[i] = static_cast<int>(input[i]);
-			//target_program
-			//std::cout << "----> run the loop function.\n";
 			func(a);
-			//std::cout << "\t<---- run the loop function.\n";
 
 			int label = afterLoop(gsets);
 			//if (gsets[CNT_EMPL].traces_num() > 0) {
 			if (label == CNT_EMPL) {
 				std::cout << RED << BOLD << " \nBUG! Program encountered a Counter-Example trace." << std::endl;
-				//std::cout << "here78.\n";
-				//std::cout.setf(std::ios::fixed);
-				//std::cout << std::setprecision(0) <<gsets[CNT_EMPL] << NORMAL << std::endl;
-				//std::cout.unsetf(std::ios::fixed);
-				//std::cout << "here82.\n";
 				exit(-2);
 			}
 			return label;
 		}
 
-		/** @brief This method is the entrance for the whole learning procedure.
-		 *		   Child class should implement it based on learning algorithm.
-		 */
 		virtual int learn() = 0;
 
 		/** @brief This method is used to generate new input and drive the testing process.
@@ -178,10 +164,6 @@ class BaseLearner{
 
 		void printStatistics() {
 #ifdef __PRT_STATISTICS
-			//std::cout << GREEN << BOLD << "***********************STATISTICS*********************\n";
-			//std::cout << GREEN << BOLD << "|*\t\t   " << RED << "random_samples= " << random_samples << "\n";
-			//std::cout << GREEN << BOLD << "|*\t\t   " << RED << "selective_samples= " << selective_samples << "\n";
-			//std::cout << GREEN << BOLD << "******************************************************\n" << NORMAL;
 			std::ofstream of1("../result/statistics", std::ofstream::app);
 			struct timeval tv;
 			gettimeofday(&tv, NULL);
@@ -197,6 +179,7 @@ class BaseLearner{
 #endif
 			std::cout<< "\t\t#r_samples=" << random_samples << "\t\t#s_samples=" << selective_samples << "\t TOTAL:" << BOLD << GREEN << random_samples + selective_samples << NORMAL << std::endl;
 		}
+
 	protected:
 		States* gsets;
 		int (*func)(int*);
