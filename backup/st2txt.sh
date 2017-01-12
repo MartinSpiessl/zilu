@@ -10,7 +10,7 @@ i=0
 if [ $# -ge 1 ]; then
 	folder=$1
 else
-	folder="."
+	exit 1
 fi
 
 #for file in `find cfg/ -maxdepth 1 -name '*.cfg'`

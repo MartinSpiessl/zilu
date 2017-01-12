@@ -14,7 +14,7 @@
 #include "states.h"
 #include "polynomial.h"
 #include "classifier.h"
-#include "candidates.h"
+//#include "candidates.h"
 #include "instrumentation.h"
 #include "color.h"
 
@@ -32,7 +32,7 @@ extern int random_samples, selective_samples;
 
 class BaseLearner{
 	public:
-		BaseLearner(States* gsets, /*const char* cntempl_fname = NULL,*/ int (*func)(int*) = target_program):
+		BaseLearner(States* gsets, int (*func)(int*) = target_program):
 			gsets(gsets), func(func) { }
 
 		virtual ~BaseLearner() {

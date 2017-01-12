@@ -107,7 +107,7 @@ iifContext::~iifContext() {
 	if (variables != NULL)
 		delete []variables;
 	if (vparray != NULL)
-		delete vparray;
+		delete []vparray;
 }
 
 

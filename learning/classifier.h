@@ -7,17 +7,14 @@
 #define _CLASSIFIER_
 
 #include "config.h"
-//#include "states.h"
 #include "polynomial.h"
 #include "connector.h"
 #include "color.h"
 
 #include <iostream>
-//#include <float.h>
 #include <string.h>
 #include <assert.h>
 
-//class Polynomial;
 
 class Classifier{
 	protected:
@@ -34,7 +31,6 @@ class Classifier{
 		int clear();
 		Polynomial* operator[] (int index);
 		Polynomial* operator[] (int index) const; 
-		//Classifier& operator--(int n);
 		Classifier& operator+= (Polynomial& poly);
 		Classifier& operator= (Polynomial& poly);
 		Classifier& operator= (Classifier& rhs);

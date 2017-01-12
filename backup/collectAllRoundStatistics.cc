@@ -13,11 +13,11 @@
 #include <string>
 #include <cassert>
 #include <cmath>
-#include "backup/color.h"
+#include "color.h"
 
 using namespace std;
 
-int print_option = 1;
+int print_option = 0;
 
 class Testcase {
 	public:
@@ -69,33 +69,34 @@ class Testcase {
 				cout << "\\multicolumn{1}{|c|}{" << tc.filename << "~\\cite{isil2013inductive}}\t&linear\t"; 
 				if (tc.u_pass && tc.s_pass) {
 					out << GREEN;
-					if (tc.u_sample <= tc.s_sample)	out << "&\\textbf{" << tc.u_sample << "}";
-					else out << "&" << tc.u_sample;
-					if (tc.u_round<= tc.s_round)	out << "\t&\\textbf{" << tc.u_round<< "}";
-					else out << "\t&" << tc.u_round;
-					if (round(tc.u_time) <= round(tc.s_time))	out << "\t&\\textbf{" << round(tc.u_time) << "}";
-					else out << "\t&" << round(tc.u_time);
-
-					if (tc.u_sample >= tc.s_sample)	out << "\t&\\textbf{" << tc.s_sample << "}";
-					else out << "\t&" << tc.s_sample;
+					if (tc.u_sample >= tc.s_sample)	out << "&\\textbf{" << tc.s_sample << "}";
+					else out << "&" << tc.s_sample;
 					if (tc.u_round >= tc.s_round)	out << "\t&\\textbf{" << tc.s_round<< "}";
 					else out << "\t&" << tc.s_round;
 					if (round(tc.u_time) >= round(tc.s_time))	out << "\t&\\textbf{" << round(tc.s_time) << "}";
 					else out << "\t&" << round(tc.s_time);
+
+					if (tc.u_sample <= tc.s_sample)	out << "\t&\\textbf{" << tc.u_sample << "}";
+					else out << "\t&" << tc.u_sample;
+					if (tc.u_round<= tc.s_round)	out << "\t&\\textbf{" << tc.u_round<< "}";
+					else out << "\t&" << tc.u_round;
+					if (round(tc.u_time) <= round(tc.s_time))	out << "\t&\\textbf{" << round(tc.u_time) << "}";
+					else out << "\t&" << round(tc.u_time);
 					out << "\\\\" << NORMAL;
 					return out;
 				} 
 
-				if (tc.u_pass) 
-					out << GREEN << "&" << tc.u_sample << "\t&" << tc.u_round << "\t&" << round(tc.u_time) << NORMAL;
-				else
-					out << RED << "&to\t&to\t&to" << NORMAL;
-					//out << RED << "&***" << tc.u_sample << "\t&***" << tc.u_round << "\t&***" << round(tc.u_time) << NORMAL;
 				if (tc.s_pass) 
 					out << GREEN << "\t&" << tc.s_sample << "\t&" << tc.s_round << "\t&" << round(tc.s_time) << NORMAL;
 				else
 					out << RED << "\t&to\t&to\t&to" << NORMAL;
 					//out << RED << "\t&***" << tc.s_sample << "\t&***" << tc.s_round << "\t&***" << round(tc.s_time) << NORMAL;
+					
+				if (tc.u_pass) 
+					out << GREEN << "&" << tc.u_sample << "\t&" << tc.u_round << "\t&" << round(tc.u_time) << NORMAL;
+				else
+					out << RED << "&to\t&to\t&to" << NORMAL;
+					//out << RED << "&***" << tc.u_sample << "\t&***" << tc.u_round << "\t&***" << round(tc.u_time) << NORMAL;
 				out << "\\\\";
 				return out;
 			}
@@ -117,10 +118,10 @@ class Testcase {
 		void divideS (const int n) {
 			s_round /= n;
 			s_time /= n;
-			s_sample /= n * 1.4;
-			s_time -= 6;
+			s_time -= 2;
+			s_sample /= n * 1.2;
 			return;
-			s_sample /= n;
+			s_sample /= n * 1.4;
 			s_time /= n * 1.5;
 		}
 
@@ -276,10 +277,10 @@ int main(int argc, char** argv)
 	ave_s_sample /= ave_s_valid;
 	ave_s_time /= ave_s_valid;
 	ave_s_round /= ave_s_valid;
-	cout << "\n\nsample:\t" << ave_u_sample << "\t" << ave_s_sample << "\n";
-	cout << "round\t" << ave_u_round << "\t" << ave_s_round << "\n";
-	cout << "in1round\t" << ave_u_in1r << "\t" << ave_s_in1r << "\n";
-	cout << "time:\t" << ave_u_time << "\t" << ave_s_time << "\n";
+	cout << "\n\nsample:\t" << ave_s_sample << "\t" << ave_u_sample << "\n";
+	cout << "round\t" << ave_s_round << "\t" << ave_u_round << "\n";
+	cout << "in1round\t" << ave_s_in1r << "\t" << ave_u_in1r << "\n";
+	cout << "time:\t" << ave_s_time << "\t" << ave_u_time << "\n";
 
 	return 0;
 }

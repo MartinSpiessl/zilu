@@ -4,6 +4,7 @@
 #include <time.h>
 #include "instrumentation.h"
 #include <assert.h>
+#include "color.h"
 
 bool _passP = false;
 bool _passQ = false;
@@ -15,7 +16,6 @@ char(*LabelTable)[10] = &lt[1];
 double program_states[MstatesIn1trace * 2][Nv];
 int state_index;
 
-#include "color.h"
 int addStateInt(int first ...)
 {
 	if (state_index >= 0.9 * MstatesIn1trace)

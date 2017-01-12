@@ -22,7 +22,7 @@
 #include <gsl/gsl_poly.h>
 #include "color.h"
 #include "solution.h"
-#include "candidates.h"
+//#include "candidates.h"
 #if (linux || __MACH__)
 #include "z3++.h"
 using namespace z3;
