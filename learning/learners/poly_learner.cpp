@@ -130,6 +130,11 @@ init_svm:
 		std::cout << GREEN << " [PASS]" << std::endl << NORMAL;
 #endif
 
+#ifndef __SELECTIVE_SAMPLING_ENABLED
+		converged = true;
+		break;
+#endif
+
 #ifdef __QUESTION_TRACE_CHECK_ENABLED
 #ifdef __PRT
 		std::cout << "\t(" << YELLOW << step++ << NORMAL << ") check Question Traces:   ";

@@ -117,9 +117,9 @@ init_svm:
 #endif
 			return -1;
 		}
-#ifndef SCRIPT
+//#ifndef SCRIPT
 		std::cout << "|-->> " << YELLOW << svm->cl << NORMAL << std::endl;
-#endif
+//#endif
 #ifdef __PRT
 		std::cout << "\t(" << YELLOW << step++ << NORMAL << ") checking training traces.";
 #endif
@@ -139,6 +139,14 @@ init_svm:
 		}
 #ifdef __PRT
 		std::cout << GREEN << " [PASS]" << std::endl << NORMAL;
+#endif
+
+#ifndef __SELECTIVE_SAMPLING_ENABLED
+		converged = true;
+		//std::cout << "--selectiveSampling\n";
+		break;
+//#else
+		//std::cout << "++selectiveSampling\n";
 #endif
 
 #ifdef __QUESTION_TRACE_CHECK_ENABLED

@@ -27,19 +27,21 @@ do
 	cfgfile=`basename -s .cfg $file`
 	echo -e $yellow$bold$i$normal$yellow" --> Processing $file >> "$filename" --> "$cfgfile$normal
 
-	rm -rf tmp/*
+	rm -rf tmp/$cfgfile".cnt"
+	rm -rf tmp/$cfgfile".ds"
 	echo    $i >> result/statistics
 	echo    $cfgfile >> result/statistics
 	echo    "   ||----SELECTIVE---------------------------------------------------"
-	{ time -p timeout 120 ./run.sh $cfgfile 0 ; } 1> result/"$cfgfile".selective.out.txt 2>> result/statistics
+	{ time -p timeout 120 ./tob.sh $cfgfile 0 ; } 1> result/"$cfgfile".selective.out.txt 2>> result/statistics
 	echo -n -e "     ---->>"$bold$green
 	cat		"tmp/"$cfgfile".inv"
 	echo -e	""$normal 
 
-	rm -rf tmp/*
+	rm -rf tmp/$cfgfile".cnt"
+	rm -rf tmp/$cfgfile".ds"
 	echo    "" >> result/statistics
 	echo    "   ||----unSELECTIVE-------------------------------------------------"
-	{ time -p timeout 120 ./run.sh $cfgfile 1 ; } 1> result/"$cfgfile".unselective.out.txt 2>> result/statistics
+	{ time -p timeout 120 ./tob.sh $cfgfile 1 ; } 1> result/"$cfgfile".unselective.out.txt 2>> result/statistics
 	echo -n -e "     ---->>"$bold$green
 	cat		"tmp/"$cfgfile".inv"
 	echo -e	""$normal 

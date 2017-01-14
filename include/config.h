@@ -83,18 +83,18 @@ const int MstatesIn1trace = 1024;
 
 /** @brief defines the number of tests runs initially. Should be a positive integer.
 */
-const int Nexe_init = 8 * Nv;
+const int Nexe_init = 10 * Nv;
 const int Nretry_init = 32;
 
 /** @brief defines the number of tests runs after the first time. Should be a positive integer.
 */
-static int Nexe_after = 8 * Nv;
+static int Nexe_after = 10 * Nv;
 
 /** @brief defines the number of random tests runs each time, 
  *		   which is used to avoid bias caused by tests picking chioce. 
  *		   Should be a non-negative integer.
  */
-const int Nexe_rand = 2 * Nv;
+const int Nexe_rand = 0 * Nv;
 
 /** @brief defines the max number of iterations tried by machine learning algorithm, 
  *		   Should be a positive integer. Usually set between 8-128
@@ -102,9 +102,9 @@ const int Nexe_rand = 2 * Nv;
 const int Miter = 512;
 
 const double density = 0.4;
-const int base_step = 200;
+//const int base_step = 200;
 //const int base_step = RAND_MAX/2;
-//const int base_step = 1000;
+const int base_step = 1000;
 const int restricted_trainset_size = 2000*Nv;
 
 // @brief converged_std defines the standard times for consecutive convergence before 

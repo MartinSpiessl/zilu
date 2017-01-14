@@ -118,9 +118,9 @@ class Testcase {
 		void divideS (const int n) {
 			s_round /= n;
 			s_time /= n;
-			s_time -= 2;
-			s_sample /= n * 1.2;
+			s_sample /= n;
 			return;
+			s_time -= 2;
 			s_sample /= n * 1.4;
 			s_time /= n * 1.5;
 		}
@@ -210,11 +210,11 @@ vector<Testcase> calc_average(vector< vector<Testcase> >& tcs) {
 				valid_u_times++;
 			}
 		}
-		if (valid_s_times >= 2) {
+		if (valid_s_times >= 1) {
 			tc.s_pass = true;
 			tc.divideS(valid_s_times);
 		}
-		if (valid_u_times >= 2) {
+		if (valid_u_times >= 1) {
 			tc.u_pass = true;
 			tc.divideU(valid_u_times);
 		}
