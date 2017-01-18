@@ -19,7 +19,8 @@ return 0;
 
 int main(int argc, char** argv)
  {
-iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.ds");
-context.addLearner("conjunctive");
-return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/css2003_true");
+	iifround = atoi(argv[1]);
+	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/css2003_true.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/css2003_true.ds");
+	context.addLearner("conjunctive");
+	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/css2003_true.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/css2003_true");
 }

@@ -1,5 +1,7 @@
 cmake_minimum_required (VERSION 2.8)
-set(Nv 2)
+set(Nv 3)
+add_definitions(-D__SELECTIVE_SAMPLING_ENABLED)
+add_definitions(-D__QAS_POSITIVE)
 project(InvariantInferenceFramework)
 set(PRECISION 3)
 
@@ -202,6 +204,6 @@ AUX_SOURCE_DIRECTORY(learning/learners DIR_SRCS)
 AUX_SOURCE_DIRECTORY(checking DIR_SRCS)
 #AUX_SOURCE_DIRECTORY(test DIR_TEST)
 
-add_executable(05 /home/lijiaying/Research/GitHub/zilu/test/05.cpp ${DIR_SRCS} ${HEADER})
-target_link_libraries(05 ${Z3_LIBRARY})
-target_link_libraries(05 ${GSL_LIBRARIES})
+add_executable(ex49 /home/lijiaying/Research/GitHub/zilu/test/ex49.cpp ${DIR_SRCS} ${HEADER})
+target_link_libraries(ex49 ${Z3_LIBRARY})
+target_link_libraries(ex49 ${GSL_LIBRARIES})

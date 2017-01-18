@@ -20,7 +20,7 @@ return 0;
 
 int main(int argc, char** argv)
  {
-	 iif::round = atoi(argv[1]);
+	iifround = atoi(argv[1]);
 	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/23.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/23.ds");
 	context.addLearner("conjunctive");
 	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/23.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/23");
