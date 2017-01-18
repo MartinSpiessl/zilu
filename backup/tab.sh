@@ -29,19 +29,27 @@ do
 
 	rm -rf tmp/$cfgfile".cnt"
 	rm -rf tmp/$cfgfile".ds"
+	rm -rf tmp/$cfgfile"_init"
+	rm -rf tmp/$cfgfile"_klee1"
+	rm -rf tmp/$cfgfile"_klee2"
+	rm -rf tmp/$cfgfile"_klee3"
 	echo    $i >> result/statistics
 	echo    $cfgfile >> result/statistics
 	echo    "   ||----SELECTIVE---------------------------------------------------"
-	{ time -p timeout 120 ./tob.sh $cfgfile 0 ; } 1> result/"$cfgfile".selective.out.txt 2>> result/statistics
+	{ time -p timeout 120 ./run.sh $cfgfile 0 ; } 1> result/"$cfgfile".selective.out.txt 2>> result/statistics
 	echo -n -e "     ---->>"$bold$green
 	cat		"tmp/"$cfgfile".inv"
 	echo -e	""$normal 
 
 	rm -rf tmp/$cfgfile".cnt"
 	rm -rf tmp/$cfgfile".ds"
+	rm -rf tmp/$cfgfile"_init"
+	rm -rf tmp/$cfgfile"_klee1"
+	rm -rf tmp/$cfgfile"_klee2"
+	rm -rf tmp/$cfgfile"_klee3"
 	echo    "" >> result/statistics
 	echo    "   ||----unSELECTIVE-------------------------------------------------"
-	{ time -p timeout 120 ./tob.sh $cfgfile 1 ; } 1> result/"$cfgfile".unselective.out.txt 2>> result/statistics
+	{ time -p timeout 120 ./run.sh $cfgfile 1 ; } 1> result/"$cfgfile".unselective.out.txt 2>> result/statistics
 	echo -n -e "     ---->>"$bold$green
 	cat		"tmp/"$cfgfile".inv"
 	echo -e	""$normal 

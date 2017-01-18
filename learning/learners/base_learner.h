@@ -17,6 +17,7 @@
 //#include "candidates.h"
 #include "instrumentation.h"
 #include "color.h"
+//#include "iif.h"
 
 #include <iostream>
 #include <iomanip>
@@ -29,6 +30,8 @@
 #ifdef __PRT_STATISTICS
 extern int random_samples, selective_samples;
 #endif
+
+extern int iifround;
 
 class BaseLearner{
 	public:
@@ -57,6 +60,7 @@ class BaseLearner{
 						runTarget(s);
 #endif
 					}
+					/*
 					int newscope = maxv;
 					for (int i = 0; i < Nv; i++) {
 						while(std::abs(s[i]) > newscope) {
@@ -74,6 +78,7 @@ class BaseLearner{
 							<< maxv << "]" << NORMAL << std::endl;
 #endif
 					}
+					*/
 					fin.close();
 				}
 			}
@@ -112,6 +117,7 @@ class BaseLearner{
 		 *		   You can find details of each parameters in child class.
 		 */
 		int selectiveSampling(int randn, int exen, Classifier* cl) {
+			//std::cout << "ITERATION::" << iifround << std::endl;
 #ifdef __PRT
 			std::cout << "{" << GREEN;
 #endif
@@ -121,6 +127,12 @@ class BaseLearner{
 			randn += exen;
 			exen = 0;
 #endif
+
+			if (iifround >= 2) {
+				randn = 0;
+				//std::cout << "No more samples added.\n";
+			}
+
 			Solution input;
 			int ret = 0;
 			for (int i = 0; i < randn; i++) {

@@ -10,18 +10,22 @@ i=0
 if [ $# -ge 1 ]; then
 	folder=$1
 else
-	exit 1
+	folder="result"
 fi
 
 #for file in `find cfg/ -maxdepth 1 -name '*.cfg'`
-#for file in `find cfg/ -maxdepth 1 -name '*.cfg'`
+#for file in `ls -d $folder`
 for dir in `ls -l $folder/ | grep "^d" | awk '{print $9}'`
 do
-	echo $dir
 	i=$(($i+1))
-	#echo "***"$dir
-	#./est $folder"/"$dir"/statistics" > $folder"/"$dir".txt"
-	./est $folder"/"$dir > $folder"/"$dir".txt"
+	grep -nR "finish proving" $folder/$dir/selective.out.txt >/dev/null
+	Sres=$?
+	Sres=$((1-$Sres))
+	grep -nR "finish proving" $folder/$dir/unselective.out.txt >/dev/null
+	Ures=$?
+	Ures=$((1-$Ures))
+	echo $dir"  ->S "$Sres"   ->U "$Ures
 done
+
 
 exit 0

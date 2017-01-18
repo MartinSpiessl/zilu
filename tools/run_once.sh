@@ -46,9 +46,9 @@ rm -f $path_cnt_lib
 ##########################################################################
 # BEGINNING 
 ##########################################################################
-cd tools
-./make_tools.sh
-cd ..
+#cd tools
+#./make_tools.sh
+#cd ..
 
 #./build_project.sh $prefix
 ./build_project.sh $prefix $path_cnt $path_dataset $2

@@ -56,9 +56,9 @@ Nv=$?
 echo -e $green$bold"[DONE]"$normal
 
 target=$prefix
-if [ $# -ge 5 ]; then
-	target=$5
-fi
+#if [ $# -ge 5 ]; then
+#	target=$5
+#fi
 
 ##########################################################################
 # Generate CMakeLists from cmake.base and Nv value
@@ -73,14 +73,14 @@ if [ $# -ge 4 ]; then
 	fi
 fi
 
-#if [ $# -ge 5 ]; then
-#	if [ $5 -eq 1 ]; then
-#		echo "add_definitions(-D__QAS_POSITIVE)" >> $cmakefile
-#	fi
-#	if [ $5 -eq -1 ]; then
-#		echo "add_definitions(-D__QAS_NEGATIVE)" >> $cmakefile
-#	fi
-#fi
+if [ $# -ge 5 ]; then
+	if [ $5 -eq 1 ]; then
+		echo "add_definitions(-D__QAS_POSITIVE)" >> $cmakefile
+	fi
+	if [ $5 -eq 2 ]; then
+		echo "add_definitions(-D__QAS_NEGATIVE)" >> $cmakefile
+	fi
+fi
 cat $dir_project"/cmake.in" >> $cmakefile
 echo "add_executable("$target" "$path_cpp" \${DIR_SRCS} \${HEADER})" >> $cmakefile
 echo "target_link_libraries("$target" \${Z3_LIBRARY})" >> $cmakefile

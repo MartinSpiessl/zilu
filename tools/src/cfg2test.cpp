@@ -221,11 +221,12 @@ class FileHelper {
 
 		inline bool writeCppMain(ofstream& cppFile) {
 			cppFile << "\nint main(int argc, char** argv)\n {\n";
+			cppFile << "\tiifround = atoi(argv[1]);\n";
 			if (oldtracefilename)
-				cppFile << "iifContext context(\"" << varfilename 
+				cppFile << "\tiifContext context(\"" << varfilename 
 					<<"\", loopFunction, \"loopFunction\", \"" << oldtracefilename << "\");\n";
 			else
-				cppFile << "iifContext context(" << varfilename <<"\", loopFunction, \"loopFunction\");\n";
+				cppFile << "\tiifContext context(" << varfilename <<"\", loopFunction, \"loopFunction\");\n";
 			/*
 			if (oldtracefilename)
 				cppFile << "iifContext context(\"../" << varfilename 
@@ -244,20 +245,20 @@ class FileHelper {
 				int size = learners.size();
 				if (size == 0 || learners[0].compare("") == 0 || learners[0].find("def") != string::npos) {
 					std::cout << "--> linear --> polynomial --> conjunctive";
-					cppFile << "context.addLearner(\"linear\");\n";
-					cppFile << "context.addLearner(\"poly\");\n";
-					cppFile << "context.addLearner(\"conjunctive\");\n";
+					cppFile << "\tcontext.addLearner(\"linear\");\n";
+					cppFile << "\tcontext.addLearner(\"poly\");\n";
+					cppFile << "\tcontext.addLearner(\"conjunctive\");\n";
 				} else {
 					for (int i = 0; i < size; i++) {
 						if (learners[i].find("lin") != string::npos) {
 							std::cout << "--> linear";
-							cppFile << "context.addLearner(\"linear\");\n";
+							cppFile << "\tcontext.addLearner(\"linear\");\n";
 						} else if (learners[i].find("poly") != string::npos) {
 							std::cout << "--> polynomial";
-							cppFile << "context.addLearner(\"poly\");\n";
+							cppFile << "\tcontext.addLearner(\"poly\");\n";
 						} else if (learners[i].find("conj") != string::npos) {
 							std::cout << "--> conjunctive";
-							cppFile << "context.addLearner(\"conjunctive\");\n";
+							cppFile << "\tcontext.addLearner(\"conjunctive\");\n";
 						}
 					}
 				}
@@ -265,27 +266,11 @@ class FileHelper {
 			}
 
 			if (testcasefilename) {
-				cppFile << "return context.learn(\"" << testcasefilename << "\", \"" << invfileprefix << "\");\n}" << endl;
+				cppFile << "\treturn context.learn(\"" << testcasefilename << "\", \"" << invfileprefix << "\");\n}" << endl;
 			} else {
-				cppFile << "return context.learn(NULL, \"" << invfileprefix << "\");\n}" << endl;
+				cppFile << "\treturn context.learn(NULL, \"" << invfileprefix << "\");\n}" << endl;
 			}
-			/*
-			if (testcasefilename) {
-				cppFile << "return context.learn(\"../" << testcasefilename << "\", \"../" << invfileprefix << "\");\n}" << endl;
-			} else {
-				cppFile << "return context.learn(NULL, \"../" << invfileprefix << "\");\n}" << endl;
-			}
-			*/
 			return true;
-
-			/*cppFile << "int main(int argc, char** argv)\n {\n" 
-				<< "iifContext context(\"../" << varfilename <<"\", loopFunction, \"loopFunction\");\n"
-				<< "context.addLearner(\"poly\");\n"
-				<< "context.addLearner(\"rbf\");\n"
-				<< "context.addLearner(\"linear\").addLearner(\"rbf\");\n"
-				<< "context.addLearner(\"linear\").addLearner(\"conjunctive\");\n"
-				<< "return context.learn(\"../" << invfileprefix << "\");\n}" << endl;
-				*/
 		}
 
 	private:

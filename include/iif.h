@@ -47,6 +47,7 @@ extern int minv, maxv;
 extern std::string* variables;
 extern int vnum;
 extern VariablePowerArray* vparray;
+extern int iifround;
 
 
 namespace iif{

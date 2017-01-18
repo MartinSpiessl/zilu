@@ -13,7 +13,7 @@ fi
 
 dir_org=`pwd`
 prefix=$1
-cnt_num=8
+cnt_num=1
 if [ $# -gt 1 ]; then
 	cnt_num=$2
 fi

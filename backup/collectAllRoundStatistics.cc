@@ -18,6 +18,7 @@
 using namespace std;
 
 int print_option = 0;
+//int print_option = 1;
 
 class Testcase {
 	public:
@@ -26,17 +27,17 @@ class Testcase {
 		int s_round;
 		float s_time;
 		int s_sample;
-		bool s_pass;
+		int s_pass;
 		int u_round;
 		float u_time;
 		int u_sample;
-		bool u_pass;
+		int u_pass;
 
 		Testcase() {
 			s_round = 0;
 			s_time = 0;
 			s_sample = 0;
-			s_pass = false;
+			s_pass = 0;
 			u_round = 0;
 			u_time = 0;
 			u_sample = 0;
@@ -157,31 +158,26 @@ class Testcase {
 
 
 void parse_statistics(ifstream& fin, vector<Testcase>& testcases) {
-	string date;
+	int nr = 0;
 	string str;
-	getline(fin, date);
-	cout << date << endl;
 	while (!fin.eof()) {
 		//getline(fin, str, '\n');
 		fin >> str;
+		nr++;
 		Testcase tc;
 		fin >> str >> tc.filename;
+		//cout << nr << " " << str << " "  << tc.filename << endl;
 		while (fin.fail()) {
 			fin >> str >> tc.filename;
-			cout << str << endl;
+			nr++;
+			//cout << nr << " " << str << " "  << tc.filename << endl;
 			if (fin.eof())
 				goto exit_func;
 		}
-		fin >> str >> tc.s_round >> tc.s_time >> tc.s_sample >> str;
-		if (str == "Pass") 
-			tc.s_pass = true;
-		else 
-			tc.s_pass = false;
-		fin >> str >> tc.u_round >> tc.u_time >> tc.u_sample >> str;
-		if (str == "Pass") 
-			tc.u_pass = true;
-		else 
-			tc.u_pass = false;
+		fin >> str >> tc.s_round >> tc.s_time >> tc.s_sample >> tc.s_pass;
+		nr++;
+		fin >> str >> tc.u_round >> tc.u_time >> tc.u_sample >> tc.u_pass;
+		nr++;
 
 		testcases.push_back(tc);
 		cout << "parsing -- " << tc.filename << tc << endl;
@@ -211,11 +207,11 @@ vector<Testcase> calc_average(vector< vector<Testcase> >& tcs) {
 			}
 		}
 		if (valid_s_times >= 1) {
-			tc.s_pass = true;
+			tc.s_pass = 1;
 			tc.divideS(valid_s_times);
 		}
 		if (valid_u_times >= 1) {
-			tc.u_pass = true;
+			tc.u_pass = 1;
 			tc.divideU(valid_u_times);
 		}
 		ave.push_back(tc);

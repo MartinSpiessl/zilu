@@ -60,14 +60,18 @@ rm -f $path_cnt_lib
 ##########################################################################
 # BEGINNING 
 ##########################################################################
-cd tools
-./make_tools.sh
-cd ..
+#cd tools
+#./make_tools.sh
+#cd ..
 
 if [ $# -lt 2 ]; then
 	./scripts/build.sh $prefix $path_cnt $path_dataset 0 >/dev/null 2>&1
 else
-	./scripts/build.sh $prefix $path_cnt $path_dataset $2  >/dev/null 2>&1
+	if [ $# -lt 3 ]; then
+		./scripts/build.sh $prefix $path_cnt $path_dataset $2  >/dev/null 2>&1
+	else
+		./scripts/build.sh $prefix $path_cnt $path_dataset $2 $3  >/dev/null 2>&1
+	fi
 fi
 
 ##echo "-----------------------"$prefix"--------------------------" >> tmp/statistics
@@ -76,15 +80,15 @@ echo -e $green"GEN INIT"$normal
 ./scripts/gen_init.sh $prefix
 #echo -e $green"DONE"$normal
 
-if [ $# -ge 3 ]; then
-	echo -e $blue"Using precondition as the invariant candidiate..."$normal
-	grep '^precondition=*' $path_cfg > $path_inv
-	sed -i 's/precondition=*//g' $path_inv
-	./scripts/verify.sh $prefix
-	if [ $? -eq 0 ]; then
-		exit 0
-	fi
-fi
+#if [ $# -ge 3 ]; then
+#	echo -e $blue"Using precondition as the invariant candidiate..."$normal
+#	grep '^precondition=*' $path_cfg > $path_inv
+#	sed -i 's/precondition=*//g' $path_inv
+#	./scripts/verify.sh $prefix
+#	if [ $? -eq 0 ]; then
+#		exit 0
+#	fi
+#fi
 
 
 iteration=1
@@ -97,7 +101,7 @@ while [ $iteration -le 128 ]; do
 	# Run the target to get Invariant Candidates
 	##########################################################################
 	cd build
-	./$prefix
+	./$prefix $iteration
 	ret=$?
 	if [ $ret -ne 0 ]; then
 		echo -e $red$bold"can not get an invariant candidate, read log file to find out more."$normal$normal

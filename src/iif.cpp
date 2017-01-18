@@ -1,6 +1,8 @@
 #include "iif.h"
 using namespace iif;
 
+int iifround = 0;
+
 LearnerNode::LearnerNode() {
 	learner = NULL;
 	next = NULL;

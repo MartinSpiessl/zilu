@@ -84,11 +84,12 @@ const int MstatesIn1trace = 1024;
 /** @brief defines the number of tests runs initially. Should be a positive integer.
 */
 const int Nexe_init = 10 * Nv;
-const int Nretry_init = 32;
+//const int Nretry_init = 32;
+const int Nretry_init = 6;
 
 /** @brief defines the number of tests runs after the first time. Should be a positive integer.
 */
-static int Nexe_after = 10 * Nv;
+static int Nexe_after = 2 * Nv;
 
 /** @brief defines the number of random tests runs each time, 
  *		   which is used to avoid bias caused by tests picking chioce. 

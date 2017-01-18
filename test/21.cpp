@@ -23,9 +23,8 @@ return 0;
 
 int main(int argc, char** argv)
  {
-iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/21.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/21.ds");
+	 iif::round = atoi(argv[1]);
+iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/21.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/21.ds");
 context.addLearner("linear");
-context.addLearner("poly");
-context.addLearner("conjunctive");
-return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/21.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/21");
+return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/21.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/21");
 }
