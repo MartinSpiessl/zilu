@@ -2,6 +2,7 @@
 using namespace iif;
 
 int iifround = 0;
+int initseed = 0;
 
 LearnerNode::LearnerNode() {
 	learner = NULL;
@@ -92,7 +93,9 @@ iifContext::iifContext(const char* vfilename, int (*func)(int*),
 	last = NULL;
 	register_program(func, func_name);
 	this->timeout = timeout;
-	srand(time(NULL)); // initialize seed for rand() function
+	//srand(time(NULL)); // initialize seed for rand() function
+	srand(initseed); // initialize seed for rand() function
+	std::cout << YELLOW << "INIT SEED: " << initseed << NORMAL << std::endl;
 }
 
 iifContext::~iifContext() {

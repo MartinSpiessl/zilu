@@ -27,9 +27,14 @@ from=`date +%m%d%H%M`
 for cfgfile in `ls $cfgfolder/*.cfg`
 do
 	cfgfile_base=`basename -s .cfg $cfgfile`
-	./testOne.sh $cfgfile_base $times 0
-	./testOne.sh $cfgfile_base $times 1
-	./testOne.sh $cfgfile_base $times 2
+	ite=1
+	while [ $ite -le $times ]; do
+		initseed=$RANDOM
+		./testOne.sh $cfgfile_base 1 0 $initseed
+		./testOne.sh $cfgfile_base 1 1 $initseed
+		./testOne.sh $cfgfile_base 1 2 $initseed
+		ite=$(($ite+1))
+	done
 done
 
 to=`date +%m%d%H%M`

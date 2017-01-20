@@ -95,6 +95,7 @@ echo -e $green$bold"[DONE]"$normal
 echo -e $blue"Build the project..."$normal
 cd $dir_build
 #rm -rf *
+#rm $target
 cmake .. > /dev/null
 make $target
 if [ $? -ne 0 ]; then

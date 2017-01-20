@@ -38,6 +38,7 @@ int ConjunctiveLearner::learn()
 	double pass_rate = 1;
 
 	for (rnd = 1; ((rnd <= max_iteration) && (pass_rate >= 1)); rnd++) {
+		//if (rnd >= 2) srand(time(NULL));
 		int zero_times = 0;
 		//std::cout << "[" << rnd << "]";
 		int nexe = (rnd == 1) ? Nexe_init : Nexe_after;

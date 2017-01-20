@@ -222,6 +222,7 @@ class FileHelper {
 		inline bool writeCppMain(ofstream& cppFile) {
 			cppFile << "\nint main(int argc, char** argv)\n {\n";
 			cppFile << "\tiifround = atoi(argv[1]);\n";
+			cppFile << "\tinitseed = atoi(argv[2]);\n";
 			if (oldtracefilename)
 				cppFile << "\tiifContext context(\"" << varfilename 
 					<<"\", loopFunction, \"loopFunction\", \"" << oldtracefilename << "\");\n";

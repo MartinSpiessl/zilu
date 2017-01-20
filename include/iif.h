@@ -48,6 +48,7 @@ extern std::string* variables;
 extern int vnum;
 extern VariablePowerArray* vparray;
 extern int iifround;
+extern int initseed;
 
 
 namespace iif{

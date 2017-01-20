@@ -63,15 +63,19 @@ public:
 	int upass;
 	int u_qas;
 
+	int seed;
+
 	Testcase* next;
 
 	friend ostream& operator << (ostream& out, Testcase tc) {
 		int sround = tc.selective_samples.size();
 		int uround = tc.unselective_samples.size();
 		if (tc.spass == 0 && tc.upass == 0) 
-			out << DARK_GRAY << setw(3) << tc.no << "   " << setw(12) << tc.filename << "\t" << setw(2) << tc.s_qas << NORMAL << "\t";
+			out << DARK_GRAY << setw(3) << tc.no << "   " << setw(12) << tc.filename << "\t" 
+				<< setw(2) << tc.s_qas << "\t" << setw(4) << tc.seed <<NORMAL << "\t";
 		else
-			out << BLUE << setw(3) << tc.no << "   " << YELLOW << setw(12) << tc.filename << "\t" << GREEN << setw(2) << tc.s_qas << NORMAL << "\t";
+			out << BLUE << setw(3) << tc.no << "   " << YELLOW << setw(12) << tc.filename << "\t" 
+				<< GREEN << setw(2) << tc.s_qas << "\t" << RED << setw(4) << tc.seed << NORMAL << "\t";
 		if (tc.spass == 0) out << DARK_GRAY;
 		out << "\t++S\t" << tc.selective_samples.size() 
 			<< "\t" << tc.selective_time.real
@@ -145,7 +149,7 @@ void parse_statistics(char* folder) {
 			}
 		}
 		int select;
-		fin >> select >> tc->s_qas;
+		fin >> select >> tc->s_qas >> tc->seed;
 		tc->s_qas = tc->s_qas >= 2? -1:tc->s_qas;
 
 		while (true) {
@@ -184,7 +188,7 @@ void parse_statistics(char* folder) {
 		}
 		//cout << "filename:" << tc.filename << " filename2:" << tmpstr << endl;
 		assert(tmpstr ==tc->filename);
-		fin >> select >> tc->u_qas;
+		fin >> select >> tc->u_qas >> tc->seed;
 		tc->u_qas = tc->u_qas >= 2? -1:tc->u_qas;
 		while (true) {
 			Nsample ns;

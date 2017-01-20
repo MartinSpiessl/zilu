@@ -27,11 +27,16 @@ if [ $# -ge 3 ]; then
 	qas=$3
 fi
 
+initseed=0
+if [ $# -ge 4 ]; then
+	initseed=$4
+fi
+
 i=1
 while [ $i -le $total ]; do
 #for file in `find cfg/ -maxdepth 1 -name '*.cfg'`
 #date >> result/statistics
-	echo -e $yellow"> Processing >>>>> ["$file"] ------ "$i" -------------------------------------------------------------------"$normal
+	echo -e $yellow"> Processing >>>>> ["$file"] ----qas=$qas-- seed="$initseed" -------------------------------------------------------------------"$normal
 
 	rm -rf tmp/$file".cnt"
 	rm -rf tmp/$file".ds"
@@ -40,9 +45,9 @@ while [ $i -le $total ]; do
 	rm -rf tmp/$file"_klee2"
 	rm -rf tmp/$file"_klee3"
 	echo    $file>> result/statistics
-	echo    0  $qas >> result/statistics
+	echo    0  $qas  $initseed >> result/statistics
 	echo    "    |----SELECTIVE---------[$qas]------------------------------------------"
-	{ time -p timeout 120 ./run.sh $file 0 $qas ; } 1> result/$file/$i.$qas.selective.out.txt 2>> result/statistics
+	{ time -p timeout 120 ./run.sh $file 0 $qas $initseed ; } 1> result/$file/$i.$qas.selective.out.txt 2>> result/statistics
 	grep -nR "finish proving" result/$file/$i.$qas.selective.out.txt >/dev/null
 	res=$?
 	echo -n "Pass?Fail?  " >> result/statistics
@@ -62,9 +67,9 @@ while [ $i -le $total ]; do
 	rm -rf tmp/$file"_klee3"
 	echo    "" >> result/statistics
 	echo    $file>> result/statistics
-	echo    1  $qas >> result/statistics
+	echo    1  $qas  $initseed >> result/statistics
 	echo    "    |----unSELECTIVE-------[$qas]------------------------------------------"
-	{ time -p timeout 120 ./run.sh $file 1 $qas ; } 1> result/$file/$i.$qas.unselective.out.txt 2>> result/statistics
+	{ time -p timeout 120 ./run.sh $file 1 $qas $initseed ; } 1> result/$file/$i.$qas.unselective.out.txt 2>> result/statistics
 	grep -nR "finish proving" result/$file/$i.$qas.unselective.out.txt >/dev/null
 	res=$?
 	echo -n "Pass?Fail?  " >> result/statistics

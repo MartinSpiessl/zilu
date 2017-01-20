@@ -20,7 +20,9 @@ return 0;
 
 int main(int argc, char** argv)
  {
-iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/half.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/half.ds");
-context.addLearner("conjunctive");
-return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/half.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/half");
+	iifround = atoi(argv[1]);
+	initseed = atoi(argv[2]);
+	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/half.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/half.ds");
+	context.addLearner("conjunctive");
+	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/half.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/half");
 }

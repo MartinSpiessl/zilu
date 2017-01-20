@@ -64,6 +64,7 @@ rm -f $path_cnt_lib
 #./make_tools.sh
 #cd ..
 
+#echo "build....build...build"
 if [ $# -lt 2 ]; then
 	./scripts/build.sh $prefix $path_cnt $path_dataset 0 >/dev/null 2>&1
 else
@@ -72,6 +73,11 @@ else
 	else
 		./scripts/build.sh $prefix $path_cnt $path_dataset $2 $3  >/dev/null 2>&1
 	fi
+fi
+
+initseed=0
+if [ $# -ge 4 ]; then
+	initseed=$4
 fi
 
 ##echo "-----------------------"$prefix"--------------------------" >> tmp/statistics
@@ -101,7 +107,7 @@ while [ $iteration -le 128 ]; do
 	# Run the target to get Invariant Candidates
 	##########################################################################
 	cd build
-	./$prefix $iteration
+	./$prefix $iteration $initseed
 	ret=$?
 	if [ $ret -ne 0 ]; then
 		echo -e $red$bold"can not get an invariant candidate, read log file to find out more."$normal$normal

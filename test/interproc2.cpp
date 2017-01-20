@@ -19,7 +19,9 @@ return 0;
 
 int main(int argc, char** argv)
  {
-iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/interproc2.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/interproc2.ds");
-context.addLearner("linear");
-return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/interproc2.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/interproc2");
+	iifround = atoi(argv[1]);
+	initseed = atoi(argv[2]);
+	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/interproc2.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/interproc2.ds");
+	context.addLearner("linear");
+	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/interproc2.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/interproc2");
 }
