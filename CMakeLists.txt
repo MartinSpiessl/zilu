@@ -1,5 +1,6 @@
 cmake_minimum_required (VERSION 2.8)
 set(Nv 2)
+add_definitions(-D__QAS_POSITIVE)
 project(InvariantInferenceFramework)
 set(PRECISION 3)
 
@@ -202,6 +203,6 @@ AUX_SOURCE_DIRECTORY(learning/learners DIR_SRCS)
 AUX_SOURCE_DIRECTORY(checking DIR_SRCS)
 #AUX_SOURCE_DIRECTORY(test DIR_TEST)
 
-add_executable(zilu_conj1 /home/lijiaying/Research/GitHub/zilu/test/zilu_conj1.cpp ${DIR_SRCS} ${HEADER})
-target_link_libraries(zilu_conj1 ${Z3_LIBRARY})
-target_link_libraries(zilu_conj1 ${GSL_LIBRARIES})
+add_executable(interproc5 /home/lijiaying/Research/GitHub/zilu/test/interproc5.cpp ${DIR_SRCS} ${HEADER})
+target_link_libraries(interproc5 ${Z3_LIBRARY})
+target_link_libraries(interproc5 ${GSL_LIBRARIES})

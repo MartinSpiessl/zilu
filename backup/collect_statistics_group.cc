@@ -23,6 +23,12 @@ string folder;
 #define colored
 
 
+#define PLAIN_FORMAT 0
+#define TABLE_FORMAT 1
+#define LATEX_FORMAT 2
+
+int output_option = PLAIN_FORMAT;
+// output_option = LATEX = 2
 
 
 
@@ -96,7 +102,7 @@ class Testcase {
 				return samples.size() < right.samples.size();
 			if (time.real != right.time.real)
 				return time.real < right.time.real;
-			return (right.total.randn + right.total.slctn - total.randn - total.slctn);
+			return (total.randn + total.slctn < (right.total.randn - right.total.slctn));
 		}
 
 		friend ostream& operator << (ostream& out, Testcase tc) {
@@ -104,9 +110,15 @@ class Testcase {
 			if (!tc.pass)
 				out << DARK_GRAY;
 			out << "\t" << "  "//<< setw(2) << tc.qas 
+				<< "\t&" << tc.total.randn + tc.total.slctn + round
+				<< "\t&" << tc.samples.size() 
+				<< "\t&" << tc.time.real;
+			return out;
+
+			out << "\t" << "  "//<< setw(2) << tc.qas 
+				<< "\t" << tc.total.randn + tc.total.slctn + round
 				<< "\t" << tc.samples.size() 
-				<< "\t" << tc.time.real
-				<< "\t" << tc.total.randn + tc.total.slctn + round;
+				<< "\t" << tc.time.real;
 			//<< "\t" << tc.pass;
 			out << NORMAL;
 
@@ -258,21 +270,23 @@ class OneTest {
 			out << "\n";
 #endif
 
+			//out << RED << setw(12) << ot.filename << LIGHT_GREEN <<"  \t\t";
 			out << RED << setw(12) << ot.filename << LIGHT_GREEN <<"  median\t\t";
 			if (ot.median_selective) 
 				out << "   " << *ot.median_selective;
 				//out << "++S" << *ot.median_selective;
 			else
-				out << DARK_GRAY << "   \t-\t-\t-\t-";
+				out << DARK_GRAY << "   \t\t&to\t&to\t&to";
 				//out << DARK_GRAY << "++S\t-\t-\t-\t-";
-			out << LIGHT_GREEN << "\t|\t";
+			//out << LIGHT_GREEN << "\t|\t";
+			out << LIGHT_GREEN << "\t\t";
 
 			if (ot.median_unselective) 
 				out << "   " << *ot.median_unselective;
 				//out << "--S" << *ot.median_unselective;
 			else
 				//out << DARK_GRAY << "--S\t-\t-\t-\t-";
-				out << DARK_GRAY << "   \t-\t-\t-\t-";
+				out << DARK_GRAY << "   \t\t&to\t&to\t&to";
 			out << endl << NORMAL;
 
 			return out;
@@ -297,11 +311,12 @@ class OneTest {
 			int s_mid = (valid_selectives.size() - 1)/2;
 			if (s_mid >= 0) 
 				median_selective = valid_selectives.at(s_mid);
+				//median_selective = valid_selectives.at(0);
 
 			int u_mid = (valid_unselectives.size() - 1)/2;
 			if (u_mid >= 0) 
-				median_unselective = valid_unselectives.at(0);
-				//median_unselective = valid_unselectives.at(u_mid);
+				//median_unselective = valid_unselectives.at(0);
+				median_unselective = valid_unselectives.at(u_mid);
 
 			valid_selectives.clear();
 			valid_unselectives.clear();
@@ -358,8 +373,8 @@ class AllTests {
 				{
 					cout << "-------------------------------------------------------------------"
 						<< "-------------------------------------------------------------------\n";
-					out << CYAN << "    Filename\t Seed\t| BestOfSlct\tQs\tRounds\tTime\tSamples\t" 
-						<< "| BestOfUslt\tQs\tRounds\tTime\tSamples\n" << NORMAL;
+					out << CYAN << "    Filename\t Seed\t| BestOfSlct\tQs\tSamples\tRounds\tTime\t" 
+						<< "| BestOfUslt\tQs\tSamples\tRounds\tTime\n" << NORMAL;
 				}
 				out << AT.ots.at(j);
 #ifndef SIM

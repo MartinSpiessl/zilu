@@ -18,7 +18,9 @@ return 0;
 
 int main(int argc, char** argv)
  {
-iifContext context("/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly3.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly3.ds");
-context.addLearner("poly");
-return context.learn("/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly3.cnt", "/home/lijiaying/Research/GitHub/ZILU/tmp/zilu_poly3");
+	iifround = atoi(argv[1]);
+	initseed = atoi(argv[2]);
+	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/zilu_poly3.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/zilu_poly3.ds");
+	context.addLearner("poly");
+	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/zilu_poly3.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/zilu_poly3");
 }
