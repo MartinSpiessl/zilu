@@ -1,6 +1,4 @@
-# ZILU Setup Guide
-
-## Installation
+## ZILU Installation
 #### pre-requirement
 * [git](https://git-scm.com/downloads)
 * [cmake](https://cmake.org/) version 2.8 or later
@@ -15,30 +13,9 @@
 This modification aims at generating smt2 file for each path condition.
 The principle is to add a new method call **``klee_fail && klee_pass''**, and in its method handler we output the path condition to files.
 
-##### these patch files are out-dated. Will update it soon, sorry for this inconvenience.
-* klee_patches is applied to KLEE with commit signature 6609a03e68bf551f433ddd0fd8cf64a8683ee2ee
-[comment]: <> (
-#* [download patch file](http://lijiaying.github.io/content/iif/klee_patch.tar.bz2) This is only valid for KLEE by Dec. 2015.
-#* For the latest KLEE, please replace the following files with the files in [klee patch file](http://lijiaying.github.io/content/iif/klee_file_patch.tar.bz2).
-#1. KLEE_home_folder/include/klee/klee.h 
-#2. KLEE_home_folder/lib/Core/Executor.cpp
-#3. KLEE_home_folder/lib/Core/SpecialFunctionHandler.cpp
-#4. KLEE_home_folder/lib/Core/SpecialFunctionHandler.h
-#5. KLEE_home_folder/runtime/Runtest/instrinsics.c
-#6. KLEE_home_folder/tools/klee/main.cpp
-)
-
-##### Note:
-+ The patch files are tested successfully if you use them just between KLEE configure step and KLEE make step. (between step 5 and 6 in [build-llvm29](http://klee.github.io/build-llvm29/))
-+ Unpack the bz2 file, and then you can find "klee.patch" which is the patch file for whole KLEE project, ignore any warning during your patching process.
-```
-$ls
-klee klee.patch filepatch
-$cd klee
-$patch -p1 <../klee.patch
-```
-+ If the last step does not work, you can patch each file by yourself. The patches for affected files are located in "klee_patch/filepatch" folder.
-+ After the patch, you can continue to proceed KLEE make step (step 6 in [build-llvm29](http://klee.github.io/build-llvm29/))
+* klee.tar.gz is the patch files. It should be applied to KLEE with commit signature 6609a03e68bf551f433ddd0fd8cf64a8683ee2ee
++ Extract the gz file to replace the same files in KLEE project.
++ After the patch, you can continue to proceed build KLEE.
 
 
 #### Get ZILU
@@ -55,9 +32,5 @@ mkdir build
 
 #### Notes
 + The '05' is a file located in 'cfg' folder without extension.
-
-#### Add a new test
-- Follow the format such as 'cfg/template.cfg', put your test case in 'cfg' folder.
-- And then try to run the system and see what happens.
 
 ## Enjoy your tour with our Invariant Inference Framework: ZILU
