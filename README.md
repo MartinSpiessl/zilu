@@ -16,14 +16,17 @@ This modification aims at generating smt2 file for each path condition.
 The principle is to add a new method call **``klee_fail && klee_pass''**, and in its method handler we output the path condition to files.
 
 ##### these patch files are out-dated. Will update it soon, sorry for this inconvenience.
-* [download patch file](http://lijiaying.github.io/content/iif/klee_patch.tar.bz2) This is only valid for KLEE by Dec. 2015.
-* For the latest KLEE, please replace the following files with the files in [klee patch file](http://lijiaying.github.io/content/iif/klee_file_patch.tar.bz2).
-1. KLEE_home_folder/include/klee/klee.h 
-2. KLEE_home_folder/lib/Core/Executor.cpp
-3. KLEE_home_folder/lib/Core/SpecialFunctionHandler.cpp
-4. KLEE_home_folder/lib/Core/SpecialFunctionHandler.h
-5. KLEE_home_folder/runtime/Runtest/instrinsics.c
-6. KLEE_home_folder/tools/klee/main.cpp
+* klee_patches is applied to KLEE with commit signature 6609a03e68bf551f433ddd0fd8cf64a8683ee2ee
+[comment]: <> (
+#* [download patch file](http://lijiaying.github.io/content/iif/klee_patch.tar.bz2) This is only valid for KLEE by Dec. 2015.
+#* For the latest KLEE, please replace the following files with the files in [klee patch file](http://lijiaying.github.io/content/iif/klee_file_patch.tar.bz2).
+#1. KLEE_home_folder/include/klee/klee.h 
+#2. KLEE_home_folder/lib/Core/Executor.cpp
+#3. KLEE_home_folder/lib/Core/SpecialFunctionHandler.cpp
+#4. KLEE_home_folder/lib/Core/SpecialFunctionHandler.h
+#5. KLEE_home_folder/runtime/Runtest/instrinsics.c
+#6. KLEE_home_folder/tools/klee/main.cpp
+)
 
 ##### Note:
 + The patch files are tested successfully if you use them just between KLEE configure step and KLEE make step. (between step 5 and 6 in [build-llvm29](http://klee.github.io/build-llvm29/))
@@ -47,11 +50,11 @@ git clone git@github.com:lijiaying/ZILU.git
 ```
 cd ZILU
 mkdir build
-./run_once.sh zilu_linear1 
+./run.sh 05
 ```
 
 #### Notes
-+ The 'zilu_linear1' is a file located in 'cfg' folder without extension.
++ The '05' is a file located in 'cfg' folder without extension.
 
 #### Add a new test
 - Follow the format such as 'cfg/template.cfg', put your test case in 'cfg' folder.
