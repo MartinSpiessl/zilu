@@ -7,19 +7,15 @@ bold="\e[1m"
 
 
 if [ $# -lt 1 ]; then
-	echo "./run_iterative.sh needs more parameters"
-	echo "./run_iterative.sh cofig_prefix"
+	echo "./run.sh needs more parameters"
+	echo "./run.sh cofig_prefix"
 	echo "try it again..."
 	exit 1
 fi
 
 dir_project=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
-#dir_project=`dirname $dir_project`
 
 dir_cfg=$dir_project"/cfg"
-dir_test=$dir_project"/test"
-dir_temp=$dir_project"/tmp"
-
 
 prefix=`basename -s .cfg $1`
 if [ ! -f $dir_cfg"/"$prefix".cfg" ]; then
@@ -27,10 +23,21 @@ if [ ! -f $dir_cfg"/"$prefix".cfg" ]; then
 		echo -e $red"The argument is invalid, can not find a config file with name $1"
 		exit 1
 	fi
-	prefix=$prefix"_copy"
-	cp $1 $dir_cfg"/"$prefix".cfg"
+	cp $1 $dir_cfg
 fi
 
+grep "disjunctive" $dir_cfg"/"$prefix".cfg" 1>/dev/null 2>&1
+if [ $? -eq 0 ]; then
+	cp $dir_cfg"/"$prefix".cfg" $dir_project"/disj/cfg/"
+	cd $dir_project"/disj"
+	./run.sh $prefix
+	ret=$?
+	cd $dir_project
+	exit $ret
+fi
+
+dir_test=$dir_project"/test"
+dir_temp=$dir_project"/tmp"
 mkdir -p tmp
 mkdir -p build
 mkdir -p test
@@ -123,3 +130,4 @@ while [ $iteration -le 128 ]; do
 done
 echo "FAILED. iteration= "$iteration >> tmp/statistics
 exit $?
+
