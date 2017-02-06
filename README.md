@@ -16,7 +16,7 @@
 git clone git@github.com:lijiaying/ZILU.git
 ```
 
-#### patch KLEE source code
+#### Patch KLEE source code
 This modification aims at generating smt2 file for each path condition.
 The principle is to add a new method call **``klee_fail && klee_pass''**, and in its method handler we output the path condition to files.
 
