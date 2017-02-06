@@ -39,18 +39,25 @@ cd $dir_project
 #**********************************************************************************************
 # Learning phase
 #**********************************************************************************************
+cd $dir_parser
+make
+make clean
+cd ..
 ##########################################################################
 # Prepare the target loop program
 ##########################################################################
 echo -n -e $blue"Converting the given config file to a valid cplusplus file..."$normal
 if [ $# -ge 2 ]; then
 	if [ $# -ge 3 ]; then
-		$dir_parser"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2 $3
+		#$dir_parser"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2 $3
+		cat $path_cfg | $dir_parser"/parser" -t 1 -o $path_cpp -v $path_var -i $prefix_path_inv -x $2 -d $3
 	else
-		$dir_parser"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2
+		#$dir_parser"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2
+		cat $path_cfg | $dir_parser"/parser" -t 1 -o $path_cpp -v $path_var -i $prefix_path_inv -x $2
 	fi
 else
-	$dir_parser"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv
+	#$dir_parser"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv
+	cat $path_cfg | $dir_parser"/parser" -t 1 -o $path_cpp -v $path_var -i $prefix_path_inv
 fi
 Nv=$?
 echo -e $green$bold"[DONE]"$normal

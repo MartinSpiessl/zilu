@@ -1,27 +1,28 @@
-#include "iif.h"
+#include "record.h"
 #include <iostream>
-using namespace iif;
+using namespace std;
+using namespace record;
 
 int loopFunction(int _reserved_input_[]) {
-int x = _reserved_input_[0];
-int y = _reserved_input_[1];
+	int x = _reserved_input_[0];
+	int y = _reserved_input_[1];
 
-iif_assume(x<y);
-while(x<y)
-{
-recordi(x, y);
- x=x+1;
-}
-recordi(x, y);
-iif_assert(x==y);
-return 0;
+	precondition(x<y);
+
+	while(x<y) {
+		record_variable_int(x, y);
+		x=x+1;
+		
+	}
+	record_variable_int(x, y);
+
+	postcondition(x==y);
+
+	return 0;
 }
 
-int main(int argc, char** argv)
- {
-	iifround = atoi(argv[1]);
-	initseed = atoi(argv[2]);
-	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/interproc2.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/interproc2.ds");
-	context.addLearner("linear");
-	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/interproc2.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/interproc2");
-}
+int main(int argc, char** argv) {
+	 iifround = atoi(argv[1]);
+	 iifseed = atoi(argv[2]);
+	Context context("
+

@@ -1,6 +1,4 @@
 #!/bin/bash
-#dir_include=/home/parallels/Research/GitHub/ZILUv3/scripts
-#dir_include=`dirname $(pwd)/${0}`
 dir_include=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
 . $dir_include"/include.sh"
 
@@ -71,7 +69,6 @@ while [ $u -lt $n ]; do
 			fi
 		done
 
-
 		echo -n -e $red$bold" [sat] [FAIL]"$normal
 		echo -e " >>> counter example(s) are  stored at "$yellow$path_cnt$normal
 		return 1
@@ -92,11 +89,11 @@ rm -rf klee-*
 rm -rf *.smt2
 echo -e $green"Compiling the C files and Run KLEE..."$u$normal
 llvm-gcc --emit-llvm -c -g $file_c_verif > /dev/null
-echo -e $blue"Running KLEE to generate path condition"$normal
+#echo -e $blue"Running KLEE to generate path condition"$normal
 klee $file_o_verif > /dev/null 2>&1
-#klee -write-smt2s $file_o_verif #> /dev/null 2>&1
 func_findsmt4z3
 ret=$?
+
 #echo -n -e $red$ret$normal
 if [ $ret -eq 2 ]; then
 	exit $ret
@@ -150,10 +147,11 @@ echo -e $green$bold"[Done]"$normal
 # Generate C files to verify using cfg file and inv file
 ##########################################################################
 echo -n -e $blue"Generating three C files to do the verification by KLEE..."$normal
-$dir_parser"/cfg2verif" $path_tmp_cfg $path_verif
-#cat $path_tmp_cfg | $dir_parser"/parser" -t 4 -c 1 -o $dir_temp"/"$file_c1_verif
-#cat $path_tmp_cfg | $dir_parser"/parser" -t 4 -c 2 -o $dir_temp"/"$file_c2_verif
-#cat $path_tmp_cfg | $dir_parser"/parser" -t 4 -c 3 -o $dir_temp"/"$file_c3_verif
+#$dir_parser"/cfg2verif" $path_tmp_cfg $path_verif
+mkdir -p $dir_temp"/"$prefix"_klee1" $dir_temp"/"$prefix"_klee2" $dir_temp"/"$prefix"_klee3"
+cat $path_tmp_cfg | $dir_parser"/parser" -t 4 -c 1 -o $dir_temp"/"$prefix"_klee1/"$file_c_verif
+cat $path_tmp_cfg | $dir_parser"/parser" -t 4 -c 2 -o $dir_temp"/"$prefix"_klee2/"$file_c_verif
+cat $path_tmp_cfg | $dir_parser"/parser" -t 4 -c 3 -o $dir_temp"/"$prefix"_klee3/"$file_c_verif
 #$dir_tool"/bin/cfg2verif" $path_tmp_cfg $path_verif
 echo -e $green$bold"[Done]"$normal
 
@@ -162,11 +160,6 @@ echo -e $green$bold"[Done]"$normal
 # File preparation for verificattion
 ##########################################################################
 cd $dir_temp
-mkdir -p $prefix"_klee1" $prefix"_klee2" $prefix"_klee3"
-mv $file_c1_verif $prefix"_klee1/"$file_c_verif
-mv $file_c2_verif $prefix"_klee2/"$file_c_verif
-mv $file_c3_verif $prefix"_klee3/"$file_c_verif
-
 func_kleeverify 1
 func_kleeverify 2
 func_kleeverify 3
