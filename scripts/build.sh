@@ -1,13 +1,5 @@
 #!/bin/bash
-red="\e[31m"
-green="\e[32m"
-yellow="\e[33m"
-blue="\e[34m"
-bold="\e[1m"
-normal="\e[0m"
-
-if [ $# -lt 1 ]
-then
+if [ $# -lt 1 ]; then
 	echo "build.sh needs more parameters"
 	echo "build.sh cofig_prefix"
 	echo "try it again..."
@@ -15,19 +7,19 @@ then
 fi
 
 prefix=$1
-mkdir -p tmp
 dir_pwd=`pwd`
 
 dir_project=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
 dir_project=`dirname $dir_project`
 . $dir_project"/scripts/include.sh"
-
+mkdir -p $dir_temp
 
 
 file_cfg=$prefix".cfg"
 file_cpp=$prefix".cpp"
 file_var=$prefix".var"
 file_inv=$prefix".inv"
+
 path_cfg=$dir_cfg"/"$file_cfg
 path_cpp=$dir_test"/"$file_cpp
 path_var=$dir_temp"/"$file_var
@@ -35,7 +27,6 @@ path_inv=$dir_temp"/"$file_inv
 prefix_path_inv=$dir_temp"/"$prefix
 
 cd $dir_project
-
 #**********************************************************************************************
 # Learning phase
 #**********************************************************************************************
@@ -43,29 +34,24 @@ cd $dir_parser
 make
 make clean
 cd ..
+
 ##########################################################################
 # Prepare the target loop program
 ##########################################################################
 echo -n -e $blue"Converting the given config file to a valid cplusplus file..."$normal
 if [ $# -ge 2 ]; then
 	if [ $# -ge 3 ]; then
-		#$dir_parser"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2 $3
 		cat $path_cfg | $dir_parser"/parser" -t 1 -o $path_cpp -v $path_var -i $prefix_path_inv -x $2 -d $3
 	else
-		#$dir_parser"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv $2
 		cat $path_cfg | $dir_parser"/parser" -t 1 -o $path_cpp -v $path_var -i $prefix_path_inv -x $2
 	fi
 else
-	#$dir_parser"/cfg2test" $path_cfg $path_cpp $path_var $prefix_path_inv
 	cat $path_cfg | $dir_parser"/parser" -t 1 -o $path_cpp -v $path_var -i $prefix_path_inv
 fi
 Nv=$?
 echo -e $green$bold"[DONE]"$normal
 
 target=$prefix
-#if [ $# -ge 5 ]; then
-#	target=$5
-#fi
 
 ##########################################################################
 # Generate CMakeLists from cmake.base and Nv value
@@ -81,10 +67,11 @@ if [ $# -ge 4 ]; then
 fi
 
 if [ $# -ge 5 ]; then
-	if [ $5 -eq 1 ]; then
+	echo -e $yellow"Parameter5 --> "$5$normal
+	if [ $5 -ge 1 ]; then
 		echo "add_definitions(-D__QAS_POSITIVE)" >> $cmakefile
 	fi
-	if [ $5 -eq 2 ]; then
+	if [ $5 -le -1 ]; then
 		echo "add_definitions(-D__QAS_NEGATIVE)" >> $cmakefile
 	fi
 fi
@@ -93,8 +80,6 @@ echo "add_executable("$target" "$path_cpp" \${DIR_SRCS} \${HEADER})" >> $cmakefi
 echo "target_link_libraries("$target" \${Z3_LIBRARY})" >> $cmakefile
 echo "target_link_libraries("$target" \${GSL_LIBRARIES})" >> $cmakefile
 echo -e $green$bold"[DONE]"$normal
-
-
 
 ##########################################################################
 # Build the project

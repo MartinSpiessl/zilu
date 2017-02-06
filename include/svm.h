@@ -125,7 +125,7 @@ class SVM : public MLalgo
 #endif
 
 #ifdef __PRT
-				std::cout << "++" << GREEN << "new" << NORMAL << "[" << cur_psize - pre_psize << "|"
+				std::cout << GREEN << "++new" << NORMAL << "[" << cur_psize - pre_psize << "|"
 					<< cur_nsize - pre_nsize  << "] ==> " << GREEN << "total" << NORMAL << "["
 					<< cur_psize << "+|" << cur_nsize << "-]";
 #endif

@@ -11,9 +11,7 @@ dir_project=`dirname $dir_project`
 
 dir_temp=$dir_project"/tmp"
 dir_test=$dir_project"/test"
-dir_tool=$dir_project"/tools"
 dir_script=$dir_project"/scripts"
-#dir_parser=$dir_project"/tools/bin"
 dir_parser=$dir_project"/parser"
 dir_cfg=$dir_project"/cfg"
 dir_build=$dir_project"/build"

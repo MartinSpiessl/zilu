@@ -1,6 +1,7 @@
 cmake_minimum_required (VERSION 2.8)
 set(Nv 1)
 add_definitions(-D__SELECTIVE_SAMPLING_ENABLED)
+add_definitions(-D__QAS_NEGATIVE)
 project(InvariantInferenceFramework)
 set(PRECISION 3)
 

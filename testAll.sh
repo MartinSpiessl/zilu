@@ -32,7 +32,7 @@ do
 		initseed=$RANDOM
 		./testOne.sh $cfgfile_base 1 0 $initseed
 		./testOne.sh $cfgfile_base 1 1 $initseed
-		./testOne.sh $cfgfile_base 1 2 $initseed
+		./testOne.sh $cfgfile_base 1 -1 $initseed
 		ite=$(($ite+1))
 	done
 done

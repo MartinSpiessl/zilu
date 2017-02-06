@@ -1,7 +1,6 @@
 #!/bin/bash
 red="\e[31m"
 green="\e[32m"
-yellow="\e[33m"
 blue="\e[34m"
 normal="\e[0m"
 bold="\e[1m"
@@ -20,9 +19,7 @@ dir_project=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
 dir_cfg=$dir_project"/cfg"
 dir_test=$dir_project"/test"
 dir_temp=$dir_project"/tmp"
-dir_tool=$dir_project"/tools/bin"
 
-# dir_cfg=$1
 
 prefix=`basename -s .cfg $1`
 if [ ! -f $dir_cfg"/"$prefix".cfg" ]; then
@@ -43,26 +40,18 @@ file_cpp=$prefix".cpp"
 path_cpp=$dir_test"/"$file_cpp
 file_var=$prefix".var"
 path_var=$dir_temp"/"$file_var
-file_inv=$prefix".inv"
-path_inv=$dir_temp"/"$file_inv
 file_cnt=$prefix".cnt"
 path_cnt=$dir_temp"/"$file_cnt
-file_cnt_lib=$prefix".cntlib"
-path_cnt_lib=$dir_temp"/"$file_cnt_lib
 
 file_dataset=$prefix".ds"
 path_dataset=$dir_temp"/"$file_dataset
 
 #rm -f $path_cnt
 rm -f $path_dataset
-rm -f $path_cnt_lib
 
 ##########################################################################
 # BEGINNING 
 ##########################################################################
-#cd tools
-#./make_tools.sh
-#cd ..
 
 #echo "build....build...build"
 if [ $# -lt 2 ]; then
@@ -85,6 +74,8 @@ echo -e $green"GEN INIT"$normal
 ./scripts/gen_init.sh $prefix
 echo -e $green"DONE"$normal
 
+#file_inv=$prefix".inv"
+#path_inv=$dir_temp"/"$file_inv
 #if [ $# -ge 3 ]; then
 #	echo -e $blue"Using precondition as the invariant candidiate..."$normal
 #	grep '^precondition=*' $path_cfg > $path_inv
@@ -121,7 +112,7 @@ while [ $iteration -le 128 ]; do
 	./scripts/verify.sh $prefix
 	if [ $? -eq 0 ]; then
 		echo ""
-		echo "=====================time========================="
+		#echo "=====================time========================="
 		#echo -n -e $green$bold"------------------------------------------------------------- Iteration "
 		#echo -e " Done -------------------------------------------------------------------"$normal$normal
 		echo "SUCCEED. with iteration= "$iteration >> tmp/statistics
@@ -129,7 +120,6 @@ while [ $iteration -le 128 ]; do
 	else
 		iteration=$(($iteration+1))
 	fi
-	#cat $dir_temp"svm.ds" > $path_dataset
 done
 echo "FAILED. iteration= "$iteration >> tmp/statistics
 exit $?

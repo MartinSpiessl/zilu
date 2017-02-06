@@ -34,8 +34,6 @@ fi
 
 i=1
 while [ $i -le $total ]; do
-#for file in `find cfg/ -maxdepth 1 -name '*.cfg'`
-#date >> result/statistics
 	echo -e $yellow"> Processing >>>>> ["$file"] ----qas=$qas-- seed="$initseed" -------------------------------------------------------------------"$normal
 
 	rm -rf tmp/$file".cnt"
