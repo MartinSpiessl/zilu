@@ -288,9 +288,10 @@ int Polynomial::roundoff(Polynomial& e) {
 
 	e = *this;
 	double scale_up = 2;
+	e.theta[0] = theta[0]/min;
 	while(scale_up <= 100) {
 		int i;
-		for (i = 0; i < dims; i++) {
+		for (i = 1; i < dims; i++) {
 			if (_roundoff(theta[i] / min, e.theta[i]) == false) {
 				//std::cout << RED << "scale X10:" << GREEN << *this << std::endl;
 				scale(*this, scale_up/(scale_up-1));
@@ -306,6 +307,7 @@ int Polynomial::roundoff(Polynomial& e) {
 			_roundoff(theta[i] / min, e.theta[i]);
 		}
 	}
+	e.theta[0] = floor(e.theta[0]);
 #ifdef __PRT_POLYNOMIAL
 	std::cout << "\tAfter roundoff: " << e << NORMAL << std::endl;
 #endif
