@@ -20,7 +20,7 @@ git clone git@github.com:lijiaying/ZILU.git
 This modification aims at generating smt2 file for each path condition.
 The principle is to add a new method call **``klee_fail && klee_pass''**, and in its method handler we output the path condition to files.
 
-* klee.tar.gz is the patch files. It should be applied to KLEE with commit signature 6609a03e68bf551f433ddd0fd8cf64a8683ee2ee
+* klee.tar.gz is the patch files. It should be applied to KLEE with commit signature 6609a03e68bf551f433ddd0fd8cf64a8683ee2ee, the short SHA: 6609a03.
 + Extract the gz file to replace the same files in KLEE project.
 + After the patch, you can continue to proceed build KLEE.
 
