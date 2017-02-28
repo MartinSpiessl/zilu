@@ -269,7 +269,7 @@ int Polynomial::roundoff(Polynomial& e) {
 		}
 	}
 	double min = max;
-	for (int i = 0; i < dims; i++) {
+	for (int i = 1; i < dims; i++) {
 		if (std::abs(theta[i]) == 0) continue;
 		if (std::abs(theta[i]) * pow(10, PRECISION) < max) {
 			theta[i] = 0;
