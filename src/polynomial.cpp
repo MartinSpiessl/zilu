@@ -30,33 +30,6 @@ static bool scale(Polynomial& poly, double times) {
 	return true;
 }
 
-#if 0
-std::string Polynomial::toString() const {
-	std::ostringstream stm;
-	bool firstplus = false;
-	if (theta[0] != 0) {
-		firstplus = true;
-		stm << theta[0];
-		//stm << "*" << vparray[0];
-	}
-	for (int j = 1; j < dims; j++) {
-		if (theta[j] == 0) continue;
-		if (firstplus == false) 
-			firstplus = true;
-		else 
-			stm << " + ";
-		if (theta[j] != 1) 
-			stm << "(" << theta[j] << ")*";
-		//stm << vparray[j];
-		stm << variables[j];
-	}
-	stm << " >= 0";
-
-	return stm.str();
-}
-#endif
-
-#if 1
 std::string Polynomial::toString() const {
 	std::ostringstream stm;
 	stm << std::setprecision(16);
@@ -82,7 +55,6 @@ std::string Polynomial::toString() const {
 
 	return stm.str();
 }
-#endif
 
 std::ostream& operator<< (std::ostream& out, const Polynomial& poly) {
 	out << std::setprecision(16);
@@ -258,10 +230,11 @@ bool Polynomial::alreadyRoundoff() {
 
 int Polynomial::roundoff(Polynomial& e) {
 	//std::cout << "ROUND OFF " << *this << " --> ";
-	if (alreadyRoundoff() == true) {
+	/*if (alreadyRoundoff() == true) {
 		e = *this;
 		return 0;
 	}
+	*/
 	double max = 0;
 	for (int i = 0; i < dims; i++) {
 		if (std::abs(theta[i]) > max) {
