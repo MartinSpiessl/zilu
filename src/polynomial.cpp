@@ -30,6 +30,35 @@ static bool scale(Polynomial& poly, double times) {
 	return true;
 }
 
+static int gcd(int a, int b) {
+	if (a==1 || b==1)
+		return 1;
+	if (a==0 || b==0)
+		return (a+b)>0? (a+b):1;
+	if (a==b)
+		return a;
+	if (a<b) {
+		int tmp = a;
+		a = b;
+		b = tmp;
+	}
+	return gcd(b, a%b);
+}
+
+static int ngcd(Polynomial& poly/*bool ignore_first = true*/) {
+	for (int i = 0; i < poly.getDims(); i++) {
+		if ((int)poly.theta[i] - poly.theta[i] != 0)
+			return 1;
+	}
+	int coffgcd = std::abs((int)poly.theta[1]);
+	for (int i = 2; i < poly.getDims(); i++) {
+		if (coffgcd == 1)
+			break;
+		coffgcd = gcd(coffgcd, std::abs((int)poly.theta[i]));
+	}
+	return coffgcd;
+}
+
 std::string Polynomial::toString() const {
 	std::ostringstream stm;
 	stm << std::setprecision(16);
@@ -261,10 +290,10 @@ int Polynomial::roundoff(Polynomial& e) {
 
 	e = *this;
 	double scale_up = 2;
-	e.theta[0] = theta[0]/min;
+	//e.theta[0] = theta[0]/min;
 	while(scale_up <= 100) {
 		int i;
-		for (i = 1; i < dims; i++) {
+		for (i = 0; i < dims; i++) {
 			if (_roundoff(theta[i] / min, e.theta[i]) == false) {
 				//std::cout << RED << "scale X10:" << GREEN << *this << std::endl;
 				scale(*this, scale_up/(scale_up-1));
@@ -280,7 +309,15 @@ int Polynomial::roundoff(Polynomial& e) {
 			_roundoff(theta[i] / min, e.theta[i]);
 		}
 	}
-	e.theta[0] = floor(e.theta[0]);
+
+	int poly_gcd = ngcd(e);
+	e.theta[0] = floor((int)e.theta[0] / poly_gcd);
+	if (poly_gcd > 1) {
+		for (int i = 1; i < dims; i++) {
+			e.theta[i] = e.theta[i] / poly_gcd;
+		}
+	}
+	//e.theta[0] = floor(e.theta[0]);
 #ifdef __PRT_POLYNOMIAL
 	std::cout << "\tAfter roundoff: " << e << NORMAL << std::endl;
 #endif
