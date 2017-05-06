@@ -1,0 +1,9 @@
+names=x y
+beforeloop=
+beforeloopinit=
+precondition=x==0&&y==0
+loopcondition=
+loop=if(rand()%2){x++;y+=100;}else if(rand()%2){if(x>=4){x++;y++;}if(x<0){y--;}}
+postcondition= x < 4 || y > 2
+afterloop=
+learners= conj

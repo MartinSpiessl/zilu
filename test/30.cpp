@@ -1,30 +1,32 @@
-#include "record.h"
+#include "iif.h"
 #include <iostream>
 using namespace std;
-using namespace record;
+using namespace iif;
 
 int loopFunction(int _reserved_input_[]) {
 	int i = _reserved_input_[0];
 	int c = _reserved_input_[1];
 
-	precondition(c==0 && i==0);
+	iif_assume( i>=0&&c>=i);
 
-	while(i<100) {
-		record_variable_int(i, c);
+	while(i<40) {
+		recordi(i, c);
 		c=c+i;
-		i=i+1;
-		if (i<=0) break;
+		i++;
 		
 	}
-	record_variable_int(i, c);
+	recordi(i, c);
 
-	postcondition(c>=0);
+	iif_assert(c>=0);
 
 	return 0;
 }
 
 int main(int argc, char** argv) {
-	 iifround = atoi(argv[1]);
-	 iifseed = atoi(argv[2]);
-	Context context("
+	iifround = atoi(argv[1]);
+	initseed = atoi(argv[2]);
+	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/30.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/30.ds");
+	context.addLearner("conjunctive");
+	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/30.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/30");
+}
 

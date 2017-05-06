@@ -6,18 +6,34 @@ using namespace iif;
 int loopFunction(int _reserved_input_[]) {
 	int x = _reserved_input_[0];
 	int y = _reserved_input_[1];
+	int z = _reserved_input_[2];
+	int w = _reserved_input_[3];
 
-	iif_assume(x<10 && x==y);
+	iif_assume(x==0&&y==0&&z==0&&w==0);
 
-	while(x<10) {
-		recordi(x, y);
+	while(rand()%2) {
+		recordi(x, y, z, w);
+		if(rand()%2){
 		x++;
-		y++;
+		y=y+2;
+		}
+		else if(rand()%2){
+		if(x>=4){
+		x++;
+		y=y+3;
+		z=z+10;
+		w=w+10;
+		}
+		}
+		else if(x>=z&&w>=y+1){
+		x=-x;
+		y=-y;
+		}
 		
 	}
-	recordi(x, y);
+	recordi(x, y, z, w);
 
-	iif_assert(y==10);
+	iif_assert(3*x>y-1);
 
 	return 0;
 }

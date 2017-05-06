@@ -304,8 +304,6 @@ int Polynomial::roundoff(Polynomial& e) {
 	std::cout << GREEN << "Before roundoff: " << *this;
 	std::cout << " min=" << min << std::endl;
 #endif
-	std::cout << GREEN << "Before roundoff: " << *this;
-	std::cout << " min=" << min << std::endl;
 
 	e = *this;
 	scale(e, 1.0/min);

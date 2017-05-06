@@ -4,24 +4,23 @@ using namespace std;
 using namespace iif;
 
 int loopFunction(int _reserved_input_[]) {
-	int x = _reserved_input_[0];
-	int y = _reserved_input_[1];
-	int i = _reserved_input_[2];
-	int j = _reserved_input_[3];
+	int i = _reserved_input_[0];
+	int j = _reserved_input_[1];
 
-	int flag;
-	iif_assume(x==y&&j==i);
+	int x, y;
+	x = 0; y = 0;
+	iif_assume(i==0 && j==0);
 
-	while(rand()%2) {
-		recordi(x, y, i, j);
+	while(rand()%4) {
+		recordi(i, j);
 		x++;
 		y++;
 		i+=x;
 		j+=y;
-		if(flag)  j+=1;
+		if (flag) j+=1;
 		
 	}
-	recordi(x, y, i, j);
+	recordi(i, j);
 
 	iif_assert(j>=i);
 
@@ -32,7 +31,7 @@ int main(int argc, char** argv) {
 	iifround = atoi(argv[1]);
 	initseed = atoi(argv[2]);
 	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/05.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/05.ds");
-	context.addLearner("conjunctive");
+	context.addLearner("linear");
 	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/05.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/05");
 }
 
