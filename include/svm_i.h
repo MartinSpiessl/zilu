@@ -525,8 +525,8 @@ class SVM_I : public MLalgo //SVM
 			if (cl.size < 0) return -1;
 			if (cl.size == 0) return 0;
 
-			//int start = rand() % negative_size;
-			int start = 0;
+			int start = rand() % negative_size;
+			//int start = 0;
 			for (int i = 0; i < negative_size; i++) {
 				int k = (i + start) % negative_size;
 				if (predict(negative_mapped_data[k]) >= 0) {

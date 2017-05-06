@@ -8,7 +8,7 @@ bold="\e[1m"
 
 if [ $# -lt 1 ]; then
 	echo "./run.sh needs more parameters"
-	echo "./run.sh cofig_prefix"
+	echo "./run.sh cofig_file"
 	echo "try it again..."
 	exit 1
 fi

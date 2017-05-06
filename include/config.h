@@ -20,7 +20,7 @@
  *		   This should be set in /CMakeLists.txt file
  *		   If it is not set correctly, you may come across a runtime error
  */
-#define Nv 6 
+#define Nv 2 
 
 /*#define Cv(i) do {int return_num##i = 1;\
   for (int tempi = 0; tempi < i; i++) return_num##i *= (Nv + i);\

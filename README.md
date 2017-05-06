@@ -53,10 +53,8 @@ We mainly add new method calls **``klee_fail && klee_pass''**, as we would like 
 
 #### Test ZILU
 ```
-./run.sh 03  or  ./run.sh cfg/03.cfg
+./run.sh benchmark/03.cfg
 ```
 
-#### Notes
-- The '03' is a file '03.cfg' without extension which is located in 'cfg' folder.
 
 ## Enjoy your tour with our Invariant Inference Framework: ZILU

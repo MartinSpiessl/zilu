@@ -10,16 +10,33 @@
 const double UPBOUND = pow(0.1, PRECISION);
 static bool _roundoff(double x, double& roundx)
 {
-	if (std::abs(x) <= UPBOUND) {
+	double xx = x;
+	if (std::abs(xx) <= UPBOUND) {
 		roundx = 0;
 		return true;
 	}
-	roundx = nearbyint(x);
-	if ((roundx  >= x * (1 - UPBOUND) && roundx  <= x * (1 + UPBOUND))
-			|| (roundx  <= x * (1 - UPBOUND) && roundx  >= x * (1 + UPBOUND))) {
+	roundx = nearbyint(xx);
+	if ((roundx  >= xx * (1 - UPBOUND) && roundx  <= xx * (1 + UPBOUND))
+			|| (roundx  <= xx * (1 - UPBOUND) && roundx  >= xx * (1 + UPBOUND))) {
 		return true;
 	}
 	return false;
+}
+
+static bool _roundoffPoly(Polynomial& p) {
+	int size = p.getDims();
+	std::vector<double> ret;
+	for (int i = 0; i < size; i++) {
+		ret.push_back(p.theta[i]);
+		if (_roundoff(p.theta[i], ret[i]) == false) {
+			ret.clear();
+			return false;
+		}
+	}
+	for (int i = 0; i < size; i++)
+		p.theta[i] = ret[i];
+	ret.clear();
+	return true;
 }
 
 static bool scale(Polynomial& poly, double times) {
@@ -287,12 +304,20 @@ int Polynomial::roundoff(Polynomial& e) {
 	std::cout << GREEN << "Before roundoff: " << *this;
 	std::cout << " min=" << min << std::endl;
 #endif
+	std::cout << GREEN << "Before roundoff: " << *this;
+	std::cout << " min=" << min << std::endl;
 
 	e = *this;
+	scale(e, 1.0/min);
 	double scale_up = 2;
 	//e.theta[0] = theta[0]/min;
 	while(scale_up <= 100) {
-		int i;
+		if (_roundoffPoly(e) == true)
+			break;
+		scale(e, (1.0 * scale_up)/(scale_up-1));
+		scale_up++;
+	}
+	/*	int i;
 		for (i = 0; i < dims; i++) {
 			if (_roundoff(theta[i] / min, e.theta[i]) == false) {
 				//std::cout << RED << "scale X10:" << GREEN << *this << std::endl;
@@ -304,19 +329,22 @@ int Polynomial::roundoff(Polynomial& e) {
 		if (i >= dims)
 			break;
 	}
+	*/
 	if (scale_up > 100) {
 		for (int i = 0; i < dims; i++) {
-			_roundoff(theta[i] / min, e.theta[i]);
+			_roundoff(e.theta[i], e.theta[i]);
 		}
 	}
 
+	//*
 	int poly_gcd = ngcd(e);
-	e.theta[0] = floor((int)e.theta[0] / poly_gcd);
+	e.theta[0] = floor(e.theta[0] / poly_gcd);
 	if (poly_gcd > 1) {
 		for (int i = 1; i < dims; i++) {
 			e.theta[i] = e.theta[i] / poly_gcd;
 		}
 	}
+	//*/
 	//e.theta[0] = floor(e.theta[0]);
 #ifdef __PRT_POLYNOMIAL
 	std::cout << "\tAfter roundoff: " << e << NORMAL << std::endl;
