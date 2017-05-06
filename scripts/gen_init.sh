@@ -111,7 +111,7 @@ cat $path_cfg | $dir_parser"/parser" -t 5 -c -1 -o $dir_temp"/"$prefix"_init2/"$
 ##########################################################################
 # File preparation for verificattion
 ##########################################################################
-rm $path_cnt
+rm -rf $path_cnt
 cd $dir_temp"/"$prefix"_init1" 
 func_kleeinit
 cd $dir_project

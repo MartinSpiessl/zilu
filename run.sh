@@ -6,28 +6,26 @@ normal="\e[0m"
 bold="\e[1m"
 
 
+dir_project=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
 if [ $# -lt 1 ]; then
 	echo "./run.sh needs more parameters"
-	echo "./run.sh cofig_file"
+	echo "./run.sh config_file"
 	echo "try it again..."
 	exit 1
 fi
 
-dir_project=$(cd $(dirname $BASH_SOURCE[0]) && pwd)
-
-dir_cfg=$dir_project"/cfg"
-
-prefix=`basename -s .cfg $1`
-if [ ! -f $dir_cfg"/"$prefix".cfg" ]; then
-	if [ ! -f $1 ]; then
-		echo -e $red"The argument is invalid, can not find a config file with name $1"
-		exit 1
-	fi
-	cp $1 $dir_cfg
+if [ ! -f $1 ]; then
+	echo -e $red"The argument is invalid, can not find a config file with name $1"
+	exit 1
 fi
+dir_cfg=$dir_project"/cfg"
+mkdir -p $dir_cfg
+cp -f $1 $dir_cfg
+prefix=`basename -s .cfg $1`
 
-grep "disjunctive" $dir_cfg"/"$prefix".cfg" 1>/dev/null 2>&1
+grep "disj" $dir_cfg"/"$prefix".cfg" 1>/dev/null 2>&1
 if [ $? -eq 0 ]; then
+	echo -e $blue"run disjunctive learner"$normal
 	cp $dir_cfg"/"$prefix".cfg" $dir_project"/disj/cfg/"
 	cd $dir_project"/disj"
 	./run.sh $prefix

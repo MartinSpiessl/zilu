@@ -3,6 +3,8 @@ dev/*.out
 bin/*.out
 src/*.out
 test/*.inv
+test/*.cpp
+cfg/*.cfg
 tmp/
 bin
 data
@@ -12,4 +14,4 @@ tags
 ./include/config.h
 result/
 result*
-config.h
+include/config.h
