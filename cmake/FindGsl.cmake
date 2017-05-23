@@ -7,12 +7,6 @@
 
 include(LibFindMacros)
 
-# Dependencies
-# libfind_package(GSL z3)
-
-# Use pkg-config to get hints about paths
-# libfind_pkg_check_modules(GSL_PKGCONF z3)
-
 # Include dir
 find_path(GSL_INCLUDE_DIR
   NAMES gsl.h
