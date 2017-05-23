@@ -4,21 +4,22 @@ using namespace std;
 using namespace iif;
 
 int loopFunction(int _reserved_input_[]) {
-	int n = _reserved_input_[0];
-	int k = _reserved_input_[1];
-	int j = _reserved_input_[2];
+	int low = _reserved_input_[0];
+	int mid = _reserved_input_[1];
+	int high = _reserved_input_[2];
 
-	iif_assume(n>0&&k>n&&j==0);
+	iif_assume(low == 0 && mid >= 1 && high == 2*mid);
 
-	while(j<n) {
-		recordi(n, k, j);
-		j++;
-		k--;
+	while(mid > 0) {
+		recordi(low, mid, high);
+		low = low + 1;
+		high = high - 1;
+		mid = mid - 1;
 		
 	}
-	recordi(n, k, j);
+	recordi(low, mid, high);
 
-	iif_assert(k>=0);
+	iif_assert(low == high);
 
 	return 0;
 }

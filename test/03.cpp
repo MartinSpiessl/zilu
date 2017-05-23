@@ -4,20 +4,25 @@ using namespace std;
 using namespace iif;
 
 int loopFunction(int _reserved_input_[]) {
-	int l = _reserved_input_[0];
+	int i = _reserved_input_[0];
+	int j = _reserved_input_[1];
 
-	 int n; int i;
-	 i = l;
-	iif_assume( l>0);
+	int x, y;
+	x = 0; y = 0;
+	iif_assume(i==0 && j==0);
 
-	while( i < n) {
-		recordi(l);
-		i++;
+	while(rand()%2) {
+		recordi(i, j);
+		x++;
+		y++;
+		i+=x;
+		j+=y;
+		if (flag) j+=1;
 		
 	}
-	recordi(l);
+	recordi(i, j);
 
-	iif_assert(l>=1);
+	iif_assert(j>=i);
 
 	return 0;
 }

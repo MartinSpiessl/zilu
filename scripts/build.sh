@@ -27,13 +27,6 @@ path_inv=$dir_temp"/"$file_inv
 prefix_path_inv=$dir_temp"/"$prefix
 
 cd $dir_project
-#**********************************************************************************************
-# Learning phase
-#**********************************************************************************************
-cd $dir_parser
-make
-make clean
-cd ..
 
 ##########################################################################
 # Prepare the target loop program
@@ -76,7 +69,8 @@ if [ $# -ge 5 ]; then
 	fi
 fi
 cat $dir_project"/cmake.in" >> $cmakefile
-echo "add_executable("$target" "$path_cpp" \${DIR_SRCS} \${HEADER})" >> $cmakefile
+#echo "add_subdirectory(parser) " >> $cmakefile
+echo "add_executable("$target" "$path_cpp" \${DIR_SRCS})" >> $cmakefile
 echo "target_link_libraries("$target" \${Z3_LIBRARY})" >> $cmakefile
 echo "target_link_libraries("$target" \${GSL_LIBRARIES})" >> $cmakefile
 echo -e $green$bold"[DONE]"$normal
@@ -89,7 +83,8 @@ cd $dir_build
 #rm -rf *
 #rm $target
 cmake .. > /dev/null
-make $target
+make
+#make $target
 if [ $? -ne 0 ]; then
 	echo -e $red$bold"[FAIL]make error, contact developer to fix project source code first..."$normal
 	cd ..

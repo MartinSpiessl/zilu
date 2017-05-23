@@ -7,14 +7,12 @@ int loopFunction(int _reserved_input_[]) {
 	int x = _reserved_input_[0];
 	int y = _reserved_input_[1];
 
-	iif_assume(x==1&&y==1);
+	iif_assume(x==1 && y==1);
 
 	while(rand()%2) {
 		recordi(x, y);
-		int t1 = x;
-		int t2 = y;
-		x = t1+ t2;
-		y = t1 + t2;
+		x=x+y;
+		y=x;
 		
 	}
 	recordi(x, y);
