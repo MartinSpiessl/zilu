@@ -4,21 +4,22 @@ using namespace std;
 using namespace iif;
 
 int loopFunction(int _reserved_input_[]) {
-	int i = _reserved_input_[0];
-	int j = _reserved_input_[1];
-	int n = _reserved_input_[2];
+	int x = _reserved_input_[0];
+	int y = _reserved_input_[1];
+	int z = _reserved_input_[2];
 
-	iif_assume(n>=0&&i==0&&j==0);
+	iif_assume(x == y && y == 0 && z==0);
 
-	while(i<=n) {
-		recordi(i, j, n);
-		i++;
-		j+=i;
+	while(rand()%2) {
+		recordi(x, y, z);
+		x++;
+		y++;
+		z-=2;
 		
 	}
-	recordi(i, j, n);
+	recordi(x, y, z);
 
-	iif_assert(i+j>2*n);
+	iif_assert(x == y && x >= 0 && x+y+z==0);
 
 	return 0;
 }
