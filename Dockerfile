@@ -5,7 +5,7 @@ MAINTAINER Dan Liew <daniel.liew@imperial.ac.uk>
 # squash the layers from within a Dockerfile so
 # the resulting image is unnecessarily large!
 
-ENV LLVM_VERSION=2.9 \
+ENV LLVM_VERSION=3.4 \
     SOLVERS=STP:Z3 \
     STP_VERSION=2.1.2 \
     DISABLE_ASSERTIONS=0 \
@@ -70,20 +70,11 @@ WORKDIR /home/klee
 RUN mkdir ${KLEE_SRC} && \
 	git clone https://github.com/klee/klee.git ${KLEE_SRC} && \
 	cd ${KLEE_SRC} && \
-	git checkout 6609a03 && \
 	mkdir ${KLEE_PATCH}
 
-RUN mkdir ${ZILU_SRC} ${ZILU_BUILD} && \
-	git clone https://github.com/lijiaying/ZILU.git ${ZILU_SRC} && \
-	tar -xvzf klee.tar.gz ${KLEE_PATCH} && \
-	cp -rf ${KLEE_PATCH}/klee/* ${KLEE_SRC} 
-	
-# ADD / ${KLEE_SRC}
 
 # Set klee user to be owner
 RUN sudo chown --recursive klee: ${KLEE_SRC}
-RUN sudo chown --recursive klee: ${ZILU_SRC}
-RUN sudo chown --recursive klee: ${ZILU_BUILD}
 
 # Create build directory
 RUN mkdir -p ${BUILD_DIR}
@@ -152,3 +143,20 @@ RUN [ "X${USE_CMAKE}" != "X1" ] && \
 # Link klee to the libkleeRuntest library needed by docker run
 RUN [ "X${USE_CMAKE}" != "X1" ] && (ln -s ${BUILD_DIR}/klee/Release+Asserts/lib/libkleeRuntest.so /usr/lib/libkleeRuntest.so.1.0) || echo "Skipping hack"
 USER klee
+
+
+USER root
+	#git checkout 6609a03 && \ 
+RUN mkdir ${ZILU_SRC} && \
+	mkdir ${ZILU_BUILD} && \
+	git clone https://github.com/lijiaying/ZILU.git ${ZILU_SRC} && \
+	cp ${ZILU_SRC}/klee.tar.gz ${KLEE_PATCH} && \
+	cd ${KLEE_PATCH} && \
+	tar -xvzf klee.tar.gz && \
+	#cp -rf klee/* ${KLEE_SRC} && \
+	chown --recursive klee: ${ZILU_SRC} && \
+	chown --recursive klee: ${ZILU_BUILD} && \
+	apt-get install --yes vim
+	
+USER klee
+# ADD / ${KLEE_SRC}

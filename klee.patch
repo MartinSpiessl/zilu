@@ -1,0 +1,280 @@
+diff --git a/.travis/klee.sh b/.travis/klee.sh
+index 5ee631f..953f9fa 100755
+--- a/.travis/klee.sh
++++ b/.travis/klee.sh
+@@ -199,6 +199,8 @@ else
+         ENABLE_SHARED=0
+ fi
+ 
++make install
++exit 0
+ ###############################################################################
+ # Unit tests
+ ###############################################################################
+diff --git a/.travis/testing-utils.sh b/.travis/testing-utils.sh
+index 153a554..bf25e23 100755
+--- a/.travis/testing-utils.sh
++++ b/.travis/testing-utils.sh
+@@ -17,6 +17,7 @@ if [ "${LLVM_VERSION}" != "2.9" ]; then
+     cd googletest-release-1.7.0/
+     cmake .
+     make
++	exit 0
+     # Normally I wouldn't do something like this but hey we're running on a temporary virtual machine, so who cares?
+     if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+       sudo cp lib* /usr/lib/
+diff --git a/Dockerfile b/Dockerfile
+index 11174e6..815718f 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -12,15 +12,21 @@ ENV LLVM_VERSION=3.4 \
+     ENABLE_OPTIMIZED=1 \
+     KLEE_UCLIBC=klee_uclibc_v1.0.0 \
+     KLEE_SRC=/home/klee/klee_src \
+-    COVERAGE=0 \
+     BUILD_DIR=/home/klee/klee_build \
++    KLEE_PATCH=/home/klee/klee_patch \
++    COVERAGE=0 \
++    ZILU_SRC=/home/klee/zilu_src \
++    ZILU_BUILD=/home/klee/zilu_build \
+     USE_CMAKE=1 \
+     ASAN_BUILD=0 \
+     UBSAN_BUILD=0 \
+     TRAVIS_OS_NAME=linux
+ 
+ RUN apt-get update && \
+-    apt-get -y --no-install-recommends install \
++	apt-get install --yes -qq software-properties-common && \
++	apt-get update && \
++	apt-add-repository --yes ppa:smspillaz/cmake-2.8.12 && \
++	apt-get -y --no-install-recommends install \
+         clang-${LLVM_VERSION} \
+         llvm-${LLVM_VERSION} \
+         llvm-${LLVM_VERSION}-dev \
+@@ -43,6 +49,7 @@ RUN apt-get update && \
+         patch \
+         wget \
+         unzip \
++		libgsl0-dev \
+         binutils && \
+     pip3 install -U lit tabulate && \
+     update-alternatives --install /usr/bin/python python /usr/bin/python3 50 && \
+@@ -60,7 +67,11 @@ USER klee
+ WORKDIR /home/klee
+ 
+ # Copy across source files needed for build
+-RUN mkdir ${KLEE_SRC}
++RUN mkdir ${KLEE_SRC} && \
++	# git clone https://github.com/klee/klee.git ${KLEE_SRC} && \
++	# cd ${KLEE_SRC} && \
++	mkdir ${KLEE_PATCH}
++
+ ADD / ${KLEE_SRC}
+ 
+ # Set klee user to be owner
+@@ -110,11 +121,11 @@ RUN sudo ln -s /usr/bin/clang /usr/bin/clang-${LLVM_VERSION} && \
+     sudo ln -s /usr/bin/clang++ /usr/bin/clang++-${LLVM_VERSION}
+ 
+ # Build KLEE (use TravisCI script)
++USER root
+ RUN cd ${BUILD_DIR} && ${KLEE_SRC}/.travis/klee.sh
+ 
+ # Revoke password-less sudo and Set up sudo access for the ``klee`` user so it
+ # requires a password
+-USER root
+ RUN mv /etc/sudoers.bak /etc/sudoers && \
+     echo 'klee  ALL=(root) ALL' >> /etc/sudoers
+ USER klee
+@@ -133,3 +144,19 @@ RUN [ "X${USE_CMAKE}" != "X1" ] && \
+ # Link klee to the libkleeRuntest library needed by docker run
+ RUN [ "X${USE_CMAKE}" != "X1" ] && (ln -s ${BUILD_DIR}/klee/Release+Asserts/lib/libkleeRuntest.so /usr/lib/libkleeRuntest.so.1.0) || echo "Skipping hack"
+ USER klee
++
++
++USER root
++	#git checkout 6609a03 && \ 
++RUN mkdir ${ZILU_SRC} && \
++	mkdir ${ZILU_BUILD} && \
++	git clone https://github.com/lijiaying/ZILU.git ${ZILU_SRC} && \
++	cp ${ZILU_SRC}/klee.tar.gz ${KLEE_PATCH} && \
++	cd ${KLEE_PATCH} && \
++	tar -xvzf klee.tar.gz && \
++	#cp -rf klee/* ${KLEE_SRC} && \
++	chown --recursive klee: ${ZILU_SRC} && \
++	chown --recursive klee: ${ZILU_BUILD} && \
++	apt-get install --yes vim
++	
++USER klee
+diff --git a/include/klee/Constraints.h b/include/klee/Constraints.h
+index 87069f8..6f0aa66 100644
+--- a/include/klee/Constraints.h
++++ b/include/klee/Constraints.h
+@@ -60,6 +60,11 @@ public:
+   size_t size() const {
+     return constraints.size();
+   }
++  void dump() {
++	  for (size_t i = 0; i < size(); i++) {
++		  constraints[i]->dump();
++	  }
++  }
+ 
+   bool operator==(const ConstraintManager &other) const {
+     return constraints == other.constraints;
+diff --git a/include/klee/klee.h b/include/klee/klee.h
+index d098039..b3bcdd1 100644
+--- a/include/klee/klee.h
++++ b/include/klee/klee.h
+@@ -107,6 +107,8 @@ extern "C" {
+      and may have peculiar semantics. */
+ 
+   void klee_assume(uintptr_t condition);
++  void klee_pass(uintptr_t condition);
++  void klee_fail(uintptr_t condition);
+   void klee_warning(const char *message);
+   void klee_warning_once(const char *message);
+   void klee_prefer_cex(void *object, uintptr_t condition);
+diff --git a/lib/Core/Executor.cpp b/lib/Core/Executor.cpp
+index c087b79..0b96be3 100644
+--- a/lib/Core/Executor.cpp
++++ b/lib/Core/Executor.cpp
+@@ -1539,6 +1539,7 @@ static inline const llvm::fltSemantics * fpWidthToSemantics(unsigned width) {
+ }
+ 
+ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
++  static int int_suffix = 1;
+   Instruction *i = ki->inst;
+   switch (i->getOpcode()) {
+     // Control flow
+@@ -1813,6 +1814,51 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
+     for (unsigned j=0; j<numArgs; ++j)
+       arguments.push_back(eval(ki, j+1, state).value);
+ 
++	const char* calleeName = cs.getCalledFunction()->getName().data();
++
++	if (strncmp(calleeName, "klee_pass", 9) == 0) {
++		printf("->>Function<%s> $$", calleeName);
++		char filename[] = "kleeAssert00000.smt2";
++		sprintf(filename+10, "%05d", int_suffix++);
++		strcat(filename, ".smt2");
++		printf("\n---------------------------------------------------------------------\n");
++		printf("filename:%s \targuments_size=%d\n", filename, numArgs);
++
++		//std::ofstream ofile("failAssert.smt2");
++		std::ofstream ofile(filename);
++		std::string Str;
++		llvm::raw_string_ostream info(Str);
++		ExprSMTLIBPrinter printer;
++		printer.setOutput(info);
++
++		Query query(state.constraints, Expr::createIsZero(arguments[0]));
++		//Query query(state.constraints, arguments[0]);
++		printer.setQuery(query);
++		printer.generateOutput();
++		ofile << info.str();
++		ofile.close();
++	} else if (strncmp(calleeName, "klee_fail", 9) == 0) {
++		printf("->>Function<%s> $$", calleeName);
++		char filename[] = "kleeAssert00000.smt2";
++		sprintf(filename+10, "%05d", int_suffix++);
++		strcat(filename, ".smt2");
++		printf("\n---------------------------------------------------------------------\n");
++		printf("filename:%s \targuments_size=%d\n", filename, numArgs);
++
++		std::ofstream ofile(filename);
++		std::string Str;
++		llvm::raw_string_ostream info(Str);
++		ExprSMTLIBPrinter printer;
++		printer.setOutput(info);
++
++		//Query query(state.constraints, Expr::createIsZero(arguments[0]));
++		Query query(state.constraints, arguments[0]);
++		printer.setQuery(query);
++		printer.generateOutput();
++		ofile << info.str();
++		ofile.close();
++	}
++
+     if (f) {
+       const FunctionType *fType = 
+         dyn_cast<FunctionType>(cast<PointerType>(f->getType())->getElementType());
+diff --git a/lib/Core/SpecialFunctionHandler.cpp b/lib/Core/SpecialFunctionHandler.cpp
+index 0ecbdd0..f0e50b2 100644
+--- a/lib/Core/SpecialFunctionHandler.cpp
++++ b/lib/Core/SpecialFunctionHandler.cpp
+@@ -91,6 +91,8 @@ static SpecialFunctionHandler::HandlerInfo handlerInfo[] = {
+   add("calloc", handleCalloc, true),
+   add("free", handleFree, false),
+   add("klee_assume", handleAssume, false),
++  add("klee_pass", handlePass, true),
++  add("klee_fail", handleFail, true),
+   add("klee_check_memory_access", handleCheckMemoryAccess, false),
+   add("klee_get_valuef", handleGetValue, true),
+   add("klee_get_valued", handleGetValue, true),
+@@ -418,6 +420,21 @@ void SpecialFunctionHandler::handleAssume(ExecutionState &state,
+   }
+ }
+ 
++void SpecialFunctionHandler::handlePass(ExecutionState &state,
++                            KInstruction *target,
++                            std::vector<ref<Expr> > &arguments) {
++  assert(arguments.size()==1 && "invalid number of arguments to klee_pass");
++  //printf("in handleAssertion function...\n");
++  return;
++}
++
++void SpecialFunctionHandler::handleFail(ExecutionState &state,
++                            KInstruction *target,
++                            std::vector<ref<Expr> > &arguments) {
++  assert(arguments.size()==1 && "invalid number of arguments to klee_fail");
++  //printf("in handleAssertion function...\n");
++  return;
++}
+ void SpecialFunctionHandler::handleIsSymbolic(ExecutionState &state,
+                                 KInstruction *target,
+                                 std::vector<ref<Expr> > &arguments) {
+diff --git a/lib/Core/SpecialFunctionHandler.h b/lib/Core/SpecialFunctionHandler.h
+index 2dfdde4..3bf8b41 100644
+--- a/lib/Core/SpecialFunctionHandler.h
++++ b/lib/Core/SpecialFunctionHandler.h
+@@ -101,6 +101,8 @@ namespace klee {
+     HANDLER(handleAssert);
+     HANDLER(handleAssertFail);
+     HANDLER(handleAssume);
++    HANDLER(handlePass);
++    HANDLER(handleFail);
+     HANDLER(handleCalloc);
+     HANDLER(handleCheckMemoryAccess);
+     HANDLER(handleDefineFixedObject);
+diff --git a/runtime/Runtest/intrinsics.c b/runtime/Runtest/intrinsics.c
+index 4d785ee..baf3794 100644
+--- a/runtime/Runtest/intrinsics.c
++++ b/runtime/Runtest/intrinsics.c
+@@ -148,6 +148,14 @@ void klee_assume(uintptr_t x) {
+   }
+ }
+ 
++void klee_pass(uintptr_t x) {
++	klee_assert(x);
++}
++
++void klee_fail(uintptr_t x) {
++	klee_assert(x);
++}
++
+ #define KLEE_GET_VALUE_STUB(suffix, type)	\
+ 	type klee_get_value##suffix(type x) { \
+ 		return x; \
+diff --git a/tools/klee/main.cpp b/tools/klee/main.cpp
+index 3662cbe..78047a1 100644
+--- a/tools/klee/main.cpp
++++ b/tools/klee/main.cpp
+@@ -734,6 +734,8 @@ static const char *modelledExternals[] = {
+   "abort",
+   "klee_abort",
+   "klee_assume",
++  "klee_pass",
++  "klee_fail",
+   "klee_check_memory_access",
+   "klee_define_fixed_object",
+   "klee_get_errno",

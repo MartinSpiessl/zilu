@@ -30,9 +30,6 @@ path_cnt_lib=$dir_temp"/"$file_cnt_lib
 file_verif=$prefix".c"
 path_verif=$dir_temp"/"$file_verif
 file_c_verif=$prefix".c"
-file_c1_verif=$prefix"_klee1.c"
-file_c2_verif=$prefix"_klee2.c"
-file_c3_verif=$prefix"_klee3.c"
 file_o_verif=$prefix".o"
 
 
