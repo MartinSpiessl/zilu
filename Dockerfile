@@ -13,10 +13,8 @@ ENV LLVM_VERSION=3.4 \
     KLEE_UCLIBC=klee_uclibc_v1.0.0 \
     KLEE_SRC=/home/klee/klee_src \
     BUILD_DIR=/home/klee/klee_build \
-    KLEE_PATCH=/home/klee/klee_patch \
     COVERAGE=0 \
-    ZILU_SRC=/home/klee/zilu_src \
-    ZILU_BUILD=/home/klee/zilu_build \
+    ZILU_SRC=/home/klee/zilu \
     USE_CMAKE=1 \
     ASAN_BUILD=0 \
     UBSAN_BUILD=0 \
@@ -67,14 +65,18 @@ USER klee
 WORKDIR /home/klee
 
 # Copy across source files needed for build
+RUN mkdir ${ZILU_SRC} && \
+	git clone https://github.com/lijiaying/ZILU.git ${ZILU_SRC}
+	
 RUN mkdir ${KLEE_SRC} && \
 	git clone https://github.com/klee/klee.git ${KLEE_SRC} && \
 	cd ${KLEE_SRC} && \
-	mkdir ${KLEE_PATCH}
-
+	git apply ${ZILU_SRC}/klee.patch
+# ADD / ${KLEE_SRC}
 
 # Set klee user to be owner
 RUN sudo chown --recursive klee: ${KLEE_SRC}
+RUN sudo chown --recursive klee: ${ZILU_SRC}
 
 # Create build directory
 RUN mkdir -p ${BUILD_DIR}
@@ -119,12 +121,12 @@ RUN [ "X${USE_CMAKE}" != "X1" ] && ( cd ${KLEE_SRC}/tools && \
 RUN sudo ln -s /usr/bin/clang /usr/bin/clang-${LLVM_VERSION} && \
     sudo ln -s /usr/bin/clang++ /usr/bin/clang++-${LLVM_VERSION}
 
+USER root
 # Build KLEE (use TravisCI script)
 RUN cd ${BUILD_DIR} && ${KLEE_SRC}/.travis/klee.sh
 
 # Revoke password-less sudo and Set up sudo access for the ``klee`` user so it
 # requires a password
-USER root
 RUN mv /etc/sudoers.bak /etc/sudoers && \
     echo 'klee  ALL=(root) ALL' >> /etc/sudoers
 USER klee
@@ -143,20 +145,3 @@ RUN [ "X${USE_CMAKE}" != "X1" ] && \
 # Link klee to the libkleeRuntest library needed by docker run
 RUN [ "X${USE_CMAKE}" != "X1" ] && (ln -s ${BUILD_DIR}/klee/Release+Asserts/lib/libkleeRuntest.so /usr/lib/libkleeRuntest.so.1.0) || echo "Skipping hack"
 USER klee
-
-
-USER root
-	#git checkout 6609a03 && \ 
-RUN mkdir ${ZILU_SRC} && \
-	mkdir ${ZILU_BUILD} && \
-	git clone https://github.com/lijiaying/ZILU.git ${ZILU_SRC} && \
-	cp ${ZILU_SRC}/klee.tar.gz ${KLEE_PATCH} && \
-	cd ${KLEE_PATCH} && \
-	tar -xvzf klee.tar.gz && \
-	#cp -rf klee/* ${KLEE_SRC} && \
-	chown --recursive klee: ${ZILU_SRC} && \
-	chown --recursive klee: ${ZILU_BUILD} && \
-	apt-get install --yes vim
-	
-USER klee
-# ADD / ${KLEE_SRC}
