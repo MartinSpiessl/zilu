@@ -24,7 +24,8 @@ RUN cd ${KLEE_SRC} && \
 	git apply ${ZILU_SRC}/klee.patch && \
 	cd ${KLEE_BLD}/klee && \
 	make && \
-	make install
+	make install && \
+	make clean
 
 RUN cd ${ZILU_SRC}/parser && \
 		mkdir build && \
