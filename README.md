@@ -1,6 +1,17 @@
-## ZILU Installation
+## *ZILU* is an open source invariant inference Framework
+
+<table>
+	<tr>
+		<th>Windows</th><th>Ubuntu</th><th>OS X</th>
+	</tr>
+		<td>TBD</td>
+		<td><a href="https://travis-ci.org/lijiaying/ZILU"><img src="https://travis-ci.org/lijiaying/ZILU.svg?branch=master" title="Ubuntu 12.04 LTS 64bit, clang"/></a></td>
+		<td>TBD</td>
+	</tr>
+</table>
 ZILU has been tested on Ubuntu 14.04 x64. It should work on other Linux platfroms, but we have not tested yet.
 
+## ZILU Installation on local computer
 #### pre-requirement (most of the package can be installed with apt-get on Ubuntu)
 - apt-get install git cmake flex bison clang
 - [git](https://git-scm.com/downloads)
@@ -63,5 +74,9 @@ We mainly add new method calls **``klee_fail && klee_pass''**, as we would like 
 ./run.sh benchmark/03.cfg
 ```
 
+### Try *zilu* from docker hub
+```
+	docker pull lijiaying/zilu
+```
 
 ## Enjoy your tour with our Invariant Inference Framework: ZILU
