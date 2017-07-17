@@ -103,7 +103,8 @@ function KleeInit(){
 cd $dir_temp"/"$prefix"_init" 
 rm -rf klee-*
 rm -rf *.smt2
-llvm-gcc --emit-llvm -c -g $file_c_verif > /dev/null
+#llvm-gcc --emit-llvm -c -g $file_c_verif > /dev/null
+clang -emit-llvm -c -g $file_c_verif -o $file_o_verif > /dev/null
 #echo -e $blue"Running KLEE to generate path condition"$normal
 klee -write-smt2s $file_o_verif > /dev/null 2>&1
 #klee -write-smt2s $file_o_verif #> /dev/null 2>&1

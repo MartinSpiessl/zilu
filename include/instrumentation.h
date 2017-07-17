@@ -26,7 +26,8 @@ int addStateDouble(double first, ...);
 #if WIN32  
 	#define recordi(first, ...) addStateInt(first, ##__VA_ARGS__)
 	#define recordd(first, ...) addStateDouble(first, ##__VA_ARGS__)
-#elif (linux ||__MACH__) 
+//#elif (linux ||__MACH__) 
+#else
 	#define recordi(first, args ...) addStateInt(first, ##args)
 	#define recordd(first, args ...) addStateDouble(first, ##args)
 #endif

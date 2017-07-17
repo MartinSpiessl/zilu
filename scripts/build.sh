@@ -73,6 +73,7 @@ cat $dir_project"/cmake.in" >> $cmakefile
 echo "add_executable("$target" "$path_cpp" \${DIR_SRCS})" >> $cmakefile
 echo "target_link_libraries("$target" \${Z3_LIBRARY})" >> $cmakefile
 echo "target_link_libraries("$target" \${GSL_LIBRARIES})" >> $cmakefile
+echo "target_link_libraries("$target" gsl gslcblas m)" >> $cmakefile
 echo -e $green$bold"[DONE]"$normal
 
 ##########################################################################

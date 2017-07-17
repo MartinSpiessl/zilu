@@ -96,6 +96,7 @@ cat ../cmake.in >> $cmakefile
 echo "add_executable("$prefix" "$path_cpp" \${DIR_SRCS} \${HEADER})" >> $cmakefile
 echo "target_link_libraries("$prefix" \${Z3_LIBRARY})" >> $cmakefile
 echo "target_link_libraries("$prefix" \${GSL_LIBRARIES})" >> $cmakefile
+echo "target_link_libraries("$target" gsl gslcblas m)" >> $cmakefile
 echo -e $green$bold"[DONE]"$normal
 
 

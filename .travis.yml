@@ -1,0 +1,18 @@
+language: cpp
+cache: apt
+services: docker
+
+install:
+    - docker build -t zilu_image:1.0 .
+    - docker run -d --name zilu_container zilu_image:1.0
+
+script:
+    - docker ps | grep -q zilu_container
+
+notifications:
+   # slack: seahornteam:NAUqZmZHFFviPH4ktQbJXgKu
+   email:
+     recipients:
+      - sutdtest@googlegroups.com
+     on_success: always
+     on_failure: always

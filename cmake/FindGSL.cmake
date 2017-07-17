@@ -9,7 +9,7 @@ include(LibFindMacros)
 
 # Include dir
 find_path(GSL_INCLUDE_DIR
-  NAMES gsl.h
+  NAMES gsl/gsl_sf.h
   PATHS ${GSL_PKGCONF_INCLUDE_DIRS}
 )
 

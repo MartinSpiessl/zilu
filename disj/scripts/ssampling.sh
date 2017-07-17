@@ -96,7 +96,8 @@ if [ ! -f $branchfile_cpp ]; then
 fi
 
 #echo -e $green"Compiling the C files and Run KLEE..."$normal
-llvm-gcc --emit-llvm -c -g $branchfile_cpp > /dev/null
+#llvm-gcc --emit-llvm -c -g $branchfile_cpp > /dev/null
+clang -emit-llvm -c -g $branchfile_cpp -o $branchfile_o > /dev/null
 #echo -e $blue"Running KLEE to generate path condition --->"$branchfile_o$normal
 klee $branchfile_o > /dev/null 2>&1
 res=$?
