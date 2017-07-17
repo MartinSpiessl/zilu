@@ -9,7 +9,9 @@
 		<td>TBD</td>
 	</tr>
 </table>
+
 ZILU has been tested on Ubuntu 14.04 x64. It should work on other Linux platfroms, but we have not tested yet.
+[![Build Status](https://travis-ci.org/lijiaying/ZILU.svg?branch=master)](https://travis-ci.org/lijiaying/ZILU)))]]
 
 ## ZILU Installation on local computer
 #### pre-requirement (most of the package can be installed with apt-get on Ubuntu)
