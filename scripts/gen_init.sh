@@ -88,7 +88,7 @@ function func_kleeinit(){
 rm -rf klee-*
 rm -rf *.smt2
 #echo -e $green"Compiling the C files and Run KLEE..."$u$normal
-clang -emit-llvm -c -g $file_c_init -o $file_o_init > /dev/null
+$llvm_cmd -c -g $file_c_init -o $file_o_init > /dev/null
 echo -e $blue"Running KLEE to generate path condition"$normal
 klee -write-smt2s $file_o_init > /dev/null 2>&1
 func_varfile2vars $path_var

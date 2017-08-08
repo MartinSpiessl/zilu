@@ -23,6 +23,11 @@ dir_build=$dir_project"/build"
 #echo "dir_script=="$dir_script
 #echo "dir_parser=="$dir_parser
 
+if [ "X"$llvm_version="X3.4" ]; then
+	llvm_cmd="llvm-gcc --emit-llvm"
+else
+	llvm_cmd="clang -emit-llvm"
+fi
 
 Nv=0
 vars=()
@@ -196,6 +201,7 @@ z3 $smt2file > $modelfile
 #echo "solve result-------------------------------"
 #cat $modelfile
 #echo "-------------------------------------------"
+grep -q "unsat" $modelfile
 res=$?
 if [ $res -ne 0 ]; then
 	#echo "z3 --> $res"
@@ -210,6 +216,11 @@ if [ $res -ne 0 ]; then
 	#fi
 fi
 
+grep -q "error" $modelfile
+if [ $? -eq 0 ]; then
+	echo -e $red"Error in model file @$modelfile, can not proceed"$normal
+	exit 0
+fi
 sed -i '1,2d' $modelfile
 sed -i 's/\ \ /\ /g' $modelfile
 sed -i 's/(define-fun\ \([a-zA-Z_][a-zA-Z_0-9]*\)\ ()\ Int/\1/g' $modelfile

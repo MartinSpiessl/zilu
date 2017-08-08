@@ -10,7 +10,7 @@ int loopFunction(int _reserved_input_[]) {
 
 	iif_assume(x>=0 && x<=y && y<n);
 
-	while(x<=n) {
+	while(x<n) {
 		recordi(x, y, n);
 		x++;
 		if (x>y) y++;
@@ -26,8 +26,8 @@ int loopFunction(int _reserved_input_[]) {
 int main(int argc, char** argv) {
 	iifround = atoi(argv[1]);
 	initseed = atoi(argv[2]);
-	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/05.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/05.ds");
+	iifContext context("/home/lijiaying/Research/zilu/tmp/05.var", loopFunction, "loopFunction", "/home/lijiaying/Research/zilu/tmp/05.ds");
 	context.addLearner("conjunctive");
-	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/05.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/05");
+	return context.learn("/home/lijiaying/Research/zilu/tmp/05.cnt", "/home/lijiaying/Research/zilu/tmp/05");
 }
 
