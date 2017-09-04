@@ -11,7 +11,6 @@
 </table>
 
 ZILU has been tested on Ubuntu 14.04 x64. It should work on other Linux platfroms, but we have not tested yet.
-[![Build Status](https://travis-ci.org/lijiaying/ZILU.svg?branch=master)](https://travis-ci.org/lijiaying/ZILU)
 
 ## ZILU Installation on local computer
 #### pre-requirement (most of the package can be installed with apt-get on Ubuntu)
@@ -45,8 +44,8 @@ ZILU has been tested on Ubuntu 14.04 x64. It should work on other Linux platfrom
 
 #### Get the latest ZILU
 ```
-git clone https://github.com/lijiaying/ZILU.git
-cd ZILU
+git clone https://github.com/lijiaying/zilu.git
+cd zilu
 ```
 
 #### Patch KLEE source code
@@ -64,16 +63,17 @@ We mainly add new method calls **``klee_fail && klee_pass''**, as we would like 
 	- make ENABLE\_OPTIMIZED=1
 	- sudo make install
 
-- for the latest klee version (up to July 16th, 2017), we also offer a patch as klee.patch
+[//]: # (- for the latest klee version (up to July 16th, 2017), we also offer a patch as klee.patch
 	- cd klee-project-home
 	- git apply ${zilu-home}/klee.patch
 	- make ENABLE_OPTIMIZED=1
 	- sudo make install
+	)
 
 
 #### Test ZILU
 ```
-./run.sh benchmark/03.cfg
+./run benchmark/03.cfg
 ```
 
 ### Try *zilu* from docker hub

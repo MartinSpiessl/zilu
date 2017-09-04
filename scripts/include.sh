@@ -203,10 +203,10 @@ z3 $smt2file > $modelfile
 #echo "-------------------------------------------"
 grep -q "unsat" $modelfile
 res=$?
-if [ $res -ne 0 ]; then
+if [ $res -eq 0 ]; then
 	#echo "z3 --> $res"
 	#echo "unsat"
-	return $res
+	return 1 
 	#exit $res
 	#grep -n "unsat" $modelfile | cut -d ':' -f 1 > result
 	#if [[ $result == "1" ]]; then
@@ -219,7 +219,7 @@ fi
 grep -q "error" $modelfile
 if [ $? -eq 0 ]; then
 	echo -e $red"Error in model file @$modelfile, can not proceed"$normal
-	exit 0
+	exit 1
 fi
 sed -i '1,2d' $modelfile
 sed -i 's/\ \ /\ /g' $modelfile
