@@ -39,7 +39,7 @@ ZILU has been tested on Ubuntu 14.04 x64. It should work on other Linux platfrom
 	- apt-get install libgsl0-dev
 --->
 - "make" and otherLLVM essential building tools, you can add if needed
-- [KLEE](https://klee.github.io/) only test llvm2.9 yet, so try to build KLEE by [build-llvm29](http://klee.github.io/build-llvm29/). 
+- [KLEE](https://klee.github.io/) only test llvm2.9 yet, so try to build KLEE by [build-llvm29](http://klee.github.io/releases/docs/v1.3.0/build-llvm29/). 
 	- If you can not build KLEE with the above instruction, maybe you can refer to 
 		- [link1](http://blog.opensecurityresearch.com/2014/07)
 		- [link2](http://klee-dev.keeda.stanford.narkive.com/RqzseDmo/problems-when-compiling-klee-runtime).
@@ -80,6 +80,7 @@ We mainly add new method calls **``klee_fail && klee_pass''**, as we would like 
 ```
 
 ### Try *zilu* from docker hub
+This is not supported for now. As klee has updated its build support platform from llvm-2.9 to llvm-3.4. We will update this in a few months.
 ```
 docker pull lijiaying/zilu
 ```
