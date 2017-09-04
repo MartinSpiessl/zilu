@@ -1,0 +1,254 @@
+diff --git a/include/klee/Constraints.h b/include/klee/Constraints.h
+index 87069f8..6f0aa66 100644
+--- a/include/klee/Constraints.h
++++ b/include/klee/Constraints.h
+@@ -60,6 +60,11 @@ public:
+   size_t size() const {
+     return constraints.size();
+   }
++  void dump() {
++	  for (size_t i = 0; i < size(); i++) {
++		  constraints[i]->dump();
++	  }
++  }
+ 
+   bool operator==(const ConstraintManager &other) const {
+     return constraints == other.constraints;
+diff --git a/include/klee/klee.h b/include/klee/klee.h
+index d098039..df97eeb 100644
+--- a/include/klee/klee.h
++++ b/include/klee/klee.h
+@@ -107,12 +107,18 @@ extern "C" {
+      and may have peculiar semantics. */
+ 
+   void klee_assume(uintptr_t condition);
++  void klee_assume_false(uintptr_t condition);
++  void klee_pass(uintptr_t condition);
++  void klee_fail(uintptr_t condition);
+   void klee_warning(const char *message);
+   void klee_warning_once(const char *message);
+   void klee_prefer_cex(void *object, uintptr_t condition);
+   void klee_posix_prefer_cex(void *object, uintptr_t condition);
+   void klee_mark_global(void *object);
+ 
++  # define klee_Massert(expr)\
++  do {klee_pass(expr); } while(0)
++
+   /* Return a possible constant value for the input expression. This
+      allows programs to forcibly concretize values on their own. */
+ #define KLEE_GET_VALUE_PROTO(suffix, type)	type klee_get_value##suffix(type expr)
+diff --git a/lib/Core/Executor.cpp b/lib/Core/Executor.cpp
+index dc9edf5..3867667 100644
+--- a/lib/Core/Executor.cpp
++++ b/lib/Core/Executor.cpp
+@@ -7,6 +7,7 @@
+ //
+ //===----------------------------------------------------------------------===//
+ 
++#include <stdio.h>
+ #include "Executor.h"
+ #include "Context.h"
+ #include "CoreStats.h"
+@@ -1386,6 +1387,7 @@ static inline const llvm::fltSemantics * fpWidthToSemantics(unsigned width) {
+ }
+ 
+ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
++  static int int_suffix = 1;
+   Instruction *i = ki->inst;
+   switch (i->getOpcode()) {
+     // Control flow
+@@ -1610,6 +1612,77 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
+     for (unsigned j=0; j<numArgs; ++j)
+       arguments.push_back(eval(ki, j+1, state).value);
+ 
++	const char* calleeName = cs.getCalledFunction()->getName().data();
++	//printf("called fuction: %s\n", cs.getCalledFunction()->getName().data());
++#if 0
++	if (strncmp(calleeName, "klee_assertion", 14) == 0) {
++		printf("->>Function<%s> $$", calleeName);
++		/*
++		printf("State::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
++		state.constraints.dump();
++		printf("Cond:0:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
++		Expr::createIsZero(arguments[0]).get()->dump();
++		printf("Cond:1:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
++		arguments[0].get()->dump();
++		printf("End::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
++		*/
++		
++		//std::ofstream ofile("failAssert.smt2");
++		//Query query(state.constraints, Expr::createIsZero(arguments[0]));
++		Query query(state.constraints, arguments[0]);
++		//printf("line#1644 before setQuery...\n");
++		printer.setQuery(query);
++		printer.generateOutput();
++		//printf("line#1647 before output to file...\n");
++		//printf ("%s\n", info.str().c_str());
++		ofile << info.str();
++		ofile.close();
++		//printf("line#1651 after my code...\n");
++	} else if (strncmp(calleeName, "klee_pass", 9) == 0) {
++#endif
++	if (strncmp(calleeName, "klee_pass", 9) == 0) {
++		printf("->>Function<%s> $$", calleeName);
++		char filename[] = "kleeAssert00000.smt2";
++		sprintf(filename+10, "%05d", int_suffix++);
++		strcat(filename, ".smt2");
++		printf("\n---------------------------------------------------------------------\n");
++		printf("filename:%s \targuments_size=%d\n", filename, numArgs);
++
++		//std::ofstream ofile("failAssert.smt2");
++		std::ofstream ofile(filename);
++		std::string Str;
++		llvm::raw_string_ostream info(Str);
++		ExprSMTLIBPrinter printer;
++		printer.setOutput(info);
++
++		Query query(state.constraints, Expr::createIsZero(arguments[0]));
++		//Query query(state.constraints, arguments[0]);
++		printer.setQuery(query);
++		printer.generateOutput();
++		ofile << info.str();
++		ofile.close();
++	} else if (strncmp(calleeName, "klee_fail", 9) == 0) {
++		printf("->>Function<%s> $$", calleeName);
++		char filename[] = "kleeAssert00000.smt2";
++		sprintf(filename+10, "%05d", int_suffix++);
++		strcat(filename, ".smt2");
++		printf("\n---------------------------------------------------------------------\n");
++		printf("filename:%s \targuments_size=%d\n", filename, numArgs);
++
++		std::ofstream ofile(filename);
++		std::string Str;
++		llvm::raw_string_ostream info(Str);
++		ExprSMTLIBPrinter printer;
++		printer.setOutput(info);
++
++		//Query query(state.constraints, Expr::createIsZero(arguments[0]));
++		Query query(state.constraints, arguments[0]);
++		printer.setQuery(query);
++		printer.generateOutput();
++		ofile << info.str();
++		ofile.close();
++	}
++
+     if (f) {
+       const FunctionType *fType = 
+         dyn_cast<FunctionType>(cast<PointerType>(f->getType())->getElementType());
+diff --git a/lib/Core/SpecialFunctionHandler.cpp b/lib/Core/SpecialFunctionHandler.cpp
+index caec5e3..f563ef0 100644
+--- a/lib/Core/SpecialFunctionHandler.cpp
++++ b/lib/Core/SpecialFunctionHandler.cpp
+@@ -83,6 +83,9 @@ static SpecialFunctionHandler::HandlerInfo handlerInfo[] = {
+   add("calloc", handleCalloc, true),
+   add("free", handleFree, false),
+   add("klee_assume", handleAssume, false),
++  add("klee_assume_false", handleAssumeFalse, false),
++  add("klee_pass", handlePass, true),
++  add("klee_fail", handleFail, true),
+   add("klee_check_memory_access", handleCheckMemoryAccess, false),
+   add("klee_get_valuef", handleGetValue, true),
+   add("klee_get_valued", handleGetValue, true),
+@@ -409,6 +412,49 @@ void SpecialFunctionHandler::handleAssume(ExecutionState &state,
+   }
+ }
+ 
++void SpecialFunctionHandler::handleAssumeFalse(ExecutionState &state,
++                            KInstruction *target,
++                            std::vector<ref<Expr> > &arguments) {
++  assert(arguments.size()==1 && "invalid number of arguments to klee_assume_false");
++  
++  ref<Expr> e = arguments[0];
++  
++  if (e->getWidth() != Expr::Bool)
++    e = NeExpr::create(e, ConstantExpr::create(0, e->getWidth()));
++  
++  bool res;
++  bool success __attribute__ ((unused)) = executor.solver->mustBeTrue(state, e, res);
++  assert(success && "FIXME: Unhandled solver failure");
++  if (res) {
++    if (SilentKleeAssume) {
++      executor.terminateState(state);
++    } else {
++      executor.terminateStateOnError(state,
++                                     "invalid klee_assume_false call (provably true)",
++                                     "user.err");
++    }
++  } else {
++    executor.addConstraint(state, e);
++  }
++}
++
++
++void SpecialFunctionHandler::handlePass(ExecutionState &state,
++                            KInstruction *target,
++                            std::vector<ref<Expr> > &arguments) {
++  assert(arguments.size()==1 && "invalid number of arguments to klee_pass");
++  //printf("in handleAssertion function...\n");
++  return;
++}
++
++void SpecialFunctionHandler::handleFail(ExecutionState &state,
++                            KInstruction *target,
++                            std::vector<ref<Expr> > &arguments) {
++  assert(arguments.size()==1 && "invalid number of arguments to klee_fail");
++  //printf("in handleAssertion function...\n");
++  return;
++}
++
+ void SpecialFunctionHandler::handleIsSymbolic(ExecutionState &state,
+                                 KInstruction *target,
+                                 std::vector<ref<Expr> > &arguments) {
+diff --git a/lib/Core/SpecialFunctionHandler.h b/lib/Core/SpecialFunctionHandler.h
+index 2dfdde4..c8bee60 100644
+--- a/lib/Core/SpecialFunctionHandler.h
++++ b/lib/Core/SpecialFunctionHandler.h
+@@ -101,6 +101,9 @@ namespace klee {
+     HANDLER(handleAssert);
+     HANDLER(handleAssertFail);
+     HANDLER(handleAssume);
++    HANDLER(handleAssumeFalse);
++    HANDLER(handlePass);
++    HANDLER(handleFail);
+     HANDLER(handleCalloc);
+     HANDLER(handleCheckMemoryAccess);
+     HANDLER(handleDefineFixedObject);
+diff --git a/runtime/Runtest/intrinsics.c b/runtime/Runtest/intrinsics.c
+index 2302e27..4abbcc3 100644
+--- a/runtime/Runtest/intrinsics.c
++++ b/runtime/Runtest/intrinsics.c
+@@ -113,6 +113,20 @@ void klee_assume(uintptr_t x) {
+   }
+ }
+ 
++void klee_assume_false(uintptr_t x) {
++  if (x) {
++    fprintf(stderr, "ERROR: invalid klee_assume_false\n");
++  }
++}
++
++void klee_pass(uintptr_t x) {
++	klee_assert(x);
++}
++
++void klee_fail(uintptr_t x) {
++	klee_assert(x);
++}
++
+ #define KLEE_GET_VALUE_STUB(suffix, type)	\
+ 	type klee_get_value##suffix(type x) { \
+ 		return x; \
+diff --git a/tools/klee/main.cpp b/tools/klee/main.cpp
+index 568c70b..ba0d29d 100644
+--- a/tools/klee/main.cpp
++++ b/tools/klee/main.cpp
+@@ -737,6 +737,9 @@ static const char *modelledExternals[] = {
+   "abort",
+   "klee_abort",
+   "klee_assume",
++  "klee_assume_false",
++  "klee_pass",
++  "klee_fail",
+   "klee_check_memory_access",
+   "klee_define_fixed_object",
+   "klee_get_errno",

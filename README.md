@@ -55,16 +55,15 @@ cd zilu
 This modification aims at generating smt2 file for each path condition.
 We mainly add new method calls **``klee_fail && klee_pass''**, as we would like to output the path condition to files in these method calls.
 
-- klee.tar.gz is the patch. It should be applied to KLEE with commit signature 6609a03e68bf551f433ddd0fd8cf64a8683ee2ee, the short SHA: 6609a03.
+- klee.6609a03.patch is the patch file. It should be applied to KLEE with commit signature 6609a03e68bf551f433ddd0fd8cf64a8683ee2ee, the short SHA: 6609a03.
 - Change to Klee with commit 6609a03. 
 	- git checkout 6609a03
-- Extract the gz file to replace the same files in KLEE project.
-	- tar -xvzf klee.tar.gz
-- After the patch, you can continue to proceed build KLEE. 
-	- cp -r klee/\* ../klee-project-home/
+- Apply the patch 
+	- git apply ${zilu-home}/klee.6609a03.patch
 - Rebuild and install the patched KLEE. 
 	- make ENABLE\_OPTIMIZED=1
 	- sudo make install
+- After patching KLEE, it is OK that several tests of KLEE might be failed. Just ignore them as long as the _make_ return 0.
 
 <!---
 - for the latest klee version (up to July 16th, 2017), we also offer a patch as klee.patch
