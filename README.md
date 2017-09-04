@@ -63,12 +63,13 @@ We mainly add new method calls **``klee_fail && klee_pass''**, as we would like 
 	- make ENABLE\_OPTIMIZED=1
 	- sudo make install
 
-[//]: # (- for the latest klee version (up to July 16th, 2017), we also offer a patch as klee.patch
+<!---
+- for the latest klee version (up to July 16th, 2017), we also offer a patch as klee.patch
 	- cd klee-project-home
 	- git apply ${zilu-home}/klee.patch
 	- make ENABLE_OPTIMIZED=1
 	- sudo make install
-	)
+--->
 
 
 #### Test ZILU
