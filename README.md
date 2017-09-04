@@ -1,5 +1,5 @@
 ## *ZILU* is an open source invariant inference Framework
-__zilu__ is named after a disciple of [Confucius](https://en.wikipedia.org/wiki/Confucius)
+__zilu__ is named after a disciple of [Confucius](https://en.wikipedia.org/wiki/Confucius).
 
 <table>
 	<tr>
