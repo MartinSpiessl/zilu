@@ -74,6 +74,15 @@ We mainly add new method calls **``klee_fail && klee_pass''**, as we would like 
 --->
 
 
+#### build parser 
+```
+mkdir -p build/parser
+cd build/parser
+cmake ../../parser
+make
+cd ../..
+```
+
 #### Test zilu
 ```
 ./run benchmark/35.cfg
