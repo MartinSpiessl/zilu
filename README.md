@@ -1,19 +1,19 @@
-## *ZILU* is an open source invariant inference Framework
+## *zilu* is an open source invariant inference Framework
 __zilu__ is named after a disciple of [Confucius](https://en.wikipedia.org/wiki/Confucius).
+zilu has been tested on Ubuntu 14.04 x64. It should work on other Linux platfroms, but we have not tested yet.
 
 <table>
 	<tr>
 		<th>Windows</th><th>Ubuntu</th><th>OS X</th>
 	</tr>
 		<td>TBD</td>
-		<td><a href="https://travis-ci.org/lijiaying/ZILU"><img src="https://travis-ci.org/lijiaying/ZILU.svg?branch=master" title="Ubuntu 12.04 LTS 64bit, clang"/></a></td>
+		<td><a href="https://travis-ci.org/lijiaying/zilu"><img src="https://travis-ci.org/lijiaying/zilu.svg?branch=master" title="Ubuntu 12.04 LTS 64bit, clang"/></a></td>
 		<td>TBD</td>
 	</tr>
 </table>
 
-ZILU has been tested on Ubuntu 14.04 x64. It should work on other Linux platfroms, but we have not tested yet.
 
-## ZILU Installation on local computer
+## zilu Installation on local computer
 #### pre-requirement (most of the package can be installed with apt-get on Ubuntu)
 - apt-get install git cmake flex bison clang z3 libz3-dev libgsl0-dev
 	- [git](https://git-scm.com/downloads)
@@ -74,13 +74,15 @@ We mainly add new method calls **``klee_fail && klee_pass''**, as we would like 
 --->
 
 
-#### Test ZILU
+#### Test zilu
 ```
-./run benchmark/03.cfg
+./run benchmark/35.cfg
 ```
 
-### Try *zilu* from docker hub
+## Try *zilu* from docker hub
+<!--- 
 This is not supported for now. As klee has updated its build support platform from llvm-2.9 to llvm-3.4. We will update this in a few months.
+--->
 ```
 docker pull lijiaying/zilu
 ```
