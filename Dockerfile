@@ -1,42 +1,39 @@
-FROM klee/klee
+FROM lijiaying/klee:2.9
 MAINTAINER lijiaying <lijiaying1989@gmail.com>
 
 # FIXME: Docker doesn't currently offer a way to
 # squash the layers from within a Dockerfile so
 # the resulting image is unnecessarily large!
 
-ENV KLEE_SRC=/home/klee/klee_src \
-    KLEE_BLD=/home/klee/klee_build \
-    ZILU_SRC=/home/klee/zilu_src
+ENV klee_home=/klee_home \
+    zilu_src=/zilu_home
 
-USER root
 RUN apt-get -y --no-install-recommends install \
 		libgsl0-dev \
-		libz3-dev \
-		z3 && \
-		mkdir ${ZILU_SRC}
+		z3 libz3-dev \
+		clang
 
+		
+#mkdir -p ${zilu_src}
 # Copy across source files needed for build
-#git clone https://github.com/lijiaying/ZILU.git ${ZILU_SRC}
-ADD / ${ZILU_SRC}
+#git clone https://github.com/lijiaying/ZILU.git ${zilu_src}
+# ADD / ${zilu_src}
 	
-RUN cd ${KLEE_SRC} && \
-	git apply ${ZILU_SRC}/klee.patch && \
-	cd ${KLEE_BLD}/klee && \
-	make && \
+RUN git clone https://github.com/lijiaying/ZILU.git ${zilu_src} && \
+	cd ${klee_home}/klee && \
+	git apply ${zilu_src}/patch/klee.6609a03.patch && \
+	export PATH=$PATH:/klee_home/llvm-gcc4.2-2.9-x86_64-linux/bin && \
+	export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu && \
+	export CPLUS_INCLUDE_PATH=/usr/include/x86_64-linux-gnu && \
+	make ENABLE_OPTIMIZED=1 -j && \
 	make install && \
 	make clean
 
-RUN cd ${ZILU_SRC}/parser && \
-		mkdir build && \
-		cd build && \
-		cmake .. && \
-		make > /dev/null 2>&1 || mv parser.hpp .. && \
-		cd .. && \
-		rm -rf build
-
-# Set klee user to be owner
-RUN sudo chown --recursive klee: ${KLEE_SRC}
-RUN sudo chown --recursive klee: ${KLEE_BLD}
-RUN sudo chown --recursive klee: ${ZILU_SRC}
-
+RUN cd ${zilu_src} && \
+	mkdir -p build/parser && \
+	cd build/parser && \
+	cmake ../../parser && \
+	make 
+	#> /dev/null 2>&1 || mv parser.hpp .. && \
+	#cd .. && \
+	#rm -rf build

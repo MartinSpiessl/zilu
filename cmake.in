@@ -59,7 +59,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/")
 find_package(Z3 REQUIRED)
 find_package(GSL REQUIRED)
 
-add_subdirectory(parser)
+#add_subdirectory(parser)
 
 configure_file(config.h.in ../include/config.h)
 # using for windows

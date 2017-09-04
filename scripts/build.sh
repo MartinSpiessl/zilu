@@ -26,12 +26,12 @@ path_var=$dir_temp"/"$file_var
 path_inv=$dir_temp"/"$file_inv
 prefix_path_inv=$dir_temp"/"$prefix
 
-cd $dir_build
-mkdir -p script
-cd script
-cmake ../parser
-make
-cd ../..
+#cd $dir_build
+#mkdir -p script
+#cd script
+#cmake ../parser
+#make
+#cd ../..
 
 cd $dir_project
 ##########################################################################
