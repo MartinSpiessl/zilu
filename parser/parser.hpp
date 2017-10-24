@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY_HOME_LIJIAYING_RESEARCH_ZILU_BUILD_PARSER_PARSER_HPP_INCLUDED
-# define YY_YY_HOME_LIJIAYING_RESEARCH_ZILU_BUILD_PARSER_PARSER_HPP_INCLUDED
+#ifndef YY_YY_HOME_LIJIAYING_RESEARCH_ZILU_PARSER_BUILD_PARSER_HPP_INCLUDED
+# define YY_YY_HOME_LIJIAYING_RESEARCH_ZILU_PARSER_BUILD_PARSER_HPP_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -47,8 +47,9 @@ extern int yydebug;
   {
     NAMES = 258,
     LEARNERS = 259,
-    TAG = 260,
-    STRING = 261
+    SYMBS = 260,
+    TAG = 261,
+    STRING = 262
   };
 #endif
 
@@ -62,9 +63,10 @@ union YYSTYPE
 	tag_type tag;
 	std::string* pstr;
 	NameList* names;
+	NameList* symbs;
 	NameList* learners;
 
-#line 68 "/home/lijiaying/Research/zilu/build/parser/parser.hpp" /* yacc.c:1909  */
+#line 70 "/home/lijiaying/Research/zilu/parser/build/parser.hpp" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -77,4 +79,4 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_HOME_LIJIAYING_RESEARCH_ZILU_BUILD_PARSER_PARSER_HPP_INCLUDED  */
+#endif /* !YY_YY_HOME_LIJIAYING_RESEARCH_ZILU_PARSER_BUILD_PARSER_HPP_INCLUDED  */

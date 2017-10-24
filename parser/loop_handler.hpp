@@ -78,6 +78,7 @@ class LoopHandler {
 		std::string toCFile4Init(int positive) {
 			// used for verifying the invariant candidate
 			std::ostringstream stm;
+			//cout << "in cfile 4 init.\n";
 			stm << toKleeInclude() << "\n"
 				<< toKleeMain4Init(positive);
 			return stm.str();
@@ -89,6 +90,12 @@ class LoopHandler {
 				return ";";
 			ostringstream stm;
 			std::size_t last = -1;
+			for (int i = 0; i < loop->symbs->n; i++) {
+				for (int j=0; j<tabs; j++) {
+					stm << "\t";
+				}
+				stm << "\tint " << loop->symbs->u[i] << " = rand() % 2;\n";
+			}
 			while (true) {
 				for (int i=0; i<tabs; i++)
 					stm << "\t";
@@ -137,8 +144,12 @@ class LoopHandler {
 			stm << "int main() {\n"; 
 			for (int i = 0; i < loop->names->n; i++) 
 				stm << "\tint " << loop->names->u[i] << ";\n";
+			for (int i = 0; i < loop->symbs->n; i++) 
+				stm << "\tint " << loop->symbs->u[i] << ";\n";
 			for (int i = 0; i < loop->names->n; i++) 
 				stm << "\tklee_make_symbolic(&" << loop->names->u[i] <<", sizeof(" << loop->names->u[i] << "), \"" << loop->names->u[i] << "\");\n";
+			for (int i = 0; i < loop->symbs->n; i++) 
+				stm << "\tklee_make_symbolic(&" << loop->symbs->u[i] <<", sizeof(" << loop->symbs->u[i] << "), \"" << loop->symbs->u[i] << "\");\n";
 			// before loop statements;
 			if (loop->beforeloop && loop->beforeloop->compare("") != 0)
 				stm << "\t" << *loop->beforeloop << "\n";
@@ -179,8 +190,12 @@ class LoopHandler {
 			stm << "int main() {\n"; 
 			for (int i = 0; i < loop->names->n; i++) 
 				stm << "\tint " << loop->names->u[i] << ";\n";
+			for (int i = 0; i < loop->symbs->n; i++) 
+				stm << "\tint " << loop->symbs->u[i] << ";\n";
 			for (int i = 0; i < loop->names->n; i++) 
 				stm << "\tklee_make_symbolic(&" << loop->names->u[i] <<", sizeof(" << loop->names->u[i] << "), \"" << loop->names->u[i] << "\");\n";
+			for (int i = 0; i < loop->symbs->n; i++) 
+				stm << "\tklee_make_symbolic(&" << loop->symbs->u[i] <<", sizeof(" << loop->symbs->u[i] << "), \"" << loop->symbs->u[i] << "\");\n";
 			// before loop statements;
 			if (loop->beforeloop && loop->beforeloop->compare("") != 0)
 				stm << "\t" << *loop->beforeloop << "\n";
@@ -207,8 +222,12 @@ class LoopHandler {
 			stm << "int main() {\n"; 
 			for (int i = 0; i < loop->names->n; i++) 
 				stm << "\tint " + loop->names->u[i] + ";\n";
+			for (int i = 0; i < loop->symbs->n; i++) 
+				stm << "\tint " << loop->symbs->u[i] << ";\n";
 			for (int i = 0; i < loop->names->n; i++) 
 				stm << "\tklee_make_symbolic(&" << loop->names->u[i] <<", sizeof(" << loop->names->u[i] << "), \"" << loop->names->u[i] << "\");\n";
+			for (int i = 0; i < loop->symbs->n; i++) 
+				stm << "\tklee_make_symbolic(&" << loop->symbs->u[i] <<", sizeof(" << loop->symbs->u[i] << "), \"" << loop->symbs->u[i] << "\");\n";
 			// before loop statements;
 			if (loop->beforeloop && loop->beforeloop->compare("") != 0)
 				stm << "\t" << *loop->beforeloop << "\n";

@@ -54,6 +54,7 @@ class Branch{
 class Loop{
 	public:
 		NameList* names;
+		NameList* symbs;
 		std::string* beforeloop;
 		std::string* beforeloopinit;
 		std::string* precondition;
@@ -69,6 +70,8 @@ class Loop{
 			cout << "Loop-------------------------------------\n";
 			cout << " |---[namelist]---------------" << endl;
 			names->print(5);
+			cout << " |---[symblist]---------------" << endl;
+			symbs->print(5);
 			BLANKS(start); 
 			cout << " |---" << "[beforeloop] [|" << (beforeloop? *beforeloop:"NULL") << "|]" << endl;
 			BLANKS(start); 

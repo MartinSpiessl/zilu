@@ -16,6 +16,7 @@ extern const std::string tag_name[];
 	tag_type tag;
 	std::string* pstr;
 	NameList* names;
+	NameList* symbs;
 	NameList* learners;
 }
 
@@ -23,9 +24,9 @@ extern const std::string tag_name[];
    match our tokens.l lex file. We also define the node type
    they represent.
  */
-%token <tag> NAMES LEARNERS TAG
+%token <tag> NAMES LEARNERS SYMBS TAG
 %token <pstr> STRING
-%type <names> namelist learnerlist
+%type <names> namelist symblist learnerlist
 /*%type <nodes> stmtlist*/
 /*%type <loop_type> stmtlist*/
 %start root
@@ -37,11 +38,26 @@ root	: namelist stmtlist
 			loop->names = $1;
 			loop->learners = new NameList();
 		}
+		| namelist symblist stmtlist
+		{ 
+			//printf("reduce to root.\n"); 
+			loop->names = $1;
+			loop->symbs = $2;
+			loop->learners = new NameList();
+		}
 		| namelist stmtlist learnerlist stmtlist
 		{ 
 			//printf("reduce to root.\n"); 
 			loop->names = $1;
+			loop->symbs = new NameList();
 			loop->learners = $3;
+		}
+		| namelist stmtlist symblist stmtlist learnerlist stmtlist
+		{ 
+			//printf("reduce to root.\n"); 
+			loop->names = $1;
+			loop->symbs = $3;
+			loop->learners = $5;
 		}
 		;
 
@@ -56,6 +72,20 @@ namelist: namelist STRING
 			$$ = new NameList();
 			$$->addName(*$2);
 			//cout << "addName<" << *$2 << ">" << endl;
+		}
+		;
+
+symblist: symblist STRING
+		{
+			//cout << "addSYM<" << *$2 << ">" << endl;
+			$$ = $1;
+			$$->addName(*$2);
+		}
+		| SYMBS STRING
+		{ 
+			//cout << "addSYM<" << *$2 << ">" << endl;
+			$$ = new NameList();
+			$$->addName(*$2);
 		}
 		;
 
@@ -84,8 +114,9 @@ stmtlist: stmtlist TAG STRING
 
 int yyerror(char const *str)
 {
+	//cout << "in yyerror.\n";
 	extern char* yytext;
-	fprintf(stderr, "parser error near %s\n", yytext);
+	fprintf(stderr, "parser error near \"%s\"\n", yytext);
 	return 0;
 }
 

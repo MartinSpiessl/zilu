@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.8)
-set(Nv 3)
+set(Nv 2)
 add_definitions(-D__SELECTIVE_SAMPLING_ENABLED)
 project(zilu CXX)
 set(PRECISION 3)
@@ -62,7 +62,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/")
 find_package(Z3 REQUIRED)
 find_package(GSL REQUIRED)
 
-add_subdirectory(parser)
+#add_subdirectory(parser)
 
 configure_file(config.h.in ../include/config.h)
 # using for windows
@@ -74,7 +74,7 @@ configure_file(config.h.in ../include/config.h)
 # add include dir and source dir into project
 include_directories (include)
 aux_source_directory(src DIR_SRCS)
-add_executable(05 /home/lijiaying/Research/zilu/test/05.cpp ${DIR_SRCS})
-target_link_libraries(05 ${Z3_LIBRARY})
-target_link_libraries(05 ${GSL_LIBRARIES})
-target_link_libraries(05 gsl gslcblas m)
+add_executable(09 /home/lijiaying/Research/zilu/test/09.cpp ${DIR_SRCS})
+target_link_libraries(09 ${Z3_LIBRARY})
+target_link_libraries(09 ${GSL_LIBRARIES})
+target_link_libraries(09 gsl gslcblas m)

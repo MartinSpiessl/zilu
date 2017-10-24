@@ -5,12 +5,13 @@
 #include "parser.hpp"
 
 static int n_names = 0;
+static int n_symbs = 0;
 static int n_learners = 0;
 
 
 %}
 %option noyywrap
-%start NAMELIST LEARNERLIST STRSTART 
+%start NAMELIST LEARNERLIST SYMBLIST STRSTART 
 %%
 <INITIAL>[ \t]	    		;
 <INITIAL>#.*\n		 		;
@@ -32,12 +33,27 @@ static int n_learners = 0;
 <INITIAL>"postcondition="	{ BEGIN STRSTART; yylval.tag = PSTC; return TAG; }
 <INITIAL>"afterloop="       { BEGIN STRSTART; yylval.tag = ALOOP; return TAG; }
 <INITIAL>"invariant="       { BEGIN STRSTART; yylval.tag = INVR; /*printf("encounter INVARIANT.\n");*/ return TAG; }
+<INITIAL>"fakesymbolic="    { BEGIN STRSTART; printf("-->fake[symlist]: \n");  yylval.tag = INVR; /*printf("encounter INVARIANT.\n");*/ return TAG; }
 <STRSTART>[^\n]*\n			{ yytext[yyleng-1] = '\0';
 							  /*printf("\t[%d]->%s\n", yylval.tag, yytext);*/ 
 							  yylval.pstr = new std::string(yytext); 
 							  BEGIN INITIAL;
 							  return STRING; 
 							}
+
+<INITIAL>"symbolic="     	{ /*printf("-->MODE[symlist]: \n");*/
+								BEGIN SYMBLIST; 
+								/*printf("-goto->SYMBLIST \n");*/
+								return SYMBS; }
+<SYMBLIST>[a-zA-Z_][a-zA-Z_0-9]*  { 
+								n_symbs++; 
+								/*printf("\t[%d]->%s\n", n_symbs, yytext);*/ 
+								yylval.pstr = new std::string(yytext); 
+								return STRING; 
+							}
+<SYMBLIST>[ \t]         	;
+<SYMBLIST>\n				{ /*printf("<--MODE[symblist]\n");*/ BEGIN INITIAL; }
+<SYMBLIST>.					{ printf("Unexpected char[%c] in symblist\n", yytext[0]); BEGIN INITIAL; }
 
 <INITIAL>"learners="        { BEGIN LEARNERLIST; return LEARNERS; }
 <LEARNERLIST>[a-zA-Z_][a-zA-Z_0-9]*  { 
