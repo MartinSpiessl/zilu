@@ -4,20 +4,20 @@ using namespace std;
 using namespace iif;
 
 int loopFunction(int _reserved_input_[]) {
-	int i = _reserved_input_[0];
-	int c = _reserved_input_[1];
+	int x = _reserved_input_[0];
+	int y = _reserved_input_[1];
 
-	iif_assume( i>=0&&c>=i);
+	iif_assume( y == x);
 
-	while(i<40) {
-		recordi(i, c);
-		c=c+i;
-		i++;
+	while(rand()%2) {
+		recordi(x, y);
+		x++;
+		y++;
 		
 	}
-	recordi(i, c);
+	recordi(x, y);
 
-	iif_assert(c>=0);
+	iif_assert(x == y);
 
 	return 0;
 }
@@ -25,8 +25,8 @@ int loopFunction(int _reserved_input_[]) {
 int main(int argc, char** argv) {
 	iifround = atoi(argv[1]);
 	initseed = atoi(argv[2]);
-	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/30.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/30.ds");
+	iifContext context("/home/lijiaying/Research/zilu/tmp/30.var", loopFunction, "loopFunction", "/home/lijiaying/Research/zilu/tmp/30.ds");
 	context.addLearner("conjunctive");
-	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/30.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/30");
+	return context.learn("/home/lijiaying/Research/zilu/tmp/30.cnt", "/home/lijiaying/Research/zilu/tmp/30");
 }
 

@@ -181,9 +181,9 @@ class SVM : public MLalgo
 					return -1; 
 				}
 
-				//std::cout << "---------------------------------------->>>>>>\n";
-				//std::cout << problem;
-				//problem.print_Negatives();
+				std::cout << "---------------------------------------->>>>>>\n";
+				std::cout << problem;
+				problem.print_Negatives();
 				int res = 0;
 				if (kernel == 0) {
 					res = trainLinear();

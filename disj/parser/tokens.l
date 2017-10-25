@@ -36,7 +36,7 @@ static int n_learners = 0;
 <INITIAL>"afterloop="       { BEGIN STRSTART; yylval.tag = ALOOP; return TAG; }
 <INITIAL>"invariant="       { BEGIN STRSTART; yylval.tag = INVR; /*printf("encounter INVARIANT.\n");*/ return TAG; }
 <STRSTART>[^\n]*\n			{ yytext[yyleng-1] = '\0';
-							  /*printf("\t[%d]->%s\n", yylval.tag, yytext);*/ 
+							  /*printf("\t[%d]->%s\n", yylval.tag, yytext);*/
 							  yylval.pstr = new std::string(yytext); 
 							  BEGIN INITIAL;
 							  return STRING; 

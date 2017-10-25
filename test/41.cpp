@@ -27,8 +27,8 @@ int loopFunction(int _reserved_input_[]) {
 int main(int argc, char** argv) {
 	iifround = atoi(argv[1]);
 	initseed = atoi(argv[2]);
-	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/41.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/41.ds");
+	iifContext context("/home/lijiaying/Research/zilu/tmp/41.var", loopFunction, "loopFunction", "/home/lijiaying/Research/zilu/tmp/41.ds");
 	context.addLearner("conjunctive");
-	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/41.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/41");
+	return context.learn("/home/lijiaying/Research/zilu/tmp/41.cnt", "/home/lijiaying/Research/zilu/tmp/41");
 }
 

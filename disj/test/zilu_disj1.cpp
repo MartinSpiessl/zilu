@@ -30,8 +30,8 @@ int loopFunction(int _reserved_input_[]) {
 }
 
 int main(int argc, char** argv) {
-	Context context("/home/lijiaying/Research/GitHub/disZILU/tmp/zilu_disj1.var", loopFunction, "loopFunction", NULL);
+	Context context("/home/lijiaying/Research/zilu/disj/tmp/zilu_disj1.var", loopFunction, "loopFunction", NULL);
 	context.addLearner("linear");
-	return context.learn("/home/lijiaying/Research/GitHub/disZILU/tmp/zilu_disj1.cnt", "/home/lijiaying/Research/GitHub/disZILU/tmp/zilu_disj1.inv", "/home/lijiaying/Research/GitHub/disZILU/test/zilu_disj1.pc");
+	return context.learn("/home/lijiaying/Research/zilu/disj/tmp/zilu_disj1.cnt", "/home/lijiaying/Research/zilu/disj/tmp/zilu_disj1.inv", "/home/lijiaying/Research/zilu/disj/test/zilu_disj1.pc");
 }
 

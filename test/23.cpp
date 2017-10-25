@@ -5,20 +5,19 @@ using namespace iif;
 
 int loopFunction(int _reserved_input_[]) {
 	int i = _reserved_input_[0];
-	int n = _reserved_input_[1];
-	int sum = _reserved_input_[2];
+	int j = _reserved_input_[1];
 
-	iif_assume( n>=0&&i==0&&sum==0);
+	iif_assume(i==0 && j==0);
 
-	while( i<n) {
-		recordi(i, n, sum);
-		sum=sum+i;
+	while(i<100) {
+		recordi(i, j);
+		j+=2;
 		i++;
 		
 	}
-	recordi(i, n, sum);
+	recordi(i, j);
 
-	iif_assert(sum>=0);
+	iif_assert(j==200);
 
 	return 0;
 }
@@ -26,8 +25,8 @@ int loopFunction(int _reserved_input_[]) {
 int main(int argc, char** argv) {
 	iifround = atoi(argv[1]);
 	initseed = atoi(argv[2]);
-	iifContext context("/home/lijiaying/Research/GitHub/zilu/tmp/23.var", loopFunction, "loopFunction", "/home/lijiaying/Research/GitHub/zilu/tmp/23.ds");
+	iifContext context("/home/lijiaying/Research/zilu/tmp/23.var", loopFunction, "loopFunction", "/home/lijiaying/Research/zilu/tmp/23.ds");
 	context.addLearner("conjunctive");
-	return context.learn("/home/lijiaying/Research/GitHub/zilu/tmp/23.cnt", "/home/lijiaying/Research/GitHub/zilu/tmp/23");
+	return context.learn("/home/lijiaying/Research/zilu/tmp/23.cnt", "/home/lijiaying/Research/zilu/tmp/23");
 }
 
