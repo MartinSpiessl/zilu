@@ -20,10 +20,10 @@
  *		   If it is not set correctly, you may come across a runtime error
  */
 #define Nv 2 
-#define Nb 3 
-#define Project "44" 
+#define Nb 2 
+#define Project "pldi08_fig1" 
 #define ProjectHome "/home/lijiaying/Research/zilu/disj" 
-//#define Project #44 
+//#define Project #pldi08_fig1 
 
 /*#define Cv(i) do {int return_num##i = 1;\
   for (int tempi = 0; tempi < i; i++) return_num##i *= (Nv + i);\

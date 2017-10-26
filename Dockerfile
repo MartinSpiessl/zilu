@@ -45,5 +45,6 @@ RUN cd ${zilu_src} && \
 	#rm -rf build
 
 RUN cd ${zilu_src} && \
+	export PATH=$PATH:/klee_home/llvm-gcc4.2-2.9-x86_64-linux/bin && \
 	./run benchmark/03.cfg && \
 	./run benchmark/07.cfg
