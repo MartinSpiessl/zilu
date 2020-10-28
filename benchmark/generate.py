@@ -7,10 +7,7 @@ template = open("template.c","r").read()
 ymltext = open("template.yml","r").read()
 
 dataset = dict()
-for f in files:
-    if f in ("f2.cfg","test.cfg"):
-        continue
-    
+def process(f, applyfix = False):
     data = dict()
     branchconds = list()
     branchcodes = list()
@@ -115,6 +112,14 @@ for f in files:
         filledtemplate = re.sub("\$\("+key+"\)",value,filledtemplate)
     
     filledyml = re.sub("\$\(file\)",basename+".i",ymltext)
+    filledyml = re.sub("\$\(overflow_verdict\)","true",filledyml)
     open (basename+".c","w").write(filledtemplate)
     open (basename+".yml","w").write(filledyml)
     dataset[f] = data
+
+for f in files:
+    if f in ("f2.cfg","test.cfg"):
+        continue
+
+    process(f, applyfix = False)
+    process(f, applyfix = True)
