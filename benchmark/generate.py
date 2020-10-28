@@ -81,19 +81,24 @@ for f in files:
         data["init"] = result
     else:
         data["init"] = ""
-        
+
+    # deal with symbolic variables (mostly "symbolic=flag")
     if "symbolic" in data:
         symvars = [entry.strip() for entry in data["symbolic"].split()]
         result = ""
         for v in symvars:
             result += "\n  _Bool %s = __VERIFIER_nondet_bool();" % v
         data["symbolicinit"] = result
-        
+
+    # indent some init code or set to "" if not present:
     for key in ["beforeloopinit","symbolicinit"]:
         if key not in data:
             data[key] = ""
         else:
             data[key] = "\n  " + data[key]
+
+    # deal with preconditions: indent and encapuslate in if (!precond) return 0;
+    # if there is no precondition, we set it to ""
     for key in ["precondition",]:
         if key not in data:
             data[key] = ""
@@ -103,12 +108,13 @@ for f in files:
         data["loopcondition"] = "__VERIFIER_nondet_bool()"
     
 
+    # fill in all the parts into the template
     filledtemplate = template
     for (key,value) in data.items():
         #print("$"+key)
         filledtemplate = re.sub("\$\("+key+"\)",value,filledtemplate)
     
-    filledyml = re.sub("\$\(file\)",basename+".c",ymltext)
+    filledyml = re.sub("\$\(file\)",basename+".i",ymltext)
     open (basename+".c","w").write(filledtemplate)
     open (basename+".yml","w").write(filledyml)
     dataset[f] = data
