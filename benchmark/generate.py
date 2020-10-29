@@ -6,6 +6,10 @@ files = [f for f in listdir(".") if isfile(join(".", f)) and ".cfg" in f]
 template = open("template.c","r").read()
 ymltext = open("template.yml","r").read()
 
+overflows = {1,6,7,12,15,21,27,28,29,30,31,39,40,42,44,45,46,47,48,49,50,53}
+
+overflows = {"%02d.cfg" %i for i  in overflows}
+
 dataset = dict()
 def process(f, applyfix = False):
     data = dict()
@@ -111,8 +115,13 @@ def process(f, applyfix = False):
         #print("$"+key)
         filledtemplate = re.sub("\$\("+key+"\)",value,filledtemplate)
     
+    overflow_verdict = "false" if f in overflows else "true"
+    reach = "" if f in overflows else """  - property_file: ../properties/unreach-call.prp
+    expected_verdict: true
+"""
     filledyml = re.sub("\$\(file\)",basename+".i",ymltext)
-    filledyml = re.sub("\$\(overflow_verdict\)","true",filledyml)
+    filledyml = re.sub("\$\(reach\)",reach,filledyml)
+    filledyml = re.sub("\$\(overflow_verdict\)",overflow_verdict,filledyml)
     open (basename+".c","w").write(filledtemplate)
     open (basename+".yml","w").write(filledyml)
     dataset[f] = data

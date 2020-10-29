@@ -3,9 +3,7 @@ format_version: '2.0'
 input_files: '$(file)'
 
 properties:
-  - property_file: ../properties/unreach-call.prp
-    expected_verdict: true
-  - property_file: ../properties/no-overflow.prp
+$(reach)  - property_file: ../properties/no-overflow.prp
     expected_verdict: $(overflow_verdict)
 
 options:
