@@ -6,7 +6,7 @@ files = [f for f in listdir(".") if isfile(join(".", f)) and ".cfg" in f]
 template = open("template.c","r").read()
 ymltext = open("template.yml","r").read()
 
-overflows = {1,6,7,12,15,21,27,28,29,30,31,39,40,42,44,45,46,47,48,49,50,53}
+overflows = {1,6,7,12,15,21,27,28,29,30,31,39,40,42,44,45,46,47,48,49,50,53,3,8,13,16,22,24,36,38,41}
 
 overflows = {"%02d.cfg" %i for i  in overflows}
 
